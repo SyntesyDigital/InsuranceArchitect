@@ -33,14 +33,14 @@
                 "Modules\\Architect\\Providers\\ArchitectServiceProvider"
             ],
             "aliases": {}
-        },
-        "installer-paths": {
-            "../../vendor/{$name}": ["vendor/package"]
         }
     },
     "autoload": {
         "psr-4": {
             "Modules\\Architect\\": ""
         }
+    },
+    "config": {
+        "vendor-dir": "../../vendor"
     }
 }
