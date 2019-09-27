@@ -7,69 +7,6 @@
 //      Author : nicolas.delcastillo@syntesy.io
 //
 // --------------------------------------------------------------------- //
-$vendors = [
-    [
-        "package" => "barryvdh/laravel-cors",
-        "version" => "^0.11.3"
-    ],
-
-    [
-        "package" => "doctrine/dbal",
-        "version" => "^2.9"
-    ],
-
-    [
-        "package" => "intervention/image",
-        "version" => "^2.4"
-    ],
-
-    [
-        "package" => "jenssegers/date",
-        "version" => "^3.5"
-    ],
-
-    [
-        "package" => "kalnoy/nestedset",
-        "version" => "^4.3"
-    ],
-
-    [
-        "package" => "laravelcollective/html",
-        "version" => "^5.4.0"
-    ],
-
-    [
-        "package" => "prettus/l5-repository",
-        "version" => "^2.6"
-    ],
-
-    [
-        "package" => "yajra/laravel-datatables-oracle",
-        "version" => "~8.0"
-    ],
-
-    [
-        "package" => "mariuzzo/laravel-js-localization",
-        "version" => "^1.4"
-    ],
-
-    [
-        "package" => "mcamara/laravel-localization",
-        "version" => "^1.3"
-    ],
-
-    [
-        "package" => "elasticsearch/elasticsearch",
-        "version" => "^6.0"
-    ],
-
-    [
-        "package" => "kevindierkx/laravel-domain-localization",
-        "version" => "^2.0"
-    ]
-    ];
-
-
 function updateEnv($key,$value)
 {
     $path = __DIR__ . '/../../.env';
@@ -126,14 +63,7 @@ exec("npm run $env");
 // --------------------------------------------------------------------- //
 echo PHP_EOL;
 echo "-> Installing vendors (composer) " . basename(__DIR__) . PHP_EOL;
-
-if(!empty($vendors)) {
-    foreach($vendors as $vendor) {
-        exec("../composer require " . $vendor["package"] . " " . $vendor["version"]);
-    }
-} else {
-    echo " Nothing to install " . PHP_EOL;
-}
+exec("composer install");
 // --------------------------------------------------------------------- //
 
 
