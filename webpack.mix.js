@@ -2,7 +2,12 @@ const mix = require('laravel-mix');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
 require('laravel-mix-merge-manifest');
-mix.setPublicPath('../../public').mergeManifest();
+
+mix
+    .setPublicPath('../../public')
+    .mergeManifest();
+    
+mix.options({ processCssUrls: false });
 
 
 // ---------------------------------------- //
