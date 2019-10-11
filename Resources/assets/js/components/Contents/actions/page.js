@@ -312,7 +312,7 @@ export function updatePageImage(media,field,pathToIndex,layout,language, editIte
 
 export function updatePageContent(content,identifier,pathToIndex,layout,editItem, listItemInfo){
 
-  const fields = null, index = null;
+  let fields = null, index = null;
 
   switch (editItem.type) {
 
