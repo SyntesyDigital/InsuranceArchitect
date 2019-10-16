@@ -30,7 +30,8 @@ class StaticBanner extends Widget implements WidgetInterface
 
     public $settings = [
       'htmlId',
-      'htmlClass'
+      'htmlClass',
+      'hiddenFilter'
     ];
 }
 ?>

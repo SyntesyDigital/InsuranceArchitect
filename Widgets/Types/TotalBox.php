@@ -31,7 +31,8 @@ class TotalBox extends Widget implements WidgetInterface
     public $settings = [
       'htmlId',
       'htmlClass',
-      'tableElements'
+      'tableElements',
+      'hiddenFilter'
     ];
 }
 ?>

@@ -28,7 +28,8 @@ class Button extends Widget implements WidgetInterface
 
     public $settings = [
         'htmlId',
-        'htmlClass'
+        'htmlClass',
+        'hiddenFilter'
     ];
 
 }
