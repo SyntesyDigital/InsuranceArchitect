@@ -394,7 +394,35 @@ return [
               'children' => [
                   [
                     'type' => 'col',
-                    'class' => 'col-md-12',
+                    'class' => 'col-md-6',
+                    'children' => [
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'frontBodyH1Color',
+                          'name' => 'frontBodyH1Color',
+                          'label' => 'H1 color'
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'frontBodyH2Color',
+                          'name' => 'frontBodyH2Color',
+                          'label' => 'H2 color'
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'frontBodyH3Color',
+                          'name' => 'frontBodyH3Color',
+                          'label' => 'H3 color'
+                      ]
+
+                    ] //end children col
+                  ],
+                  [
+                    'type' => 'col',
+                    'class' => 'col-md-6',
                     'children' => [
                       [
                           'type' => 'field',
@@ -464,6 +492,13 @@ return [
                     'children' => [
                       [
                           'type' => 'field',
+                          'input' => 'number',
+                          'identifier' => 'titleFontSize',
+                          'name' => 'titleFontSize',
+                          'label' => 'Title font size (px)'
+                      ],
+                      [
+                          'type' => 'field',
                           'input' => 'color',
                           'identifier' => 'frontElementHeadColor',
                           'name' => 'frontElementHeadColor',
@@ -506,6 +541,27 @@ return [
                     'children' => [
                       [
                           'type' => 'field',
+                          'input' => 'number',
+                          'identifier' => 'titleCollapsableFontSize',
+                          'name' => 'titleCollapsableFontSize',
+                          'label' => 'Title collapsable font size (px)'
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'elementHeadCollapsableColor',
+                          'name' => 'elementHeadCollapsableColor',
+                          'label' => 'Header collapsable text color'
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'frontElementHeadCollapsableBackground',
+                          'name' => 'frontElementHeadCollapsableBackground',
+                          'label' => 'Header collapsable background color'
+                      ],
+                      [
+                          'type' => 'field',
                           'input' => 'color',
                           'identifier' => 'frontElementLinkColor',
                           'name' => 'frontElementLinkColor',
@@ -539,11 +595,48 @@ return [
                 ]//en children box
             ],//end box 7
 
+            [
+              'type' => 'box',
+              'title' => 'Buttons Settings',
+              'identifier' => 'box_8',
+              'children' => [
+                  [
+                    'type' => 'col',
+                    'class' => 'col-sm-12 col-md-6',
+                    'children' => [
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonPrimaryColor',
+                          'name' => 'buttonPrimaryColor',
+                          'label' => 'Button primary color'
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonHoverColor',
+                          'name' => 'buttonHoverColor',
+                          'label' => 'Button hover color'
+                      ]
+
+                    ] //end children col
+                  ],
+                  [
+                    'type' => 'col',
+                    'class' => 'col-sm-12 col-md-6',
+                    'children' => [
+
+                    ] //end children col
+                  ],
+
+                ]//en children box
+            ],//end box 7
+
 
             [
               'type' => 'box',
               'title' => 'Static Banner Settings',
-              'identifier' => 'box_7',
+              'identifier' => 'box_9',
               'children' => [
                   [
                     'type' => 'col',
