@@ -76,15 +76,14 @@ class ModalEditItem extends Component {
 
   processProps(props) {
 
-    ////console.log("ModalEditItem :: field processProps ",props);
+    //console.log("ModalEditItem :: field processProps ",props);
 
     var field = JSON.parse(JSON.stringify(props.modalEdit.item.data.field));
     field.identifier = "temp_"+JSON.stringify(props.modalEdit.item.pathToIndex);
     field.value = props.modalEdit.item.data.field !== undefined &&
       props.modalEdit.item.data.field.value !== undefined ? props.modalEdit.item.data.field.value : null;
 
-    //
-    ////console.log("ModalEditItem :: field after process : ",field);
+    //console.log("ModalEditItem :: field after process : ",field);
 
     return field;
   }
@@ -153,19 +152,34 @@ class ModalEditItem extends Component {
   */
   updateSettingsFromConfig(field) {
 
-    var widgetConfig = WIDGETS[field.label];
+    var config = null;
 
-    for(var id in widgetConfig.rules){
-      var rule = widgetConfig.rules[id];
-      if(field.rules[rule] === undefined){
-        field.rules[rule] = null;
+    if(field.type == "widget"){
+        config = WIDGETS[field.label];
+    }
+    else {
+        config = FIELDS[field.label];
+    }
+
+    if(config == null){
+      return field;
+    }
+
+    if(config.rules !== undefined ) {
+      for(var id in config.rules){
+        var rule = config.rules[id];
+        if(field.rules[rule] === undefined){
+          field.rules[rule] = null;
+        }
       }
     }
 
-    for(var id in widgetConfig.settings){
-      var setting = widgetConfig.settings[id];
-      if(field.settings[setting] === undefined){
-        field.settings[setting] = null;
+    if(config.settings !== undefined ) {
+      for(var id in config.settings){
+        var setting = config.settings[id];
+        if(field.settings[setting] === undefined){
+          field.settings[setting] = null;
+        }
       }
     }
 

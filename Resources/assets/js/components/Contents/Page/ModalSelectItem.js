@@ -119,6 +119,7 @@ class ModalSelectItem extends Component {
 
     newField.rules = this.exploteToObject(newField.rules);
     newField.settings = this.exploteToObject(newField.settings);
+    newField.identifier = "temp_"+JSON.stringify(this.props.modalItem.pathToIndex);
 
     this.handleSelectItem({
       type : 'item',
