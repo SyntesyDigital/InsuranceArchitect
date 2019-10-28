@@ -91,7 +91,11 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
       for(var key in element.attrs){
         var attribute = element.attrs[key];
         if(attribute.name == "parameter"){
-          result.parameters.push(attribute.value);
+          result.parameters.push({
+            name : attribute.name,
+            id : attribute.value,
+            settings : JSON.parse(attribute.settings)
+          });
         }
       }
     }
@@ -110,7 +114,8 @@ export function loadElements() {
               && response.data.length > 0)
           {
 
-            ////console.log("original elements => ",response.data);
+            console.log("original elements => ",response.data);
+
             var fileElements = [{
               value:'',
               name:'----'
@@ -191,10 +196,10 @@ export function cancelEditItem() {
 function parameterExist(id,pageParameters) {
   for(var i=0;i<pageParameters.length;i++){
     if(pageParameters[i].id == id){
-      return true;
+      return i;
     }
   }
-  return false;
+  return null;
 }
 
 /**
@@ -225,13 +230,60 @@ function getElementParameterOption(identifier,elements){
   return '';
 }
 
+function mergeByPriority(settings,newSettings){
+  var currentRequired = settings != null && settings.required !== undefined &&
+    settings.required != null ?
+    settings.required : false;
+  var newRequired = newSettings != null && newSettings.required !== undefined &&
+    newSettings.required != null ?
+    newSettings.required : false;
+
+  //if any is required, then result is required
+  if(settings == null)
+    settings = {};
+
+  settings.required = newRequired || currentRequired;
+  return settings;
+
+  /*
+  //NOT NECESSARY BY NOW
+  for(var key in PARAMETERS.settings){
+    var setting = PARAMETERS.settings[key];
+  }
+  */
+}
+
 export function updateParameters(layout, elements, pageParameters, parametersList) {
 
   //search for all hierarchy all widgets that has parameters
   //console.log("updateParameters :: ",layout, elements);
 
-  var parameters = getParametersFromLayout(layout,[], elements);
-  //console.log("getParametersFromLayout : pageParams : => ", pageParameters, parameters);
+  var parametersObjects = getParametersFromLayout(layout,[], elements);
+
+  //get parameters ids
+  var parameters = [];
+  for(var key in parametersObjects){
+    parameters.push(parametersObjects[key].id);
+  }
+
+  //get parameters objects by id
+  var parametersById = {};
+  for(var key in parametersObjects){
+    //if parameter already added merge by priority
+    if(parametersById[parametersObjects[key].id] !== undefined){
+      parametersById[parametersObjects[key].id].settings = mergeByPriority(
+        parametersById[parametersObjects[key].id].settings,
+        parametersObjects[key].settings
+      );
+    }
+    else {
+      parametersById[parametersObjects[key].id] = parametersObjects[key];
+    }
+  }
+
+  console.log("updateParameters :: getParametersFromLayout : parametersById : => ", parametersById);
+
+  console.log("updateParameters :: getParametersFromLayout : pageParams : => ", pageParameters, parameters);
   var filterParameters = getFilterParametersFromLayout(layout,{});
   console.log("updateParameters :: filter parameters ",filterParameters);
 
@@ -242,6 +294,7 @@ export function updateParameters(layout, elements, pageParameters, parametersLis
   //console.log("getParametersFromLayout : init page parameters => ",pageParameters);
   //check existing parameters
   for(var j=pageParameters.length-1;j>=0;j--){
+
     //if not exist in array
     //console.log("getParametersFromLayout :: indexOf => ", parameters.indexOf(pageParameters[j].id.toString()));
     if(parameters.indexOf(pageParameters[j].id.toString()) == -1){
@@ -250,14 +303,18 @@ export function updateParameters(layout, elements, pageParameters, parametersLis
       pageParameters.splice(j,1);
     }
   }
-  //console.log("getParametersFromLayout : after clean => ",pageParameters);
+  console.log("getParametersFromLayout : after clean => ",pageParameters);
 
   //add new parameters
   for(var i =0;i<parameters.length;i++){
     var id = parameters[i];
+
+    var parameterIndex = parameterExist(id, pageParameters);
+
     //check if not already pushed to page
-    if(!parameterExist(id, pageParameters)){
-        //console.log("dont exist :: id => ", id,parametersList[id].identifier);
+    if(parameterIndex == null){
+
+        console.log("getParametersFromLayout :: dont exist :: id => ", id, parametersById, parametersList);
 
         //if parameters is a filter
         if(filterParameters[id] !== undefined){
@@ -266,6 +323,7 @@ export function updateParameters(layout, elements, pageParameters, parametersLis
               default : filterParameters[id],
               identifier : parametersList[id].identifier,
               name : parametersList[id].name,
+              settings : getFilterSettings(parametersById[parseInt(id)])
           });
         }
         else {
@@ -274,14 +332,36 @@ export function updateParameters(layout, elements, pageParameters, parametersLis
               default : getElementParameterOption(parametersList[id].identifier, elements),
               identifier : parametersList[id].identifier,
               name : parametersList[id].name,
+              settings : parametersById[parseInt(id)].settings
           });
         }
+    }
+    else {
+      //if exist update only settings. Necessary to filter getSettings to check if it is a filter
+      pageParameters[parameterIndex].settings = getFilterSettings(parametersById[parseInt(id)]);
     }
   }
 
   console.log("getParametersFromLayout : after adding => ",pageParameters);
 
   return { type: UPDATE_PARAMETERS,payload : pageParameters };
+}
+
+/*
+*   Parameters that are filters can be added to any kind of widget, even with no element.
+*   Maybe this parameters are not in any of the elements of the widgets. ( imagine a page of buttons for example )
+*/
+function getFilterSettings(paramterById) {
+    //if parametersById is defined
+    if(paramterById !== undefined && paramterById != null){
+        return paramterById.settings;
+    }
+    else {
+        return {
+          //filters are not required
+          required : false
+        }
+    }
 }
 
 /**
@@ -300,6 +380,9 @@ function concatFilterParameters(parameters,filterParameters) {
   return parameters;
 }
 
+/*
+*   Recursive function to search for all parameters.
+*/
 function getParametersFromLayout(layout,params, elements) {
 
   for(var i=0;i<layout.length;i++){
@@ -309,16 +392,16 @@ function getParametersFromLayout(layout,params, elements) {
       //process item, return params
 
       var widgetParams = getWidgetParams(item.field, elements);
-      //console.log("item, widgetParams => ",item,widgetParams);
+      console.log("functionGetParametersFromLayout :: item, widgetParams => ",item,widgetParams);
       params = Array.from(new Set(params.concat(widgetParams)));
-      //console.log("item, params => ",params);
+      console.log("functionGetParametersFromLayout :: item, params => ",params);
     }
     else if(item.children != null && item.children !== undefined &&
       item.children.length > 0){
       var childrenParams = getParametersFromLayout(item.children,params, elements);
       //merge with params
       params = Array.from(new Set(params.concat(childrenParams)));
-      //console.log("row/col, params => ",params);
+      console.log("functionGetParametersFromLayout :: row/col, params => ",params);
     }
   }
 

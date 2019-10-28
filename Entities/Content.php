@@ -108,7 +108,28 @@ class Content extends Model
     public function routesParameters()
     {
         return $this->belongsToMany('\Modules\Extranet\Entities\RouteParameter', 'contents_routes_parameters',  'content_id', 'route_parameter_id')
-          ->withPivot('preview_default_value');
+          ->withPivot('preview_default_value','settings');
+    }
+
+    /*
+    *   Return route parametesr with settings processed.
+    */
+    public function getRouteParametersWithSettings()
+    {
+        $parameters = $this->routesParameters()->get();
+        if(isset($parameters)){
+            $resultParameters = [];
+            foreach($parameters as $parameter){
+              $resultParameters[$parameter->identifier] = [
+                "identifier" => $parameter->identifier,
+                "required" => $parameter->isRequired()
+              ];
+            }
+            return $resultParameters;
+        }
+        else {
+          return null;
+        };
     }
 
     public function isStatusPublished()

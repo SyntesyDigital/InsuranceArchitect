@@ -7,7 +7,8 @@ import {
   editItem,
   pullUpItem,
   pullDownItem,
-  deletePageItem
+  deletePageItem,
+  updateParameters
 } from './../actions/';
 
 class PageItem extends Component {
@@ -44,6 +45,15 @@ class PageItem extends Component {
               self.props.pathToIndex,
               self.props.app.layout
             );
+
+            //FIXME this is necessary to put in another place beacuse state doesn't update
+            self.props.updateParameters(
+              self.props.app.layout,
+              self.props.modalEdit.originalElements,
+              self.props.app.parameters,
+              self.props.app.parametersList,
+            );
+
 					}
 				}
 		});
@@ -284,7 +294,8 @@ class PageItem extends Component {
 
 const mapStateToProps = state => {
     return {
-        app: state.app
+        app: state.app,
+        modalEdit: state.modalEdit
     }
 }
 
@@ -304,8 +315,10 @@ const mapDispatchToProps = dispatch => {
         },
         deletePageItem: (pathToIndex,layout) => {
             return dispatch(deletePageItem(pathToIndex,layout))
+        },
+        updateParameters : (definition, elements, pageParameters, parametersList) => {
+          return dispatch(updateParameters(definition, elements, pageParameters, parametersList))
         }
-
     }
 }
 

@@ -58,7 +58,8 @@ class CreateContent
         if((isset($this->attributes['parameters'])) && count($this->attributes['parameters'])>0) {
           foreach ($this->attributes['parameters'] as $parameter) {
             $this->content->routesParameters()->attach($parameter['id'],[
-              'preview_default_value' => $parameter['default']
+              'preview_default_value' => $parameter['default'],
+              'settings' => json_encode($parameter['settings']),
             ]);
           }
         }

@@ -189,6 +189,15 @@ class ContentSidebar extends Component {
     this.props.updateDefaultParameters(parameters);
   }
 
+  isRequired(settings) {
+    if(settings !== undefined && settings != null &&
+      settings['required'] !== undefined && settings['required'] != null){
+      return settings['required'];
+    }
+
+    return true;
+  }
+
   renderParameters() {
 
     const parameters = this.props.app.parameters;
@@ -197,20 +206,32 @@ class ContentSidebar extends Component {
         return null;
     }
 
-    return parameters.map((item,index) =>
-      <div className="form-group bmd-form-group" key={index}>
-        <label htmlFor={item.id} className="bmd-label-floating">
-          {item.name}
-        </label>
-        <input
-          id={item.id} className="form-control"
-          value={item.default}
-          placeholder="Valeur de prévisualisation"
-          name={item.identifier}
-          onChange={this.handleParameterDefaultChange.bind(this,index)}
-        />
-      </div>
-    );
+    return parameters.map((item,index) => {
+
+      const required = this.isRequired(item.settings);
+
+      return (
+        <div className="form-group bmd-form-group" key={index}>
+          <label htmlFor={item.id} className="bmd-label-floating">
+            {required &&
+              <i className="fas fa-exclamation-circle"></i>
+
+            }
+            {!required &&
+              <i className="far fa-question-circle"></i>
+            }
+            &nbsp; {item.name}
+          </label>
+          <input
+            id={item.id} className="form-control"
+            value={item.default}
+            placeholder="Valeur de prévisualisation"
+            name={item.identifier}
+            onChange={this.handleParameterDefaultChange.bind(this,index)}
+          />
+        </div>
+      )
+    });
   }
 
   render() {

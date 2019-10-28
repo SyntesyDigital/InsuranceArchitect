@@ -22,7 +22,8 @@ import {
   UPDATE_PAGE_CONTENT,
   UPDATE_PAGE_LAYOUT,
   LOAD_PARAMETERS,
-  UPDATE_DEFAULT_PARAMETERS
+  UPDATE_DEFAULT_PARAMETERS,
+  EDIT_ITEM_UPDATE_ELEMENS
 
 } from '../constants';
 
@@ -65,6 +66,10 @@ const initialState =  {
   //route parameters
   parameters : null,
   parametersList : {},
+
+  loadParameters : false,
+  loadElements : false,
+  loaded : false
 }
 
 function exploteToObject(fields) {
@@ -207,11 +212,15 @@ function appReducer(state = initialState, action) {
             if(content.routes_parameters !== undefined){
               for(var key in content.routes_parameters){
                 var parameter = content.routes_parameters[key];
+
+                console.log("parameter => ",parameter);
+
                 newParameters.push({
                   id : parameter.id,
                   identifier : parameter.identifier,
                   name : parameter.name,
-                  default : parameter.pivot.preview_default_value
+                  default : parameter.pivot.preview_default_value,
+                  settings : JSON.parse(parameter.pivot.settings),
                 });
               }
             }
@@ -322,13 +331,23 @@ function appReducer(state = initialState, action) {
 
             return {
               ...state,
-              parametersList : action.payload
+              parametersList : action.payload,
+              loadParameters : true,
+              loaded : state.loadedElements //need to be boeath loadParameters && loadedElements
             }
         case UPDATE_DEFAULT_PARAMETERS :
 
             return {
               ...state,
               parameters : action.payload
+            }
+
+        case EDIT_ITEM_UPDATE_ELEMENS :
+            //when elements info are loaded, update parameters
+            return {
+              ...state,
+              loadedElements : true,
+              loaded : state.loadParameters //need to be boeath loadParameters && loadedElements
             }
 
         default:

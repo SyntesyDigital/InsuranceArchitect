@@ -8,7 +8,8 @@ import {
   updatePageImage,
   updateSelectedContent,
   cancelContent,
-  updatePageContent
+  updatePageContent,
+  updateParameters
 } from './../actions/';
 
 import ContentFields from './../Content/ContentFields';
@@ -26,6 +27,9 @@ class PageBuilder extends Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      loaded : false
+    };
   }
 
   handleAddRow(e) {
@@ -51,6 +55,20 @@ class PageBuilder extends Component {
         )
     );
 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("PageBuilder :: ",nextProps.app);
+
+    if(this.state.loaded != nextProps.app.loaded){
+      //app is loaded
+      this.props.updateParameters(
+        nextProps.app.layout,
+        nextProps.modalEdit.originalElements,
+        nextProps.app.parameters,
+        nextProps.app.parametersList,
+      );
+    }
   }
 
   handleImageSelected(media){
@@ -184,6 +202,9 @@ const mapDispatchToProps = dispatch => {
         },
         updatePageContent : (content,field,pathToIndex,layout,editItem,listItemInfo) => {
             return dispatch(updatePageContent(content,field,pathToIndex,layout,editItem,listItemInfo));
+        },
+        updateParameters : (definition, elements, pageParameters, parametersList) => {
+          return dispatch(updateParameters(definition, elements, pageParameters, parametersList))
         }
     }
 }

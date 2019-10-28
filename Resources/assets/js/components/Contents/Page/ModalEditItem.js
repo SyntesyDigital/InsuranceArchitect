@@ -115,7 +115,6 @@ class ModalEditItem extends Component {
             this.props.app.parametersList,
           );
 
-
         }
 
         field = this.processProps(nextProps);
@@ -523,9 +522,9 @@ class ModalEditItem extends Component {
           </div>
       )
     }
-    return this.state.parameters.map((id,index) => {
+    return this.state.parameters.map((item,index) => {
 
-      if(this.props.modalEdit.parameters[id] === undefined)
+      if(this.props.modalEdit.parameters[item.id] === undefined)
         return null;
 
       return (
@@ -533,7 +532,7 @@ class ModalEditItem extends Component {
           {index != 0 &&
               <span>, &nbsp;</span>
           }
-          {this.props.modalEdit.parameters[id].name}
+          {this.props.modalEdit.parameters[item.id].name}
         </div>
       );
     })
