@@ -13,6 +13,7 @@
       <div class="dashboard-items">
         <div class="row">
             @if(has_roles([ROLE_SUPERADMIN,ROLE_SYSTEM]))
+
               <div class="col-xs-6">
                 <!-- React Table.js -->
                 <div id="dashboard-table"
@@ -22,12 +23,12 @@
               </div>
 
               <div class="col-xs-6">
-                <!-- React Table.js -->
-                <div id="dashboard-table"
-                  title={{Lang::get('architect::home.news')}}
-                  route={{route('contents.modal.data')."?typology_id=1"}}
+                <div id="custom-table"
+                  title="Configuration"
+                  route={{ route('extranet.api.elements.data')."?q=check_routes_parameters" }}
                 ></div>
               </div>
+
             @endif
 
             <div class="col-xs-12">
