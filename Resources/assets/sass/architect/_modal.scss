@@ -108,7 +108,7 @@
   .modal-buttons {
       display: inline-block;
       position: absolute;
-      z-index: 650;
+      /*z-index: 650;*/
       top: 0px;
       right: 0px;
 
@@ -154,7 +154,7 @@
     padding: 8px 0;
 
     .togglebutton label{
-      color:#2d2f31;      
+      color:#2d2f31;
     }
 
     .form-group{
