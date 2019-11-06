@@ -32,7 +32,8 @@ class ElementFile extends Widget implements WidgetInterface
         'collapsable',
         'collapsed',
         'doubleColumn',
-        'hiddenFilter'
+        'hiddenFilter',
+        'conditionalVisibility'
     ];
 }
 ?>

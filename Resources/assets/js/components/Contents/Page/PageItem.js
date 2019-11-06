@@ -11,6 +11,10 @@ import {
   updateParameters
 } from './../actions/';
 
+import RichTextPreview from './Previews/RichTextPreview';
+import WidgetPreview from './Previews/WidgetPreview';
+import SettingsPreview from './Previews/SettingsPreview';
+
 class PageItem extends Component {
 
   constructor(props){
@@ -189,31 +193,6 @@ class PageItem extends Component {
 
   }
 
-  renderImageTextLinkPreview() {
-    var value = null;
-
-    //console.log("PageItem :: renderImageTextLinkPreview => ",this.props.data.field);
-
-    if(this.props.data.field.fields[1] !== undefined &&
-      this.props.data.field.fields[1].value !== undefined &&
-      this.props.data.field.fields[1].value != null &&
-      this.props.data.field.fields[1].value.title[DEFAULT_LOCALE] !== undefined ){
-
-      value = this.props.data.field.fields[1].value.title[DEFAULT_LOCALE];
-    }
-
-    if(value != null) {
-      return (
-        <a href="" className="text-preview">
-          <p>{value}</p>
-        </a>
-      );
-    }
-    else {
-      return this.renderDefaultPreview();
-    }
-  }
-
   renderDefaultPreview() {
     return (
       <a href="" className="btn btn-link">
@@ -225,15 +204,24 @@ class PageItem extends Component {
 
   renderPreview() {
 
+    console.log("renderPreview :: ",this.props.data.field);
+
     switch (this.props.data.field.type) {
       case FIELDS.TEXT.type:
         return this.renderTextPreview();
       case FIELDS.RICHTEXT.type:
-        return this.renderRichTextPreview();
+        return <RichTextPreview
+          field={this.props.data.field}
+        />;
       case FIELDS.IMAGE.type:
         return this.renderImagePreview();
       case FIELDS.LINK.type:
         return this.renderLinkPreview();
+      case "widget":
+        return <WidgetPreview
+            field={this.props.data.field}
+          />
+        ;
 
       /*
       case WIDGETS.IMAGE_TEXT_LINK.type:
@@ -256,20 +244,28 @@ class PageItem extends Component {
 
         <div className="item-header">
 
-          {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
             <div className="left-buttons">
-              { childrenIndex > 0 &&
-                <a href="" className="btn btn-link" onClick={this.onPullUpItem.bind(this)}>
-                  <i className="fa fa-arrow-up"></i>
-                </a>
+              {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
+                <span>
+                { childrenIndex > 0 &&
+                  <a href="" className="btn btn-link" onClick={this.onPullUpItem.bind(this)}>
+                    <i className="fa fa-arrow-up"></i>
+                  </a>
+                }
+                {childrenIndex < childrenLength - 1 &&
+                  <a href="" className="btn btn-link" onClick={this.onPullDownItem.bind(this)}>
+                    <i className="fa fa-arrow-down"></i>
+                  </a>
+                }
+                &nbsp;
+                </span>
               }
-              {childrenIndex < childrenLength - 1 &&
-                <a href="" className="btn btn-link" onClick={this.onPullDownItem.bind(this)}>
-                  <i className="fa fa-arrow-down"></i>
-                </a>
-              }
-            </div>
-          }
+
+              <SettingsPreview
+                field={this.props.data.field}
+              />
+
+          </div>
           {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
             <div className="right-buttons">
               <a href="" className="btn btn-link" onClick={this.onCopyItem.bind(this)}>

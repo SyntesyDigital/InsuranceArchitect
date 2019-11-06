@@ -23,7 +23,8 @@ import {
   UPDATE_PAGE_LAYOUT,
   LOAD_PARAMETERS,
   UPDATE_DEFAULT_PARAMETERS,
-  EDIT_ITEM_UPDATE_ELEMENS
+  EDIT_ITEM_UPDATE_ELEMENS,
+  UPDATE_PARAMETERS
 
 } from '../constants';
 
@@ -335,6 +336,8 @@ function appReducer(state = initialState, action) {
               loadParameters : true,
               loaded : state.loadedElements //need to be boeath loadParameters && loadedElements
             }
+
+        case UPDATE_PARAMETERS :
         case UPDATE_DEFAULT_PARAMETERS :
 
             return {

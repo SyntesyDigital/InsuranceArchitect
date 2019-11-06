@@ -18,6 +18,8 @@ class ModalEditClass extends Component {
 
     // //console.log(" ModalEditClass :: construct ",props);
 
+    this.mounted = false;
+
     this.state = {
       field : null
     };
@@ -31,12 +33,17 @@ class ModalEditClass extends Component {
         this.modalOpen();
     }
 
+    this.mounted = true;
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
   }
 
   componentWillReceiveProps(nextProps)
   {
 
-    //console.log(" ModalEditClass :: componentWillReceiveProps ",nextProps);
+    console.log(" ModalEditClass :: componentWillReceiveProps ",nextProps);
 
     var field = null;
 
@@ -50,9 +57,11 @@ class ModalEditClass extends Component {
 
      ////console.log("ModalEditClass :: componentWillReceiveProps :: =>",field);
 
-    this.setState({
-      field : field
-    });
+    if(this.mounted){
+      this.setState({
+        field : field
+      });
+    }
 
   }
 

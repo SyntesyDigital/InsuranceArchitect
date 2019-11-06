@@ -43,6 +43,7 @@ import InputTranslatedSettingsField from './../../Typology/Settings/InputTransla
 import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
 
 import HiddenFilter from './Settings/HiddenFilter';
+import VisibilitySettingsField from './Settings/Visibility/VisibilitySettingsField';
 
 import ModalEditListItem from './ModalEditListItem';
 
@@ -453,7 +454,9 @@ class ModalEditItem extends Component {
       )
 
       if(field.name == "fileElements" || field.name == "tableElements"
-        || field.name == "formElements" || field.name == "hiddenFilter") {
+        || field.name == "formElements"
+        || field.name == "hiddenFilter"
+        || field.name == "conditionalVisibility") {
 
         this.updateParameters(field);
       }
@@ -891,6 +894,16 @@ class ModalEditItem extends Component {
           inputLabel={'Si la variable a cette valeur est caché'}
         />
 
+        <VisibilitySettingsField
+          field={this.state.field}
+          name="conditionalVisibility"
+          source="settings"
+          inputLabel="Définir l'état par défaut."
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label="Afficher selon conditions"
+          parameters={this.props.app.parametersList}
+        />
+
       </div>
 
 
@@ -936,13 +949,13 @@ class ModalEditItem extends Component {
               <div className="modal-content">
                 <div className="container">
                   <div className="row">
-                    <div className="col-xs-8 field-col">
+                    <div className="col-xs-7 field-col">
 
                       {this.state.field != null &&
                         this.renderField()}
 
                     </div>
-                    <div className={"col-xs-4 settings-col "+(architect.currentUserHasRole(ROLES['ROLE_ADMIN']) ? "disabled":"")}>
+                    <div className={"col-xs-5 settings-col "+(architect.currentUserHasRole(ROLES['ROLE_ADMIN']) ? "disabled":"")}>
                       {this.renderSettings()}
                     </div>
                   </div>

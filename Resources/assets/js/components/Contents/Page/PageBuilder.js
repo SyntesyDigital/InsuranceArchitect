@@ -27,9 +27,7 @@ class PageBuilder extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      loaded : false
-    };
+    this.loaded = false;
   }
 
   handleAddRow(e) {
@@ -60,14 +58,19 @@ class PageBuilder extends Component {
   componentWillReceiveProps(nextProps) {
     console.log("PageBuilder :: ",nextProps.app);
 
-    if(this.state.loaded != nextProps.app.loaded){
+    if(!this.loaded && nextProps.app.loaded){
       //app is loaded
+
+      //console.log("PageBuilder :: first update parameters");
+
       this.props.updateParameters(
         nextProps.app.layout,
         nextProps.modalEdit.originalElements,
         nextProps.app.parameters,
         nextProps.app.parametersList,
       );
+
+      this.loaded = true;
     }
   }
 

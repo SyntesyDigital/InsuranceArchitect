@@ -31,7 +31,8 @@ class ElementForm extends Widget implements WidgetInterface
         'formElements',
         'collapsable',
         'collapsed',
-        'hiddenFilter'
+        'hiddenFilter',
+        'conditionalVisibility'
     ];
 }
 ?>

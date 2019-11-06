@@ -51,6 +51,10 @@ class ContentSidebar extends Component {
 
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log("ContentSidebar :: nextProps => ",nextProps);
+  }
+
   handleTranslationChange(event) {
     var field = {
       name : event.target.name,
