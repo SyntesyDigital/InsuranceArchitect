@@ -16,6 +16,8 @@ use Modules\Architect\Fields\FieldConfig;
 use Modules\Architect\Fields\Types\Text as TextField;
 use Cache;
 
+use Modules\Extranet\Jobs\Validation\ElementsPageRouteValidation;
+
 class UpdateContent
 {
      public function __construct(Content $content, $attributes)
@@ -84,6 +86,9 @@ class UpdateContent
 
         // Elasticsearch indexation
         $this->content->index();
+
+        // Check elements configuration
+        ElementsPageRouteValidation::dispatch();
 
         return $this->content;
     }

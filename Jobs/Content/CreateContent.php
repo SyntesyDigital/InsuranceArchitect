@@ -13,6 +13,7 @@ use Modules\Architect\Fields\FieldConfig;
 use Modules\Architect\Fields\Types\Text as TextField;
 
 use Modules\Architect\Tasks\Urls\CreateUrlsContent;
+use Modules\Extranet\Jobs\Validation\PageElementRouteValidation;
 
 class CreateContent
 {
@@ -74,8 +75,9 @@ class CreateContent
         // Index or reindex content on elasticsearch
         $this->content->index();
 
-
-
+        // Check elements configuration
+        ElementsPageRouteValidation::dispatch();
+        
         return $this->content;
     }
 
