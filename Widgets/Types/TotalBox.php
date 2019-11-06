@@ -12,7 +12,7 @@ use Modules\Architect\Entities\Language;
 class TotalBox extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'fa fa-pencil-square-o';
+    public $icon = 'fas fa-chart-bar';
     public $name = 'TOTAL_BOX';
     public $component = 'CommonWidget';
 

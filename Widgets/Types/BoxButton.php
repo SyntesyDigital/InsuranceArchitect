@@ -12,7 +12,7 @@ use Modules\Architect\Entities\Language;
 class BoxButton extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'fa fa-external-link';
+    public $icon = 'fas fa-external-link-square-alt';
     public $name = 'BOX_BUTTON';
     public $component = 'CommonWidget';
 
