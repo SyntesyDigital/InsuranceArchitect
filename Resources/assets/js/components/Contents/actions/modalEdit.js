@@ -253,6 +253,14 @@ function mergeByPriority(settings,newSettings){
   */
 }
 
+function parameterListByIdentifier(parametersList) {
+  var result = {};
+  for(var id in parametersList) {
+    result[parametersList[id].identifier] = parametersList[id];
+  }
+  return result;
+}
+
 export function updateParameters(layout, elements, pageParameters, parametersList) {
 
   //search for all hierarchy all widgets that has parameters
@@ -284,7 +292,11 @@ export function updateParameters(layout, elements, pageParameters, parametersLis
   console.log("updateParameters :: getParametersFromLayout : parametersById : => ", parametersById);
 
   console.log("updateParameters :: getParametersFromLayout : pageParams : => ", pageParameters, parameters);
-  var filterParameters = getFilterParametersFromLayout(layout,{});
+  //get all parameters by conditional visibility
+  var filterParameters = getFilterParametersFromLayout(
+    layout,{},
+    parameterListByIdentifier(parametersList)
+  );
   console.log("updateParameters :: filter parameters ",filterParameters);
 
   //add filter parameters into parameters array
@@ -416,7 +428,7 @@ function getParametersFromLayout(layout,params, elements) {
         "param id" : "default value"
       }
 */
-function getFilterParametersFromLayout(layout,params) {
+function getFilterParametersFromLayout(layout,params,parametersList) {
 
   for(var i=0;i<layout.length;i++){
     var item = layout[i];
@@ -424,16 +436,22 @@ function getFilterParametersFromLayout(layout,params) {
     if(item.type == "item"){
       //process item, return params
 
-      var widgetParams = getWidgetFilterParam(item.field);
+      var widgetParams = getWidgetFilterParam(item.field,parametersList);
+
       if(widgetParams != null){
-        params[widgetParams.id] = widgetParams.value;
+        for(var key in widgetParams){
+          if(params[key] === undefined) {
+            params[key] = widgetParams[key];
+          }
+        }
       }
+
       //console.log("item, widgetParams => ",item,widgetParams);
 
     }
     else if(item.children != null && item.children !== undefined &&
       item.children.length > 0){
-        params = getFilterParametersFromLayout(item.children,params);
+        params = getFilterParametersFromLayout(item.children,params,parametersList);
       }
   }
 
@@ -474,28 +492,64 @@ function getWidgetParams(field, elements) {
 }
 
 /**
-*   Check if filter exist in this widget.
+*   Return parameters object found on this widget.
 *   Return {
-*       id : "param id"
-*       value : "selected value"
+*       id : default_value,
+*        id : default_value,
 *    }
 */
-function getWidgetFilterParam(field) {
+function getWidgetFilterParam(field, parametersList) {
 
   if(field == null || field.settings === undefined){
     return null;
   }
 
-  if(field.settings['hiddenFilter'] !== undefined && field.settings['hiddenFilter'] != null
-    && field.settings['hiddenFilter'] != ''){
+  if(field.settings['conditionalVisibility'] !== undefined && field.settings['conditionalVisibility'] != null
+    && field.settings['conditionalVisibility'] != ''){
 
-    var paramArray = field.settings['hiddenFilter'].split(':');
+    var settings = field.settings['conditionalVisibility'];
 
-    return {
-      id : paramArray[0],
-      value : paramArray[1]
-    }
+    //get all parameters and some default values
+    //console.log("getWidgetFilterParam :: settings",settings);
+
+    var parameters = getParametersFromConditions(settings,parametersList);
+
+    console.log("getWidgetFilterParam :: getParametersFromConditions :: ",parameters);
+    return parameters;
   }
 
   return null;
+}
+
+/**
+Return an object with
+parameters {
+  "id" : "default value"
+}
+*/
+function getParametersFromConditions(settings,parametersList){
+  if(settings.conditions === undefined)
+    return null;
+
+  var parameters = {};
+
+  for(var key in settings.conditions){
+    var condition = settings.conditions[key];
+
+    //if names and values are defined and values > 0
+    if(condition.name !== undefined && condition.name != ""){
+      if(condition.values !== undefined && condition.values != ""){
+        var values = condition.values.split(",");
+        if(values.length > 0){
+
+          //if parameter exist
+          if(parametersList[condition.name] !== undefined){
+            parameters[parametersList[condition.name].id] = values[0].trim();
+          }
+        }
+      }
+    }
+  }
+
+  return parameters;
 }

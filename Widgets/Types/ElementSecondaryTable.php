@@ -33,7 +33,8 @@ class ElementSecondaryTable extends Widget implements WidgetInterface
         'tableElements',
         'collapsable',
         'collapsed',
-        'hiddenFilter'
+        'hiddenFilter',
+        'conditionalVisibility'
     ];
 }
 ?>

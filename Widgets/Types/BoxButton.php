@@ -31,7 +31,8 @@ class BoxButton extends Widget implements WidgetInterface
     public $settings = [
         'htmlId',
         'htmlClass',
-        'hiddenFilter'
+        'hiddenFilter',
+        'conditionalVisibility'
     ];
 }
 ?>

@@ -32,7 +32,8 @@ class TotalBox extends Widget implements WidgetInterface
       'htmlId',
       'htmlClass',
       'tableElements',
-      'hiddenFilter'
+      'hiddenFilter',
+      'conditionalVisibility'
     ];
 }
 ?>

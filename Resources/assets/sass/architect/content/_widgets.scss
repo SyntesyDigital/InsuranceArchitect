@@ -102,5 +102,23 @@
       pointer-events: none !important;
     }
 
+    .visibility-settings-field {
+
+      .setup-field-config {
+        .form-group{
+          padding-left: 0px !important;
+        }
+      }
+
+      .text-right {
+        padding: 0;
+        padding-right: 15px;
+      }
+
+      .add-row-block {
+        margin-left: 0px;
+      }
+
+    }
   }
 }
