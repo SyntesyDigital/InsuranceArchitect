@@ -19,12 +19,13 @@
               <div class="row">
 
                 <div id="logo-wrapper" class="col-xs-2">
-                  @if(isset($storedStylesBack['backLogo']) && isset($storedStylesBack['backLogo']->value))
-                    <img src="/{{$storedStylesBack['backLogo']->value->urls['original']}}" alt="Logo" />
-
-                  @else
-                    <img src="{{asset('modules/architect/images/client-logo.jpg')}}" alt="Logo" />
-                  @endif
+                  <a href="{{route('home')}}" class="logo-link">
+                    @if(isset($storedStylesBack['backLogo']) && isset($storedStylesBack['backLogo']->value))
+                      <img src="/{{$storedStylesBack['backLogo']->value->urls['original']}}" alt="Logo" />
+                    @else
+                      <img src="{{asset('modules/architect/images/client-logo.jpg')}}" alt="Logo" />
+                    @endif
+                  </a>
                 </div>
 
                 <div class="col-xs-8">
