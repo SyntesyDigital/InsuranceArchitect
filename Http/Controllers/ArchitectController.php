@@ -16,4 +16,5 @@ class ArchitectController extends Controller
     {
         return view('architect::settings');
     }
+    
 }
