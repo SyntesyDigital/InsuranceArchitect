@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Architect\Entities\Language;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
+use Modules\Architect\Entities\StyleField;
 
 class ArchitectDatabaseSeeder extends Seeder
 {
@@ -42,9 +43,20 @@ class ArchitectDatabaseSeeder extends Seeder
             'icon' => 'fas fa-user-lock'
         ]);
 
+        //front style seeder
+        StyleField::create([
+          'name' => 'frontPrimary'
+          'value' => '{"type":"color","value":"#e84b37"}'
+          'style_id' => 1
+        ]);
+
+        StyleField::create([
+          'name' => 'frontHeaderRightPartBackgroundColor'
+          'value' => '{"type":"color","value":"#e7eaef"}'
+          'style_id' => 1
+        ]);
+
         Model::unguard();
-
-
 
     }
 }
