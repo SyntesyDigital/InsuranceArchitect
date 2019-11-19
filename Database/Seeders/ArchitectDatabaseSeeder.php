@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
 use Modules\Architect\Entities\Language;
+use Modules\Architect\Entities\StyleField;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
 
@@ -33,6 +34,7 @@ class ArchitectDatabaseSeeder extends Seeder
             'iso' => 'en'
         ]);
 
+        //add style forms
         DB::table('styles')->insert([
             'identifier' => 'front',
             'icon' => 'fas fa-desktop'
@@ -41,6 +43,9 @@ class ArchitectDatabaseSeeder extends Seeder
             'identifier' => 'back',
             'icon' => 'fas fa-user-lock'
         ]);
+
+
+        //add front and back seeder
 
         Model::unguard();
 
