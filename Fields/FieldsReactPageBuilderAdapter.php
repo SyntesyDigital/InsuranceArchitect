@@ -74,6 +74,9 @@ class FieldsReactPageBuilderAdapter
     private function processContent($contentId) {
       $content = Content::find($contentId);
 
+      if(!isset($content))
+        return null;
+
       $data = [
         "id" => $content->id,
         "title" => $content->title
