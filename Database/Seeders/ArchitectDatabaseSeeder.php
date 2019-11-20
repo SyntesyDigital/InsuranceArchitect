@@ -9,6 +9,7 @@ use Modules\Architect\Entities\Language;
 use Modules\Architect\Entities\StyleField;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
+use Modules\Architect\Entities\StyleField;
 
 class ArchitectDatabaseSeeder extends Seeder
 {
@@ -44,12 +45,27 @@ class ArchitectDatabaseSeeder extends Seeder
             'icon' => 'fas fa-user-lock'
         ]);
 
+<<<<<<< HEAD
 
         //add front and back seeder
 
         Model::unguard();
+=======
+        //front style seeder
+        StyleField::create([
+          'name' => 'frontPrimary'
+          'value' => '{"type":"color","value":"#e84b37"}'
+          'style_id' => 1
+        ]);
+>>>>>>> hotfix/v1.0.4
 
+        StyleField::create([
+          'name' => 'frontHeaderRightPartBackgroundColor'
+          'value' => '{"type":"color","value":"#e7eaef"}'
+          'style_id' => 1
+        ]);
 
+        Model::unguard();
 
     }
 }
