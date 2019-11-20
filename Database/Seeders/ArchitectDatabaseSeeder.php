@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
 use Modules\Architect\Entities\Language;
+use Modules\Architect\Entities\StyleField;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
 use Modules\Architect\Entities\StyleField;
@@ -34,6 +35,7 @@ class ArchitectDatabaseSeeder extends Seeder
             'iso' => 'en'
         ]);
 
+        //add style forms
         DB::table('styles')->insert([
             'identifier' => 'front',
             'icon' => 'fas fa-desktop'
@@ -43,12 +45,19 @@ class ArchitectDatabaseSeeder extends Seeder
             'icon' => 'fas fa-user-lock'
         ]);
 
+<<<<<<< HEAD
+
+        //add front and back seeder
+
+        Model::unguard();
+=======
         //front style seeder
         StyleField::create([
           'name' => 'frontPrimary'
           'value' => '{"type":"color","value":"#e84b37"}'
           'style_id' => 1
         ]);
+>>>>>>> hotfix/v1.0.4
 
         StyleField::create([
           'name' => 'frontHeaderRightPartBackgroundColor'
