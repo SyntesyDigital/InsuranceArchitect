@@ -33,7 +33,6 @@ class ArchitectDatabaseSeeder extends Seeder
             'iso' => 'en'
         ]);
 
-
         Model::unguard();
 
     }
