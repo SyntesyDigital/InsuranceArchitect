@@ -8,7 +8,7 @@ use Kalnoy\Nestedset\NodeTrait;
 
 class Style extends Model
 {
-    use HasFields, NodeTrait;
+    use HasFields;
 
     protected $fieldModel = 'Modules\Architect\Entities\StyleField';
 
