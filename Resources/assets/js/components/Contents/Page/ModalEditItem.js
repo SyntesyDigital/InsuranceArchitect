@@ -875,6 +875,36 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="bootstrapColumns"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={Lang.get('modals.list_columns')}
+          options={[
+              {
+                  value: "",
+                  name: "---",
+              },
+              {
+                  value: "col-md-12",
+                  name: "1 "+Lang.get('modals.column'),
+              },
+              {
+                  value: "col-md-6",
+                  name: "2 "+Lang.get('modals.columns'),
+              },
+              {
+                  value: "col-md-4",
+                  name: "3 "+Lang.get('modals.columns'),
+              },
+              {
+                  value: "col-md-3",
+                  name: "4 "+Lang.get('modals.columns'),
+              }
+          ]}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="height"
