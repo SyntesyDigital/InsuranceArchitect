@@ -5,7 +5,7 @@ namespace Modules\Architect\Tests\Feature\Core;
 use Modules\Architect\Tests\TestCase;
 use Modules\Architect\Entities\Content;
 
-use Modules\Architect\Entities\Errors\EntityError;
+use Modules\Architect\Entities\Errors\ContentError;
 
 use Modules\Architect\Jobs\Content\CreateContent;
 
@@ -63,7 +63,7 @@ class EntityErrorTest extends TestCase
     public function testCreateError()
     {
         $content = (new CreateContent($this->attributes['page']))->handle();
-        $content->saveError(EntityError::class);
+        $content->saveError(ContentError::class);
 
         $this->assertSame(1, $content->errors->count());
     }
@@ -71,17 +71,17 @@ class EntityErrorTest extends TestCase
     public function testGetError()
     {
         $content = (new CreateContent($this->attributes['page']))->handle();
-        $content->saveError(EntityError::class);
+        $content->saveError(ContentError::class);
 
-        $this->assertSame(EntityError::class, get_class($content->getError(EntityError::class)));
+        $this->assertSame(ContentError::class, get_class($content->getError(ContentError::class)));
     }
 
     public function testErrorMessage()
     {
         $content = (new CreateContent($this->attributes['page']))->handle();
-        $content->saveError(EntityError::class);
+        $content->saveError(ContentError::class);
 
-        $error = $content->getError(EntityError::class);
+        $error = $content->getError(ContentError::class);
 
         $this->assertSame($content->getField('title'), $error->getMessage());
     }
@@ -90,11 +90,11 @@ class EntityErrorTest extends TestCase
     {
         $content = (new CreateContent($this->attributes['page']))->handle();
         
-        $content->saveError(EntityError::class);
-        $content->saveError(EntityError::class);
-        $content->saveError(EntityError::class);
+        $content->saveError(ContentError::class);
+        $content->saveError(ContentError::class);
+        $content->saveError(ContentError::class);
 
         $this->assertSame(3, $content->getErrors()->count());
-        $this->assertSame(EntityError::class, get_class($content->getErrors()->first()));
+        $this->assertSame(ContentError::class, get_class($content->getErrors()->first()));
     }
 }

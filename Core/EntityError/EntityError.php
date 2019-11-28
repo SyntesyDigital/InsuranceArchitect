@@ -2,7 +2,7 @@
 
 namespace Modules\Architect\Core\EntityError;
 
-abstract class EntityErrorContract
+abstract class EntityError
 {
     const ERROR_MESSAGE = 'entity error';
     const ERROR_TYPE = 'ENTITY_ERROR';
