@@ -98,7 +98,7 @@ trait Searchable
 
         return ClientBuilder::create()
                 ->setHosts(config('elasticsearch.hosts'))
-                ->setLogger(ClientBuilder::defaultLogger(storage_path('logs/elastic.log')))
+                //->setLogger(ClientBuilder::defaultLogger(storage_path('logs/elastic.log')))
                 ->build();
     }
 

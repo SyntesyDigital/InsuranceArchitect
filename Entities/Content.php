@@ -3,21 +3,24 @@
 namespace Modules\Architect\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\Architect\Traits\HasFields;
-use Modules\Architect\Traits\HasUrl;
-use Modules\Architect\Traits\Searchable;
+
 use Kalnoy\Nestedset\NodeTrait;
+use Illuminate\Database\Eloquent\Builder;
 
 use Modules\Architect\Entities\Language;
 
-use Illuminate\Database\Eloquent\Builder;
+use Modules\Architect\Traits\HasFields;
+use Modules\Architect\Traits\HasUrl;
+use Modules\Architect\Traits\Searchable;
+use Modules\Architect\Core\EntityError\HasEntityError;
 
 class Content extends Model
 {
     use HasFields,
         HasUrl,
         NodeTrait,
-        Searchable;
+        Searchable,
+        HasEntityError;
 
     const STATUS_PUBLISHED = 1;
     const STATUS_DRAFT = 0;

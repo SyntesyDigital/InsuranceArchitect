@@ -14,7 +14,7 @@ class AlterTableMediasAddUploadedByField extends Migration
     public function up()
     {
         Schema::table('medias', function($table){
-            $table->integer('author_id')->unsigned()->after('metadata');
+            $table->integer('author_id')->unsigned()->nullable()->after('metadata');
             $table->foreign('author_id')->references('id')->on('users');
         });
     }
@@ -26,13 +26,13 @@ class AlterTableMediasAddUploadedByField extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        //DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         Schema::table('medias', function($table){
             $table->dropForeign('medias_author_id_foreign');
             $table->dropColumn('author_id');
         });
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        //DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
