@@ -27,9 +27,12 @@ class TableDocument extends Widget implements WidgetInterface
     public $hidden = false;
 
     public $settings = [
+      'collapsable',
+      'collapsed',
       'pagination',
       'bootstrapColumns',
-      'tableElements'
+      'tableElements',
+      'conditionalVisibility'
     ];
 }
 ?>
