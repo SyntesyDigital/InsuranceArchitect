@@ -33,18 +33,7 @@ class ArchitectDatabaseSeeder extends Seeder
             'iso' => 'en'
         ]);
 
-        DB::table('styles')->insert([
-            'identifier' => 'front',
-            'icon' => 'fas fa-desktop'
-        ]);
-        DB::table('styles')->insert([
-            'identifier' => 'back',
-            'icon' => 'fas fa-user-lock'
-        ]);
-
         Model::unguard();
-
-
 
     }
 }
