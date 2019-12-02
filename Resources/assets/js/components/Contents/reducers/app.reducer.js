@@ -51,7 +51,7 @@ const initialState =  {
 
   page : '',
   pages : '',
-  layout : null,
+  layout : [],
   parent_id : null,
 
   category : null,
@@ -65,7 +65,7 @@ const initialState =  {
   saved : false,
 
   //route parameters
-  parameters : null,
+  parameters : [],
   parametersList : {},
 
   loadParameters : false,
@@ -120,7 +120,7 @@ function appReducer(state = initialState, action) {
 
                 page : isPage ? action.payload.page : '',
                 pages : action.payload.pages,
-                layout : action.payload.page ? action.payload.page : null,
+                layout : action.payload.page ? action.payload.page : [],
 
                 status: action.payload.content ? action.payload.content.status : 0,
                 category: action.payload.content && action.payload.content.categories &&
