@@ -55,8 +55,8 @@ class DeleteContent
         // Delete content fields
         ContentField::where('content_id', $this->content->id)->delete();
         Page::where('content_id', $this->content->id)->delete();
-        RouteParameter::where('content_id',$this->content->id)->delete();
 
+        DB::table('contents_routes_parameters')->where('content_id',$this->content->id)->delete();
         DB::table('contents_languages')->where('content_id',$this->content->id)->delete();
         DB::table('contents_categories')->where('content_id',$this->content->id)->delete();
         DB::table('contents_tags')->where('content_id',$this->content->id)->delete();
