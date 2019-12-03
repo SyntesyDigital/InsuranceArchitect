@@ -9,6 +9,10 @@ use Modules\Architect\Repositories\ContentRepository;
 use Modules\Architect\Entities\Content;
 use Modules\Architect\Entities\Typology;
 use Modules\Architect\Entities\Language;
+use Modules\Architect\Entities\ContentField;
+use Modules\Architect\Entities\Page;
+use Modules\Extranet\Entities\RouteParameter;
+use Modules\Extranet\Entities\ContentLa;
 
 use Modules\Architect\Jobs\Typology\CreateTypology;
 use Modules\Architect\Jobs\Typology\UpdateTypology;
@@ -19,6 +23,8 @@ use Modules\Architect\Jobs\Content\DeleteContent;
 
 use Modules\Architect\Jobs\Category\CreateCategory;
 use Modules\Architect\Jobs\Category\UpdateCategory;
+
+use Illuminate\Support\Facades\DB;
 
 class ContentPageTest extends TestCase
 {
@@ -177,7 +183,136 @@ class ContentPageTest extends TestCase
         $this->assertNotEquals($pageId, $contentId);
     }
 
+    public function testRemovePage()
+    {
+
+        /*
+        $attributes = $this->attributes['page'];
+        $attributes['fields'][] = [
+            'identifier' => 'content',
+            'type' => 'contents',
+            'value' => []
+        ];
+
+        json_decode($attributes)
+        */
+
+        $attributes = json_decode('{
+          	"parent_id": null,
+          	"translations": {
+          		"es": true
+          	},
+          	"status": "1",
+          	"category_id": null,
+          	"tags": [],
+          	"settings": {
+          		"htmlClass": null,
+          		"pageType": null
+          	},
+          	"fields": {
+          		"title": {
+          			"id": 0,
+          			"identifier": "title",
+          			"value": {
+          				"es": "Page de tests"
+          			},
+          			"name": "Titre",
+          			"type": "text",
+          			"icon": "fa-font",
+          			"settings": {
+          				"entryTitle": true
+          			}
+          		},
+          		"slug": {
+          			"id": 1,
+          			"identifier": "slug",
+          			"value": {
+          				"es": "accueil-15"
+          			},
+          			"name": "Lien permanent",
+          			"type": "slug",
+          			"icon": "fa-link"
+          		},
+          		"description": {
+          			"id": 0,
+          			"identifier": "description",
+          			"value": {
+          				"es": "<p>Page de tests</p>"
+          			},
+          			"name": "Description",
+          			"type": "richtext",
+          			"icon": "fa-align-left"
+          		}
+          	},
+          	"is_page": true,
+          	"page": [{
+          		"type": "row",
+          		"settings": {
+          			"htmlId": null,
+          			"htmlClass": null,
+          			"hasContainer": null
+          		},
+          		"children": [{
+          			"type": "col",
+          			"settings": {
+          				"htmlId": null,
+          				"htmlClass": null
+          			},
+          			"colClass": "col-xs-12",
+          			"children": [{
+          				"type": "item",
+          				"field": {
+          					"class": "Modules\\Architect\\Widgets\\Types\\ElementTable",
+          					"rules": {
+          						"required": null
+          					},
+          					"label": "ELEMENT_TABLE",
+          					"name": "Tableau principaux",
+          					"type": "widget",
+          					"icon": "fa fa-table",
+          					"settings": {
+          						"pagination": null,
+          						"tableElements": "5",
+          						"excel": null
+          					},
+          					"component": "CommonWidget",
+          					"widget": null,
+          					"hidden": false,
+          					"defaultSettings": null,
+          					"identifier": "temp_[0,0,0]",
+          					"fieldname": "Tableau principaux",
+          					"fields": [{
+          						"class": "Modules\\Architect\\Fields\\Types\\Text",
+          						"identifier": "title",
+          						"type": "text",
+          						"name": "Titre",
+          						"value": []
+          					}, {
+          						"class": "Modules\\Architect\\Fields\\Types\\Link",
+          						"identifier": "addBtn",
+          						"type": "link",
+          						"name": "Ajouter Element",
+          						"value": null
+          					}]
+          				}
+          			}]
+          		}]
+          	}],
+          	"parameters": []
+          }');
 
 
+        $page = $this->createPage($attributes);
+
+        $pageId = $page->id;
+
+        // Remove page
+        (new DeleteContent($page))->handle();
+
+        $this->assertEquals(0, ContentField::where('content_id',$pageId)->count());
+        $this->assertEquals(0, Page::where('content_id',$pageId)->count());
+        $this->assertEquals(0, Content::where('id',$pageId)->count());
+        $this->assertEquals(0, DB::table('contents_languages')->where('content_id',$pageId)->count());
+    }
 
 }

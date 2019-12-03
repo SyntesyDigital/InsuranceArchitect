@@ -13,7 +13,7 @@ class RemoveAuthorId extends Migration
      */
     public function up()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        //DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         Schema::table('medias', function($table){
             $table->dropForeign('medias_author_id_foreign');
@@ -33,7 +33,7 @@ class RemoveAuthorId extends Migration
         Schema::dropIfExists('role_user');
 
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        //DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 
     /**
