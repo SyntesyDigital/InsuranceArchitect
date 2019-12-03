@@ -268,4 +268,11 @@ class Content extends Model
             $q->whereIn('tag_id', $tagsId);
         }) : $query;
     }
+
+    public function delete()
+    {
+        $this->languages()->delete();
+
+        return parent::delete();
+    }
 }
