@@ -35,6 +35,10 @@ abstract class TestCase extends BaseTestCase
         ]);
 
         $this->artisan('migrate', [
+            '--path' => 'Modules/Extranet/Database/Migrations',
+        ]);
+
+        $this->artisan('migrate', [
             '--path' => 'database/migrations',
         ]);
 
@@ -45,6 +49,10 @@ abstract class TestCase extends BaseTestCase
    {
         $this->artisan('migrate:rollback', [
             '--path' => 'Modules/Architect/Database/Migrations',
+        ]);
+
+        $this->artisan('migrate:rollback', [
+            '--path' => 'Modules/Extranet/Database/Migrations',
         ]);
 
         $this->artisan('migrate:rollback', [
