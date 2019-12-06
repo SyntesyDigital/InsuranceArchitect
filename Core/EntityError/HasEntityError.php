@@ -26,9 +26,19 @@ trait HasEntityError
         return (new EntityErrorHandler($this))->getAll();
     }
 
+    public function removeError($error)
+    {
+        return (new EntityErrorHandler($this))->remove($error);
+    }
+
     public function saveError($error)
     {
         return (new EntityErrorHandler($this))->add($error);
+    }
+
+    public function addError($error)
+    {
+        return $this->saveError($error);
     }
 
     public function getErrorMessage($type)

@@ -94,7 +94,7 @@ class EntityErrorTest extends TestCase
         $content->saveError(ContentError::class);
         $content->saveError(ContentError::class);
 
-        $this->assertSame(3, $content->getErrors()->count());
+        $this->assertSame(1, $content->getErrors()->count());
         $this->assertSame(ContentError::class, get_class($content->getErrors()->first()));
     }
 }

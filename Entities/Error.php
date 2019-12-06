@@ -21,7 +21,7 @@ class Error extends Model
     protected $fillable = [
         'errorable_id',
         'errorable_type',
-        'data'
+        'error'
     ];
 
     /**
@@ -40,5 +40,12 @@ class Error extends Model
     public function errorable()
     {
         return $this->morphTo();
+    }
+
+    public function getErrorObject()
+    {
+        $className = $this->error;
+
+        return new $className($this->errorable);
     }
 }

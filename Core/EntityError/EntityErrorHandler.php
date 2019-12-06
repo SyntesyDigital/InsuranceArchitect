@@ -32,8 +32,17 @@ class EntityErrorHandler
         });
     }
 
+    public function remove($error)
+    {
+        return $this->entity->errors()
+            ->where('error', is_object($error) ? get_class($error) : $error)
+            ->delete();
+    }
+
     public function add($error)
     {
+        $this->remove($error);
+        
         return $this->entity->errors()->create([
             'error' => is_object($error) ? get_class($error) : $error,
             'errorable_id' => $this->entity->id,

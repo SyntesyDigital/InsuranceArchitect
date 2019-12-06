@@ -14,11 +14,8 @@ class TranslationCollection extends ResourceCollection
      * @param  \Illuminate\Http\Request
      * @return array
      */
-     public function toArray($request)
-    {
-        print_r($this->collection);
-        exit();
-        
+    public function toArray($request)
+    {        
         return [
             'data' => $this->collection->map(function($translation) use ($request){
                 return (new TranslationTransformer($translation))->toArray($request);

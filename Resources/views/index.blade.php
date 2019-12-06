@@ -25,7 +25,7 @@
               <div class="col-xs-6">
                 <div id="custom-table"
                   title="Configuration"
-                  route={{ route('extranet.api.elements.data')."?q=check_routes_parameters" }}
+                  route={{ route('extranet.api.elements.data')."?q=errors" }}
                 ></div>
               </div>
 
