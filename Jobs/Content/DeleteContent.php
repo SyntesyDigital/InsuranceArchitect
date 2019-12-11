@@ -60,6 +60,10 @@ class DeleteContent
         DB::table('contents_languages')->where('content_id',$this->content->id)->delete();
         DB::table('contents_categories')->where('content_id',$this->content->id)->delete();
         DB::table('contents_tags')->where('content_id',$this->content->id)->delete();
+        DB::table('urls')
+          ->where('entity_id',$this->content->id)
+          ->where('entity_type','Modules\Architect\Entities\Content')
+          ->delete();
 
         // Delete content
         $raws = Content::where('id', $this->content->id)->delete();
