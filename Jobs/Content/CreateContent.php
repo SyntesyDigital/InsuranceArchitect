@@ -13,8 +13,8 @@ use Modules\Architect\Fields\FieldConfig;
 use Modules\Architect\Fields\Types\Text as TextField;
 
 use Modules\Architect\Tasks\Urls\CreateUrlsContent;
-use Modules\Extranet\Jobs\Validation\PageElementRouteValidation;
 use Modules\Extranet\Jobs\Validation\ElementsPageRouteValidation;
+use Modules\Extranet\Jobs\Validation\PageElementRouteValidation;
 
 class CreateContent
 {
