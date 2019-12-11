@@ -12,6 +12,19 @@ Route::group([
 
     Route::get('/', 'ArchitectController@index')->name('dashboard');
 
+    // Styles
+    Route::get('/styles', 'StyleController@index')->name('styles');
+    Route::get('/styles/{name}', 'StyleController@show')->name('style.show');
+    Route::post('/styles/{style}/update', 'StyleController@update')->name('style.update');
+
+    // Medias
+    Route::get('/medias', 'MediaController@index')->name('medias.index');
+    Route::get('/medias/data', 'MediaController@data')->name('medias.data');
+    Route::post('/medias', 'MediaController@store')->name('medias.store');
+    Route::get('/medias/{media?}', 'MediaController@show')->name('medias.show');
+    Route::delete('/medias/{media?}/delete', 'MediaController@delete')->name('medias.delete');
+    Route::put('/medias/{media?}/update', 'MediaController@update')->name('medias.update');
+
 });
 
 
@@ -93,16 +106,6 @@ Route::group([
   Route::put('/contents/{content?}/publish', 'ContentController@publish')->name('contents.publish');
   Route::delete('/contents/{content?}/delete', 'ContentController@delete')->name('contents.delete');
 
-
-  // Medias
-  Route::get('/medias', 'MediaController@index')->name('medias.index');
-  Route::get('/medias/data', 'MediaController@data')->name('medias.data');
-  Route::post('/medias', 'MediaController@store')->name('medias.store');
-  Route::get('/medias/{media?}', 'MediaController@show')->name('medias.show');
-  Route::delete('/medias/{media?}/delete', 'MediaController@delete')->name('medias.delete');
-  Route::put('/medias/{media?}/update', 'MediaController@update')->name('medias.update');
-
-
   //Route::get('/settings', 'ArchitectController@settings')->name('settings');
 
   // Menu
@@ -148,10 +151,5 @@ Route::group([
   //added to all users FIXME separete account and users ?
   //Route::put('/users/{user?}/update', 'UserController@update')->name('users.update');
   //Route::get('/users/{user?}', 'UserController@show')->name('users.show');
-
-  // Styles
-  Route::get('/styles', 'StyleController@index')->name('styles');
-  Route::get('/styles/{name}', 'StyleController@show')->name('style.show');
-  Route::post('/styles/{style}/update', 'StyleController@update')->name('style.update');
 
 });
