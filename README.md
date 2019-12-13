@@ -1,9 +1,9 @@
 # ArchitectCore
 
 
-## Roles & Permissions
+## Roles & Permisos
 
-$roles = Role::find(1);
+### Permisos
 
 #### Añadir un permisso a un role 
 
@@ -12,3 +12,30 @@ $roles = Role::find(1);
 o pasando el permisso al metodo
 
 *$role->addPermission(Permission::find(2));*
+
+
+#### Añadir un permisso a un usuario 
+
+*$user->enablePermission('permission-identifier');*
+
+o pasando el permisso al metodo
+
+*$user->enablePermission(Permission::find(2));*
+
+### Roles
+
+#### Añadir un role a un usuario
+
+*$user->addRole('role-identifier');*
+
+o pasando el permisso al metodo
+
+*$user->addRole(Role::find(2));*
+
+#### Verificar si un usuario tiene un role determinado
+
+*$user->hasRole('role-identifier');*
+
+#### Verificar si un usuario tiene varios roles determinado
+
+*$user->hasRole(['role-1', 'role-2']);*
