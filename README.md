@@ -7,18 +7,21 @@
 
 #### Añadir un permisso a un role 
 
-*$role->addPermission('permission-identifier');* o *$role->addPermission(Permission::find(2));*
+*$role->addPermission('permission-identifier');*
+*$role->addPermission(Permission::find(2));*
 
 
 #### Añadir un permisso a un usuario 
 
-*$user->enablePermission('permission-identifier');* o *$user->enablePermission(Permission::find(2));*
+*$user->enablePermission('permission-identifier');*
+*$user->enablePermission(Permission::find(2));*
 
 ### Roles
 
 #### Añadir un role a un usuario
 
-*$user->addRole('role-identifier');* o *$user->addRole(Role::find(2));*
+*$user->addRole('role-identifier');*
+*$user->addRole(Role::find(2));*
 
 #### Verificar si un usuario tiene un role determinado
 
