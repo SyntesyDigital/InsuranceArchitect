@@ -3,6 +3,10 @@
 
 ## Roles & Permisos
 
+Un usuario puede tener permisos a travers de su role o directamente con un permisio atribuido.
+
+Los permisos directemente atribuidos al usuario son prioritario, tambien se puede decidir de desactivar un permiso (o forzar que el permiso de un role sea desactivado)
+
 ### Permisos
 
 #### Añadir un permisso a un role 
