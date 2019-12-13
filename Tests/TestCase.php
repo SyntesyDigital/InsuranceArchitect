@@ -42,6 +42,10 @@ abstract class TestCase extends BaseTestCase
             '--path' => 'database/migrations',
         ]);
 
+        $this->artisan('migrate', [
+            '--path' => 'Modules/Architect/Core/RolesPermissions/Migrations',
+        ]);
+
         (new ArchitectTestDatabaseSeeder)->run();
    }
 
@@ -57,6 +61,10 @@ abstract class TestCase extends BaseTestCase
 
         $this->artisan('migrate:rollback', [
             '--path' => 'database/migrations',
+        ]);
+
+        $this->artisan('migrate:rollback', [
+            '--path' => 'Modules/Architect/Core/RolesPermissions/Migrations',
         ]);
 
         parent::tearDown();

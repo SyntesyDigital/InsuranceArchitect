@@ -8,6 +8,8 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\AliasLoader;
 use Config;
 
+use Modules\Architect\Core\RolesPermissions\Providers\RolesPermissionsProvider;
+
 class ArchitectServiceProvider extends ServiceProvider
 {
     /**
@@ -31,6 +33,8 @@ class ArchitectServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
 
         $router->aliasMiddleware('DetectUserLocale', \Modules\Architect\Http\Middleware\DetectUserLocale::class);
+
+        $this->app->register(RolesPermissionsProvider::class);
 
         // FIXME : don't know if necesary
         //$this->registerAliases();
