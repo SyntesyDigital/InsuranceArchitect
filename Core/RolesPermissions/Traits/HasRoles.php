@@ -38,9 +38,9 @@ trait HasRoles
      *
      * @return boolean
      */
-    public function hasRoles(Array $roles)
+    public function hasRoles(Array $identifiers)
     {
-        return $this->roles->whereIn('identifier', $roles)->count() == sizeof($roles) ? true : false;
+        return $this->roles->whereIn('identifier', $identifiers)->count() == sizeof($identifiers) ? true : false;
     }
 
 
@@ -56,6 +56,8 @@ trait HasRoles
         $this->roles()->attach([
             $this->getRoleByIdentifier($role)->id
         ]);
+
+        $this->load('roles');
     }
 
     /**
@@ -71,6 +73,7 @@ trait HasRoles
             $this->getRoleByIdentifier($role)->id
         ]);
 
+        $this->load('roles');
     }
 
 

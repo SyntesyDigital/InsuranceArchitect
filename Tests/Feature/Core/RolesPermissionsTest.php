@@ -11,8 +11,12 @@ use Modules\Architect\Core\RolesPermissions\Entities\Role;
 
 class RolesPermissionsTest extends TestCase
 {
-
-   public function testRoles()
+   /**
+    * Test User/Role
+    *
+    * @return void
+    */
+   public function testUserRoles()
    {
       $user = User::create([
          'id_per' => 1
@@ -40,7 +44,41 @@ class RolesPermissionsTest extends TestCase
    }
 
 
-   public function testPermissions()
+   /**
+    * test Role/Permission
+    *
+    * @return void
+    */
+   public function testRolesPermissions()
+   {
+      $role = Role::create([
+         'name' => 'Superadmin',
+         'description' => 'Superadmin role',
+         'identifier' => 'root'
+      ]);
+
+      $permission1 = Permission::create([
+         'name' => 'Permision 1',
+         'description' => 'Permision 1',
+         'identifier' => 'permission1'
+      ]);
+
+      // Test add permission to role
+      $role->addPermission($permission1);
+      $this->assertTrue($role->hasPermission($permission1->identifier));
+
+      // Test to remove permission to role
+      $role->removePermission($permission1);
+      $this->assertFalse($role->hasPermission($permission1->identifier));
+   }
+
+   
+   /**
+    * Test User/Permissions
+    *
+    * @return void
+    */
+   public function testUserPermissions()
    {
       $user = User::create([
          'id_per' => 1
@@ -86,6 +124,5 @@ class RolesPermissionsTest extends TestCase
       // Test disabled permission
       $user->disablePermission('permission2');
       $this->assertFalse($user->hasPermission('permission2'));
-      
    }
 }
