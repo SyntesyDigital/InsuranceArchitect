@@ -7,8 +7,8 @@ $roles = Role::find(1);
 
 #### Añadir un permisso a un role 
 
-$role->addPermission('permission-identifier'); 
+*$role->addPermission('permission-identifier');*
 
 o pasando el permisso al metodo
 
-$role->addPermission(Permission::find(2)); 
+*$role->addPermission(Permission::find(2));*
