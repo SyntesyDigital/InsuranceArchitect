@@ -18,9 +18,6 @@ class CreateTableContents extends Migration
             $table->integer('typology_id')->nullable()->unsigned();
             $table->foreign('typology_id')->references('id')->on('typologies');
 
-            $table->integer('author_id')->unsigned();
-            $table->foreign('author_id')->references('id')->on('users');
-
             $table->string('status');
             $table->timestamp('published_at')->nullable();
 

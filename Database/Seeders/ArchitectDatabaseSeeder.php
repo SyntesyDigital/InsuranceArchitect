@@ -19,18 +19,8 @@ class ArchitectDatabaseSeeder extends Seeder
     public function run()
     {
         Language::create([
-            'name' => 'Català',
-            'iso' => 'ca'
-        ]);
-
-        Language::create([
-            'name' => 'Español',
-            'iso' => 'es'
-        ]);
-
-        Language::create([
-            'name' => 'English',
-            'iso' => 'en'
+            'name' => 'Français',
+            'iso' => 'fr'
         ]);
 
         Model::unguard();
