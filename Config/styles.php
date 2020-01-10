@@ -531,8 +531,14 @@ return [
                           'identifier' => 'frontElementBorder',
                           'name' => 'frontElementBorder',
                           'label' => 'Body Separator color'
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'elementFileInputBorder',
+                          'name' => 'elementFileInputBorder',
+                          'label' => 'Element Row border bottom'
                       ]
-
                     ] //end children col
                   ],
                   [
