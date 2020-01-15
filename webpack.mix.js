@@ -6,7 +6,7 @@ require('laravel-mix-merge-manifest');
 mix
     .setPublicPath('../../public')
     .mergeManifest();
-    
+
 mix.options({ processCssUrls: false });
 
 
@@ -42,11 +42,10 @@ mix.react('Resources/assets/js/app.js', 'modules/architect/js')
         'Resources/assets/js/architect/architect.menu.js',
         'Resources/assets/js/architect/architect.languages.js',
         'Resources/assets/js/architect/architect.translations.js'
-    ], '../../public/modules/architect/js/admin.js');
+    ], '../../public/modules/architect/js/architect.js');
 // ---------------------------------------- //
 
 
 if (mix.inProduction()) {
     mix.version();
 }
-

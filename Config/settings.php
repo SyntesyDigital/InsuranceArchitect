@@ -1,13 +1,7 @@
 <?php
 
 return [
-    [
-        "route" => 'extranet.elements.index',
-        "icon" => "fa-sitemap",
-        "label" => 'Éléments',
-        "roles" => [ROLE_SYSTEM]
-    ],
-
+    /*
     [
         "route" => 'typologies',
         "icon" => "fa-th",
@@ -28,6 +22,7 @@ return [
         "label" => Lang::get('architect::settings.list'),
         "roles" => [ROLE_SYSTEM]
     ],
+    */
 
     [
         "route" => 'menu.index',
@@ -42,14 +37,6 @@ return [
         "label" => Lang::get('architect::settings.templates'),
         "roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN]
     ],
-
-    [
-        "route" => 'extranet.routes_parameters.index',
-        "icon" => "fa-bars",
-        "label" => Lang::get('architect::settings.routes_parameters'),
-        "roles" => [ROLE_SYSTEM]
-    ],
-
     [
         "route" => 'styles',
         "icon" => "fa-paint-brush ",
