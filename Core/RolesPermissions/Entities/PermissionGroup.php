@@ -4,14 +4,14 @@ namespace Modules\Architect\Core\RolesPermissions\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Permission extends Model
+class PermissionGroup extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'permissions';
+    protected $table = 'permissions_groups';
 
     /**
      * The attributes that are mass assignable.
@@ -21,17 +21,10 @@ class Permission extends Model
     protected $fillable = [
         'name',
         'description',
-        'identifier',
-        'group_id',
     ];
 
-    public function roles()
+    public function permissions()
     {
-        return $this->belongsToMany(Permission::class, 'roles_permissions', 'id', 'permission_id');
-    }
-
-    public function group()
-    {
-        return $this->belongTo(PermissionGroup::class, 'group_id', 'id');
+        return $this->hasMany(Permission::class);
     }
 }
