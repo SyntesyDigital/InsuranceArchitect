@@ -20,7 +20,8 @@ class PermissionGroup extends Model
      */
     protected $fillable = [
         'name',
-        'description',
+        'identifier',
+        'order'
     ];
 
     public function permissions()

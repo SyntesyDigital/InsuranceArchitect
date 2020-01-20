@@ -28,6 +28,8 @@ class CreateTablesRolesPermissions extends Migration
         Schema::create('permissions_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('identifier');
+            $table->integer('order');
             $table->timestamps();
         });
 
@@ -84,5 +86,6 @@ class CreateTablesRolesPermissions extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
         Schema::dropIfExists('permissions');
+        Schema::dropIfExists('permissions_groups');
     }
 }
