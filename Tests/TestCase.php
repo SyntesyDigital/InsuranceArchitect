@@ -2,29 +2,28 @@
 
 namespace Modules\Architect\Tests;
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Artisan;
 use DB;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Modules\Architect\Database\Seeders\ArchitectTestDatabaseSeeder;
 
 abstract class TestCase extends BaseTestCase
 {
     /**
-    * Creates the application.
-    *
-    * @return \Illuminate\Foundation\Application
-    */
-   public function createApplication()
-   {
-       $app = require __DIR__ . '/../../../bootstrap/app.php';
+     * Creates the application.
+     *
+     * @return \Illuminate\Foundation\Application
+     */
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../../../bootstrap/app.php';
 
-       $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
-       return $app;
-   }
+        return $app;
+    }
 
-   public function setUp()
-   {
+    public function setUp()
+    {
         parent::setUp();
 
         // FIX : http://novate.co.uk/supporting-delete-cascade-with-sqlite-and-laravel/
@@ -42,15 +41,11 @@ abstract class TestCase extends BaseTestCase
             '--path' => 'database/migrations',
         ]);
 
-        $this->artisan('migrate', [
-            '--path' => 'Modules/Architect/Core/RolesPermissions/Migrations',
-        ]);
+        (new ArchitectTestDatabaseSeeder())->run();
+    }
 
-        (new ArchitectTestDatabaseSeeder)->run();
-   }
-
-   public function tearDown()
-   {
+    public function tearDown()
+    {
         $this->artisan('migrate:rollback', [
             '--path' => 'Modules/Architect/Database/Migrations',
         ]);
@@ -63,11 +58,6 @@ abstract class TestCase extends BaseTestCase
             '--path' => 'database/migrations',
         ]);
 
-        $this->artisan('migrate:rollback', [
-            '--path' => 'Modules/Architect/Core/RolesPermissions/Migrations',
-        ]);
-
         parent::tearDown();
-   }
-
+    }
 }
