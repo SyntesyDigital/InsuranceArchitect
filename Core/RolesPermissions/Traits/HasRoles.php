@@ -1,30 +1,29 @@
-<?php 
+<?php
 
 namespace Modules\Architect\Core\RolesPermissions\Traits;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Architect\Core\RolesPermissions\Entities\Role;
-use Modules\Architect\Core\RolesPermissions\Entities\Permission;
 use Modules\Architect\Core\RolesPermissions\Exceptions\RoleDoesNotExist;
 
 trait HasRoles
 {
-
     /**
-     * roles relation
+     * roles relation.
      *
      * @return relationship
      */
-    public function roles()
+    public function roles(): BelongsToMany
     {
         return $this->belongsToMany(Role::class, 'users_roles');
     }
 
     /**
-     * Check if has a role
+     * Check if has a role.
      *
-     * @param string $role 
+     * @param string $role
      *
-     * @return boolean
+     * @return bool
      */
     public function hasRole($role)
     {
@@ -32,53 +31,51 @@ trait HasRoles
     }
 
     /**
-     * Check if has various roles
+     * Check if has various roles.
      *
      * @param string $roles
      *
-     * @return boolean
+     * @return bool
      */
-    public function hasRoles(Array $identifiers)
+    public function hasRoles(array $identifiers)
     {
         return $this->roles->whereIn('identifier', $identifiers)->count() == sizeof($identifiers) ? true : false;
     }
 
-
     /**
-     * Add role to user
+     * Add role to user.
      *
      * @param string $role
      *
-     * @return boolean
+     * @return bool
      */
     public function addRole($role)
-    {        
+    {
         $this->roles()->attach([
-            $this->getRoleByIdentifier($role)->id
+            $this->getRoleByIdentifier($role)->id,
         ]);
 
         $this->load('roles');
     }
 
     /**
-     * Remove role 
+     * Remove role.
      *
      * @param string $role
      *
-     * @return boolean
+     * @return bool
      */
     public function removeRole($role)
     {
         $this->roles()->detach([
-            $this->getRoleByIdentifier($role)->id
+            $this->getRoleByIdentifier($role)->id,
         ]);
 
         $this->load('roles');
     }
 
-
     /**
-     * Retrive role by his identifier
+     * Retrive role by his identifier.
      *
      * @param string $role
      *
@@ -86,19 +83,18 @@ trait HasRoles
      */
     private function getRoleByIdentifier($role)
     {
-        if(!is_object($role)) {
+        if (!is_object($role)) {
             $role = Role::where('identifier', $role)->first();
 
-            if(!$role) {
-                throw new RoleDoesNotExist;
+            if (!$role) {
+                throw new RoleDoesNotExist();
             }
         }
 
-        if(!is_a($role, Role::class)) {
-            throw new RoleIsBadObject;
+        if (!is_a($role, Role::class)) {
+            throw new RoleIsBadObject();
         }
 
         return $role;
     }
-
 }

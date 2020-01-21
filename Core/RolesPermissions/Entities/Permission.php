@@ -3,6 +3,8 @@
 namespace Modules\Architect\Core\RolesPermissions\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Permission extends Model
 {
@@ -25,13 +27,13 @@ class Permission extends Model
         'group_id',
     ];
 
-    public function roles()
+    public function roles(): BelongsToMany
     {
-        return $this->belongsToMany(Permission::class, 'roles_permissions', 'id', 'permission_id');
+        return $this->belongsToMany(Role::class, 'roles_permissions', 'role_id', 'permission_id');
     }
 
-    public function group()
+    public function group(): HasOne
     {
-        return $this->belongTo(PermissionGroup::class, 'group_id', 'id');
+        return $this->hasOne(PermissionGroup::class, 'id', 'group_id');
     }
 }

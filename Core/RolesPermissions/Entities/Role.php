@@ -1,16 +1,16 @@
-<?php 
+<?php
 
 namespace Modules\Architect\Core\RolesPermissions\Entities;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
-
-use Modules\Architect\Core\RolesPermissions\Entities\Permission;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Architect\Core\RolesPermissions\Traits\RolePermissions;
 
-class Role extends Model 
+class Role extends Model
 {
     use RolePermissions;
-    
+
     /**
      * The database table used by the model.
      *
@@ -26,14 +26,16 @@ class Role extends Model
     protected $fillable = [
         'name',
         'description',
-        'identifier'
+        'identifier',
     ];
 
-    public function permissions()
+    public function permissions(): BelongsToMany
     {
         return $this->belongsToMany(Permission::class, 'roles_permissions');
     }
 
-    
-
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'users_roles', 'role_id', 'user_id');
+    }
 }
