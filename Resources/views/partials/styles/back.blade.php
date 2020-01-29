@@ -26,6 +26,13 @@
   $sidebarColor = isset($storedStylesBack['backSidebarColor']) ? $storedStylesBack['backSidebarColor']->value  :'#455660';
   $sidebarHoverColor = isset($storedStylesBack['backSidebarHoverColor']) ? $storedStylesBack['backSidebarHoverColor']->value  :'#273544';
   $sidebarHoverIconBorderColor = isset($storedStylesBack['backSidebarHoverIconBorderColor']) ? $storedStylesBack['backSidebarHoverIconBorderColor']->value  :$primaryColor;//$primaryColor
+
+  /*BUTTONS*/
+  $backPrimaryButtonBackgroundColor = isset($storedStylesBack['backPrimaryButtonBackgroundColor']) ? $storedStylesBack['backPrimaryButtonBackgroundColor']->value  : '#4a9fea';
+  $backPrimaryTextColor = isset($storedStylesBack['backPrimaryTextColor']) ? $storedStylesBack['backPrimaryTextColor']->value  : '#fff';
+  $backSecondaryButtonBackgroundColor = isset($storedStylesBack['backSecondaryButtonBackgroundColor']) ? $storedStylesBack['backSecondaryButtonBackgroundColor']->value  : '#fff';
+  $backSecondaryTextColor = isset($storedStylesBack['backSecondaryTextColor']) ? $storedStylesBack['backSecondaryTextColor']->value  : '#455660';
+
 @endphp
 
 <style type="text/css">
@@ -109,6 +116,14 @@
     color: {{$sidebarHoverIconBorderColor}};
   }
 
+  #app .btn.btn-primary{
+    background-color: {{$backPrimaryButtonBackgroundColor}};
+    color:{{$backPrimaryTextColor}};
+  }
 
+  #app .btn.btn-default{
+    background-color: {{$backSecondaryButtonBackgroundColor}};
+    color:{{$backSecondaryTextColor}};
+  }
 
 </style>
