@@ -2,11 +2,11 @@
 
 namespace Modules\Architect\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
-use Illuminate\Routing\Router;
-use Illuminate\Foundation\AliasLoader;
 use Config;
+use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Routing\Router;
+use Illuminate\Support\ServiceProvider;
 
 class ArchitectServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ class ArchitectServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
 
         $router->aliasMiddleware('DetectUserLocale', \Modules\Architect\Http\Middleware\DetectUserLocale::class);
 
@@ -38,12 +38,12 @@ class ArchitectServiceProvider extends ServiceProvider
 
     public function registerAliases()
     {
-        $this->app->booting(function() {
+        $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
             $aliases = Config::get('architect.aliases');
 
-            if(is_array($aliases)) {
-                foreach($aliases as $alias => $class) {
+            if (is_array($aliases)) {
+                foreach ($aliases as $alias => $class) {
                     $loader->alias($alias, $class);
                 }
             }
@@ -57,7 +57,6 @@ class ArchitectServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
         $this->commands([
             \Modules\Architect\Console\ElasticSearchIndexAllContents::class,
             \Modules\Architect\Console\ElasticSearchBuildsIndexes::class,
@@ -110,11 +109,11 @@ class ArchitectServiceProvider extends ServiceProvider
         $sourcePath = __DIR__.'/../Resources/views';
 
         $this->publishes([
-            $sourcePath => $viewPath
-        ],'views');
+            $sourcePath => $viewPath,
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/architect';
+            return $path.'/modules/architect';
         }, \Config::get('view.paths')), [$sourcePath]), 'architect');
     }
 
@@ -129,18 +128,19 @@ class ArchitectServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'architect');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'architect');
+            $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'architect');
         }
     }
 
     /**
      * Register an additional directory of factories.
+     *
      * @source https://github.com/sebastiaanluca/laravel-resource-flow/blob/develop/src/Modules/ModuleServiceProvider.php#L66
      */
     public function registerFactories()
     {
         if (!app()->environment('production')) {
-            app(Factory::class)->load(__DIR__ . '/../Database/factories');
+            app(Factory::class)->load(__DIR__.'/../Database/factories');
         }
     }
 
