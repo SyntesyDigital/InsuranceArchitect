@@ -934,6 +934,23 @@ class ModalEditItem extends Component {
           parameters={this.props.app.parametersList}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="buttonClass"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={Lang.get('modals.button_class')}
+          options={[
+              {
+                  value: "",
+                  name: "Primary "+Lang.get('button_primary'),
+              },
+              {
+                  value: "box-button-secondary",
+                  name: "Secondary "+Lang.get('button_secondary'),
+              }
+          ]}
+        />
       </div>
 
 
