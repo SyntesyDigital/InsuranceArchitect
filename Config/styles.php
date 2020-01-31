@@ -630,7 +630,7 @@ return [
 
             [
               'type' => 'box',
-              'title' => 'Buttons Settings',
+              'title' => 'Primary Button Settings',
               'identifier' => 'box_8',
               'children' => [
                   [
@@ -642,25 +642,89 @@ return [
                           'input' => 'color',
                           'identifier' => 'buttonPrimaryColor',
                           'name' => 'buttonPrimaryColor',
-                          'label' => 'Button primary color',
+                          'label' => 'Button color',
                       ],
                       [
                           'type' => 'field',
                           'input' => 'color',
-                          'identifier' => 'buttonHoverColor',
-                          'name' => 'buttonHoverColor',
+                          'identifier' => 'buttonPrimaryHoverColor',
+                          'name' => 'buttonPrimaryHoverColor',
                           'label' => 'Button hover color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonPrimaryBackgroundColor',
+                          'name' => 'buttonPrimaryBackgroundColor',
+                          'label' => 'Button background color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonPrimaryHoverBackgroundColor',
+                          'name' => 'buttonPrimaryHoverBackgroundColor',
+                          'label' => 'Button hover background color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'number',
+                          'identifier' => 'buttonPrimaryBorderRadius',
+                          'name' => 'buttonPrimaryBorderRadius',
+                          'label' => 'Border radius (px)',
                       ],
                     ], //end children col
                   ],
+                ], //en children box
+            ], //Primary Button Settings
+
+            [
+              'type' => 'box',
+              'title' => 'Secondary Button Settings',
+              'identifier' => 'box_8b',
+              'children' => [
                   [
                     'type' => 'col',
                     'class' => 'col-sm-12 col-md-6',
                     'children' => [
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonSecondaryColor',
+                          'name' => 'buttonSecondaryColor',
+                          'label' => 'Button color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonSecondaryHoverColor',
+                          'name' => 'buttonSecondaryHoverColor',
+                          'label' => 'Button hover color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonSecondaryBackgroundColor',
+                          'name' => 'buttonSecondaryBackgroundColor',
+                          'label' => 'Button background color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'buttonSecondaryHoverBackgroundColor',
+                          'name' => 'buttonSecondaryHoverBackgroundColor',
+                          'label' => 'Button hover background color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'number',
+                          'identifier' => 'buttonSecondaryBorderRadius',
+                          'name' => 'buttonSecondaryBorderRadius',
+                          'label' => 'Border radius (px)',
+                      ],
                     ], //end children col
                   ],
                 ], //en children box
-            ], //end box 7
+            ], //Secondary Button Settings
 
             [
               'type' => 'box',
@@ -699,7 +763,7 @@ return [
             [
               'type' => 'box',
               'title' => 'Login Page Settings',
-              'identifier' => 'box_4',
+              'identifier' => 'box_10',
               'children' => [
                   [
                     'type' => 'col',
