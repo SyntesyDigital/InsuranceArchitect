@@ -943,11 +943,11 @@ class ModalEditItem extends Component {
           options={[
               {
                   value: "",
-                  name: "Primary "+Lang.get('button_primary'),
+                  name: Lang.get('modals.button_primary'),
               },
               {
                   value: "box-button-secondary",
-                  name: "Secondary "+Lang.get('button_secondary'),
+                  name: Lang.get('modals.button_secondary'),
               }
           ]}
         />

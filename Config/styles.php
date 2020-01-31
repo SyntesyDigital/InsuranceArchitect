@@ -654,15 +654,15 @@ return [
                       [
                           'type' => 'field',
                           'input' => 'color',
-                          'identifier' => 'buttonPrimaryBackgorundColor',
-                          'name' => 'buttonPrimaryBackgorundColor',
+                          'identifier' => 'buttonPrimaryBackgroundColor',
+                          'name' => 'buttonPrimaryBackgroundColor',
                           'label' => 'Button background color',
                       ],
                       [
                           'type' => 'field',
                           'input' => 'color',
-                          'identifier' => 'buttonPrimaryHoverBackgorundColor',
-                          'name' => 'buttonPrimaryHoverBackgorundColor',
+                          'identifier' => 'buttonPrimaryHoverBackgroundColor',
+                          'name' => 'buttonPrimaryHoverBackgroundColor',
                           'label' => 'Button hover background color',
                       ],
                       [
@@ -703,15 +703,15 @@ return [
                       [
                           'type' => 'field',
                           'input' => 'color',
-                          'identifier' => 'buttonSecondaryBackgorundColor',
-                          'name' => 'buttonSecondaryBackgorundColor',
+                          'identifier' => 'buttonSecondaryBackgroundColor',
+                          'name' => 'buttonSecondaryBackgroundColor',
                           'label' => 'Button background color',
                       ],
                       [
                           'type' => 'field',
                           'input' => 'color',
-                          'identifier' => 'buttonSecondaryHoverBackgorundColor',
-                          'name' => 'buttonSecondaryHoverBackgorundColor',
+                          'identifier' => 'buttonSecondaryHoverBackgroundColor',
+                          'name' => 'buttonSecondaryHoverBackgroundColor',
                           'label' => 'Button hover background color',
                       ],
                       [
@@ -763,7 +763,7 @@ return [
             [
               'type' => 'box',
               'title' => 'Login Page Settings',
-              'identifier' => 'box_4',
+              'identifier' => 'box_10',
               'children' => [
                   [
                     'type' => 'col',
