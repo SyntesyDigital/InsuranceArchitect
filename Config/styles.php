@@ -767,7 +767,7 @@ return [
               'children' => [
                   [
                     'type' => 'col',
-                    'class' => 'col-md-12',
+                    'class' => 'col-md-6',
                    'children' => [
                      /*  [
                           'type' => 'field',
@@ -836,6 +836,41 @@ return [
                   ],
               ], //en children box
             ], //end box login
+
+            [
+              'type' => 'box',
+              'title' => 'Form Settings',
+              'identifier' => 'box_11',
+              'children' => [
+                  [
+                    'type' => 'col',
+                    'class' => 'col-md-6',
+                    'children' => [
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'labelColor',
+                          'name' => 'labelColor',
+                          'label' => 'Label color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'number',
+                          'identifier' => 'labelFontSize',
+                          'name' => 'labelFontSize',
+                          'label' => 'Label Font Size (px)',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'number',
+                          'identifier' => 'labelPadding',
+                          'name' => 'labelPadding',
+                          'label' => 'Label padding (px)',
+                      ]
+                    ], //end children col
+                  ],
+              ], //en children box
+            ], //end box form settings
       ],
     ],
 ];
