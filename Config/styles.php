@@ -430,6 +430,13 @@ return [
                     'class' => 'col-md-6',
                     'children' => [
                       [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'frontBodyTextColor',
+                        'name' => 'frontBodyTextColor',
+                        'label' => 'Text color',
+                      ],
+                      [
                           'type' => 'field',
                           'input' => 'color',
                           'identifier' => 'frontBodyH1Color',
@@ -450,6 +457,20 @@ return [
                           'name' => 'frontBodyH3Color',
                           'label' => 'H3 color',
                       ],
+                      [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'frontBodyH4Color',
+                        'name' => 'frontBodyH4Color',
+                        'label' => 'H4 color',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'frontBodyH5Color',
+                        'name' => 'frontBodyH5Color',
+                        'label' => 'H5 color',
+                      ],
                     ], //end children col
                   ],
                   [
@@ -459,17 +480,45 @@ return [
                       [
                           'type' => 'field',
                           'input' => 'color',
-                          'identifier' => 'frontBodyTextColor',
-                          'name' => 'frontBodyTextColor',
-                          'label' => 'Text color',
-                      ],
-                      [
-                          'type' => 'field',
-                          'input' => 'color',
                           'identifier' => 'frontBodyBackgroundColor',
                           'name' => 'frontBodyBackgroundColor',
                           'label' => 'Background color',
                       ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'frontBodyH1FontSize',
+                        'name' => 'frontBodyH1FontSize',
+                        'label' => 'H1 font size',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'frontBodyH2FontSize',
+                        'name' => 'frontBodyH2FontSize',
+                        'label' => 'H2 font size',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'frontBodyH3FontSize',
+                        'name' => 'frontBodyH3FontSize',
+                        'label' => 'H3 font size',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'frontBodyH4FontSize',
+                        'name' => 'frontBodyH4FontSize',
+                        'label' => 'H4 font size',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'frontBodyH5FontSize',
+                        'name' => 'frontBodyH5FontSize',
+                        'label' => 'H5 font size'
+                      ]
                     ], //end children col
                   ],
                 ], //en children box
