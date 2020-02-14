@@ -32,8 +32,8 @@
 
             
             @foreach(config('architect::plugins.settings') as $setting)
-            
-                @if(empty($setting['roles']) || has_roles([$setting['roles']]))
+
+                @if(empty($setting['roles']) || has_roles($setting['roles']))
 
                   <div class="col-xs-3">
                       <a href="{{ route($setting["route"]) }}">
