@@ -279,6 +279,20 @@ return [
                   ],
                 ], //end children col
               ],
+              //BOX SHADOW
+              [
+                'type' => 'col',
+                'class' => 'col-md-12',
+                'children' => [
+                  [
+                      'type' => 'field',
+                      'input' => 'number',
+                      'identifier' => 'boxShadowOpacity',
+                      'name' => 'boxShadowOpacity',
+                      'label' => 'Box shadow opacity 0-100',
+                  ],
+                ], //end children col
+              ],
               //BODY
               [
                 'type' => 'col',
@@ -517,8 +531,8 @@ return [
                         'input' => 'number',
                         'identifier' => 'frontBodyH5FontSize',
                         'name' => 'frontBodyH5FontSize',
-                        'label' => 'H5 font size'
-                      ]
+                        'label' => 'H5 font size',
+                      ],
                     ], //end children col
                   ],
                 ], //en children box
@@ -777,6 +791,62 @@ return [
 
             [
               'type' => 'box',
+              'title' => 'Box total Settings',
+              'identifier' => 'box_8b',
+              'children' => [
+                  [
+                    'type' => 'col',
+                    'class' => 'col-sm-12 col-md-6',
+                    'children' => [
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'titleColor',
+                          'name' => 'titleColor',
+                          'label' => 'Label Color',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'backgroundColorIcon',
+                          'name' => 'backgroundColorIcon',
+                          'label' => 'Background color icon',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'backgroundColorIconOpacity',
+                        'name' => 'backgroundColorIconOpacity',
+                        'label' => 'Background color icon opacity 0-100',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'iconColor',
+                        'name' => 'iconColor',
+                        'label' => 'Color icon',
+                      ],
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'elementNumberColor',
+                          'name' => 'elementNumberColor',
+                          'label' => 'Color numbers',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'borderRadiusBox',
+                        'name' => 'borderRadiusBox',
+                        'label' => 'Border radius (px)',
+                      ],
+                    ], //end children col
+                  ],
+                ], //en children box
+            ], //Secondary Button Settings
+
+            [
+              'type' => 'box',
               'title' => 'Static Banner Settings',
               'identifier' => 'box_9',
               'children' => [
@@ -915,7 +985,7 @@ return [
                           'identifier' => 'labelPadding',
                           'name' => 'labelPadding',
                           'label' => 'Label padding (px)',
-                      ]
+                      ],
                     ], //end children col
                   ],
               ], //en children box
