@@ -792,7 +792,7 @@ return [
             [
               'type' => 'box',
               'title' => 'Box total Settings',
-              'identifier' => 'box_8b',
+              'identifier' => 'box_9b',
               'children' => [
                   [
                     'type' => 'col',
@@ -804,13 +804,6 @@ return [
                           'identifier' => 'titleColor',
                           'name' => 'titleColor',
                           'label' => 'Label color',
-                      ],
-                      [
-                        'type' => 'field',
-                        'input' => 'number',
-                        'identifier' => 'fontSizeLabel',
-                        'name' => 'fontSizeLabel',
-                        'label' => 'Label font-size (px)',
                       ],
                       [
                         'type' => 'field',
@@ -826,6 +819,29 @@ return [
                         'name' => 'backgroundColorIcon',
                         'label' => 'Icon background color',
                       ],
+                      
+                      [
+                          'type' => 'field',
+                          'input' => 'color',
+                          'identifier' => 'elementNumberColor',
+                          'name' => 'elementNumberColor',
+                          'label' => 'Numbers color',
+                      ],
+                      
+                      
+                    ], //end children col
+                  ],
+                  [
+                    'type' => 'col',
+                    'class' => 'col-sm-12 col-md-6',
+                    'children' => [
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'fontSizeLabel',
+                        'name' => 'fontSizeLabel',
+                        'label' => 'Label font-size (px)',
+                      ],
                       [
                         'type' => 'field',
                         'input' => 'number',
@@ -834,11 +850,11 @@ return [
                         'label' => 'Icon font-size (px)',
                       ],
                       [
-                          'type' => 'field',
-                          'input' => 'color',
-                          'identifier' => 'elementNumberColor',
-                          'name' => 'elementNumberColor',
-                          'label' => 'Numbers color',
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'borderRadiusBox',
+                        'name' => 'borderRadiusBox',
+                        'label' => 'Border radius box (px)',
                       ],
                       [
                         'type' => 'field',
@@ -846,13 +862,6 @@ return [
                         'identifier' => 'fontSizeNumbers',
                         'name' => 'fontSizeNumbers',
                         'label' => 'Numbers font-size (px)',
-                      ],
-                      [
-                        'type' => 'field',
-                        'input' => 'number',
-                        'identifier' => 'borderRadiusBox',
-                        'name' => 'borderRadiusBox',
-                        'label' => 'Border radius box (px)',
                       ],
                     ], //end children col
                   ],
