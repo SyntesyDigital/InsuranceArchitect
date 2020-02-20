@@ -32,7 +32,7 @@ class ElementFormTemp extends Widget implements WidgetInterface
         'collapsable',
         'collapsed',
         'hiddenFilter',
-        'conditionalVisibility'
+        'conditionalVisibility',
     ];
 }
 ?>
