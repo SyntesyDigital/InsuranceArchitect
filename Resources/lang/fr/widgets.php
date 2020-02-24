@@ -46,6 +46,7 @@ return [
     'ELEMENT_SECONDARY_TABLE' => 'Tableau secondaire',
     'TOTAL_BOX' => 'Boîte totale',
     'BOX_BUTTON' => 'Boîte à boutons',
-    'STATIC_BANNER' => 'Bannière statique'
-
+    'STATIC_BANNER' => 'Bannière statique',
+    'ELEMENT_FORM_TEMP' => 'Element Form Temp',
+    'ELEMENT_FILE_TEMP' => 'Element File Temp'
 ];

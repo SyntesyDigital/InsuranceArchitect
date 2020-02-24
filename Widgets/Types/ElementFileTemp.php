@@ -9,17 +9,16 @@ use Modules\Architect\Entities\Content;
 use Modules\Architect\Entities\ContentField;
 use Modules\Architect\Entities\Language;
 
-class TotalBox extends Widget implements WidgetInterface
+class ElementFileTemp extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'fas fa-chart-bar';
-    public $name = 'TOTAL_BOX';
+    public $icon = 'fa fa-columns';
+    public $name = 'ELEMENT_FILE_TEMP';
     public $component = 'CommonWidget';
 
     public $fields = [
-        'name' => 'Modules\Architect\Fields\Types\Text',
-        'icon' => 'Modules\Architect\Fields\Types\Text',
-        'url' => 'Modules\Architect\Fields\Types\Url',
+        'title' => 'Modules\Architect\Fields\Types\Text',
+        'link' => 'Modules\Architect\Fields\Types\Link'
     ];
 
     public $rules = [
@@ -29,11 +28,12 @@ class TotalBox extends Widget implements WidgetInterface
     public $hidden = false;
 
     public $settings = [
-      'htmlId',
-      'htmlClass',
-      'tableElements',
-      //'hiddenFilter',
-      'conditionalVisibility'
+        'fileElements',
+        'collapsable',
+        'collapsed',
+        'doubleColumn',
+        'hiddenFilter',
+        'conditionalVisibility'
     ];
 }
 ?>
