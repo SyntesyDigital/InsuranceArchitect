@@ -34,6 +34,7 @@ return [
         "patterns" => [
             'architect/settings*'
         ],
-        "roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN,ROLE_ADMIN]
+        "roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN,ROLE_ADMIN],
+        //"permissions" => 'settings'
     ],
 ];
