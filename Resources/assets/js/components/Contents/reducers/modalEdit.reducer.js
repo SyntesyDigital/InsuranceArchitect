@@ -20,6 +20,7 @@ const initialState =  {
   originalElements : [],
   fileElements : [],
   formElements : [],
+  formElementsV2 : [],
   tableElements : [],
   parameters : {},
 
@@ -90,6 +91,7 @@ function modalEditReducer(state = initialState, action) {
               fileElements : action.payload.fileElements,
               tableElements : action.payload.tableElements,
               formElements : action.payload.formElements,
+              formElementsV2 : action.payload.formElementsV2,
             }
 
         case EDIT_ITEM_SELECT :
