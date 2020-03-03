@@ -65,17 +65,20 @@ export function loadCategories() {
     }
 }
 
-function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElementsTo){
+function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElementsTo, formElementsV2To){
     for (var i = 0; i< elementsFrom.length; i++ ){
 
        if(elementsFrom[i].type == 'file'){
          fileElementsTo.push(processElement(elementsFrom[i]));
        }
-       if(elementsFrom[i].type == 'form'){
+       else if(elementsFrom[i].type == 'form'){
          formElementsTo.push(processElement(elementsFrom[i]));
        }
-       if(elementsFrom[i].type == 'table'){
-         tableElementsTo.push(processElement(elementsFrom[i]));
+       else if(elementsFrom[i].type == 'form-v2'){
+        formElementsV2To.push(processElement(elementsFrom[i]));
+       }
+       else if(elementsFrom[i].type == 'table'){
+        tableElementsTo.push(processElement(elementsFrom[i]));
        }
     }
  }
@@ -131,7 +134,19 @@ export function loadElements() {
               name:'----'
             }];
 
-            pushElements(response.data, fileElements,formElements, tableElements);
+            var formElementsV2 = [{
+              value:'',
+              name:'----'
+            }];
+
+            
+
+            pushElements(response.data, 
+              fileElements,
+              formElements, 
+              tableElements,
+              formElementsV2
+            );
 
             dispatch({
               type : EDIT_ITEM_UPDATE_ELEMENS,
@@ -139,7 +154,8 @@ export function loadElements() {
                 originalElements : response.data,
                 fileElements  : fileElements,
                 tableElements : tableElements,
-                formElements  : formElements
+                formElements  : formElements,
+                formElementsV2 : formElementsV2
               }
             });
 
@@ -474,6 +490,9 @@ function getWidgetParams(field, elements) {
   }
   else if(field.settings['formElements'] !== undefined){
     value = field.settings['formElements'];
+  }
+  else if(field.settings['formElementsV2'] !== undefined){
+    value = field.settings['formElementsV2'];
   }
   else {
     return [];

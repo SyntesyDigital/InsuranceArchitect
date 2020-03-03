@@ -273,9 +273,9 @@ return [
                   [
                       'type' => 'field',
                       'input' => 'color',
-                      'identifier' => 'frontSidebarBackgroundColor',
-                      'name' => 'frontSidebarBackgroundColor',
-                      'label' => 'Sidebar background color',
+                      'identifier' => 'frontElementsBackgroundColor',
+                      'name' => 'frontElementsBackgroundColor',
+                      'label' => 'Elements background color',
                   ],
                 ], //end children col
               ],
@@ -909,7 +909,7 @@ return [
               'children' => [
                   [
                     'type' => 'col',
-                    'class' => 'col-md-6',
+                    'class' => 'col-sm-12 col-md-6',
                    'children' => [
                      /*  [
                           'type' => 'field',
@@ -974,6 +974,20 @@ return [
                       'name' => 'loginButtonBorderRadius',
                       'label' => 'Button border radius (px)',
                   ],
+                    ], //end children col
+                  ],
+                  [
+                    'type' => 'col',
+                    'class' => 'col-sm-12 col-md-6',
+                    'children' => [
+                      [
+                          'type' => 'field',
+                          'input' => 'image',
+                          'identifier' => 'loginLogo',
+                          'name' => 'loginLogo',
+                          'label' => 'Logo',
+                          'format' => 'medium',
+                      ],
                     ], //end children col
                   ],
               ], //en children box
