@@ -19,7 +19,6 @@ import RichTextField from './../ContentFields/RichTextField';
 import ImageField from './../ContentFields/ImageField';
 import DateField from './../ContentFields/DateField';
 import ImagesField from './../ContentFields/ImagesField';
-import ListField from './../ContentFields/ListField';
 import ContentsField from './../ContentFields/ContentsField';
 import BooleanField from './../ContentFields/BooleanField';
 import LinkField from './../ContentFields/LinkField';
@@ -37,7 +36,6 @@ import TitleImageWidget from './../Widgets/TitleImageWidget';
 
 import InputSettingsField from './../../Typology/Settings/InputSettingsField';
 import RadioSettingsField from './../../Typology/Settings/RadioSettingsField';
-import CheckboxesSettingsField from './../../Typology/Settings/CheckboxesSettingsField';
 import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField';
 import InputTranslatedSettingsField from './../../Typology/Settings/InputTranslatedSettingsField';
 import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
@@ -209,6 +207,10 @@ class ModalEditItem extends Component {
     else if(field.settings['formElements'] !== undefined){
       result.name = 'formElements';
       result.value = field.settings['formElements'];
+    }
+    else if(field.settings['formElementsV2'] !== undefined){
+      result.name = 'formElementsV2';
+      result.value = field.settings['formElementsV2'];
     }
     else {
       return null;
@@ -455,8 +457,11 @@ class ModalEditItem extends Component {
 
       if(field.name == "fileElements" || field.name == "tableElements"
         || field.name == "formElements"
+        || field.name == "formElementsV2"
         || field.name == "hiddenFilter"
         || field.name == "conditionalVisibility") {
+
+          console.log("update parameters!");
 
         this.updateParameters(field);
       }
@@ -467,6 +472,7 @@ class ModalEditItem extends Component {
     //get parameters of this field.value
     var parameters = this.getElementParameters(field);
     //console.log("updateParameters :: parameters => ",parameters);
+    //console.log("update parameters! :: (parameters) => ",parameters);
 
     this.setState({
       parameters : parameters
@@ -493,6 +499,11 @@ class ModalEditItem extends Component {
     else if(field.name == "formElements"){
       elementsList = this.props.modalEdit.formElements;
     }
+    else if(field.name == "formElementsV2"){
+      elementsList = this.props.modalEdit.formElementsV2;
+    }
+
+    //console.log("update parameters! :: elementsList => ",elementsList);
 
     for(var i=0;i<elementsList.length;i++){
       var element = elementsList[i];
@@ -586,6 +597,20 @@ class ModalEditItem extends Component {
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
           label={Lang.get('modals.element')}
           options={this.props.modalEdit.formElements.map(function(obj){
+              return {
+                  value: obj.value,
+                  name: obj.name
+              };
+          })}
+        />
+
+        <SelectorSettingsField
+          field={this.state.field}
+          name="formElementsV2"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={Lang.get('modals.element')}
+          options={this.props.modalEdit.formElementsV2.map(function(obj){
               return {
                   value: obj.value,
                   name: obj.name
