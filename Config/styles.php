@@ -236,6 +236,20 @@ return [
                       'label' => 'Secondary color',
                   ],
                   [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'inputColor',
+                    'name' => 'inputColor',
+                    'label' => 'Input color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'errorColor',
+                    'name' => 'errorColor',
+                    'label' => 'Error color',
+                  ],
+                  [
                       'type' => 'field',
                       'input' => 'number',
                       'identifier' => 'frontButtonRadius',
