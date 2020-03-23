@@ -16,6 +16,7 @@ class BoxButton extends Widget implements WidgetInterface
         'url' => 'Modules\Architect\Fields\Types\Url',
         'title' => 'Modules\Architect\Fields\Types\Text',
         'icon' => 'Modules\Architect\Fields\Types\Text',
+        'image' => 'Modules\Architect\Fields\Types\Image',
     ];
 
     public $rules = [
@@ -30,5 +31,6 @@ class BoxButton extends Widget implements WidgetInterface
         'hiddenFilter',
         'conditionalVisibility',
         'buttonClass',
+        'cropsAllowed',
     ];
 }
