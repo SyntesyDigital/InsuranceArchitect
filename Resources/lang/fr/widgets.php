@@ -49,5 +49,8 @@ return [
     'BOX_BUTTON' => 'Boîte à boutons',
     'STATIC_BANNER' => 'Bannière statique',
     'ELEMENT_FORM_TEMP' => 'Element Form Temp',
-    'ELEMENT_FILE_TEMP' => 'Element File Temp'
+    'ELEMENT_FILE_TEMP' => 'Element File Temp',
+    'ELEMENT_FORM_PRELOAD' => 'Formulaire avec précharge',
+    'ELEMENT_FORM_BUTTON' => 'Formulaire bouton'
+    
 ];
