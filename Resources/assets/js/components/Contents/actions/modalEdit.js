@@ -280,7 +280,7 @@ function parameterListByIdentifier(parametersList) {
 export function updateParameters(layout, elements, pageParameters, parametersList) {
 
   //search for all hierarchy all widgets that has parameters
-  //console.log("updateParameters :: ",layout, elements);
+  console.log("updateParameters :: ",layout, elements);
 
   var parametersObjects = getParametersFromLayout(layout,[], elements);
 
@@ -305,9 +305,9 @@ export function updateParameters(layout, elements, pageParameters, parametersLis
     }
   }
 
-  console.log("updateParameters :: getParametersFromLayout : parametersById : => ", parametersById);
+  //console.log("updateParameters :: getParametersFromLayout : parametersById : => ", parametersById);
 
-  console.log("updateParameters :: getParametersFromLayout : pageParams : => ", pageParameters, parameters);
+  //console.log("updateParameters :: getParametersFromLayout : pageParams : => ", pageParameters, parameters);
   //get all parameters by conditional visibility
   var filterParameters = getFilterParametersFromLayout(
     layout,{},
@@ -476,38 +476,85 @@ function getFilterParametersFromLayout(layout,params,parametersList) {
 
 function getWidgetParams(field, elements) {
 
-  if(field == null || field.settings === undefined){
-    return [];
-  }
+  var params = [];
 
-  var value = null;
+  
+  if(field.settings['formElementsV2Preload'] !== undefined){
+    params = getParamsMerged('formElementsV2Preload',field,params,elements);
+  }
 
   if(field.settings['fileElements'] !== undefined){
-    value = field.settings['fileElements'];
+    params = getParamsMerged('fileElements',field,params,elements);
   }
   else if(field.settings['tableElements'] !== undefined){
-    value = field.settings['tableElements'];
+    params = getParamsMerged('tableElements',field,params,elements);
   }
   else if(field.settings['formElements'] !== undefined){
-    value = field.settings['formElements'];
+    params = getParamsMerged('formElements',field,params,elements);
   }
   else if(field.settings['formElementsV2'] !== undefined){
-    value = field.settings['formElementsV2'];
+    params = getParamsMerged('formElementsV2',field,params,elements);
   }
-  else {
-    return [];
-  }
+  
+  console.log("getWidgetParams => (field,params) ",field, params);
 
-  //console.log("Elements => ",value, elements);
+  return params;
+}
 
-  for(var i=0;i<elements.length;i++){
-    var element = elements[i];
-    if(element.id == value){
-      var elementProcessed = processElement(element);
-      return elementProcessed.parameters;
+/**
+ * 
+ * Get Element parameters and merge with source params. Necessary when two 
+ * selectors in same widget.
+ * 
+ * @param {*} settingsName 
+ * @param {*} field 
+ * @param {*} params 
+ */
+function getParamsMerged(settingsName, field, params,elements) {
+
+  //if formElementsV2Preload take elements from formv2
+  var newParams = getElementParameters(settingsName, field, elements);
+
+  //merge params with new Params
+  for(var key in newParams){
+    if(!paramExist(params,newParams[key].id)){
+      params.push(newParams[key]);
     }
   }
-  return [];
+
+  return params;
+}
+
+function paramExist(params,id){
+  for(var key in params){
+    if(params[key].id == id)
+      return true;
+  }
+  return false;
+}
+
+/**
+ * Get parameters from settings name getting the element id stored in settings.
+ * 
+ * @param {*} field 
+ * @param {*} elements 
+ */
+function getElementParameters(settingsName,field,elements) {
+    if(field == null || field.settings === undefined || field.settings[settingsName] === undefined){
+      return [];
+    }
+
+    var value = field.settings[settingsName];
+    //console.log("getWidgetParams :: getElementParameters (field,settingsName,value,elements)",field,settingsName,value,elements);
+
+    for(var i=0;i<elements.length;i++){
+      var element = elements[i];
+      if(element.id == value){
+        var elementProcessed = processElement(element);
+        return elementProcessed.parameters;
+      }
+    }
+    return [];
 }
 
 /**
