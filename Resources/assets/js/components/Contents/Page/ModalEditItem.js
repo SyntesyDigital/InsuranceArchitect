@@ -186,40 +186,78 @@ class ModalEditItem extends Component {
     return field;
   }
 
+  
+  getParamsMerged(settingsName, field, params) {
+
+      //if formElementsV2Preload take elements from formv2
+      var newParams = this.getElementParameters({
+        name : settingsName == "formElementsV2Preload" ? 
+          "formElementsV2" : settingsName,
+        value : field.settings[settingsName]
+      });
+
+      //merge params with new Params
+      for(var key in newParams){
+        if(!this.paramExist(params,newParams[key].id)){
+          params.push(newParams[key]);
+        }
+      }
+
+      return params;
+  }
+
+  paramExist(params,id){
+    for(var key in params){
+      if(params[key].id == id)
+        return true;
+    }
+    return false;
+  }
+
   getInitParameters(field) {
 
     if(field == null || field.settings === undefined){
       return null;
     }
 
-    var result = {
-      name : '',
-      value : ''
-    };
-    if(field.settings['fileElements'] !== undefined){
-      result.name = 'fileElements';
-      result.value = field.settings['fileElements'];
-    }
-    else if(field.settings['tableElements'] !== undefined){
-      result.name = 'tableElements';
-      result.value = field.settings['tableElements'];
-    }
-    else if(field.settings['formElements'] !== undefined){
-      result.name = 'formElements';
-      result.value = field.settings['formElements'];
-    }
-    else if(field.settings['formElementsV2'] !== undefined){
-      result.name = 'formElementsV2';
-      result.value = field.settings['formElementsV2'];
-    }
-    else {
-      return null;
-    }
+    return this.getFieldParameters(field);;
+  }
 
-    var params = this.getElementParameters(result);
-    //console.log("getInitParameters :: params => ",params);
+  /**
+   * Iterate through all field settings and update parameters when needed
+   * @param {*} field 
+   */
+  getFieldParameters(field) {
+      var params = [];
 
-    return params;
+      console.log("getFieldParameters :: (field)",field);
+
+      if(field.settings['formElementsV2Preload'] !== undefined){
+        params = this.getParamsMerged('formElementsV2Preload',field,params);
+      }
+
+      console.log("getFieldParameters :: formElementsV2Preload (params)",JSON.parse(JSON.stringify(params)));
+
+      if(field.settings['fileElements'] !== undefined){
+        params = this.getParamsMerged('fileElements',field,params);
+      }
+      else if(field.settings['tableElements'] !== undefined){
+        params = this.getParamsMerged('tableElements',field,params);
+      }
+      else if(field.settings['formElements'] !== undefined){
+        params = this.getParamsMerged('formElements',field,params);
+      }
+      else if(field.settings['formElementsV2'] !== undefined){
+        params = this.getParamsMerged('formElementsV2',field,params);
+      }
+      else {
+        return null;
+      }
+
+      console.log("getFieldParameters :: result (params)",JSON.parse(JSON.stringify(params)));
+
+      //console.log("getInitParameters :: params => ",params);
+      return params;
   }
 
   onModalClose(e){
@@ -443,6 +481,7 @@ class ModalEditItem extends Component {
 
       const stateField = this.state.field;
 
+      //update field settings to be same structure as field ( field.settings[name] = value )
       stateField[field.source][field.name] = field.value;
 
       this.setState({
@@ -458,10 +497,11 @@ class ModalEditItem extends Component {
       if(field.name == "fileElements" || field.name == "tableElements"
         || field.name == "formElements"
         || field.name == "formElementsV2"
+        || field.name == "formElementsV2Preload"
         || field.name == "hiddenFilter"
         || field.name == "conditionalVisibility") {
 
-          console.log("update parameters!");
+          console.log("handleFieldSettingsChange :: update parameters!");
 
         this.updateParameters(field);
       }
@@ -469,22 +509,35 @@ class ModalEditItem extends Component {
 
   updateParameters(field) {
 
+    console.log("updateParameters :: field => ",field);
+
+    if(field == null){
+      return null;
+    }
+
+    field[field.source] = {};
+    field[field.source][field.name] = field.value;
+
     //get parameters of this field.value
-    var parameters = this.getElementParameters(field);
-    //console.log("updateParameters :: parameters => ",parameters);
+    var parameters = this.getFieldParameters(field);
+    console.log("updateParameters :: parameters => ",parameters);
     //console.log("update parameters! :: (parameters) => ",parameters);
+
+    var self = this;
 
     this.setState({
       parameters : parameters
+    },function(){
+        //update page parameters with this new parameters
+        self.props.updateParameters(
+          self.props.app.layout,
+          self.props.modalEdit.originalElements,
+          self.props.app.parameters,
+          self.props.app.parametersList,
+        );
     });
 
-    //update page parameters with this new parameters
-    this.props.updateParameters(
-      this.props.app.layout,
-      this.props.modalEdit.originalElements,
-      this.props.app.parameters,
-      this.props.app.parametersList,
-    );
+    
   }
 
   getElementParameters(field) {
@@ -597,6 +650,20 @@ class ModalEditItem extends Component {
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
           label={Lang.get('modals.element')}
           options={this.props.modalEdit.formElements.map(function(obj){
+              return {
+                  value: obj.value,
+                  name: obj.name
+              };
+          })}
+        />
+
+        <SelectorSettingsField
+          field={this.state.field}
+          name="formElementsV2Preload"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Formulaire de précharge'}
+          options={this.props.modalEdit.formElementsV2.map(function(obj){
               return {
                   value: obj.value,
                   name: obj.name
