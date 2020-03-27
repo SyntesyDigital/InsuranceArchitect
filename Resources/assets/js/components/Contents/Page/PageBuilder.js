@@ -92,9 +92,6 @@ class PageBuilder extends Component {
   }
 
   handleContentSelected(content){
-
-      ////console.log("handleContentSelected => ",this.props.contents);
-
       this.props.updatePageContent(
         content,
         this.props.contents.sourceField,
@@ -110,9 +107,6 @@ class PageBuilder extends Component {
   }
 
   render() {
-
-    ////console.log("PageBuilder :: editItemData => ",this.state.editItemData);
-
     const fields = this.props.app.fields;
     const contentSourceField = this.props.contents.sourceField;
     const mediaType = this.props.images.sourceField != null ?
@@ -155,18 +149,15 @@ class PageBuilder extends Component {
         <ContentFields />
 
         <div className="field-group">
-
-
           {this.props.app.layout != null &&
             this.renderRows()
           }
 
           {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
             <FirstEmptyRow
-              onAddRow={this.handleAddRow.bind(this)}
+                onAddRow={this.handleAddRow.bind(this)}
             />
           }
-
         </div>
       </div>
     );
@@ -207,7 +198,7 @@ const mapDispatchToProps = dispatch => {
             return dispatch(updatePageContent(content,field,pathToIndex,layout,editItem,listItemInfo));
         },
         updateParameters : (definition, elements, pageParameters, parametersList) => {
-          return dispatch(updateParameters(definition, elements, pageParameters, parametersList))
+            return dispatch(updateParameters(definition, elements, pageParameters, parametersList))
         }
     }
 }

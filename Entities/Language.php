@@ -2,15 +2,13 @@
 
 namespace Modules\Architect\Entities;
 
-use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Builder;
-use Cache;
 use App;
+use Cache;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-
     /**
      * The database table used by the model.
      *
@@ -26,7 +24,7 @@ class Language extends Model
     protected $fillable = [
         'name',
         'iso',
-        'default'
+        'default',
     ];
 
     /**
@@ -35,7 +33,7 @@ class Language extends Model
      * @var array
      */
     protected $hidden = [
-        'deleted_at'
+        'deleted_at',
     ];
 
     /**
@@ -46,35 +44,33 @@ class Language extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at'
+        'deleted_at',
     ];
 
     public function typology()
     {
-        return $this->hasOne('\Modules\Architect\Entities\Typology', "id", "typology_id");
+        return $this->hasOne('\Modules\Architect\Entities\Typology', 'id', 'typology_id');
     }
-
 
     public static function getDefault()
     {
         $key = 'languages.default';
         $language = cache($key);
 
-        if(!isset($language)) {
+        if (!isset($language)) {
             $language = self::where('default', 1)->first();
 
-            if(!isset($language)){
-              $language = self::first();
+            if (!isset($language)) {
+                $language = self::first();
             }
 
             cache([
-                $key => $language
+                $key => $language,
             ], now()->addSeconds(5 * 60));
         }
 
         return $language;
     }
-
 
     public function save(array $options = [])
     {
@@ -88,9 +84,9 @@ class Language extends Model
     public static function getCurrentLanguage()
     {
         $currentLang = self::getAllCached()->where('iso', App::getLocale())->first();
+
         return $currentLang ? $currentLang : self::getDefault();
     }
-
 
     public static function getCachedLanguageById($languageId)
     {
@@ -99,16 +95,17 @@ class Language extends Model
 
     public static function getAllCached()
     {
-        $key = "languages.all";
+        $key = 'languages.all';
         $languages = cache($key);
 
-        if(!isset($languages)) {
+        if (!isset($languages)) {
             $languages = self::all();
 
             cache([
-                $key => $languages
+                $key => $languages,
             ], now()->addSeconds(5 * 60));
         }
+
         return $languages;
     }
 
@@ -117,11 +114,11 @@ class Language extends Model
         $key = 'languages.byIso';
         $languages = cache($key);
 
-        if(!isset($languages)) {
-            $languages = self::pluck('iso','id');
+        if (!isset($languages)) {
+            $languages = self::pluck('iso', 'id');
 
             cache([
-                $key => $languages
+                $key => $languages,
             ], now()->addSeconds(5 * 60));
         }
 
@@ -135,5 +132,4 @@ class Language extends Model
     {
         return $query->where('iso', $iso);
     }
-
 }
