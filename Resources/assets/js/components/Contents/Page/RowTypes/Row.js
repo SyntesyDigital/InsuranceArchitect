@@ -269,9 +269,6 @@ class Row extends Component {
       var col = this.props.data.children[i];
 
     }
-
-
-
   }
 
 

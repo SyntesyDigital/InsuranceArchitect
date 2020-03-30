@@ -1,11 +1,11 @@
 @foreach(config('architect::menu') as $item)
 
     {{-- If current user can show this menu --}}
-    @if(!empty($item['roles']))
-        @if(!has_roles($item['roles']))
+    @if(!empty($item['permissions'])) 
+        @HasNotAbilities($item['permissions'])
             @continue;
-        @endif
-    @endif
+        @endHasNotAbilities
+    @endif 
 
     {{-- Request pattern for display active of not the menu item --}}
     @if(!empty($item['patterns']))
