@@ -87,7 +87,8 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
     var result = {
       value: element.id,
       name : element.name,
-      parameters : []
+      parameters : [],
+      templates : []
     };
 
     if(element.attrs !== undefined){
@@ -100,6 +101,17 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
             settings : JSON.parse(attribute.settings)
           });
         }
+      }
+    }
+
+    if(element.templates !== undefined){
+      for(var key in element.templates){
+        var template = element.templates[key];
+
+        result.templates.push({
+          name : template.name,
+          id : template.id
+        });
       }
     }
 
