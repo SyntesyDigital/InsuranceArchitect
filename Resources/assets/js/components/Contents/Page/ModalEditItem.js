@@ -724,6 +724,25 @@ class ModalEditItem extends Component {
           inputLabel={Lang.get('modals.indica_css')}
         />
 
+        <InputSettingsField
+          field={this.state.field}
+          name="backgroundColor"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label="Couleur de fond"
+          inputLabel="Entrez la couleur"
+        />
+
+        <InputSettingsField
+          field={this.state.field}
+          name="backgroundHoverColor"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label="Couleur de fond (Hover)"
+          inputLabel="Entrez la couleur"
+        />
+        
+
         <BooleanSettingsField
           field={this.state.field}
           name="collapsable"

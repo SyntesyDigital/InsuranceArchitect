@@ -741,6 +741,13 @@ return [
                 'name' => 'buttonPrimaryIconHoverColor',
                 'label' => 'Icon hover color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'buttonPrimaryBorderRadius',
+                'name' => 'buttonPrimaryBorderRadius',
+                'label' => 'Border radius (px)',
+              ],
               
             ], //end children col
           ],
@@ -765,16 +772,16 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
-                'identifier' => 'buttonPrimaryBackgroundHoverColor',
-                'name' => 'buttonPrimaryBackgroundHoverColor',
-                'label' => 'Background button hover color',
+                'identifier' => 'buttonPrimaryBackgroundIconHoverColor',
+                'name' => 'buttonPrimaryBackgroundIconHoverColor',
+                'label' => 'Background hover (Icon/Image) color',
               ],
               [
                 'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'buttonPrimaryBorderRadius',
-                'name' => 'buttonPrimaryBorderRadius',
-                'label' => 'Border radius (px)',
+                'input' => 'color',
+                'identifier' => 'buttonPrimaryBackgroundLabelHoverColor',
+                'name' => 'buttonPrimaryBackgroundLabelHoverColor',
+                'label' => 'Background hover label color',
               ],
             ],
           ],
@@ -817,6 +824,13 @@ return [
                 'name' => 'buttonSecondaryIconHoverColor',
                 'label' => 'Icon hover color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'buttonSecondaryBorderRadius',
+                'name' => 'buttonSecondaryBorderRadius',
+                'label' => 'Border radius (px)',
+              ],
               
             ], //end children col
           ],
@@ -841,17 +855,18 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
-                'identifier' => 'buttonSecondaryHoverBackgroundColor',
-                'name' => 'buttonSecondaryHoverBackgroundColor',
-                'label' => 'Background button hover color',
+                'identifier' => 'buttonSecondaryBackgroundLabelHoverColor',
+                'name' => 'buttonSecondaryBackgroundLabelHoverColor',
+                'label' => 'Background hover label color',
               ],
               [
                 'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'buttonSecondaryBorderRadius',
-                'name' => 'buttonSecondaryBorderRadius',
-                'label' => 'Border radius (px)',
+                'input' => 'color',
+                'identifier' => 'buttonSecondaryBackgroundIconHoverColor',
+                'name' => 'buttonSecondaryBackgroundIconHoverColor',
+                'label' => 'Background hover (Icon/Image) color',
               ],
+            
               
             ],
           ],
