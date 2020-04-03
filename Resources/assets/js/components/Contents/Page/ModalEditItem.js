@@ -63,7 +63,8 @@ class ModalEditItem extends Component {
         field : null,
         displayListItemModal : false,
         listItemInfo : null,
-        parameters : null
+        parameters : null,
+        templates : null
     };
 
     this.onModalClose = this.onModalClose.bind(this);
@@ -121,9 +122,11 @@ class ModalEditItem extends Component {
         field = this.updateSettingsFromConfig(field);
 
         var paramerters = this.getInitParameters(field);
+        var templates = this.getElementTemplates(field);
 
         this.setState({
-          parameters : paramerters
+          parameters : paramerters,
+          templates : templates
         });
 
 
@@ -520,13 +523,15 @@ class ModalEditItem extends Component {
 
     //get parameters of this field.value
     var parameters = this.getFieldParameters(field);
+    var templates = this.getElementTemplates(field);
     console.log("updateParameters :: parameters => ",parameters);
     //console.log("update parameters! :: (parameters) => ",parameters);
 
     var self = this;
 
     this.setState({
-      parameters : parameters
+      parameters : parameters,
+      templates : templates
     },function(){
         //update page parameters with this new parameters
         self.props.updateParameters(
@@ -563,9 +568,44 @@ class ModalEditItem extends Component {
       if(element.value == field.value){
         return element.parameters;
       }
-    }
+    }    
 
     return null;
+  }
+
+  getElementTemplates(field) {
+
+    architect.log('ModalEditItem :: getElementTemplates : (field) ',field);
+
+    var elementId = null;
+    if(field.settings['fileElements'] !== undefined){
+      elementId = field.settings['fileElements'];
+    }
+    else if(field.settings['tableElements'] !== undefined){
+      elementId = field.settings['tableElements'];
+    }
+    else if(field.settings['formElements'] !== undefined){
+      elementId = field.settings['formElements'];
+    }
+    else if(field.settings['formElementsV2'] !== undefined){
+      elementId = field.settings['formElementsV2'];
+    }
+
+    if(elementId == null)
+      return [];
+
+    var elementsList = this.props.modalEdit.originalElements;
+
+    for(var i=0;i<elementsList.length;i++){
+      var element = elementsList[i];
+      if(elementId == element.id){
+
+        architect.log('ModalEditItem :: selected templates : ',element.templates);
+
+        return element.templates;
+      }
+    }    
+    return [];
   }
 
   getCropsformats() {
@@ -578,6 +618,22 @@ class ModalEditItem extends Component {
       });
 
       return formats;
+  }
+
+  getTemplateOptions() {
+    var options = [{
+      name : "---",
+      value : ""
+    }];
+    
+    for(var key in this.state.templates){
+      options.push({
+        value: this.state.templates[key].id,
+        name: this.state.templates[key].name
+      })
+    }
+
+    return options;
   }
 
   renderParameters() {
@@ -685,6 +741,17 @@ class ModalEditItem extends Component {
           })}
         />
 
+        {this.state.templates != null && 
+          <SelectorSettingsField
+            field={this.state.field}
+            name="template"
+            source="settings"
+            onFieldChange={this.handleFieldSettingsChange.bind(this)}
+            label={'Sélectionner template'}
+            options={this.getTemplateOptions()}
+          />
+        }
+
         {this.state.parameters !== undefined && this.state.parameters != null &&
           <div>
             <label>Paramètres</label>
@@ -704,7 +771,6 @@ class ModalEditItem extends Component {
           inputLabel={Lang.get('modals.indica_title')}
           translations={this.props.translations}
         />
-
 
         <InputSettingsField
           field={this.state.field}

@@ -87,7 +87,8 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
     var result = {
       value: element.id,
       name : element.name,
-      parameters : []
+      parameters : [],
+      templates : []
     };
 
     if(element.attrs !== undefined){
@@ -102,7 +103,7 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
         }
       }
     }
-
+    
     return result;
  }
 

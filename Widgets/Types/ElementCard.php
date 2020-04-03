@@ -9,11 +9,11 @@ use Modules\Architect\Entities\Content;
 use Modules\Architect\Entities\ContentField;
 use Modules\Architect\Entities\Language;
 
-class ElementFileTemp extends Widget implements WidgetInterface
+class ElementCard extends Widget implements WidgetInterface
 {
     public $type = 'widget';
     public $icon = 'fa fa-columns';
-    public $name = 'ELEMENT_FILE_TEMP';
+    public $name = 'ELEMENT_CARD';
     public $component = 'CommonWidget';
 
     public $fields = [
@@ -29,10 +29,9 @@ class ElementFileTemp extends Widget implements WidgetInterface
 
     public $settings = [
         'fileElements',
+        'template',
         'collapsable',
         'collapsed',
-        'doubleColumn',
-        'hiddenFilter',
         'conditionalVisibility'
     ];
 }
