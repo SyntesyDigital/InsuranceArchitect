@@ -22,7 +22,8 @@ class Text extends Field implements FieldInterface
     public $settings = [
         'entryTitle',
         'htmlId',
-        'htmlClass'
+        'htmlClass',
+        'textAlign'
     ];
 }
 ?>

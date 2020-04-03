@@ -18,6 +18,7 @@ var architect = {
     },
 
     log : function(...params) {
+        console.log("log!");
         if(this._debugEnabled){
             console.log('[Architect] :: ', ...params);
         }

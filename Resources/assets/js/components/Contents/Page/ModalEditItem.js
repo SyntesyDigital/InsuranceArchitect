@@ -575,6 +575,8 @@ class ModalEditItem extends Component {
 
   getElementTemplates(field) {
 
+    architect.log('ModalEditItem :: getElementTemplates : (field) ',field);
+
     var elementId = null;
     if(field.settings['fileElements'] !== undefined){
       elementId = field.settings['fileElements'];
@@ -596,7 +598,10 @@ class ModalEditItem extends Component {
 
     for(var i=0;i<elementsList.length;i++){
       var element = elementsList[i];
-      if(elementId == elementId){
+      if(elementId == element.id){
+
+        architect.log('ModalEditItem :: selected templates : ',element.templates);
+
         return element.templates;
       }
     }    
@@ -613,6 +618,22 @@ class ModalEditItem extends Component {
       });
 
       return formats;
+  }
+
+  getTemplateOptions() {
+    var options = [{
+      name : "---",
+      value : ""
+    }];
+    
+    for(var key in this.state.templates){
+      options.push({
+        value: this.state.templates[key].id,
+        name: this.state.templates[key].name
+      })
+    }
+
+    return options;
   }
 
   renderParameters() {
@@ -726,13 +747,8 @@ class ModalEditItem extends Component {
             name="template"
             source="settings"
             onFieldChange={this.handleFieldSettingsChange.bind(this)}
-            label={'Select template'}
-            options={this.state.templates.map(function(obj){
-                return {
-                    value: obj.value,
-                    name: obj.name
-                };
-            })}
+            label={'Sélectionner template'}
+            options={this.getTemplateOptions()}
           />
         }
 
