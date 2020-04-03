@@ -103,18 +103,7 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
         }
       }
     }
-
-    if(element.templates !== undefined){
-      for(var key in element.templates){
-        var template = element.templates[key];
-
-        result.templates.push({
-          name : template.name,
-          id : template.id
-        });
-      }
-    }
-
+    
     return result;
  }
 

@@ -29,10 +29,9 @@ class ElementCard extends Widget implements WidgetInterface
 
     public $settings = [
         'fileElements',
+        'template',
         'collapsable',
         'collapsed',
-        'doubleColumn',
-        'hiddenFilter',
         'conditionalVisibility'
     ];
 }
