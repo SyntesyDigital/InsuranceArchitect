@@ -111,7 +111,7 @@ export function loadElements() {
 
   return (dispatch) => {
 
-    axios.get(ASSETS+'api/elements')
+    axios.get(ASSETS+'architect/elements/list')
       .then(function (response) {
           if(response.status == 200
               && response.data !== undefined
