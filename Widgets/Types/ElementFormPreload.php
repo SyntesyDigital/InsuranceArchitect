@@ -30,7 +30,8 @@ class ElementFormPreload extends Widget implements WidgetInterface
         'formElementsV2',
         'collapsable',
         'collapsed',
-        'conditionalVisibility'
+        'conditionalVisibility',
+        'template'
     ];
 }
 ?>
