@@ -107,6 +107,7 @@ return [
     'price' => 'Prix',
     'price_with_decimals' => 'Prix avec décimales',
     'day_month_year' => 'Jour / mois / année',
+    'day_month_year_2' => 'Jour - mois - année',
     'day_month' => 'Jour / mois',
     'month_year' => 'Mois / année',
     'year' => 'Année',
