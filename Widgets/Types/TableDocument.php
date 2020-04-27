@@ -29,10 +29,10 @@ class TableDocument extends Widget implements WidgetInterface
     public $settings = [
       'collapsable',
       'collapsed',
-      'pagination',
       'bootstrapColumns',
       'tableElements',
-      'conditionalVisibility'
+      'conditionalVisibility',
+      'itemsPerPage'
     ];
 }
 ?>
