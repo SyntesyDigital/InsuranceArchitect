@@ -54,4 +54,5 @@ return [
   'button_class' => 'Clase de butó',
   'button_primary' => 'Primari',
   'button_secondary' => 'Secundari',
+  'hide_empty_rows' => 'Ocultar files buides',
 ];
