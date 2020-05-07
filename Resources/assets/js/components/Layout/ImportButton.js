@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Modal from '../Layout/Modal'
+import Modal from '../Layout/Modal';
+import { FilePicker } from 'react-file-picker'
 
 const styles = {
     display: 'inline-block',
@@ -12,7 +12,64 @@ export default class ImportButton extends Component {
         super(props);
         this.state = {
             display: false,
+            loading : false,
+            file : null,
+            base64 : null,
+            type : null,
+            name : ''
         }
+    }
+
+    handleOnChange(FileObject) {
+
+        var self = this;
+
+        this.setState({
+            file : FileObject,
+            name : FileObject.name,
+            type : FileObject.type,
+            loading : true
+        },self.getBase64.bind(self))
+    }
+
+    updateFile() {
+        //update all fields
+        //name : this.props.field.identifier,
+        //value : this.state.base64
+
+        
+
+        //process json and return.
+        console.log("updateFile!",JSON.parse(window.atob(this.state.base64)));
+    }
+
+    /**
+     *   Get file info.
+     */
+    getBase64() {
+        let reader = new FileReader();
+        var self = this;
+
+        reader.readAsDataURL(this.state.file);
+
+        reader.onload = function () {
+
+            var base64Array = reader.result.split(',');
+
+            self.setState({
+                base64 : base64Array.length > 0 ? base64Array[1] : null,
+                loading : false
+            },self.updateFile.bind(self));
+
+        };
+        reader.onerror = function (error) {
+            console.error('FileField :: ', error);
+        };
+    }
+
+    handleError(message) {
+        toastr.error(message);
+        console.error("FileField :: "+message);
     }
 
     openModal(e){
@@ -36,7 +93,7 @@ export default class ImportButton extends Component {
                 <Modal
                     id={'modal-result-import'}
                     icon={'fas fa-download'}
-                    title={'Resultado de la importación'}
+                    title={'Résultat de l\'importation'}
                     display={this.state.display}
                     zIndex={10000}
                     size={'medium'}
@@ -47,8 +104,8 @@ export default class ImportButton extends Component {
                 >
                     <div className="row rightbar-page">
                         <div className="col-md-4 col-xs-12">
-                            <p className="success">Éxito <i class="fas fa-check"></i></p>
-                            <p className="error">Error <i class="fas fa-times"></i></p>
+                            <p className="success">Éxito <i className="fas fa-check"></i></p>
+                            <p className="error">Error <i className="fas fa-times"></i></p>
                             <p>Se han importado :</p> 
                             <ul>
                                 <li>4 Elementos</li>
@@ -62,11 +119,18 @@ export default class ImportButton extends Component {
                         </div>
                     </div>
                 </Modal>
-                <a href={this.props.route} className="btn btn-default" onClick={this.openModal.bind(this)}>
-                    <i className={this.props.icon}></i>
-                    &nbsp;&nbsp;
-                    {this.props.label}
-                </a>
+
+                <FilePicker
+                    extensions={['json']}
+                    onChange={this.handleOnChange.bind(this)}
+                    onError={this.handleError.bind(this)}
+                >
+                    <a className="btn btn-default" href="#">
+                        <i className={this.props.icon}></i>
+                        &nbsp;&nbsp;
+                        {this.props.label}
+                    </a>
+                </FilePicker>
             </div>
             
         );
@@ -83,7 +147,3 @@ ImportButton.propTypes = {
     onError: PropTypes.func
 };
 
-
-if (document.getElementById('import-button')) {
-    ReactDOM.render(<ImportButton />, document.getElementById('import-button'));
-}
