@@ -54,4 +54,5 @@ return [
     'button_class' => 'Button Class',
     'button_primary' => 'Primary',
     'button_secondary' => 'Secondary',
+    'hide_empty_rows' => 'hide empty rows',
 ];

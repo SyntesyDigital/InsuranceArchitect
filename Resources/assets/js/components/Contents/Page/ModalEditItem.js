@@ -850,6 +850,14 @@ class ModalEditItem extends Component {
           label={Lang.get('modals.excel')}
         />
 
+        <BooleanSettingsField
+          field={this.state.field}
+          name="hideEmptyRows"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={Lang.get('modals.hide_empty_rows')}
+        />
+
         <RadioSettingsField
           field={this.state.field}
           name="cropsAllowed"
