@@ -748,7 +748,6 @@ return [
                 'name' => 'buttonPrimaryBorderRadius',
                 'label' => 'Border radius (px)',
               ],
-              
             ], //end children col
           ],
           [
@@ -831,7 +830,6 @@ return [
                 'name' => 'buttonSecondaryBorderRadius',
                 'label' => 'Border radius (px)',
               ],
-              
             ], //end children col
           ],
           [
@@ -866,8 +864,6 @@ return [
                 'name' => 'buttonSecondaryBackgroundIconHoverColor',
                 'label' => 'Background hover (Icon/Image) color',
               ],
-            
-              
             ],
           ],
         ], //en children box
@@ -911,8 +907,6 @@ return [
                 'name' => 'elementNumberColor',
                 'label' => 'Numbers color',
               ],
-
-
             ], //end children col
           ],
           [
@@ -1111,6 +1105,132 @@ return [
           ],
         ], //en children box
       ], //end box form settings
+
+      [
+        'type' => 'box',
+        'title' => 'Box 1',
+        'identifier' => 'box_12',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorBox1',
+                'name' => 'backgroundColorBox1',
+                'label' => 'Background Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'textColorBox1',
+                'name' => 'textColorBox1',
+                'label' => 'Text Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'borderColorBox1',
+                'name' => 'borderColorBox1',
+                'label' => 'Border Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusBox1',
+                'name' => 'borderRadiusBox1',
+                'label' => 'Border radius (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 1
+      ], //end box 1
+
+      [
+        'type' => 'box',
+        'title' => 'Box 2',
+        'identifier' => 'box_13',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorBox2',
+                'name' => 'backgroundColorBox2',
+                'label' => 'Background Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'textColorBox2',
+                'name' => 'textColorBox2',
+                'label' => 'Text Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'borderColorBox2',
+                'name' => 'borderColorBox2',
+                'label' => 'Border Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusBox2',
+                'name' => 'borderRadiusBox2',
+                'label' => 'Border radius (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 2
+      ], //end box 2
+
+      [
+        'type' => 'box',
+        'title' => 'Box 3',
+        'identifier' => 'box_14',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorBox3',
+                'name' => 'backgroundColorBox3',
+                'label' => 'Background Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'textColorBox3',
+                'name' => 'textColorBox3',
+                'label' => 'Text Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'borderColorBox3',
+                'name' => 'borderColorBox3',
+                'label' => 'Border Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusBox3',
+                'name' => 'borderRadiusBox3',
+                'label' => 'Border radius (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
     ],
   ],
 ];
