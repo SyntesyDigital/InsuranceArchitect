@@ -54,4 +54,5 @@ return [
     'button_class' => 'Clase de botón',
     'button_primary' => 'Primario',
     'button_secondary' => 'Secundario',
+    'hide_empty_rows' => 'Ocultar filas vacías',
 ];

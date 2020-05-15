@@ -40,3 +40,4 @@ require('./components/Dashboard/CustomTable');
 require('./components/Dashboard/SiteMap');
 require('./components/Contents/ContentApp');
 require('./components/Forms/FormApp');
+require('./components/Settings/Import');

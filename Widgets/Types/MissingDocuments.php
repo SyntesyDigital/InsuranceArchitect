@@ -5,16 +5,15 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-class ElementSecondaryTable extends Widget implements WidgetInterface
+class MissingDocuments extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'fa fa-table';
-    public $name = 'ELEMENT_SECONDARY_TABLE';
+    public $icon = 'fas fa-chart-bar';
+    public $name = 'MISSING_DOCUMENTS';
     public $component = 'CommonWidget';
 
     public $fields = [
-        'title' => 'Modules\Architect\Fields\Types\Text',
-        'moreBtn' => 'Modules\Architect\Fields\Types\Link',
+        'title' => 'Modules\Architect\Fields\Types\Text'
     ];
 
     public $rules = [
@@ -24,13 +23,11 @@ class ElementSecondaryTable extends Widget implements WidgetInterface
     public $hidden = false;
 
     public $settings = [
-        'maxItems',
-        'hideEmptyRows',
-        'pagination',
-        'tableElements',
         'collapsable',
         'collapsed',
-        'hiddenFilter',
+        'bootstrapColumns',
+        'tableElements',
         'conditionalVisibility',
+        'itemsPerPage'
     ];
 }

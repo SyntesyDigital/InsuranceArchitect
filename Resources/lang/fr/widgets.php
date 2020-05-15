@@ -53,4 +53,5 @@ return [
     'ELEMENT_FORM_PRELOAD' => 'Formulaire avec précharge',
     'ELEMENT_FORM_BUTTON' => 'Formulaire bouton',
     'ELEMENT_CARD' => 'Fiche avec template',
+    'MISSING_DOCUMENTS' => 'Pièces manquantes',
 ];
