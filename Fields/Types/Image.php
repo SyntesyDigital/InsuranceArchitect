@@ -4,7 +4,6 @@ namespace Modules\Architect\Fields\Types;
 
 use Modules\Architect\Fields\Field;
 use Modules\Architect\Fields\FieldInterface;
-use Modules\Architect\Entities\Content;
 use Modules\Architect\Entities\ContentField;
 
 class Image extends Field implements FieldInterface
@@ -14,29 +13,27 @@ class Image extends Field implements FieldInterface
     public $name = 'IMAGE';
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $settings = [
         'cropsAllowed',
         'htmlId',
-        'htmlClass'
+        'htmlClass',
     ];
 
     public function save($content, $identifier, $media, $languages = null)
     {
         $mediaId = isset($media['id']) ? $media['id'] : null;
 
-        if($mediaId) {
+        if ($mediaId) {
             return $content->fields()->save(new ContentField([
                 'name' => $identifier,
                 'value' => $mediaId,
-                'relation' => 'medias'
+                'relation' => 'medias',
             ]));
         }
 
         return false;
     }
-
 }
-?>
