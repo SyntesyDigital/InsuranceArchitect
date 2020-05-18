@@ -1085,21 +1085,49 @@ return [
                 'input' => 'color',
                 'identifier' => 'labelColor',
                 'name' => 'labelColor',
-                'label' => 'Label color',
+                'label' => 'Label input color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'borderColorInput',
+                'name' => 'borderColorInput',
+                'label' => 'Border input color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'hoverColorInput',
+                'name' => 'hoverColorInput',
+                'label' => 'Hover input color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+
+            'children' => [
               [
                 'type' => 'field',
                 'input' => 'number',
                 'identifier' => 'labelFontSize',
                 'name' => 'labelFontSize',
-                'label' => 'Label Font Size (px)',
+                'label' => 'Label input font-size (px)',
               ],
               [
                 'type' => 'field',
                 'input' => 'number',
                 'identifier' => 'labelPadding',
                 'name' => 'labelPadding',
-                'label' => 'Label padding (px)',
+                'label' => 'Label input padding (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusInput',
+                'name' => 'borderRadiusInput',
+                'label' => 'Border-radius input (px)',
               ],
             ], //end children col
           ],
