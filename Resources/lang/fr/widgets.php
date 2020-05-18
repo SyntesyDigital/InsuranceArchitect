@@ -54,4 +54,5 @@ return [
     'ELEMENT_FORM_BUTTON' => 'Formulaire bouton',
     'ELEMENT_CARD' => 'Fiche avec template',
     'MISSING_DOCUMENTS' => 'Pièces manquantes',
+    'BACKGROUND_IMAGE' => 'Background Image',
 ];
