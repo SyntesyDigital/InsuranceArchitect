@@ -1085,6 +1085,13 @@ return [
                 'input' => 'color',
                 'identifier' => 'labelColor',
                 'name' => 'labelColor',
+                'label' => 'Label color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'labelInputColor',
+                'name' => 'labelInputColor',
                 'label' => 'Label input color',
               ],
               [
@@ -1111,15 +1118,29 @@ return [
               [
                 'type' => 'field',
                 'input' => 'number',
+                'identifier' => 'labelPadding',
+                'name' => 'labelPadding',
+                'label' => 'Label padding (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
                 'identifier' => 'labelFontSize',
                 'name' => 'labelFontSize',
+                'label' => 'Label font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'labelInputFontSize',
+                'name' => 'labelInputFontSize',
                 'label' => 'Label input font-size (px)',
               ],
               [
                 'type' => 'field',
                 'input' => 'number',
-                'identifier' => 'labelPadding',
-                'name' => 'labelPadding',
+                'identifier' => 'labelInputPadding',
+                'name' => 'labelInputPadding',
                 'label' => 'Label input padding (px)',
               ],
               [
