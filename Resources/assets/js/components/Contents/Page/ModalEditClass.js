@@ -40,7 +40,41 @@ class ModalEditClass extends Component {
   componentWillUnmount() {
     this.mounted = false;
   }
+  
+  /**
+  *   configuration can be changed because some settings or $rule
+  *   added directly to PHP. It's necessary to update the json stored in BBDD
+  *   to update the avialabe settings, and modifiy if necessary
+  */
+  updateSettingsFromConfig(field) {
 
+    var config = null;
+
+    if(field.data.type == "row"){
+        config = ROW_SETTINGS;
+    }
+    else if(field.data.type == "col"){
+        config = COL_SETTINGS;
+    }
+
+    if(config == null){
+      return field;
+    }
+
+    if(config !== undefined ) {
+      for(var id in config){
+        var setting = config[id];
+        if(field.data.settings[setting] === undefined){
+          field.data.settings[setting] = null;
+        }
+      }
+    }
+
+    console.log("Rows/cols :: updateSettingsFromConfig :: (config,field)",config,field);
+
+    return field;
+  }
+    
   componentWillReceiveProps(nextProps) {
 
     console.log(" ModalEditClass :: componentWillReceiveProps ", nextProps);
@@ -50,6 +84,8 @@ class ModalEditClass extends Component {
     if (nextProps.modalSettings.displayModal) {
       this.modalOpen();
       field = nextProps.modalSettings.item;
+
+      field = this.updateSettingsFromConfig(field);
 
     } else {
       this.modalClose();
@@ -171,7 +207,7 @@ class ModalEditClass extends Component {
           name="boxClass"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={'Box'}
+          label={'Style conteneur'}
           options={[
             {
               value: "box-class-1",
