@@ -1238,7 +1238,6 @@ return [
           ],
         ], //en children box 2
       ], //end box 2
-
       [
         'type' => 'box',
         'title' => 'Box 3',
@@ -1274,6 +1273,88 @@ return [
                 'input' => 'number',
                 'identifier' => 'borderRadiusBox3',
                 'name' => 'borderRadiusBox3',
+                'label' => 'Border radius (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Image text link',
+        'identifier' => 'box_15',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'titleColorImgTxtLink',
+                'name' => 'titleColorImgTxtLink',
+                'label' => 'Title color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'linkColorImgTxtLink',
+                'name' => 'linkColorImgTxtLink',
+                'label' => 'Link color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'dateColorImgTxtLink',
+                'name' => 'dateColorImgTxtLink',
+                'label' => 'Date color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'descColorImgTxtLink',
+                'name' => 'descColorImgTxtLink',
+                'label' => 'Description color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'titleFontSizeImgTxtLink',
+                'name' => 'titleFontSizeImgTxtLink',
+                'label' => 'Title font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'linkFontSizeImgTxtLink',
+                'name' => 'linkFontSizeImgTxtLink',
+                'label' => 'Link font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'dateFontSizeImgTxtLink',
+                'name' => 'dateFontSizeImgTxtLink',
+                'label' => 'Date font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'descFontSizeImgTxtLink',
+                'name' => 'descFontSizeImgTxtLink',
+                'label' => 'Description font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusImgTxtLink',
+                'name' => 'borderRadiusImgTxtLink',
                 'label' => 'Border radius (px)',
               ],
             ], //end children col

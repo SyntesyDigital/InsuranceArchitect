@@ -55,4 +55,6 @@ return [
     'ELEMENT_CARD' => 'Fiche avec template',
     'MISSING_DOCUMENTS' => 'Pièces manquantes',
     'BACKGROUND_IMAGE' => 'Background Image',
+    'IMAGE_TEXT_LINK' => 'Image text link',
+    'IMAGE_TEXT_LINK_LIST' => 'Image text link list',
 ];
