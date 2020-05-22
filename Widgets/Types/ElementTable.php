@@ -18,7 +18,8 @@ class ElementTable extends Widget implements WidgetInterface
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'addBtn' => 'Modules\Architect\Fields\Types\Link'
+        'addBtn' => 'Modules\Architect\Fields\Types\Link',
+        'excelBtn' => 'Modules\Architect\Fields\Types\Text',
     ];
 
     public $rules = [

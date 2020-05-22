@@ -114,6 +114,6 @@ return [
     'telephone' => 'Téléphone',
     'collapsable' => 'Repliable',
     'moreBtn' => 'Voir plus',
-    'addBtn' => 'Ajouter Element'
-
+    'addBtn' => 'Ajouter Element',
+    'excelBtn' => 'Texte exportation CSV'
 ];
