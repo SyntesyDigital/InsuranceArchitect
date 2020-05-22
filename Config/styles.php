@@ -423,6 +423,27 @@ return [
                 'name' => 'frontSidebarActiveColor',
                 'label' => 'Active text color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorSidebarIconMenu',
+                'name' => 'colorSidebarIconMenu',
+                'label' => 'Icon menu color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorSidebarTooltip',
+                'name' => 'backgroundColorSidebarTooltip',
+                'label' => 'Background color tooltip',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorSidebarTooltip',
+                'name' => 'colorSidebarTooltip',
+                'label' => 'Text color tooltip',
+              ],
             ], //end children col
           ],
           [
