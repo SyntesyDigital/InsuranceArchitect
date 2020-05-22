@@ -43,7 +43,6 @@ return [
     'ELEMENT_FORM_V2' => 'Formulaire V2',
     'ELEMENT_TABLE' => 'Tableau principaux',
     'ELEMENT_FILE' => 'Fiche',
-    'TABLE_DOCUMENT' => 'Documents de Tableau',
     'ELEMENT_SECONDARY_TABLE' => 'Tableau secondaire',
     'TOTAL_BOX' => 'Boîte totale',
     'BOX_BUTTON' => 'Boîte à boutons',
@@ -55,4 +54,6 @@ return [
     'ELEMENT_CARD' => 'Fiche avec template',
     'MISSING_DOCUMENTS' => 'Pièces manquantes',
     'BACKGROUND_IMAGE' => 'Background Image',
+    'TABLE_DOCUMENT' => 'Tableau de documents',
+    'TABLE_LIST' => 'Liste d\'éléments',
 ];
