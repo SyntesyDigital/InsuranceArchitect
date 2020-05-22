@@ -43,7 +43,6 @@ return [
     'ELEMENT_FORM_V2' => 'Formulaire V2',
     'ELEMENT_TABLE' => 'Tableau principaux',
     'ELEMENT_FILE' => 'Fiche',
-    'TABLE_DOCUMENT' => 'Documents de Tableau',
     'ELEMENT_SECONDARY_TABLE' => 'Tableau secondaire',
     'TOTAL_BOX' => 'Boîte totale',
     'BOX_BUTTON' => 'Boîte à boutons',
@@ -57,4 +56,6 @@ return [
     'BACKGROUND_IMAGE' => 'Background Image',
     'IMAGE_TEXT_LINK' => 'Image text link',
     'IMAGE_TEXT_LINK_LIST' => 'Image text link list',
+    'TABLE_DOCUMENT' => 'Tableau de documents',
+    'TABLE_LIST' => 'Liste d\'éléments',
 ];
