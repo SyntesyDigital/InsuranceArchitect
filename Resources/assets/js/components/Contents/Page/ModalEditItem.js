@@ -26,6 +26,7 @@ import VideoField from './../ContentFields/VideoField';
 import LocalizationField from './../ContentFields/LocalizationField';
 import FileField from './../ContentFields/FileField';
 import TranslatedFileField from './../ContentFields/TranslatedFileField';
+import IconField from './../ContentFields/IconField';
 
 
 // WIDGETS LIST
@@ -415,6 +416,7 @@ class ModalEditItem extends Component {
                 onFieldChange={this.onFieldChange}
             />
           );
+
         case FIELDS.LOCALIZATION.type:
           return (
             <LocalizationField
@@ -424,7 +426,14 @@ class ModalEditItem extends Component {
             />
           );
 
-
+        case FIELDS.ICON.type:
+          return (
+            <IconField
+                field={this.state.field}
+                hideTab={true}
+                onFieldChange={this.onFieldChange}
+            />
+          );
 
         case "widget":
             const Widget = this.widgets[this.state.field.component || 'CommonWidget'];
@@ -1136,6 +1145,15 @@ class ModalEditItem extends Component {
               }
           ]}
         />
+
+        <InputSettingsField
+          field={this.state.field}
+          name="fontSize"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label="Font Size (px)"
+        />
+
       </div>
 
 
