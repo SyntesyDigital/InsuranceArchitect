@@ -666,6 +666,20 @@ return [
                 'name' => 'elementFileInputBorder',
                 'label' => 'Element Row border bottom',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'iconFontSizeElement',
+                'name' => 'iconFontSizeElement',
+                'label' => 'Icon font-size',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'iconColorElement',
+                'name' => 'iconColorElement',
+                'label' => 'Icon color',
+              ],
             ], //end children col
           ],
           [
