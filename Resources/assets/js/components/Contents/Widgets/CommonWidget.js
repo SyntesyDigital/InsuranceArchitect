@@ -22,6 +22,7 @@ import LocalizationField from './../ContentFields/LocalizationField';
 import UrlField from './../ContentFields/UrlField';
 import FileField from './../ContentFields/FileField';
 import TranslatedFileField from './../ContentFields/TranslatedFileField';
+import IconField from './../ContentFields/IconField';
 
 class CommonWidget extends Component
 {
@@ -215,6 +216,16 @@ class CommonWidget extends Component
             case FIELDS.LOCALIZATION.type:
                 fields.push(
                 <LocalizationField
+                    field={stateFields[k]}
+                    key={k}
+                    onFieldChange={_this.onFieldChange}
+                />
+                );
+            break;
+
+            case FIELDS.ICON.type:
+                fields.push(
+                <IconField
                     field={stateFields[k]}
                     key={k}
                     onFieldChange={_this.onFieldChange}

@@ -15,6 +15,7 @@ class ElementSecondaryTable extends Widget implements WidgetInterface
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
         'moreBtn' => 'Modules\Architect\Fields\Types\Link',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [

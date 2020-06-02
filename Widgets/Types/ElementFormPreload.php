@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class ElementFormPreload extends Widget implements WidgetInterface
 {
     public $type = 'widget';
@@ -18,7 +14,8 @@ class ElementFormPreload extends Widget implements WidgetInterface
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'redirect' => 'Modules\Architect\Fields\Types\Url'
+        'redirect' => 'Modules\Architect\Fields\Types\Url',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [];
@@ -31,7 +28,6 @@ class ElementFormPreload extends Widget implements WidgetInterface
         'collapsable',
         'collapsed',
         'conditionalVisibility',
-        'template'
+        'template',
     ];
 }
-?>

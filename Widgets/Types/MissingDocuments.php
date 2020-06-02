@@ -13,7 +13,8 @@ class MissingDocuments extends Widget implements WidgetInterface
     public $component = 'CommonWidget';
 
     public $fields = [
-        'title' => 'Modules\Architect\Fields\Types\Text'
+        'title' => 'Modules\Architect\Fields\Types\Text',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [
@@ -28,6 +29,6 @@ class MissingDocuments extends Widget implements WidgetInterface
         'bootstrapColumns',
         'tableElements',
         'conditionalVisibility',
-        'itemsPerPage'
+        'itemsPerPage',
     ];
 }

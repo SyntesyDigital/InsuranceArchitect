@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class ElementForm extends Widget implements WidgetInterface
 {
     public $type = 'widget';
@@ -18,11 +14,12 @@ class ElementForm extends Widget implements WidgetInterface
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'redirect' => 'Modules\Architect\Fields\Types\Url'
+        'redirect' => 'Modules\Architect\Fields\Types\Url',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $hidden = false;
@@ -33,7 +30,6 @@ class ElementForm extends Widget implements WidgetInterface
         'collapsed',
         'hiddenFilter',
         'conditionalVisibility',
-        'template'
+        'template',
     ];
 }
-?>

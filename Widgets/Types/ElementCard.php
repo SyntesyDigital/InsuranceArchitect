@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class ElementCard extends Widget implements WidgetInterface
 {
     public $type = 'widget';
@@ -18,11 +14,12 @@ class ElementCard extends Widget implements WidgetInterface
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'link' => 'Modules\Architect\Fields\Types\Link'
+        'link' => 'Modules\Architect\Fields\Types\Link',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $hidden = false;
@@ -32,7 +29,6 @@ class ElementCard extends Widget implements WidgetInterface
         'template',
         'collapsable',
         'collapsed',
-        'conditionalVisibility'
+        'conditionalVisibility',
     ];
 }
-?>

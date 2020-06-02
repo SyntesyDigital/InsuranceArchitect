@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class ElementTable extends Widget implements WidgetInterface
 {
     public $type = 'widget';
@@ -20,10 +16,11 @@ class ElementTable extends Widget implements WidgetInterface
         'title' => 'Modules\Architect\Fields\Types\Text',
         'addBtn' => 'Modules\Architect\Fields\Types\Link',
         'excelBtn' => 'Modules\Architect\Fields\Types\Text',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $hidden = false;
@@ -31,7 +28,6 @@ class ElementTable extends Widget implements WidgetInterface
     public $settings = [
         'pagination',
         'tableElements',
-        'excel'
+        'excel',
     ];
 }
-?>
