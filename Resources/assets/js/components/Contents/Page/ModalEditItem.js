@@ -1154,6 +1154,25 @@ class ModalEditItem extends Component {
           label="Font Size (px)"
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="headerRowsNumber"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Lignes d\'en-tête de table'}
+          //inputLabel={Lang.get('modals.indica_max_elements_page')}
+          options={[
+              {
+                  value: "",
+                  name: "1",
+              },
+              {
+                  value: "2",
+                  name: "2",
+              }
+          ]}
+        />
+
       </div>
 
 

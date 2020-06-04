@@ -33,5 +33,6 @@ class ElementSecondaryTable extends Widget implements WidgetInterface
         'collapsed',
         'hiddenFilter',
         'conditionalVisibility',
+        'headerRowsNumber'
     ];
 }
