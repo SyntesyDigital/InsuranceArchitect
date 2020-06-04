@@ -1206,6 +1206,7 @@ return [
                 'name' => 'backgroundColorBox1',
                 'label' => 'Background Color',
               ],
+              /*
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -1213,6 +1214,7 @@ return [
                 'name' => 'textColorBox1',
                 'label' => 'Text Color',
               ],
+              */
               [
                 'type' => 'field',
                 'input' => 'color',
