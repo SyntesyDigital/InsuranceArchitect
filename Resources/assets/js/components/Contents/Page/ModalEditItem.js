@@ -1153,7 +1153,7 @@ class ModalEditItem extends Component {
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
           label="Font Size (px)"
         />
-
+        
         <SelectorSettingsField
           field={this.state.field}
           name="headerRowsNumber"

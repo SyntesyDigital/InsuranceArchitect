@@ -58,4 +58,6 @@ return [
     'IMAGE_TEXT_LINK_LIST' => 'Image text link list',
     'TABLE_DOCUMENT' => 'Tableau de documents',
     'TABLE_LIST' => 'Liste d\'éléments',
+    'ACTION_BUTTON' => 'Action button',
+    'BANNER_HORIZONTAL' => 'Horizontal banner',
 ];
