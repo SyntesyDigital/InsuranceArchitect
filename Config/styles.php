@@ -1604,6 +1604,74 @@ return [
           ],
         ], //en children box 3
       ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Tabs',
+        'identifier' => 'box_18',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'fontColorTab',
+                'name' => 'fontColorTab',
+                'label' => 'Color font tab',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorTab',
+                'name' => 'backgroundColorTab',
+                'label' => 'Background color tab',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorActiveTab',
+                'name' => 'backgroundColorActiveTab',
+                'label' => 'Background color active tab',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundHoverColorTab',
+                'name' => 'backgroundHoverColorTab',
+                'label' => 'Background hover color tab',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorContentTab',
+                'name' => 'backgroundColorContentTab',
+                'label' => 'Background color content tab',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeTab',
+                'name' => 'fontSizeTab',
+                'label' => 'Font-size tab (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusTab',
+                'name' => 'borderRadiusTab',
+                'label' => 'Border radius tab (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
     ],
   ],
 ];

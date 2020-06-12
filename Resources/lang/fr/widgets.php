@@ -60,4 +60,5 @@ return [
     'TABLE_LIST' => 'Liste d\'éléments',
     'ACTION_BUTTON' => 'Action button',
     'BANNER_HORIZONTAL' => 'Horizontal banner',
+    'TABS' => 'Tabs',
 ];
