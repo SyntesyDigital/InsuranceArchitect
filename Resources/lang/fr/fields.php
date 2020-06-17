@@ -10,6 +10,7 @@ return [
     'contentlist' => 'Liste',
     'boolean' => 'Booléen',
     'link' => 'Lien',
+    'link2' => 'Lien 2',
     'video' => 'Vidéo',
     'localization' => 'Emplacement',
     'slug' => 'Slug',
@@ -21,6 +22,7 @@ return [
     'title' => 'Titre',
     'description' => 'Description',
     'subtitle' => 'Sous-titre',
+    'subtitle2' => 'Sous-titre 2',
     'message' => 'Message',
     'author' => 'Auteur',
     'company' => 'Entreprise',
@@ -116,5 +118,5 @@ return [
     'collapsable' => 'Repliable',
     'moreBtn' => 'Voir plus',
     'addBtn' => 'Ajouter Element',
-    'excelBtn' => 'Texte exportation CSV'
+    'excelBtn' => 'Texte exportation CSV',
 ];
