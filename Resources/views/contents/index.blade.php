@@ -15,7 +15,11 @@
   <div class="col-xs-offset-2 col-xs-10 page-content">
 
     <h3 class="card-title"> {{Lang::get('architect::contents.contents')}}</h3>
-    <a href="#" class="btn btn-primary"><i class="fa fa-plus-circle"></i> &nbsp; {{Lang::get('architect::contents.add')}}</a>
+
+    @if(has_permission('contents.create'))   
+      <a href="#" class="btn btn-primary"><i class="fa fa-plus-circle"></i> &nbsp; {{Lang::get('architect::contents.add')}}</a>
+    @endif
+
 
     <table class="table" id="table-contents" data-url="{{route('contents.data', request()->all())}}">
         <thead>
