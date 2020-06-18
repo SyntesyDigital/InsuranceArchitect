@@ -1960,7 +1960,7 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-md-6',
+            'class' => 'col-md-2',
             'children' => [
               [
                 'type' => 'field',
@@ -2022,7 +2022,7 @@ return [
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-5',
             'children' => [
               [
                 'type' => 'field',
@@ -2044,6 +2044,58 @@ return [
                 'identifier' => 'borderRadiusRowTable',
                 'name' => 'borderRadiusRowTable',
                 'label' => 'Border radius row (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-5',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignFilterTable',
+                'name' => 'alignFilterTable',
+                'label' => 'Align filters (center, top, bottom)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'top',
+                    'value' => 'top',
+                  ],
+                  [
+                    'name' => 'bottom',
+                    'value' => 'bottom',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'lowerUpperCaseHeaderTable',
+                'name' => 'lowerUpperCaseHeaderTable',
+                'label' => 'Text transform header (lowercase, uppercase, capitalize)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'lowercase',
+                    'value' => 'lowercase',
+                  ],
+                  [
+                    'name' => 'uppercase',
+                    'value' => 'uppercase',
+                  ],
+                  [
+                    'name' => 'capitalize',
+                    'value' => 'capitalize',
+                  ],
+                ],
               ],
             ], //end children col
           ],

@@ -69,8 +69,8 @@ class SelectField extends Component {
     const customStyles = {
       control: (base) => ({
         ...base,
-        height: 36,
-        minHeight: 36,
+        height: 40,
+        minHeight: 40,
         boxShadow: '1 !important',
       }),
       menu: provided => ({ ...provided, zIndex: 99999 })
