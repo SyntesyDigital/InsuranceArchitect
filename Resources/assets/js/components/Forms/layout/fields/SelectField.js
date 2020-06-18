@@ -80,7 +80,7 @@ class SelectField extends Component {
 
       <div className={"form-group bmd-form-group"}>
         <label className="bmd-label-floating">
-          {field.name}
+          {field.label}
         </label>
         <Select
           value={options[value]}
