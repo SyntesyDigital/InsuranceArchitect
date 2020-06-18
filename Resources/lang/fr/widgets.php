@@ -56,9 +56,11 @@ return [
     'BACKGROUND_IMAGE' => 'Background Image',
     'IMAGE_TEXT_LINK' => 'Image text link',
     'IMAGE_TEXT_LINK_LIST' => 'Image text link list',
+    'IMAGE_TEXT_TITLE_DOCUMENTS' => 'Image text title documents',
     'TABLE_DOCUMENT' => 'Tableau de documents',
     'TABLE_LIST' => 'Liste d\'éléments',
     'ACTION_BUTTON' => 'Action button',
     'BANNER_HORIZONTAL' => 'Horizontal banner',
     'TABS' => 'Tabs',
+    'TOTAL_BOX_PRICE' => 'Boîte totale price',
 ];

@@ -476,15 +476,8 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-md-6',
+            'class' => 'col-md-4',
             'children' => [
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'frontBodyTextColor',
-                'name' => 'frontBodyTextColor',
-                'label' => 'Text color',
-              ],
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -520,12 +513,13 @@ return [
                 'name' => 'frontBodyH5Color',
                 'label' => 'H5 color',
               ],
-            ], //end children col
-          ],
-          [
-            'type' => 'col',
-            'class' => 'col-md-6',
-            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontBodyTextColor',
+                'name' => 'frontBodyTextColor',
+                'label' => 'Text color',
+              ],
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -533,6 +527,12 @@ return [
                 'name' => 'frontBodyBackgroundColor',
                 'label' => 'Background color',
               ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
               [
                 'type' => 'field',
                 'input' => 'number',
@@ -567,6 +567,47 @@ return [
                 'identifier' => 'frontBodyH5FontSize',
                 'name' => 'frontBodyH5FontSize',
                 'label' => 'H5 font size',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH1FontWeight',
+                'name' => 'frontBodyH1FontWeight',
+                'label' => 'H1 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH2FontWeight',
+                'name' => 'frontBodyH2FontWeight',
+                'label' => 'H2 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH3FontWeight',
+                'name' => 'frontBodyH3FontWeight',
+                'label' => 'H3 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH4FontWeight',
+                'name' => 'frontBodyH4FontWeight',
+                'label' => 'H4 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH5FontWeight',
+                'name' => 'frontBodyH5FontWeight',
+                'label' => 'H5 font weight',
               ],
             ], //end children col
           ],
@@ -980,7 +1021,109 @@ return [
           ],
         ], //en children box
       ], //Secondary Button Settings
-
+      [
+        'type' => 'box',
+        'title' => 'Box total price Settings',
+        'identifier' => 'box_9c',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'titleColorBoxPrice',
+                'name' => 'titleColorBoxPrice',
+                'label' => 'Title color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'subtitleColorBoxPrice',
+                'name' => 'subtitleColorBoxPrice',
+                'label' => 'Subtitle color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'subtitle2ColorBoxPrice',
+                'name' => 'subtitle2ColorBoxPrice',
+                'label' => 'Subtitle 2 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorBoxPrice',
+                'name' => 'backgroundColorBoxPrice',
+                'label' => 'Background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundHoverColorBoxPrice',
+                'name' => 'backgroundHoverColorBoxPrice',
+                'label' => 'Background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'elementNumberPriceColorBoxPrice',
+                'name' => 'elementNumberPriceColorBoxPrice',
+                'label' => 'Number color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeTitleBoxPrice',
+                'name' => 'fontSizeTitleBoxPrice',
+                'label' => 'Title font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeNumberBoxPrice',
+                'name' => 'fontSizeNumberBoxPrice',
+                'label' => 'Number font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeSubTitleBoxPrice',
+                'name' => 'fontSizeSubTitleBoxPrice',
+                'label' => 'Subtitle font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeSubTitle2BoxPrice',
+                'name' => 'fontSizeSubTitle2BoxPrice',
+                'label' => 'Subtitle 2 font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusBoxPrice',
+                'name' => 'borderRadiusBoxPrice',
+                'label' => 'Border radius box (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'boxShadowOpacityBoxPrice',
+                'name' => 'boxShadowOpacityBoxPrice',
+                'label' => 'Box shadow (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box
+      ], //Secondary Button Settings
       [
         'type' => 'box',
         'title' => 'Static Banner Settings',
@@ -1393,6 +1536,144 @@ return [
                 'identifier' => 'borderRadiusImgTxtLink',
                 'name' => 'borderRadiusImgTxtLink',
                 'label' => 'Border radius (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Image text title documents',
+        'identifier' => 'box_15_b',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'titleColorImgTxtTitleDocuments',
+                'name' => 'titleColorImgTxtTitleDocuments',
+                'label' => 'Title color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorImgTxtTitleDocuments',
+                'name' => 'buttonColorImgTxtTitleDocuments',
+                'label' => 'Button 1 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundColorImgTxtTitleDocuments',
+                'name' => 'buttonBackgroundColorImgTxtTitleDocuments',
+                'label' => 'Button 1 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundHoverColorImgTxtTitleDocuments',
+                'name' => 'buttonBackgroundHoverColorImgTxtTitleDocuments',
+                'label' => 'Button 1 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorHoverImgTxtTitleDocuments',
+                'name' => 'buttonColorHoverImgTxtTitleDocuments',
+                'label' => 'Button 1 color hover',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBorderColorImgTxtTitleDocuments',
+                'name' => 'buttonBorderColorImgTxtTitleDocuments',
+                'label' => 'Button 1 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2ColorImgTxtTitleDocuments',
+                'name' => 'button2ColorImgTxtTitleDocuments',
+                'label' => 'Button 2 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2BackgroundColorImgTxtTitleDocuments',
+                'name' => 'button2BackgroundColorImgTxtTitleDocuments',
+                'label' => 'Button 2 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2BackgroundHoverColorImgTxtTitleDocuments',
+                'name' => 'button2BackgroundHoverColorImgTxtTitleDocuments',
+                'label' => 'Button 2 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2ColorHoverImgTxtTitleDocuments',
+                'name' => 'button2ColorHoverImgTxtTitleDocuments',
+                'label' => 'Button 2 color hover',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2BorderColorImgTxtTitleDocuments',
+                'name' => 'button2BorderColorImgTxtTitleDocuments',
+                'label' => 'Button 2 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'descColorImgTxtTitleDocuments',
+                'name' => 'descColorImgTxtTitleDocuments',
+                'label' => 'Description color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'titleFontSizeImgTitleDocuments',
+                'name' => 'titleFontSizeImgTitleDocuments',
+                'label' => 'Title font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'descFontSizeImgTxtTitleDocuments',
+                'name' => 'descFontSizeImgTxtTitleDocuments',
+                'label' => 'Description font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusImgTxtTitleDocuments',
+                'name' => 'borderRadiusImgTxtTitleDocuments',
+                'label' => 'Border radius box (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'buttonsFontSizeImgTitleDocuments',
+                'name' => 'buttonsFontSizeImgTitleDocuments',
+                'label' => 'Buttons font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusButtonsImgTxtTitleDocuments',
+                'name' => 'borderRadiusButtonsImgTxtTitleDocuments',
+                'label' => 'Border radius buttons (px)',
               ],
             ], //end children col
           ],
