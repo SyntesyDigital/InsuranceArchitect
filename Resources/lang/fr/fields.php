@@ -109,14 +109,16 @@ return [
     'price' => '1,000 €',
     'price_with_decimals' => '1,000.00 €',
     'price_with_decimals_2' => '1 000,00 €',
-    'day_month_year' => 'Jour / mois / année',
-    'day_month_year_2' => 'Jour - mois - année',
-    'day_month' => 'Jour / mois',
-    'month_year' => 'Mois / année',
-    'year' => 'Année',
+    'day_month_year' => 'JJ/MM/AAAA',
+    'day_month_year_2' => 'JJ-MM-AAAA',
+    'day_month' => 'JJ/MM',
+    'month_year' => 'MM/AAAA',
+    'year' => 'AAAA',
+    'day_month_year_hour' => 'JJ/MM/AAAA HH:MM',
     'telephone' => 'Téléphone',
     'collapsable' => 'Repliable',
     'moreBtn' => 'Voir plus',
     'addBtn' => 'Ajouter Element',
-    'excelBtn' => 'Texte exportation CSV',
+    'excelBtn' => 'Texte exportation CSV'
+    
 ];
