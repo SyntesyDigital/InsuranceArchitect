@@ -675,6 +675,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
+                'identifier' => 'frontElementHeadIconColor',
+                'name' => 'frontElementHeadIconColor',
+                'label' => 'Header icon color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
                 'identifier' => 'frontElementHeadBackground',
                 'name' => 'frontElementHeadBackground',
                 'label' => 'Header background color',
