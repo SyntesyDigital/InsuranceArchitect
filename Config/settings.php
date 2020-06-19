@@ -28,22 +28,22 @@ return [
         "route" => 'menu.index',
         "icon" => "fa-list",
         "label" => Lang::get('architect::settings.menu'),
-        //"roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN]
-        'permissions' => 'menu'
+        "roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN]
+        //'permissions' => 'menu'
     ],
 
     [
         "route" => 'pagelayouts',
         "icon" => "fa-columns",
         "label" => Lang::get('architect::settings.templates'),
-        //"roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN]
-        'permissions' => 'page_layouts'
+        "roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN]
+        //'permissions' => 'page_layouts'
     ],
     [
         "route" => 'styles',
         "icon" => "fa-paint-brush ",
         "label" => Lang::get('architect::settings.styles'),
-        //"roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN,ROLE_ADMIN]
-        'permissions' => 'styles'
+        "roles" => [ROLE_SYSTEM,ROLE_SUPERADMIN,ROLE_ADMIN]
+        //'permissions' => 'styles'
     ]
 ];
