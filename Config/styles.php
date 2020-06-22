@@ -2063,7 +2063,7 @@ return [
                 'input' => 'select',
                 'identifier' => 'alignFilterTable',
                 'name' => 'alignFilterTable',
-                'label' => 'Align filters (center, top, bottom)',
+                'label' => 'Align filters (top, bottom)',
                 'options' => [
                   [
                     'name' => 'Sélectionnez...',
@@ -2101,6 +2101,232 @@ return [
                   [
                     'name' => 'capitalize',
                     'value' => 'capitalize',
+                  ],
+                ],
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Chat',
+        'identifier' => 'box_21',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderColorChat',
+                'name' => 'senderColorChat',
+                'label' => 'Sender text color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderBackgroundColorChat',
+                'name' => 'senderBackgroundColorChat',
+                'label' => 'Sender background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderBorderColorChat',
+                'name' => 'senderBorderColorChat',
+                'label' => 'Sender border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderMailColorChat',
+                'name' => 'senderMailColorChat',
+                'label' => 'Sender mail color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderDateColorChat',
+                'name' => 'senderDateColorChat',
+                'label' => 'Sender date color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientColorChat',
+                'name' => 'recipientColorChat',
+                'label' => 'Recipient text color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientBackgroundColorChat',
+                'name' => 'recipientBackgroundColorChat',
+                'label' => 'Recipient background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientBorderColorChat',
+                'name' => 'recipientBorderColorChat',
+                'label' => 'Recipient border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientDateColorChat',
+                'name' => 'recipientDateColorChat',
+                'label' => 'Recipient date color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorChat',
+                'name' => 'buttonColorChat',
+                'label' => 'Button color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundColorChat',
+                'name' => 'buttonBackgroundColorChat',
+                'label' => 'Button background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBorderColorChat',
+                'name' => 'buttonBorderColorChat',
+                'label' => 'Button border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundHoverColorChat',
+                'name' => 'buttonBackgroundHoverColorChat',
+                'label' => 'Button background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorHoverChat',
+                'name' => 'buttonColorHoverChat',
+                'label' => 'Button hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonborderHoverColorChat',
+                'name' => 'buttonborderHoverColorChat',
+                'label' => 'Button border hover color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderFontSizeChat',
+                'name' => 'senderFontSizeChat',
+                'label' => 'Sender text Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderDateFontSizeChat',
+                'name' => 'senderDateFontSizeChat',
+                'label' => 'Sender date Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderMailFontSizeChat',
+                'name' => 'senderMailFontSizeChat',
+                'label' => 'Sender mail Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderBorderRadiusChat',
+                'name' => 'senderBorderRadiusChat',
+                'label' => 'Sender border-radius (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'recipientFontSizeChat',
+                'name' => 'recipientFontSizeChat',
+                'label' => 'Recipient text Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'recipientDateFontSizeChat',
+                'name' => 'recipientDateFontSizeChat',
+                'label' => 'Recipient date Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'recipientBorderRadiusChat',
+                'name' => 'recipientBorderRadiusChat',
+                'label' => 'Recipient border-radius (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeButtonChat',
+                'name' => 'fontSizeButtonChat',
+                'label' => 'Font-size button (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'buttonRadiusChat',
+                'name' => 'buttonRadiusChat',
+                'label' => 'Button border radius (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignButtonChat',
+                'name' => 'alignButtonChat',
+                'label' => 'Align button (top, bottom)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'top',
+                    'value' => 'top',
+                  ],
+                  [
+                    'name' => 'bottom',
+                    'value' => 'bottom',
                   ],
                 ],
               ],
