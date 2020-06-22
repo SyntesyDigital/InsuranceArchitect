@@ -1172,15 +1172,15 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-2',
             'children' => [
-              /*  [
-                          'type' => 'field',
-                          'input' => 'color',
-                          'identifier' => 'loginBackgroundColor',
-                          'name' => 'loginBackgroundColor',
-                          'label' => 'General background color',
-                      ],*/
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'loginContainerTextColor',
+                'name' => 'loginContainerTextColor',
+                'label' => 'Text color',
+              ],
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -1191,17 +1191,23 @@ return [
               [
                 'type' => 'field',
                 'input' => 'number',
-                'identifier' => 'loginContainerBorderRadius',
-                'name' => 'loginContainerBorderRadius',
-                'label' => 'Box border radius (px)',
+                'identifier' => 'loginContainerLogoBackgroundOpacity',
+                'name' => 'loginContainerLogoBackgroundOpacity',
+                'label' => 'Box logo background opacity 0-1',
               ],
               [
                 'type' => 'field',
                 'input' => 'color',
-                'identifier' => 'loginContainerTextColor',
-                'name' => 'loginContainerTextColor',
-                'label' => 'Text color',
+                'identifier' => 'loginContainerBorderColor',
+                'name' => 'loginContainerBorderColor',
+                'label' => 'Border color',
               ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-2',
+            'children' => [
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -1230,6 +1236,19 @@ return [
                 'name' => 'loginButtonHoverTextColor',
                 'label' => ' Button Hover text color',
               ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'loginContainerBorderRadius',
+                'name' => 'loginContainerBorderRadius',
+                'label' => 'Box border radius (px)',
+              ],
               [
                 'type' => 'field',
                 'input' => 'number',
@@ -1241,7 +1260,13 @@ return [
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
             'children' => [
               [
                 'type' => 'field',
@@ -1249,6 +1274,14 @@ return [
                 'identifier' => 'loginLogo',
                 'name' => 'loginLogo',
                 'label' => 'Logo',
+                'format' => 'medium',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'image',
+                'identifier' => 'loginBackgroundImage',
+                'name' => 'loginBackgroundImage',
+                'label' => 'Background image',
                 'format' => 'medium',
               ],
             ], //end children col
