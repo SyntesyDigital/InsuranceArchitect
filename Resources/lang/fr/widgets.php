@@ -63,4 +63,5 @@ return [
     'BANNER_HORIZONTAL' => 'Horizontal banner',
     'TABS' => 'Tabs',
     'TOTAL_BOX_PRICE' => 'Boîte totale price',
+    'CHAT' => 'Chat',
 ];
