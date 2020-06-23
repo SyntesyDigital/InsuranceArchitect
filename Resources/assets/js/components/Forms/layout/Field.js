@@ -1,18 +1,15 @@
-import React, {Component} from 'react';
-import { render } from 'react-dom';
-import Select from 'react-select';
-import {connect} from 'react-redux';
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
-
 } from './../actions/';
-
 import TextField from './fields/TextField';
 import ImageField from './fields/ImageField';
 import NumberField from './fields/NumberField';
 import ColorField from './fields/ColorField';
 import RichTextField from './fields/RichTextField';
 import FontField from './fields/FontField';
+import BooleanField from './fields/BooleanField';
+import SelectField from './fields/SelectField';
 
 class Field extends Component {
 
@@ -22,48 +19,60 @@ class Field extends Component {
 
   renderField() {
 
-    const {data} = this.props;
+    const { data } = this.props;
 
-    switch(data.input) {
-      case 'text' :
+    switch (data.input) {
+      case 'text':
         return (
           <TextField
             field={data}
           />
         );
 
-      case 'richtext' :
+      case 'richtext':
         return (
           <RichTextField
             field={data}
           />
         );
-      case 'font' :
+      case 'font':
         return (
           <FontField
             field={data}
           />
         );
-      case 'image' :
+      case 'image':
         return (
           <ImageField
             field={data}
           />
         );
 
-      case 'number' :
+      case 'number':
         return (
           <NumberField
             field={data}
           />
         );
-      case 'color' :
+      case 'color':
         return (
           <ColorField
             field={data}
           />
         );
-      default :
+      case 'boolean':
+        return (
+          <BooleanField
+            field={data}
+          />
+        );
+      case 'select':
+        return (
+          <SelectField
+            field={data}
+          />
+        );
+      default:
         return null;
     }
 
@@ -83,19 +92,19 @@ class Field extends Component {
 
 
 const mapStateToProps = state => {
-    return {
-        app: state.app
-    }
+  return {
+    app: state.app
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-        /*
-        changeField: (field) => {
-            return dispatch(changeField(field));
-        }
-        */
+  return {
+    /*
+    changeField: (field) => {
+        return dispatch(changeField(field));
     }
+    */
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Field);

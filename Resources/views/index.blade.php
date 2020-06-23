@@ -29,12 +29,12 @@
                 ></div>
               </div>
 
-            @endif
+              <div class="col-xs-12">
+                <!-- React SiteMap.js-->
+                <div id="dashboard-sitemap"></div>
+              </div>
 
-            <div class="col-xs-12">
-              <!-- React SiteMap.js-->
-              <div id="dashboard-sitemap"></div>
-            </div>
+            @endif
 
 
         </div>

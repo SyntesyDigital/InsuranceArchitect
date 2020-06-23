@@ -476,15 +476,8 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-md-6',
+            'class' => 'col-md-4',
             'children' => [
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'frontBodyTextColor',
-                'name' => 'frontBodyTextColor',
-                'label' => 'Text color',
-              ],
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -520,12 +513,13 @@ return [
                 'name' => 'frontBodyH5Color',
                 'label' => 'H5 color',
               ],
-            ], //end children col
-          ],
-          [
-            'type' => 'col',
-            'class' => 'col-md-6',
-            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontBodyTextColor',
+                'name' => 'frontBodyTextColor',
+                'label' => 'Text color',
+              ],
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -533,6 +527,12 @@ return [
                 'name' => 'frontBodyBackgroundColor',
                 'label' => 'Background color',
               ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
               [
                 'type' => 'field',
                 'input' => 'number',
@@ -567,6 +567,47 @@ return [
                 'identifier' => 'frontBodyH5FontSize',
                 'name' => 'frontBodyH5FontSize',
                 'label' => 'H5 font size',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH1FontWeight',
+                'name' => 'frontBodyH1FontWeight',
+                'label' => 'H1 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH2FontWeight',
+                'name' => 'frontBodyH2FontWeight',
+                'label' => 'H2 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH3FontWeight',
+                'name' => 'frontBodyH3FontWeight',
+                'label' => 'H3 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH4FontWeight',
+                'name' => 'frontBodyH4FontWeight',
+                'label' => 'H4 font weight',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontBodyH5FontWeight',
+                'name' => 'frontBodyH5FontWeight',
+                'label' => 'H5 font weight',
               ],
             ], //end children col
           ],
@@ -630,6 +671,13 @@ return [
                 'identifier' => 'frontElementHeadColor',
                 'name' => 'frontElementHeadColor',
                 'label' => 'Header text color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontElementHeadIconColor',
+                'name' => 'frontElementHeadIconColor',
+                'label' => 'Header icon color',
               ],
               [
                 'type' => 'field',
@@ -980,7 +1028,109 @@ return [
           ],
         ], //en children box
       ], //Secondary Button Settings
-
+      [
+        'type' => 'box',
+        'title' => 'Box total price Settings',
+        'identifier' => 'box_9c',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'titleColorBoxPrice',
+                'name' => 'titleColorBoxPrice',
+                'label' => 'Title color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'subtitleColorBoxPrice',
+                'name' => 'subtitleColorBoxPrice',
+                'label' => 'Subtitle color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'subtitle2ColorBoxPrice',
+                'name' => 'subtitle2ColorBoxPrice',
+                'label' => 'Subtitle 2 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorBoxPrice',
+                'name' => 'backgroundColorBoxPrice',
+                'label' => 'Background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundHoverColorBoxPrice',
+                'name' => 'backgroundHoverColorBoxPrice',
+                'label' => 'Background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'elementNumberPriceColorBoxPrice',
+                'name' => 'elementNumberPriceColorBoxPrice',
+                'label' => 'Number color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeTitleBoxPrice',
+                'name' => 'fontSizeTitleBoxPrice',
+                'label' => 'Title font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeNumberBoxPrice',
+                'name' => 'fontSizeNumberBoxPrice',
+                'label' => 'Number font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeSubTitleBoxPrice',
+                'name' => 'fontSizeSubTitleBoxPrice',
+                'label' => 'Subtitle font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeSubTitle2BoxPrice',
+                'name' => 'fontSizeSubTitle2BoxPrice',
+                'label' => 'Subtitle 2 font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusBoxPrice',
+                'name' => 'borderRadiusBoxPrice',
+                'label' => 'Border radius box (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'boxShadowOpacityBoxPrice',
+                'name' => 'boxShadowOpacityBoxPrice',
+                'label' => 'Box shadow (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box
+      ], //Secondary Button Settings
       [
         'type' => 'box',
         'title' => 'Static Banner Settings',
@@ -1400,6 +1550,144 @@ return [
       ], //end box 3
       [
         'type' => 'box',
+        'title' => 'Image text title documents',
+        'identifier' => 'box_15_b',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'titleColorImgTxtTitleDocuments',
+                'name' => 'titleColorImgTxtTitleDocuments',
+                'label' => 'Title color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorImgTxtTitleDocuments',
+                'name' => 'buttonColorImgTxtTitleDocuments',
+                'label' => 'Button 1 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundColorImgTxtTitleDocuments',
+                'name' => 'buttonBackgroundColorImgTxtTitleDocuments',
+                'label' => 'Button 1 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundHoverColorImgTxtTitleDocuments',
+                'name' => 'buttonBackgroundHoverColorImgTxtTitleDocuments',
+                'label' => 'Button 1 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorHoverImgTxtTitleDocuments',
+                'name' => 'buttonColorHoverImgTxtTitleDocuments',
+                'label' => 'Button 1 color hover',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBorderColorImgTxtTitleDocuments',
+                'name' => 'buttonBorderColorImgTxtTitleDocuments',
+                'label' => 'Button 1 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2ColorImgTxtTitleDocuments',
+                'name' => 'button2ColorImgTxtTitleDocuments',
+                'label' => 'Button 2 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2BackgroundColorImgTxtTitleDocuments',
+                'name' => 'button2BackgroundColorImgTxtTitleDocuments',
+                'label' => 'Button 2 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2BackgroundHoverColorImgTxtTitleDocuments',
+                'name' => 'button2BackgroundHoverColorImgTxtTitleDocuments',
+                'label' => 'Button 2 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2ColorHoverImgTxtTitleDocuments',
+                'name' => 'button2ColorHoverImgTxtTitleDocuments',
+                'label' => 'Button 2 color hover',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'button2BorderColorImgTxtTitleDocuments',
+                'name' => 'button2BorderColorImgTxtTitleDocuments',
+                'label' => 'Button 2 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'descColorImgTxtTitleDocuments',
+                'name' => 'descColorImgTxtTitleDocuments',
+                'label' => 'Description color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'titleFontSizeImgTitleDocuments',
+                'name' => 'titleFontSizeImgTitleDocuments',
+                'label' => 'Title font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'descFontSizeImgTxtTitleDocuments',
+                'name' => 'descFontSizeImgTxtTitleDocuments',
+                'label' => 'Description font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusImgTxtTitleDocuments',
+                'name' => 'borderRadiusImgTxtTitleDocuments',
+                'label' => 'Border radius box (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'buttonsFontSizeImgTitleDocuments',
+                'name' => 'buttonsFontSizeImgTitleDocuments',
+                'label' => 'Buttons font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusButtonsImgTxtTitleDocuments',
+                'name' => 'borderRadiusButtonsImgTxtTitleDocuments',
+                'label' => 'Border radius buttons (px)',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
+      [
+        'type' => 'box',
         'title' => 'Horizontal Banner',
         'identifier' => 'box_16',
         'children' => [
@@ -1679,7 +1967,7 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-md-6',
+            'class' => 'col-md-2',
             'children' => [
               [
                 'type' => 'field',
@@ -1741,7 +2029,7 @@ return [
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-5',
             'children' => [
               [
                 'type' => 'field',
@@ -1763,6 +2051,263 @@ return [
                 'identifier' => 'borderRadiusRowTable',
                 'name' => 'borderRadiusRowTable',
                 'label' => 'Border radius row (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-5',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignFilterTable',
+                'name' => 'alignFilterTable',
+                'label' => 'Align filters (top, bottom)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'top',
+                    'value' => 'top',
+                  ],
+                  [
+                    'name' => 'bottom',
+                    'value' => 'bottom',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'lowerUpperCaseHeaderTable',
+                'name' => 'lowerUpperCaseHeaderTable',
+                'label' => 'Text transform header (lowercase, uppercase, capitalize)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'lowercase',
+                    'value' => 'lowercase',
+                  ],
+                  [
+                    'name' => 'uppercase',
+                    'value' => 'uppercase',
+                  ],
+                  [
+                    'name' => 'capitalize',
+                    'value' => 'capitalize',
+                  ],
+                ],
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Chat',
+        'identifier' => 'box_21',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderColorChat',
+                'name' => 'senderColorChat',
+                'label' => 'Sender text color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderBackgroundColorChat',
+                'name' => 'senderBackgroundColorChat',
+                'label' => 'Sender background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderBorderColorChat',
+                'name' => 'senderBorderColorChat',
+                'label' => 'Sender border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderMailColorChat',
+                'name' => 'senderMailColorChat',
+                'label' => 'Sender mail color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'senderDateColorChat',
+                'name' => 'senderDateColorChat',
+                'label' => 'Sender date color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientColorChat',
+                'name' => 'recipientColorChat',
+                'label' => 'Recipient text color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientBackgroundColorChat',
+                'name' => 'recipientBackgroundColorChat',
+                'label' => 'Recipient background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientBorderColorChat',
+                'name' => 'recipientBorderColorChat',
+                'label' => 'Recipient border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'recipientDateColorChat',
+                'name' => 'recipientDateColorChat',
+                'label' => 'Recipient date color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorChat',
+                'name' => 'buttonColorChat',
+                'label' => 'Button color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundColorChat',
+                'name' => 'buttonBackgroundColorChat',
+                'label' => 'Button background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBorderColorChat',
+                'name' => 'buttonBorderColorChat',
+                'label' => 'Button border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonBackgroundHoverColorChat',
+                'name' => 'buttonBackgroundHoverColorChat',
+                'label' => 'Button background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonColorHoverChat',
+                'name' => 'buttonColorHoverChat',
+                'label' => 'Button hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'buttonborderHoverColorChat',
+                'name' => 'buttonborderHoverColorChat',
+                'label' => 'Button border hover color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderFontSizeChat',
+                'name' => 'senderFontSizeChat',
+                'label' => 'Sender text Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderDateFontSizeChat',
+                'name' => 'senderDateFontSizeChat',
+                'label' => 'Sender date Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderMailFontSizeChat',
+                'name' => 'senderMailFontSizeChat',
+                'label' => 'Sender mail Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'senderBorderRadiusChat',
+                'name' => 'senderBorderRadiusChat',
+                'label' => 'Sender border-radius (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'recipientFontSizeChat',
+                'name' => 'recipientFontSizeChat',
+                'label' => 'Recipient text Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'recipientDateFontSizeChat',
+                'name' => 'recipientDateFontSizeChat',
+                'label' => 'Recipient date Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'recipientBorderRadiusChat',
+                'name' => 'recipientBorderRadiusChat',
+                'label' => 'Recipient border-radius (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeButtonChat',
+                'name' => 'fontSizeButtonChat',
+                'label' => 'Font-size button (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'buttonRadiusChat',
+                'name' => 'buttonRadiusChat',
+                'label' => 'Button border radius (px)',
               ],
             ], //end children col
           ],

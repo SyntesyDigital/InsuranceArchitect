@@ -55,7 +55,7 @@ class Box extends Component {
             {data.title}
           </span>
         </button>
-        <div id={"collapse"+data.identifier} className="collapse in" aria-labelledby={"heading"+data.identifier} aria-expanded="true" aria-controls={"collapse"+data.identifier}>
+        <div id={"collapse"+data.identifier} className="collapse on" aria-labelledby={"heading"+data.identifier} aria-expanded="true" aria-controls={"collapse"+data.identifier}>
           <div className="row box">
             {this.renderBox()}
           </div>
