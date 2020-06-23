@@ -2309,27 +2309,6 @@ return [
                 'name' => 'buttonRadiusChat',
                 'label' => 'Button border radius (px)',
               ],
-              [
-                'type' => 'field',
-                'input' => 'select',
-                'identifier' => 'alignButtonChat',
-                'name' => 'alignButtonChat',
-                'label' => 'Align button (top, bottom)',
-                'options' => [
-                  [
-                    'name' => 'Sélectionnez...',
-                    'value' => '',
-                  ],
-                  [
-                    'name' => 'top',
-                    'value' => 'top',
-                  ],
-                  [
-                    'name' => 'bottom',
-                    'value' => 'bottom',
-                  ],
-                ],
-              ],
             ], //end children col
           ],
         ], //en children box 3
