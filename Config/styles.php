@@ -1172,15 +1172,29 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-2',
             'children' => [
-              /*  [
-                          'type' => 'field',
-                          'input' => 'color',
-                          'identifier' => 'loginBackgroundColor',
-                          'name' => 'loginBackgroundColor',
-                          'label' => 'General background color',
-                      ],*/
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'loginContainerLabelColor',
+                'name' => 'loginContainerLabelColor',
+                'label' => 'Label color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'loginContainerMotPasseColor',
+                'name' => 'loginContainerMotPasseColor',
+                'label' => 'Mot de passe color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'loginContainerTitleColor',
+                'name' => 'loginContainerTitleColor',
+                'label' => 'Title color',
+              ],
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -1190,17 +1204,10 @@ return [
               ],
               [
                 'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'loginContainerBorderRadius',
-                'name' => 'loginContainerBorderRadius',
-                'label' => 'Box border radius (px)',
-              ],
-              [
-                'type' => 'field',
                 'input' => 'color',
-                'identifier' => 'loginContainerTextColor',
-                'name' => 'loginContainerTextColor',
-                'label' => 'Text color',
+                'identifier' => 'loginContainerBorderColor',
+                'name' => 'loginContainerBorderColor',
+                'label' => 'Border color',
               ],
               [
                 'type' => 'field',
@@ -1232,16 +1239,124 @@ return [
               ],
               [
                 'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'loginButtonBorderRadius',
-                'name' => 'loginButtonBorderRadius',
-                'label' => 'Button border radius (px)',
+                'input' => 'color',
+                'identifier' => 'loginBorderColorFooter',
+                'name' => 'loginBorderColorFooter',
+                'label' => ' Border color footer',
               ],
             ], //end children col
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'loginContainerBorderRadius',
+                'name' => 'loginContainerBorderRadius',
+                'label' => 'Box border radius (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'loginButtonBorderRadius',
+                'name' => 'loginButtonBorderRadius',
+                'label' => 'Button border radius (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignMotDePasseLogin',
+                'name' => 'alignMotDePasseLogin',
+                'label' => 'Align *mot de passe (top, bottom)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'top',
+                    'value' => 'top',
+                  ],
+                  [
+                    'name' => 'bottom',
+                    'value' => 'bottom',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignHorizontalMotDePasseLogin',
+                'name' => 'alignHorizontalMotDePasseLogin',
+                'label' => 'Align *mot de passe (center, right)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'center',
+                    'value' => 'center',
+                  ],
+                  [
+                    'name' => 'right',
+                    'value' => 'right',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignFooterLogin',
+                'name' => 'alignFooterLogin',
+                'label' => 'Align footer (center, right)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'center',
+                    'value' => 'center',
+                  ],
+                  [
+                    'name' => 'right',
+                    'value' => 'right',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'lowerUpperCaseButtonLogin',
+                'name' => 'lowerUpperCaseButtonLogin',
+                'label' => 'Text transform button (lowercase, uppercase, capitalize)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'lowercase',
+                    'value' => 'lowercase',
+                  ],
+                  [
+                    'name' => 'uppercase',
+                    'value' => 'uppercase',
+                  ],
+                  [
+                    'name' => 'capitalize',
+                    'value' => 'capitalize',
+                  ],
+                ],
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-7',
             'children' => [
               [
                 'type' => 'field',
@@ -1250,6 +1365,65 @@ return [
                 'name' => 'loginLogo',
                 'label' => 'Logo',
                 'format' => 'medium',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'loginMaxHeightLogo',
+                'name' => 'loginMaxHeightLogo',
+                'label' => 'Logo max-height (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'boolean',
+                'identifier' => 'boxBackgroundLogoLogin',
+                'name' => 'boxBackgroundLogoLogin',
+                'label' => 'Box logo transparent (yes/no)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'boolean',
+                'identifier' => 'displayIconsLogin',
+                'name' => 'displayIconsLogin',
+                'label' => 'Display none icons (yes/no)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'richtext',
+                'identifier' => 'titleLogin',
+                'name' => 'titleLogin',
+                'label' => 'Text login title',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'image',
+                'identifier' => 'loginBackgroundImage',
+                'name' => 'loginBackgroundImage',
+                'label' => 'Background image',
+                'format' => 'medium',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'richtext',
+                'identifier' => 'loginBackgroundImageText',
+                'name' => 'loginBackgroundImageText',
+                'label' => 'Background image Text',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'image',
+                'identifier' => 'loginImageBorderTopRightContainer',
+                'name' => 'loginImageBorderTopRightContainer',
+                'label' => 'Image border top right',
+                'format' => 'original',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'image',
+                'identifier' => 'loginImageBorderBottomLeftContainer',
+                'name' => 'loginImageBorderBottomLeftContainer',
+                'label' => 'Image border bottom left',
+                'format' => 'original',
               ],
             ], //end children col
           ],
