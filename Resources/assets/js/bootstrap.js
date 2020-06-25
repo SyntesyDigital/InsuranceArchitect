@@ -8,12 +8,13 @@ window.Popper = require('popper.js').default;
  * code may be modified to fit the specific needs of your application.
  */
 
-
+/*
 try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
 } catch (e) {}
+*/
 
 
 /**
@@ -40,6 +41,12 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
+import { 
+    default as UserSessionService 
+} from './services/UserSessionService';
+
+window.userSession = new UserSessionService(CURRENT_USER !== undefined ? CURRENT_USER : {});
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

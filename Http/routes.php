@@ -4,19 +4,32 @@
 Auth::routes();
 
 Route::group([
-  'middleware' => ['web', 'auth:veos-ws','roles:ROLE_SUPERADMIN,ROLE_SYSTEM,ROLE_ADMIN', 'DetectUserLocale'],
+  'middleware' => ['web', 'auth:veos-ws','permissions:dashboard', 'DetectUserLocale'],
   'prefix' => 'architect',
   'namespace' => 'Modules\Architect\Http\Controllers'
 ], function()
 {
-
     Route::get('/', 'ArchitectController@index')->name('dashboard');
+});
 
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:styles', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
     // Styles
     Route::get('/styles', 'StyleController@index')->name('styles');
     Route::get('/styles/{name}', 'StyleController@show')->name('style.show');
-    Route::post('/styles/{style}/update', 'StyleController@update')->name('style.update');
+    Route::post('/styles/{style}/update', 'StyleController@update')->name('style.update')->middleware('permissions:styles.edit');
+});
 
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:medias', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
     // Medias
     Route::get('/medias', 'MediaController@index')->name('medias.index');
     Route::get('/medias/data', 'MediaController@data')->name('medias.data');
@@ -24,8 +37,8 @@ Route::group([
     Route::get('/medias/{media?}', 'MediaController@show')->name('medias.show');
     Route::delete('/medias/{media?}/delete', 'MediaController@delete')->name('medias.delete');
     Route::put('/medias/{media?}/update', 'MediaController@update')->name('medias.update');
-
 });
+
 
 
 /*
