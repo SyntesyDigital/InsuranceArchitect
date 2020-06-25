@@ -99,7 +99,7 @@ class ContentController extends Controller
 
         //print_r($data["page"]);
         //exit();
-
+        
         return view('architect::contents.show', $data);
     }
 
