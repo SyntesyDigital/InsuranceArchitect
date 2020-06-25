@@ -16,7 +16,7 @@ require('./material-kit/nouislider.min');
 require('./material-kit/bootstrap-datepicker');
 require('./material-kit/material-kit');
 
-//require('./bootstrap');
+require('./bootstrap');
 require('./libs/tweenMax/tweenmax.js');
 require('./libs/jquery.sortable.min.js');
 

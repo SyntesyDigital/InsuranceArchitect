@@ -100,10 +100,12 @@ class FormBar extends Component {
                   </div>
                 }
 
-              <a href="" className="btn btn-primary"
-                onClick={this.onSubmitForm.bind(this)}
-                disabled={saving}
-              > <i className="fa fa-cloud-upload"></i> &nbsp; {Lang.get('fields.save') } </a>
+              {userSession.hasPermission('styles.edit') && 
+                <a href="" className="btn btn-primary"
+                  onClick={this.onSubmitForm.bind(this)}
+                  disabled={saving}
+                > <i className="fa fa-cloud-upload"></i> &nbsp; {Lang.get('fields.save') } </a>
+              }
             </div>
 
             </div>

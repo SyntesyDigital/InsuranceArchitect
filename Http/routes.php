@@ -4,19 +4,32 @@
 Auth::routes();
 
 Route::group([
-  'middleware' => ['web', 'auth:veos-ws','roles:ROLE_SUPERADMIN,ROLE_SYSTEM,ROLE_ADMIN', 'DetectUserLocale'],
+  'middleware' => ['web', 'auth:veos-ws','permissions:dashboard', 'DetectUserLocale'],
   'prefix' => 'architect',
   'namespace' => 'Modules\Architect\Http\Controllers'
 ], function()
 {
-
     Route::get('/', 'ArchitectController@index')->name('dashboard');
+});
 
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:styles', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
     // Styles
     Route::get('/styles', 'StyleController@index')->name('styles');
     Route::get('/styles/{name}', 'StyleController@show')->name('style.show');
-    Route::post('/styles/{style}/update', 'StyleController@update')->name('style.update');
+    Route::post('/styles/{style}/update', 'StyleController@update')->name('style.update')->middleware('permissions:styles.edit');
+});
 
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:medias', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
     // Medias
     Route::get('/medias', 'MediaController@index')->name('medias.index');
     Route::get('/medias/data', 'MediaController@data')->name('medias.data');
@@ -24,7 +37,16 @@ Route::group([
     Route::get('/medias/{media?}', 'MediaController@show')->name('medias.show');
     Route::delete('/medias/{media?}/delete', 'MediaController@delete')->name('medias.delete');
     Route::put('/medias/{media?}/update', 'MediaController@update')->name('medias.update');
+});
 
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:settings', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
+    // settings
+    Route::get('/settings', 'ArchitectController@settings')->name('settings');
 });
 
 
@@ -47,7 +69,6 @@ Route::group([
     */
     Route::post('/file/upload', ['as' => 'upload-post', 'uses' => 'FileUploadController@postUpload']);
 
-    Route::get('/settings', 'ArchitectController@settings')->name('settings');
     Route::get('/contents/modal-data', 'ContentController@modalData')->name('contents.modal.data');
     Route::get('/contents/pages-tree', 'ContentController@pagesTree')->name('contents.pages-tree');
 });
@@ -59,7 +80,23 @@ Route::group([
 */
 
 Route::group([
-  'middleware' => ['web', 'auth:veos-ws','roles:ROLE_SUPERADMIN,ROLE_SYSTEM', 'DetectUserLocale'],
+  'middleware' => ['web', 'auth:veos-ws','permissions:page_layouts', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
+    // Layouts
+    Route::post('/page-layouts', 'PageLayoutController@store')->name('pagelayouts.store')->middleware('permissions:page_layouts.create');
+    Route::get('/page-layouts', 'PageLayoutController@index')->name('pagelayouts');
+    Route::get('/page-layouts/{pageLayout?}/show', 'PageLayoutController@show')->name('pagelayouts.show');
+    Route::get('/page-layouts/data', 'PageLayoutController@data')->name('pagelayouts.data');
+    Route::delete('/page-layouts/{pageLayout?}/delete', 'PageLayoutController@delete')->name('pagelayouts.delete')->middleware('permissions:page_layouts.remove');
+    Route::get('/page-layouts/modal-data', 'PageLayoutController@modalData')->name('pagelayouts.modal.data');
+});
+
+
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:contents', 'DetectUserLocale'],
   'prefix' => 'architect',
   'namespace' => 'Modules\Architect\Http\Controllers'
 ], function()
@@ -84,13 +121,7 @@ Route::group([
   Route::delete('/tags/{tag?}/delete', 'TagController@delete')->name('tags.delete');
   Route::get('/tags/{tag?}', 'TagController@show')->name('tags.show');
 
-  // Layouts
-  Route::post('/page-layouts', 'PageLayoutController@store')->name('pagelayouts.store');
-  Route::get('/page-layouts', 'PageLayoutController@index')->name('pagelayouts');
-  Route::get('/page-layouts/{pageLayout?}/show', 'PageLayoutController@show')->name('pagelayouts.show');
-  Route::get('/page-layouts/data', 'PageLayoutController@data')->name('pagelayouts.data');
-  Route::delete('/page-layouts/{pageLayout?}/delete', 'PageLayoutController@delete')->name('pagelayouts.delete');
-  Route::get('/page-layouts/modal-data', 'PageLayoutController@modalData')->name('pagelayouts.modal.data');
+  
 
   // Contents
   Route::post('/contents/{content?}/duplicate', 'ContentController@duplicate')->name('contents.duplicate');
@@ -108,16 +139,7 @@ Route::group([
 
   //Route::get('/settings', 'ArchitectController@settings')->name('settings');
 
-  // Menu
-  Route::get('/settings/menu', 'MenuController@index')->name('menu.index');
-  Route::get('/settings/menu/data', 'MenuController@data')->name('menu.data');
-  Route::get('/settings/menu/create', 'MenuController@create')->name('menu.create');
-  Route::put('/settings/menu/store', 'MenuController@store')->name('menu.store');
-  Route::get('/settings/menu/element/{id}', 'MenuController@element')->name('menu.element');
-  Route::put('/settings/menu/{menu}/update', 'MenuController@update')->name('menu.update');
-  Route::get('/settings/menu/{menu?}/tree', 'MenuController@elementsTree')->name('menu.show.tree');
-  Route::get('/settings/menu/{menu?}', 'MenuController@show')->name('menu.show');
-  Route::delete('/settings/menu/{menu?}/delete', 'MenuController@delete')->name('menu.delete');
+  
 
 
   // Typologies
@@ -152,4 +174,22 @@ Route::group([
   //Route::put('/users/{user?}/update', 'UserController@update')->name('users.update');
   //Route::get('/users/{user?}', 'UserController@show')->name('users.show');
 
+});
+
+Route::group([
+  'middleware' => ['web', 'auth:veos-ws','permissions:menu', 'DetectUserLocale'],
+  'prefix' => 'architect',
+  'namespace' => 'Modules\Architect\Http\Controllers'
+], function()
+{
+    // Menu
+    Route::get('/settings/menu', 'MenuController@index')->name('menu.index');
+    Route::get('/settings/menu/data', 'MenuController@data')->name('menu.data');
+    Route::get('/settings/menu/create', 'MenuController@create')->name('menu.create')->middleware('permissions:menu.create');
+    Route::put('/settings/menu/store', 'MenuController@store')->name('menu.store')->middleware('permissions:menu.create');
+    Route::get('/settings/menu/element/{id}', 'MenuController@element')->name('menu.element');
+    Route::put('/settings/menu/{menu}/update', 'MenuController@update')->name('menu.update')->middleware('permissions:menu.edit');
+    Route::get('/settings/menu/{menu?}/tree', 'MenuController@elementsTree')->name('menu.show.tree');
+    Route::get('/settings/menu/{menu?}', 'MenuController@show')->name('menu.show');
+    Route::delete('/settings/menu/{menu?}/delete', 'MenuController@delete')->name('menu.delete')->middleware('permissions:menu.remove');
 });
