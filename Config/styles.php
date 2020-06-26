@@ -1729,7 +1729,7 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-md-6',
+            'class' => 'col-md-2',
             'children' => [
               [
                 'type' => 'field',
@@ -1738,6 +1738,26 @@ return [
                 'name' => 'titleColorImgTxtTitleDocuments',
                 'label' => 'Title color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'borderTitleColorImgTxtTitleDocuments',
+                'name' => 'borderTitleColorImgTxtTitleDocuments',
+                'label' => 'Border color title',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'descColorImgTxtTitleDocuments',
+                'name' => 'descColorImgTxtTitleDocuments',
+                'label' => 'Description color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -1775,6 +1795,19 @@ return [
               ],
               [
                 'type' => 'field',
+                'input' => 'boolean',
+                'identifier' => 'buttonTransparentImgTxtTitleDocuments',
+                'name' => 'buttonTransparentImgTxtTitleDocuments',
+                'label' => 'Button 1 transparent (yes/no)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
                 'input' => 'color',
                 'identifier' => 'button2ColorImgTxtTitleDocuments',
                 'name' => 'button2ColorImgTxtTitleDocuments',
@@ -1808,18 +1841,11 @@ return [
                 'name' => 'button2BorderColorImgTxtTitleDocuments',
                 'label' => 'Button 2 border color',
               ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'descColorImgTxtTitleDocuments',
-                'name' => 'descColorImgTxtTitleDocuments',
-                'label' => 'Description color',
-              ],
             ], //end children col
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-3',
             'children' => [
               [
                 'type' => 'field',
@@ -1845,16 +1871,43 @@ return [
               [
                 'type' => 'field',
                 'input' => 'number',
-                'identifier' => 'buttonsFontSizeImgTitleDocuments',
-                'name' => 'buttonsFontSizeImgTitleDocuments',
-                'label' => 'Buttons font-size (px)',
+                'identifier' => 'button1FontSizeImgTitleDocuments',
+                'name' => 'button1FontSizeImgTitleDocuments',
+                'label' => 'Button 1 font-size (px)',
               ],
               [
                 'type' => 'field',
                 'input' => 'number',
-                'identifier' => 'borderRadiusButtonsImgTxtTitleDocuments',
-                'name' => 'borderRadiusButtonsImgTxtTitleDocuments',
-                'label' => 'Border radius buttons (px)',
+                'identifier' => 'button2FontSizeImgTitleDocuments',
+                'name' => 'button2FontSizeImgTitleDocuments',
+                'label' => 'Button 2 font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusButtons1ImgTxtTitleDocuments',
+                'name' => 'borderRadiusButtons1ImgTxtTitleDocuments',
+                'label' => 'Border radius button 1 (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusButtons2ImgTxtTitleDocuments',
+                'name' => 'borderRadiusButtons2ImgTxtTitleDocuments',
+                'label' => 'Border radius button 2 (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'titleFontWeightImgTitleDocuments',
+                'name' => 'titleFontWeightImgTitleDocuments',
+                'label' => 'Title font-weight (100-900)',
               ],
             ], //end children col
           ],
