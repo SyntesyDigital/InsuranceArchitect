@@ -1,33 +1,37 @@
 <?php
+
 //In import we only put the parameters from the https://fonts.googleapis.com/css?[PARAMETERS] import...
 return [
-    "Open Sans" => [
+    'Open Sans' => [
       'import' => 'family=Open+Sans:300,400,700&display=swap',
-      'name'  => 'Open Sans, sans-serif'
+      'name' => 'Open Sans, sans-serif',
     ],
-    "Roboto" =>[
+    'Roboto' => [
       'import' => 'family=Roboto:300,400,700&display=swap',
-      'name'  => 'Roboto, sans-serif'
+      'name' => 'Roboto, sans-serif',
     ],
-    "Lato" =>[
+    'Lato' => [
       'import' => 'family=Lato:300,400,700&display=swap',
-      'name'  => 'Lato, sans-serif'
+      'name' => 'Lato, sans-serif',
     ],
-    "Montserrat" =>[
+    'Montserrat' => [
       'import' => 'family=Montserrat:300,400,700&display=swap',
-      'name'  => 'Montserrat, sans-serif'
+      'name' => 'Montserrat, sans-serif',
     ],
-    "Source Sans Pro" =>[
+    'Source Sans Pro' => [
       'import' => 'family=Source+Sans+Pro:300,400,700&display=swap',
-      'name'  => 'Source Sans Pro, sans-serif'
+      'name' => 'Source Sans Pro, sans-serif',
     ],
-    "Raleway" =>[
+    'Raleway' => [
       'import' => 'family=Raleway:300,400,700&display=swap',
-      'name'  => 'Raleway, sans-serif'
+      'name' => 'Raleway, sans-serif',
     ],
-    "Ubuntu" =>[
+    'Ubuntu' => [
       'import' => 'family=Ubuntu:300,400,700&display=swap',
-      'name'  => 'Ubuntu, sans-serif'
+      'name' => 'Ubuntu, sans-serif',
     ],
-
+    'Poppins' => [
+      'import' => 'family=Poppins:wght@400;500&display=swap',
+      'name' => 'Poppins, sans-serif',
+    ],
   ];
