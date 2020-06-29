@@ -58,7 +58,6 @@ return [
                 'label' => 'Logo',
                 'format' => 'medium',
               ],
-
               [
                 'type' => 'field',
                 'input' => 'color',
@@ -1396,6 +1395,13 @@ return [
               ],
               [
                 'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'letterSpacingTitleLogin',
+                'name' => 'letterSpacingTitleLogin',
+                'label' => 'Letter spacing title (px)',
+              ],
+              [
+                'type' => 'field',
                 'input' => 'image',
                 'identifier' => 'loginBackgroundImage',
                 'name' => 'loginBackgroundImage',
@@ -1909,6 +1915,14 @@ return [
                 'name' => 'titleFontWeightImgTitleDocuments',
                 'label' => 'Title font-weight (100-900)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'image',
+                'identifier' => 'iconButton1ImgTitleDocuments',
+                'name' => 'iconButton1ImgTitleDocuments',
+                'label' => 'Logo',
+                'format' => 'medium',
+              ],
             ], //end children col
           ],
         ], //en children box 3
@@ -2141,6 +2155,13 @@ return [
                 'identifier' => 'backgroundColorTab',
                 'name' => 'backgroundColorTab',
                 'label' => 'Background color tab',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'fontColorActiveTab',
+                'name' => 'fontColorActiveTab',
+                'label' => 'Color font active tab',
               ],
               [
                 'type' => 'field',
