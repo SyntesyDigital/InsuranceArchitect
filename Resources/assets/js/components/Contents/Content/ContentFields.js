@@ -20,6 +20,8 @@ import VideoField from './../ContentFields/VideoField';
 import LocalizationField from './../ContentFields/LocalizationField';
 import UrlField from './../ContentFields/UrlField';
 import KeyValuesField from './../ContentFields/KeyValuesField';
+import IconField from './../ContentFields/IconField';
+
 
 class ContentFields extends Component {
 
@@ -200,6 +202,16 @@ class ContentFields extends Component {
                 case FIELDS.LOCALIZATION.type:
                     fields.push(
                         <LocalizationField
+                            field={_this.props.app.fields[k]}
+                            key={k}
+                            onFieldChange={_this.handleFieldChange}
+                        />
+                    );
+                    break;
+
+                case FIELDS.ICON.type:
+                    fields.push(
+                        <IconField
                             field={_this.props.app.fields[k]}
                             key={k}
                             onFieldChange={_this.handleFieldChange}

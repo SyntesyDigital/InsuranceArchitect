@@ -5,16 +5,15 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-class MissingDocuments extends Widget implements WidgetInterface
+class BackgroundImage extends Widget implements WidgetInterface
 {
     public $type = 'widget';
     public $icon = 'fas fa-chart-bar';
-    public $name = 'MISSING_DOCUMENTS';
+    public $name = 'BACKGROUND_IMAGE';
     public $component = 'CommonWidget';
 
     public $fields = [
-        'title' => 'Modules\Architect\Fields\Types\Text',
-        'icon' => 'Modules\Architect\Fields\Types\Icon',
+        'image' => 'Modules\Architect\Fields\Types\Image',
     ];
 
     public $rules = [
@@ -24,11 +23,9 @@ class MissingDocuments extends Widget implements WidgetInterface
     public $hidden = false;
 
     public $settings = [
-        'collapsable',
-        'collapsed',
-        'bootstrapColumns',
-        'tableElements',
-        'conditionalVisibility',
-        'itemsPerPage',
+      'htmlId',
+      'htmlClass',
+      'conditionalVisibility',
+      'height',
     ];
 }

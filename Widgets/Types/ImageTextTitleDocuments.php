@@ -5,30 +5,28 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-class ElementCard extends Widget implements WidgetInterface
+class ImageTextTitleDocuments extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'fa fa-columns';
-    public $name = 'ELEMENT_CARD';
+    public $icon = 'fa-file-o';
+    public $name = 'IMAGE_TEXT_TITLE_DOCUMENTS';
     public $component = 'CommonWidget';
 
     public $fields = [
+        'image' => 'Modules\Architect\Fields\Types\Image',
         'title' => 'Modules\Architect\Fields\Types\Text',
         'link' => 'Modules\Architect\Fields\Types\Link',
-        'icon' => 'Modules\Architect\Fields\Types\Icon',
+        'link2' => 'Modules\Architect\Fields\Types\Link',
+        'richtext' => 'Modules\Architect\Fields\Types\RichText',
     ];
 
     public $rules = [
         'required',
     ];
 
-    public $hidden = false;
-
     public $settings = [
-        'fileElements',
-        'template',
-        'collapsable',
-        'collapsed',
-        'conditionalVisibility',
+        'htmlId',
+        'htmlClass',
+        'cropsAllowed',
     ];
 }

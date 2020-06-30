@@ -7,8 +7,8 @@
   const CURRENT_USER = {!! Auth::user() ? json_encode(Auth::user(), JSON_PRETTY_PRINT) : 'null' !!};
   const LANGUAGES = {!! json_encode(Modules\Architect\Entities\Language::orderBy('name', 'DESC')->get(), JSON_PRETTY_PRINT) !!};
   const TYPOLOGIES = {!! json_encode(Modules\Architect\Entities\Typology::all(), JSON_PRETTY_PRINT) !!};
-  const ROW_SETTINGS = ['htmlId','htmlClass','hasContainer','textAlign'];
-  const COL_SETTINGS = ['htmlId','htmlClass','textAlign','stripped','labelAlign','valueAlign','display'];
+  const ROW_SETTINGS = ['htmlId','htmlClass','hasContainer','textAlign','hideBorders', 'boxClass'];
+  const COL_SETTINGS = ['htmlId','htmlClass','textAlign','stripped','labelAlign','valueAlign','display', 'hideBorders'];
   const PAGE_SETTINGS = ['htmlClass','pageType'];
   const CONTENT_SETTINGS = ['htmlClass'];
   const CATEGORIES = {!! json_encode(Modules\Architect\Entities\Category::all(), JSON_PRETTY_PRINT) !!};

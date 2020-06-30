@@ -147,13 +147,19 @@ class ModalSelectItem extends Component {
     var fields = [];
 
     var nonAllowed = [
-        //FIELDS["CONTENTS"].type,
+        FIELDS["CONTENTS"].type,
         FIELDS["SLUG"].type,
         FIELDS["KEY_VALUES"].type,
-        //FIELDS["IMAGES"].type,
+        FIELDS["IMAGES"].type,
         FIELDS["BOOLEAN"].type,
         FIELDS["URL"].type,
-        //FIELDS["FILE"].type
+        FIELDS["FILE"].type,
+        FIELDS["TRANSLATED_FILE"].type,
+        FIELDS["VIDEO"].type,
+        FIELDS["LOCALIZATION"].type,
+        FIELDS["DATE"].type,
+        FIELDS["LINK"].type
+
     ];
 
     for( var key in FIELDS){

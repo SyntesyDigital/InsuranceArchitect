@@ -14,6 +14,7 @@ import {
 import RichTextPreview from './Previews/RichTextPreview';
 import WidgetPreview from './Previews/WidgetPreview';
 import SettingsPreview from './Previews/SettingsPreview';
+import PageDragItem from './PageDragItem';
 
 class PageItem extends Component {
 
@@ -21,9 +22,7 @@ class PageItem extends Component {
         super(props);
     }
 
-    onEditItem(e) {
-        e.preventDefault();
-
+    onEditItem() {
         this.props.editItem(this.props);
     }
 
@@ -278,9 +277,14 @@ class PageItem extends Component {
                     }
                 </div>
 
-                <div className="item-content" onClick={this.onEditItem.bind(this)}>
+                <PageDragItem
+                    editable={this.props.data.type != "element_field"}
+                    onEditItem={this.onEditItem.bind(this)}
+                    definition={this.props.data}
+                    pathToIndex={this.props.pathToIndex}
+                >
                     {this.renderPreview()}
-                </div>
+                </PageDragItem>
             </div>
         );
     }

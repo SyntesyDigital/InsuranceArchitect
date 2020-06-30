@@ -85,6 +85,7 @@ function modalEditReducer(state = initialState, action) {
               categories : action.payload.categories
             }
         case EDIT_ITEM_UPDATE_ELEMENS :
+
             return {
               ...state,
               originalElements : action.payload.originalElements,

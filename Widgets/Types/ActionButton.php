@@ -5,16 +5,16 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-class ElementSecondaryTable extends Widget implements WidgetInterface
+class ActionButton extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'fa fa-table';
-    public $name = 'ELEMENT_SECONDARY_TABLE';
+    public $icon = 'fas fa-external-link-square-alt';
+    public $name = 'ACTION_BUTTON';
     public $component = 'CommonWidget';
 
     public $fields = [
+        'url' => 'Modules\Architect\Fields\Types\Url',
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'moreBtn' => 'Modules\Architect\Fields\Types\Link',
         'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
@@ -25,14 +25,9 @@ class ElementSecondaryTable extends Widget implements WidgetInterface
     public $hidden = false;
 
     public $settings = [
-        'maxItems',
-        'hideEmptyRows',
-        'pagination',
-        'tableElements',
-        'collapsable',
-        'collapsed',
+        'htmlId',
+        'htmlClass',
         'hiddenFilter',
         'conditionalVisibility',
-        'headerRowsNumber'
     ];
 }

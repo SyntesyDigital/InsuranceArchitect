@@ -5,16 +5,15 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-class ElementSecondaryTable extends Widget implements WidgetInterface
+class TableList extends Widget implements WidgetInterface
 {
     public $type = 'widget';
     public $icon = 'fa fa-table';
-    public $name = 'ELEMENT_SECONDARY_TABLE';
+    public $name = 'TABLE_LIST';
     public $component = 'CommonWidget';
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'moreBtn' => 'Modules\Architect\Fields\Types\Link',
         'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
@@ -25,14 +24,11 @@ class ElementSecondaryTable extends Widget implements WidgetInterface
     public $hidden = false;
 
     public $settings = [
-        'maxItems',
-        'hideEmptyRows',
-        'pagination',
-        'tableElements',
-        'collapsable',
-        'collapsed',
-        'hiddenFilter',
-        'conditionalVisibility',
-        'headerRowsNumber'
+      'collapsable',
+      'collapsed',
+      'bootstrapColumns',
+      'tableElements',
+      'conditionalVisibility',
+      'itemsPerPage',
     ];
 }
