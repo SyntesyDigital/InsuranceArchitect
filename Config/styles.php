@@ -950,7 +950,309 @@ return [
           ],
         ], //en children box
       ], //Secondary Button Settings
-
+      [
+        'type' => 'box',
+        'title' => 'Action List',
+        'identifier' => 'box_8h',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'labelActionListColor',
+                'name' => 'labelActionListColor',
+                'label' => 'Label Color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListButtonBackgroundColor',
+                'name' => 'actionListButtonBackgroundColor',
+                'label' => 'Button background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListButtonBackgroundHoverColor',
+                'name' => 'actionListButtonBackgroundHoverColor',
+                'label' => 'Button background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListButtonBorderColor',
+                'name' => 'actionListButtonBorderColor',
+                'label' => 'Button border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListButtonBorderHoverColor',
+                'name' => 'actionListButtonBorderHoverColor',
+                'label' => 'Button border hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListButtonColorIcon',
+                'name' => 'actionListButtonColorIcon',
+                'label' => 'Button color icon',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListButtonHoverColorIcon',
+                'name' => 'actionListButtonHoverColorIcon',
+                'label' => 'Button hover color icon',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListDropdownColor',
+                'name' => 'actionListDropdownColor',
+                'label' => 'Dropdown color text',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListDropdownHoverColor',
+                'name' => 'actionListDropdownHoverColor',
+                'label' => 'Dropdown hover color text',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'actionListDropdownBackgroundColor',
+                'name' => 'actionListDropdownBackgroundColor',
+                'label' => 'Dropdown background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'labelActionListFontSize',
+                'name' => 'labelActionListFontSize',
+                'label' => 'Label Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'actionListDropdownTextFontSize',
+                'name' => 'actionListDropdownTextFontSize',
+                'label' => 'Dropdown text Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'actionListDropdownBorderRadius',
+                'name' => 'actionListDropdownBorderRadius',
+                'label' => 'Dropdown border radius',
+              ],
+            ],
+          ],
+        ], //en children box
+      ], //Secondary Button Settings
+      [
+        'type' => 'box',
+        'title' => 'Buttons',
+        'identifier' => 'box_8d',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn1Color',
+                'name' => 'btn1Color',
+                'label' => 'Button 1 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn1BackgroundColor',
+                'name' => 'btn1BackgroundColor',
+                'label' => 'Button 1 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn1BorderColor',
+                'name' => 'btn1BorderColor',
+                'label' => 'Button 1 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn1BackgroundHoverColor',
+                'name' => 'btn1BackgroundHoverColor',
+                'label' => 'Button 1 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn1HoverColor',
+                'name' => 'btn1HoverColor',
+                'label' => 'Button 1 hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn1HoverBorderColor',
+                'name' => 'btn1HoverBorderColor',
+                'label' => 'Button 1 hover border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn1FontSize',
+                'name' => 'btn1FontSize',
+                'label' => 'Button 1 font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn1BorderRadius',
+                'name' => 'btn1BorderRadius',
+                'label' => 'Button 1 border-radius (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn2Color',
+                'name' => 'btn2Color',
+                'label' => 'Button 2 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn2BackgroundColor',
+                'name' => 'btn2BackgroundColor',
+                'label' => 'Button 2 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn2BorderColor',
+                'name' => 'btn2BorderColor',
+                'label' => 'Button 2 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn2BackgroundHoverColor',
+                'name' => 'btn2BackgroundHoverColor',
+                'label' => 'Button 2 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn2HoverColor',
+                'name' => 'btn2HoverColor',
+                'label' => 'Button 2 hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn2BorderHoverColor',
+                'name' => 'btn2BorderHoverColor',
+                'label' => 'Button 2 hover border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn2FontSize',
+                'name' => 'btn2FontSize',
+                'label' => 'Button 2 font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn2BorderRadius',
+                'name' => 'btn2BorderRadius',
+                'label' => 'Button 2 border-radius (px)',
+              ],
+            ],
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn3Color',
+                'name' => 'btn3Color',
+                'label' => 'Button 3 color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn3BackgroundColor',
+                'name' => 'btn3BackgroundColor',
+                'label' => 'Button 3 background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn3BorderColor',
+                'name' => 'btn3BorderColor',
+                'label' => 'Button 3 border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn3BackgroundHoverColor',
+                'name' => 'btn3BackgroundHoverColor',
+                'label' => 'Button 3 background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn3HoverColor',
+                'name' => 'btn3HoverColor',
+                'label' => 'Button 3 hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'btn3BorderHoverColor',
+                'name' => 'btn3BorderHoverColor',
+                'label' => 'Button 3 hover border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn3FontSize',
+                'name' => 'btn3FontSize',
+                'label' => 'Button 3 font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn3BorderRadius',
+                'name' => 'btn3BorderRadius',
+                'label' => 'Button 3 border-radius (px)',
+              ],
+            ],
+          ],
+        ], //en children box
+      ], //Buttons
       [
         'type' => 'box',
         'title' => 'Box total Settings',
