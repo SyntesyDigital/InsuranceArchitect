@@ -1146,6 +1146,32 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="btnClass"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Button class'}
+          options={[
+            {
+              value: "",
+              name: "---",
+            },
+            {
+              value: "btn-1",
+              name: "btn-1",
+            },
+            {
+              value: "btn-2",
+              name: "btn-2",
+            },
+            {
+              value: "btn-3",
+              name: "btn-3",
+            },
+          ]}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="fontSize"

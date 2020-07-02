@@ -64,4 +64,6 @@ return [
     'TABS' => 'Tabs',
     'TOTAL_BOX_PRICE' => 'Boîte totale price',
     'CHAT' => 'Chat',
+    'SIMPLE_BUTTON' => 'Simple Button',
+    'ACTION_LIST' => 'Action List',
 ];
