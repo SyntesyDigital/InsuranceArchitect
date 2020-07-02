@@ -673,6 +673,31 @@ return [
               ],
               [
                 'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'elementHeadTextTransform',
+                'name' => 'elementHeadTextTransform',
+                'label' => 'Text header transform (lowercase, uppercase, capitalize)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'lowercase',
+                    'value' => 'lowercase',
+                  ],
+                  [
+                    'name' => 'uppercase',
+                    'value' => 'uppercase',
+                  ],
+                  [
+                    'name' => 'capitalize',
+                    'value' => 'capitalize',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
                 'input' => 'color',
                 'identifier' => 'frontElementHeadIconColor',
                 'name' => 'frontElementHeadIconColor',
