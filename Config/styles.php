@@ -1524,6 +1524,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
+                'identifier' => 'loginInputBorderColor',
+                'name' => 'loginInputBorderColor',
+                'label' => 'Input color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
                 'identifier' => 'loginContainerBackgroundColor',
                 'name' => 'loginContainerBackgroundColor',
                 'label' => 'Box background color',
