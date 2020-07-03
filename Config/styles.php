@@ -1526,7 +1526,7 @@ return [
                 'input' => 'color',
                 'identifier' => 'loginInputBorderColor',
                 'name' => 'loginInputBorderColor',
-                'label' => 'Input color',
+                'label' => 'Input border color',
               ],
               [
                 'type' => 'field',
