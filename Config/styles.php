@@ -643,6 +643,13 @@ return [
                 'name' => 'frontFooterBackgroundColor',
                 'label' => 'Background color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontFooterVersionColor',
+                'name' => 'frontFooterVersionColor',
+                'label' => 'Text version color',
+              ],
             ], //end children col
           ],
         ], //en children box
@@ -1573,6 +1580,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
+                'identifier' => 'loginButtonHoverBorderColor',
+                'name' => 'loginButtonHoverBorderColor',
+                'label' => ' Button Hover border color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
                 'identifier' => 'loginBorderColorFooter',
                 'name' => 'loginBorderColorFooter',
                 'label' => ' Border color footer',
@@ -1848,6 +1862,13 @@ return [
                 'identifier' => 'borderRadiusInput',
                 'name' => 'borderRadiusInput',
                 'label' => 'Border-radius input (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderPxInputForm',
+                'name' => 'borderPxInputForm',
+                'label' => 'Border (px) input',
               ],
             ], //end children col
           ],

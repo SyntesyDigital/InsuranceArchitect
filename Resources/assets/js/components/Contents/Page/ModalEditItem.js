@@ -1172,6 +1172,32 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="alignContent"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Align content'}
+          options={[
+            {
+              value: "",
+              name: "---",
+            },
+            {
+              value: "center",
+              name: "center",
+            },
+            {
+              value: "right",
+              name: "right",
+            },
+            {
+              value: "left",
+              name: "left",
+            },
+          ]}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="fontSize"

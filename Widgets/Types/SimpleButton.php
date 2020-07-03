@@ -26,5 +26,6 @@ class SimpleButton extends Widget implements WidgetInterface
         'hiddenFilter',
         'conditionalVisibility',
         'btnClass',
+        'alignContent'
     ];
 }

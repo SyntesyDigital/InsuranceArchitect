@@ -19,5 +19,6 @@ class ActionList extends Widget implements WidgetInterface
     public $settings = [
         'htmlId',
         'htmlClass',
+        'alignContent'    
     ];
 }
