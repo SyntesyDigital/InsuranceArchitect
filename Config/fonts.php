@@ -31,7 +31,7 @@ return [
       'name' => 'Ubuntu, sans-serif',
     ],
     'Poppins' => [
-      'import' => 'family=Poppins:wght@200,400,500&display=swap',
+      'import' => 'family=Poppins:200,400,500&display=swap',
       'name' => 'Poppins, sans-serif',
     ],
   ];
