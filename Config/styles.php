@@ -620,7 +620,7 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-md-12',
+            'class' => 'col-md-4',
             'children' => [
               [
                 'type' => 'field',
@@ -649,6 +649,13 @@ return [
                 'identifier' => 'frontFooterVersionColor',
                 'name' => 'frontFooterVersionColor',
                 'label' => 'Text version color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'boolean',
+                'identifier' => 'footerPosition',
+                'name' => 'footerPosition',
+                'label' => 'Footer position on menu sidebar left (yes/no)',
               ],
             ], //end children col
           ],
