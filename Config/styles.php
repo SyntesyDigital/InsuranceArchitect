@@ -1852,6 +1852,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'number',
+                'identifier' => 'labelRadioFieldFontSize',
+                'name' => 'labelRadioFieldFontSize',
+                'label' => 'Label radio-field font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
                 'identifier' => 'labelInputPadding',
                 'name' => 'labelInputPadding',
                 'label' => 'Label input padding (px)',
