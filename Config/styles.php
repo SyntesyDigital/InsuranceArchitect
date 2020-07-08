@@ -406,7 +406,7 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-4',
             'children' => [
               [
                 'type' => 'field',
@@ -447,7 +447,7 @@ return [
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-4',
             'children' => [
               [
                 'type' => 'field',
@@ -462,6 +462,19 @@ return [
                 'identifier' => 'frontSidebarActiveBackgroundColor',
                 'name' => 'frontSidebarActiveBackgroundColor',
                 'label' => 'Active Background color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontSidebarBorderRadiusBottomRight',
+                'name' => 'frontSidebarBorderRadiusBottomRight',
+                'label' => 'Border radius bottom right (px)',
               ],
             ], //end children col
           ],
@@ -650,12 +663,52 @@ return [
                 'name' => 'frontFooterVersionColor',
                 'label' => 'Text version color',
               ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontFooterTextContactColor',
+                'name' => 'frontFooterTextContactColor',
+                'label' => 'Text contact color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontFooterTextNumberColor',
+                'name' => 'frontFooterTextNumberColor',
+                'label' => 'Text number color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
               [
                 'type' => 'field',
                 'input' => 'boolean',
                 'identifier' => 'footerPosition',
                 'name' => 'footerPosition',
                 'label' => 'Footer position on menu sidebar left (yes/no)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'richtext',
+                'identifier' => 'footerContactText',
+                'name' => 'footerContactText',
+                'label' => 'Text contact',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'richtext',
+                'identifier' => 'footerContactPhone',
+                'name' => 'footerContactPhone',
+                'label' => 'Phone contact',
               ],
             ], //end children col
           ],
