@@ -14,6 +14,7 @@ import {
 import TagManager from "./../Tags/TagManager";
 import InputSettingsField from './../../Typology/Settings/InputSettingsField';
 import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField';
+import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
 
 import moment from 'moment';
 
@@ -126,14 +127,36 @@ class ContentSidebar extends Component {
       this.props.publishToogle(this.props.app.content.id,newStatus);
   }
 
+    /**
+    *   configuration can be changed because some settings or $rule
+    *   added directly to PHP. It's necessary to update the json stored in BBDD
+    *   to update the avialabe settings, and modifiy if necessary
+    */
+  updateSettingsFromConfig(field) {
+
+    var config = PAGE_SETTINGS;
+
+    if(config !== undefined ) {
+      for(var id in config){
+        var setting = config[id];
+        if(field.settings[setting] === undefined){
+          field.settings[setting] = null;
+        }
+      }
+    }
+
+    return field;
+  }
+
   renderSettings()
   {
 
     //console.log("settings => ",this.props.app.settings)
 
-    const field = {
+    let field = {
       settings : this.props.app.settings
     };
+    field = this.updateSettingsFromConfig(field);
 
     return (
       <div>
@@ -174,6 +197,17 @@ class ContentSidebar extends Component {
             inputLabel={Lang.get('modals.indica_html')}
           />
         </div>
+
+        <div className="form-group bmd-form-group sidebar-item">
+          <BooleanSettingsField
+            field={field}
+            name="accessByLink"
+            source="settings"
+            onFieldChange={this.handleFieldSettingsChange.bind(this)}
+            label={'Accessible par le lien'}
+          />
+        </div>
+        
 
       </div>
 

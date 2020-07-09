@@ -9,7 +9,7 @@
   const TYPOLOGIES = {!! json_encode(Modules\Architect\Entities\Typology::all(), JSON_PRETTY_PRINT) !!};
   const ROW_SETTINGS = ['htmlId','htmlClass','hasContainer','textAlign','hideBorders', 'boxClass','conditionalVisibility'];
   const COL_SETTINGS = ['htmlId','htmlClass','textAlign','stripped','labelAlign','valueAlign','display', 'hideBorders','conditionalVisibility'];
-  const PAGE_SETTINGS = ['htmlClass','pageType'];
+  const PAGE_SETTINGS = ['htmlClass','pageType','accessByLink'];
   const CONTENT_SETTINGS = ['htmlClass'];
   const CATEGORIES = {!! json_encode(Modules\Architect\Entities\Category::all(), JSON_PRETTY_PRINT) !!};
   const DEFAULT_LOCALE = '{{ Modules\Architect\Entities\Language::getDefault()->iso}}';

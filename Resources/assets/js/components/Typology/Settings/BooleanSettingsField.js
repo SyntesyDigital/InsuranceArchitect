@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { render } from 'react-dom';
+
+import ToggleField from '../../Layout/Fields/ToggleField';
 
 class BooleanSettingsField extends Component {
 
@@ -9,15 +10,14 @@ class BooleanSettingsField extends Component {
     this.handleFieldChange = this.handleFieldChange.bind(this);
   }
 
-  handleFieldChange(event) {
+  handleFieldChange(name,value) {
     var field = {
-      name : event.target.name,
+      name : name,
       source : this.props.source,
-      value : event.target.checked
+      value : value
     };
 
     this.props.onFieldChange(field);
-
   }
 
   render() {
@@ -31,18 +31,13 @@ class BooleanSettingsField extends Component {
     }
 
     return (
-      <div className="setup-field" style={{display : display ? "block":"none"}}>
-        <div className="togglebutton">
-          <label>
-              <input
-                type="checkbox"
-                name={this.props.name}
-                checked={  checkbox != null  ? checkbox : false }
-                onChange={this.handleFieldChange}
-              />
-              {this.props.label}
-          </label>
-        </div>
+      <div className="setup-field version-2" style={{display : display ? "block":"none"}}>
+          <ToggleField
+            label={this.props.label}
+            name={this.props.name}
+            checked={  checkbox != null  ? checkbox : false }
+            onChange={this.handleFieldChange}
+          />
       </div>
     );
   }
