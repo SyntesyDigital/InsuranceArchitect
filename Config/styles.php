@@ -722,7 +722,7 @@ return [
         'children' => [
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-4',
             'children' => [
               [
                 'type' => 'field',
@@ -779,6 +779,13 @@ return [
               ],
               [
                 'type' => 'field',
+                'input' => 'boolean',
+                'identifier' => 'frontElementHeadTransparent',
+                'name' => 'frontElementHeadTransparent',
+                'label' => 'Header background transparent (yes/no)',
+              ],
+              [
+                'type' => 'field',
                 'input' => 'color',
                 'identifier' => 'frontElementColor',
                 'name' => 'frontElementColor',
@@ -823,7 +830,7 @@ return [
           ],
           [
             'type' => 'col',
-            'class' => 'col-sm-12 col-md-6',
+            'class' => 'col-sm-12 col-md-4',
             'children' => [
               [
                 'type' => 'field',
