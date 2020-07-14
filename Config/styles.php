@@ -463,6 +463,13 @@ return [
                 'name' => 'frontSidebarActiveBackgroundColor',
                 'label' => 'Active Background color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'frontSidebarBorderColor',
+                'name' => 'frontSidebarBorderColor',
+                'label' => 'Border color items',
+              ],
             ], //end children col
           ],
           [
