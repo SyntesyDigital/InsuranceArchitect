@@ -28,6 +28,20 @@ class ColorField extends Component
     this.setState({ displayColorPicker: !this.state.displayColorPicker })
   }
 
+  handleRemove(){
+
+    event.preventDefault();
+
+    const {field} = this.props;
+
+    this.props.changeField({
+      name : field.name,
+      value : '',
+      type : TYPE_COLOR
+    });
+    
+  }
+
   handleClose(){
     this.setState({ displayColorPicker: false })
   }
@@ -65,13 +79,15 @@ class ColorField extends Component
 
     return (
 
-      <div className={"form-group bmd-form-group "+errors}>
+      <div className={"form-group bmd-form-group color-field-container"+errors}>
           <label className="bmd-label-floating">
             {field.label}
           </label>
 
           <div className="color-field-swatch"  onClick={ this.handleClick.bind(this) }>
             <div className="color-field-color" style={ styles.color } />
+            <a href="#" onClick={this.handleRemove.bind(this)} class="btn btn-link text-danger"><i class="fa fa-times"></i></a>
+
           </div>
           { this.state.displayColorPicker &&
             <div className="color-field-popover" >
