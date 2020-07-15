@@ -470,6 +470,13 @@ return [
                 'name' => 'frontSidebarBorderColor',
                 'label' => 'Border color items',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontSidebarHeightUser',
+                'name' => 'frontSidebarHeightUser',
+                'label' => 'Height user box',
+              ],
             ], //end children col
           ],
           [
