@@ -490,6 +490,20 @@ return [
                 'name' => 'frontSidebarBorderRadiusBottomRight',
                 'label' => 'Border radius bottom right (px)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontSidebarFontSizeItems',
+                'name' => 'frontSidebarFontSizeItems',
+                'label' => 'Font-size items (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontSidebarWidth',
+                'name' => 'frontSidebarWidth',
+                'label' => 'Width sidebar (px)',
+              ],
             ], //end children col
           ],
         ], //en children box
