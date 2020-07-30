@@ -1916,6 +1916,13 @@ return [
                 'name' => 'hoverColorInput',
                 'label' => 'Hover input color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'text',
+                'identifier' => 'textBtnAddFileForm',
+                'name' => 'textBtnAddFileForm',
+                'label' => 'Text button file upload',
+              ],
             ], //end children col
           ],
           [
