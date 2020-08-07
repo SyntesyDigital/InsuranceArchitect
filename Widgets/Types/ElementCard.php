@@ -30,5 +30,6 @@ class ElementCard extends Widget implements WidgetInterface
         'collapsable',
         'collapsed',
         'conditionalVisibility',
+        'backgroundTransparent',
     ];
 }

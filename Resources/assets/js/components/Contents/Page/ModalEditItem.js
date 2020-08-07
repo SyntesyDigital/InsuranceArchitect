@@ -1198,6 +1198,24 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="backgroundTransparent"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Background transparent'}
+          options={[
+            {
+              value: "",
+              name: "---",
+            },
+            {
+              value: "transparent",
+              name: "transparent",
+            },
+          ]}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="fontSize"

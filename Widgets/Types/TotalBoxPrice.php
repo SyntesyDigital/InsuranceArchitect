@@ -28,6 +28,7 @@ class TotalBoxPrice extends Widget implements WidgetInterface
     public $settings = [
       'htmlId',
       'htmlClass',
+      'fileElements',
       'backgroundColor',
       'backgroundHoverColor',
       'conditionalVisibility',

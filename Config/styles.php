@@ -2112,6 +2112,54 @@ return [
       ], //end box 3
       [
         'type' => 'box',
+        'title' => 'Reduced',
+        'identifier' => 'box_14_b',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeReduced',
+                'name' => 'fontSizeReduced',
+                'label' => 'Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'paddingBottomTopReduced',
+                'name' => 'paddingBottomTopReduced',
+                'label' => 'Padding top-bottom (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'paddingRightLeftReduced',
+                'name' => 'paddingRightLeftReduced',
+                'label' => 'Padding right-left (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'lineHeightReduced',
+                'name' => 'lineHeightReduced',
+                'label' => 'Line-height (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'marginBetweenReduced',
+                'name' => 'marginBetweenReduced',
+                'label' => 'Margin between items',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 1
+      ], //end box 1
+      [
+        'type' => 'box',
         'title' => 'Image text link',
         'identifier' => 'box_15',
         'children' => [

@@ -8,6 +8,8 @@ return [
     'cancel' => 'Cancel',
     'accept' => 'Accept',
     'has_container' => 'Has Container ?',
+    'display_inline' => 'Display-inline elements with separator?',
+    'display_label' => 'Display none labels?',
     'without_program' => 'Without program',
     'indica_title' => 'Indicate title',
     'Title' => 'Title',
