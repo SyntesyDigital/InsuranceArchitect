@@ -3073,6 +3073,233 @@ return [
           ],
         ], //en children box 3
       ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Message Box',
+        'identifier' => 'box_22',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorInfoMessageBox',
+                    'name' => 'colorInfoMessageBox',
+                    'label' => 'Info color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorInfoMessageBox',
+                    'name' => 'backgroundColorInfoMessageBox',
+                    'label' => 'Info background-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorInfoMessageBox',
+                    'name' => 'borderColorInfoMessageBox',
+                    'label' => 'Info border-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeInfoMessageBox',
+                    'name' => 'fontSizeInfoMessageBox',
+                    'label' => 'Info font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingInfoMessageBox',
+                    'name' => 'paddingInfoMessageBox',
+                    'label' => 'Info padding (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeIconInfoMessageBox',
+                    'name' => 'fontSizeIconInfoMessageBox',
+                    'label' => 'Icon remove font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconInfoMessageBox',
+                    'name' => 'iconInfoMessageBox',
+                    'label' => 'Icon Info reduced',
+                ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorSuccessMessageBox',
+                    'name' => 'colorSuccessMessageBox',
+                    'label' => 'Success color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorSuccessMessageBox',
+                    'name' => 'backgroundColorSuccessMessageBox',
+                    'label' => 'Success background-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorSuccessMessageBox',
+                    'name' => 'borderColorSuccessMessageBox',
+                    'label' => 'Success border-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeSuccessMessageBox',
+                    'name' => 'fontSizeSuccessMessageBox',
+                    'label' => 'Success font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingSuccessMessageBox',
+                    'name' => 'paddingSuccessMessageBox',
+                    'label' => 'Success padding (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeIconSuccessMessageBox',
+                    'name' => 'fontSizeIconSuccessMessageBox',
+                    'label' => 'Icon remove font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconSuccessMessageBox',
+                    'name' => 'iconSuccessMessageBox',
+                    'label' => 'Icon Success reduced',
+                ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorErrorMessageBox',
+                    'name' => 'colorErrorMessageBox',
+                    'label' => 'Error color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorErrorMessageBox',
+                    'name' => 'backgroundColorErrorMessageBox',
+                    'label' => 'Error background-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorErrorMessageBox',
+                    'name' => 'borderColorErrorMessageBox',
+                    'label' => 'Error border-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeErrorMessageBox',
+                    'name' => 'fontSizeErrorMessageBox',
+                    'label' => 'Error font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingErrorMessageBox',
+                    'name' => 'paddingErrorMessageBox',
+                    'label' => 'Error padding (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeIconErrorMessageBox',
+                    'name' => 'fontSizeIconErrorMessageBox',
+                    'label' => 'Icon remove font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconErrorMessageBox',
+                    'name' => 'iconErrorMessageBox',
+                    'label' => 'Icon Error reduced',
+                ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorWarningMessageBox',
+                    'name' => 'colorWarningMessageBox',
+                    'label' => 'Warning color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorWarningMessageBox',
+                    'name' => 'backgroundColorWarningMessageBox',
+                    'label' => 'Warning background-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorWarningMessageBox',
+                    'name' => 'borderColorWarningMessageBox',
+                    'label' => 'Warning border-color',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeWarningMessageBox',
+                    'name' => 'fontSizeWarningMessageBox',
+                    'label' => 'Warning font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingWarningMessageBox',
+                    'name' => 'paddingWarningMessageBox',
+                    'label' => 'Warning padding (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeIconWarningMessageBox',
+                    'name' => 'fontSizeIconWarningMessageBox',
+                    'label' => 'Icon remove font-size (px)',
+                ],
+                [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconWarningMessageBox',
+                    'name' => 'iconWarningMessageBox',
+                    'label' => 'Icon Warning reduced',
+                ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
     ],
   ],
 ];
