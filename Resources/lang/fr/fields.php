@@ -16,6 +16,7 @@ return [
     'slug' => 'Slug',
     'url' => 'URL',
     'file' => 'Fichier',
+    'file_ws_fusion' => 'Fichier WS fusion',
     'translated_file' => 'Fichier traduit',
     'key_values' => 'Clé/Valeur',
 
