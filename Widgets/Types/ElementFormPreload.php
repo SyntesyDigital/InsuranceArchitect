@@ -29,5 +29,6 @@ class ElementFormPreload extends Widget implements WidgetInterface
         'collapsed',
         'conditionalVisibility',
         'template',
+        'wsVisibility'
     ];
 }

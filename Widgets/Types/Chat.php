@@ -30,5 +30,6 @@ class Chat extends Widget implements WidgetInterface
       'conditionalVisibility',
       'itemsPerPage',
       'tableElements',
+      'wsVisibility'
     ];
 }

@@ -31,5 +31,6 @@ class ElementForm extends Widget implements WidgetInterface
         'hiddenFilter',
         'conditionalVisibility',
         'template',
+        'wsVisibility'
     ];
 }

@@ -29,7 +29,8 @@ class ElementFormButton extends Widget implements WidgetInterface
     public $settings = [
         'formElementsV2',
         'conditionalVisibility',
-        'buttonClass'
+        'buttonClass',
+        'wsVisibility'
     ];
 }
 ?>

@@ -31,5 +31,6 @@ class ElementFile extends Widget implements WidgetInterface
         'doubleColumn',
         'hiddenFilter',
         'conditionalVisibility',
+        'wsVisibility'
     ];
 }

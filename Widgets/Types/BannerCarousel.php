@@ -26,6 +26,7 @@ class BannerCarousel extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'cropsAllowed',
+        'wsVisibility'
     ];
 }
 ?>

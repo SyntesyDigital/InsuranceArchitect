@@ -33,6 +33,7 @@ class BoxButton extends Widget implements WidgetInterface
         'buttonClass',
         'cropsAllowed',
         'backgroundColor',
-        'backgroundHoverColor'
+        'backgroundHoverColor',
+        'wsVisibility'
     ];
 }

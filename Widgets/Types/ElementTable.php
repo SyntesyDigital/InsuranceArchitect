@@ -29,6 +29,7 @@ class ElementTable extends Widget implements WidgetInterface
         'pagination',
         'tableElements',
         'excel',
-        'headerRowsNumber'
+        'headerRowsNumber',
+        'wsVisibility'
     ];
 }

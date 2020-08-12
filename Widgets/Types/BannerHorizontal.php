@@ -30,5 +30,6 @@ class BannerHorizontal extends Widget implements WidgetInterface
       'htmlClass',
       'hiddenFilter',
       'conditionalVisibility',
+      'wsVisibility'
     ];
 }
