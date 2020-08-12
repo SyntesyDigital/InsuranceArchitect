@@ -72,8 +72,6 @@ class IconField extends Component {
             this.props.app.fields[field.name].value ?
             this.props.app.fields[field.name].value : '';
 
-            console.log("value :: " , value)
-
         const options = this.state.icons.map(
             item => ({
                 label: item.label,
@@ -82,15 +80,13 @@ class IconField extends Component {
 
         var optionIndex = this.getOption(value);
 
-        console.log(" options[value]" , options[value]);
-
         return (
             <div className={'form-group bmd-form-group '}>
                 <label className="bmd-label-floating">
                     {field.label}
                 </label>
                 <Select
-                    value={options[value]}
+                    value={optionIndex}
                     name={field.identifier}
                     defaultValue={optionIndex != null ? options[optionIndex] : ''}
                     options={options}
