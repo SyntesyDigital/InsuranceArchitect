@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 import Select from 'react-select';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import {
-  changeField,
-  changeSettings,
-  publishToogle,
-  changeTranslation,
-  updateDefaultParameters
+    changeField,
+    changeSettings,
+    publishToogle,
+    changeTranslation,
+    updateDefaultParameters
 } from './../actions/';
 
 import TagManager from "./../Tags/TagManager";
@@ -18,391 +17,396 @@ import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField
 
 import moment from 'moment';
 
+
 class ContentSidebar extends Component {
 
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    ////console.log('PROPS ======>', props);
+        ////console.log('PROPS ======>', props);
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleTranslationChange = this.handleTranslationChange.bind(this);
-  }
+        this.pagesArray = [];
 
-  handleChange(event) {
+        if (this.props.app.pages) {
+            var self = this;
+            Object.keys(this.props.app.pages).map(function (id) {
+                self.pagesArray.push({
+                    value: self.props.app.pages[id].id,
+                    label: self.props.app.pages[id].title
+                });
+            });
+        }
 
-    var field = null;
-
-    if(event.target.type == "text" || event.target.type == "select-one"){
-        field = {
-            name : event.target.name,
-            value : event.target.value
-        };
-    }
-    else if(event.target.type == "checkbox"){
-        field = {
-            name : event.target.name,
-            value : event.target.checked
-        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleTranslationChange = this.handleTranslationChange.bind(this);
     }
 
-    if(field != null) {
+    handleChange(event) {
+
+        var field = null;
+
+        if (event.target.type == "text" || event.target.type == "select-one") {
+            field = {
+                name: event.target.name,
+                value: event.target.value
+            };
+        }
+        else if (event.target.type == "checkbox") {
+            field = {
+                name: event.target.name,
+                value: event.target.checked
+            };
+        }
+
+        if (field != null) {
+            this.props.changeField(field);
+        }
+    }
+
+    handleChangeSelect(obj) {
+
+        var field = {
+            name: 'parent_id',
+            value: obj.value
+        }
+
         this.props.changeField(field);
     }
 
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log("ContentSidebar :: nextProps => ",nextProps);
-  }
-
-  handleTranslationChange(event) {
-    var field = {
-      name : event.target.name,
-      value : event.target.checked
-    };
-
-    this.props.changeTranslation(field);
-  }
-
-  renderLanguagesCheckbox()
-  {
-    return (LANGUAGES.map((language, k) => (
-        <div className="togglebutton" key={k}>
-            <label>
-              {language.name}
-              {language.iso == DEFAULT_LOCALE &&
-                <input type="checkbox" name={language.iso} value={true} checked="true" disabled="true" />
-              }
-              {language.iso != DEFAULT_LOCALE &&
-                <input type="checkbox" name={language.iso} checked={this.props.app.translations[language.iso]} onChange={this.handleTranslationChange} />
-              }
-            </label>
-        </div>
-    )));
-  }
-
-  printSpace(level)
-  {
-
-    if(level <= 1)
-      return null;
-
-    var spaces = [];
-    for(var i=1;i<level;i++){
-      spaces.push(
-        "- "
-      );
+    componentWillReceiveProps(nextProps) {
+        console.log("ContentSidebar :: nextProps => ", nextProps);
     }
 
-    return spaces;
-  }
+    handleTranslationChange(event) {
+        var field = {
+            name: event.target.name,
+            value: event.target.checked
+        };
 
-  handleFieldSettingsChange(field) {
+        this.props.changeTranslation(field);
+    }
 
-      ////console.log("ModalEditItem :: handleFieldSettingsChange => ", field);
+    renderLanguagesCheckbox() {
+        return (LANGUAGES.map((language, k) => (
+            <div className="togglebutton" key={k}>
+                <label>
+                    {language.name}
+                    {language.iso == DEFAULT_LOCALE &&
+                        <input type="checkbox" name={language.iso} value={true} checked="true" disabled="true" />
+                    }
+                    {language.iso != DEFAULT_LOCALE &&
+                        <input type="checkbox" name={language.iso} checked={this.props.app.translations[language.iso]} onChange={this.handleTranslationChange} />
+                    }
+                </label>
+            </div>
+        )));
+    }
 
-      const settings = this.props.app.settings;
+    printSpace(level) {
 
-      settings[field.name] = field.value;
+        if (level <= 1)
+            return null;
 
-      this.props.changeSettings(settings);
-  }
+        var spaces = [];
+        for (var i = 1; i < level; i++) {
+            spaces.push(
+                "- "
+            );
+        }
 
-  handlePublish(e) {
+        return spaces;
+    }
 
-      e.preventDefault();
+    handleFieldSettingsChange(field) {
 
-      const newStatus = 1;
+        ////console.log("ModalEditItem :: handleFieldSettingsChange => ", field);
 
-      this.props.publishToogle(this.props.app.content.id,newStatus);
-  }
+        const settings = this.props.app.settings;
 
-  handleUnpublish(e) {
+        settings[field.name] = field.value;
 
-      e.preventDefault();
+        this.props.changeSettings(settings);
+    }
 
-      const newStatus = 0;
+    handlePublish(e) {
 
-      this.props.publishToogle(this.props.app.content.id,newStatus);
-  }
+        e.preventDefault();
+
+        const newStatus = 1;
+
+        this.props.publishToogle(this.props.app.content.id, newStatus);
+    }
+
+    handleUnpublish(e) {
+
+        e.preventDefault();
+
+        const newStatus = 0;
+
+        this.props.publishToogle(this.props.app.content.id, newStatus);
+    }
 
     /**
     *   configuration can be changed because some settings or $rule
     *   added directly to PHP. It's necessary to update the json stored in BBDD
     *   to update the avialabe settings, and modifiy if necessary
     */
-  updateSettingsFromConfig(field) {
+    updateSettingsFromConfig(field) {
 
-    var config = PAGE_SETTINGS;
+        var config = PAGE_SETTINGS;
 
-    if(config !== undefined ) {
-      for(var id in config){
-        var setting = config[id];
-        if(field.settings[setting] === undefined){
-          field.settings[setting] = null;
+        if (config !== undefined) {
+            for (var id in config) {
+                var setting = config[id];
+                if (field.settings[setting] === undefined) {
+                    field.settings[setting] = null;
+                }
+            }
         }
-      }
+
+        return field;
     }
 
-    return field;
-  }
+    renderSettings() {
 
-  renderSettings()
-  {
+        //console.log("settings => ",this.props.app.settings)
 
-    //console.log("settings => ",this.props.app.settings)
+        let field = {
+            settings: this.props.app.settings
+        };
+        field = this.updateSettingsFromConfig(field);
 
-    let field = {
-      settings : this.props.app.settings
-    };
-    field = this.updateSettingsFromConfig(field);
+        return (
+            <div>
+                <div className="form-group bmd-form-group sidebar-item">
+                    <SelectorSettingsField
+                        field={field}
+                        name="pageType"
+                        source="settings"
+                        onFieldChange={this.handleFieldSettingsChange.bind(this)}
+                        label={Lang.get('fields.page_type')}
+                        options={[
+                            {
+                                value: '',
+                                name: '---'
+                            },
+                            {
+                                value: 'single',
+                                name: 'Single'
+                            },
+                            {
+                                value: 'landing',
+                                name: 'Landing'
+                            },
+                            {
+                                value: 'home',
+                                name: 'Home'
+                            }
+                        ]}
+                    />
+                </div>
+                <div className="form-group bmd-form-group sidebar-item">
+                    <InputSettingsField
+                        field={field}
+                        name="htmlClass"
+                        source="settings"
+                        onFieldChange={this.handleFieldSettingsChange.bind(this)}
+                        label={Lang.get('modals.html_class')}
+                        inputLabel={Lang.get('modals.indica_html')}
+                    />
+                </div>
 
-    return (
-      <div>
-        <div className="form-group bmd-form-group sidebar-item">
-          <SelectorSettingsField
-            field={field}
-            name="pageType"
-            source="settings"
-            onFieldChange={this.handleFieldSettingsChange.bind(this)}
-            label={Lang.get('fields.page_type')}
-            options={[
-              {
-                value : '',
-                name : '---'
-              },
-              {
-                value : 'single',
-                name : 'Single'
-              },
-              {
-                value : 'landing',
-                name : 'Landing'
-              },
-              {
-                value : 'home',
-                name : 'Home'
-              }
-            ]}
-          />
-        </div>
-        <div className="form-group bmd-form-group sidebar-item">
-          <InputSettingsField
-            field={field}
-            name="htmlClass"
-            source="settings"
-            onFieldChange={this.handleFieldSettingsChange.bind(this)}
-            label={Lang.get('modals.html_class')}
-            inputLabel={Lang.get('modals.indica_html')}
-          />
-        </div>
-
-        <div className="form-group bmd-form-group sidebar-item">
-          <BooleanSettingsField
-            field={field}
-            name="accessByLink"
-            source="settings"
-            onFieldChange={this.handleFieldSettingsChange.bind(this)}
-            label={'Accessible par le lien'}
-          />
-        </div>
-        
-
-      </div>
-
-
-    )
-  }
-
-  handleParameterDefaultChange(index,event) {
-    event.preventDefault();
-
-    console.log("handleParameterDefaultChange ::");
-
-    const parameters = this.props.app.parameters;
-
-    parameters[index].default = event.target.value;
-
-    this.props.updateDefaultParameters(parameters);
-  }
-
-  isRequired(settings) {
-    if(settings !== undefined && settings != null &&
-      settings['required'] !== undefined && settings['required'] != null){
-      return settings['required'];
+                <div className="form-group bmd-form-group sidebar-item">
+                    <BooleanSettingsField
+                        field={field}
+                        name="accessByLink"
+                        source="settings"
+                        onFieldChange={this.handleFieldSettingsChange.bind(this)}
+                        label={'Accessible par le lien'}
+                    />
+                </div>
+            </div>
+        )
     }
 
-    return true;
-  }
+    handleParameterDefaultChange(index, event) {
+        event.preventDefault();
 
-  renderParameters() {
+        console.log("handleParameterDefaultChange ::");
 
-    const parameters = this.props.app.parameters;
+        const parameters = this.props.app.parameters;
 
-    if(parameters === undefined || parameters == null){
+        parameters[index].default = event.target.value;
+
+        this.props.updateDefaultParameters(parameters);
+    }
+
+    isRequired(settings) {
+        if (settings !== undefined && settings != null &&
+            settings['required'] !== undefined && settings['required'] != null) {
+            return settings['required'];
+        }
+
+        return true;
+    }
+
+    renderParameters() {
+
+        const parameters = this.props.app.parameters;
+
+        if (parameters === undefined || parameters == null) {
+            return null;
+        }
+
+        return parameters.map((item, index) => {
+
+            const required = this.isRequired(item.settings);
+
+            return (
+                <div className="form-group bmd-form-group" key={index}>
+                    <label htmlFor={item.id} className="bmd-label-floating">
+                        {required &&
+                            <i className="fas fa-exclamation-circle"></i>
+
+                        }
+                        {!required &&
+                            <i className="far fa-question-circle"></i>
+                        }
+            &nbsp; {item.name}
+                    </label>
+                    <input
+                        id={item.id} className="form-control"
+                        value={item.default}
+                        placeholder="Valeur de prévisualisation"
+                        name={item.identifier}
+                        onChange={this.handleParameterDefaultChange.bind(this, index)}
+                    />
+                </div>
+            )
+        });
+    }
+
+    getOption(value) {
+
+        if (value === undefined || value == null)
+            return null;
+
+        for (var index in this.pagesArray) {
+            if (this.pagesArray[index]['value'] == value)
+                return this.pagesArray[index]
+        }
         return null;
     }
 
-    return parameters.map((item,index) => {
+    render() {
 
-      const required = this.isRequired(item.settings);
+        var self = this;
+        var value = this.getOption(this.props.app.parent_id);
+        const isPage = this.props.app.typology ? false : true;
 
-      return (
-        <div className="form-group bmd-form-group" key={index}>
-          <label htmlFor={item.id} className="bmd-label-floating">
-            {required &&
-              <i className="fas fa-exclamation-circle"></i>
+        return (
+            <div className="sidebar">
+                {this.props.app.saved &&
+                    <div className="publish-group">
+                        {this.props.app.status == 1 &&
+                            <div className="publish-form sidebar-item">
+                                <i className="fa fa-circle text-success"></i> {Lang.get('fields.published')} <br />
+                                {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
+                                    <a className="btn btn-default" href="" onClick={this.handleUnpublish.bind(this)}> {Lang.get('fields.unpublish')} </a>
+                                }
+                                <p className="field-help">{moment(this.props.app.content.published_at).format('LLLL')}</p>
+                            </div>
+                        }
 
-            }
-            {!required &&
-              <i className="far fa-question-circle"></i>
-            }
-            &nbsp; {item.name}
-          </label>
-          <input
-            id={item.id} className="form-control"
-            value={item.default}
-            placeholder="Valeur de prévisualisation"
-            name={item.identifier}
-            onChange={this.handleParameterDefaultChange.bind(this,index)}
-          />
-        </div>
-      )
-    });
-  }
+                        {this.props.app.status == 0 &&
+                            <div className="publish-form sidebar-item">
+                                <i className="fa fa-circle text-warning"></i> {Lang.get('fields.draft')} <br />
+                                {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
+                                    <a className="btn btn-success" href="" onClick={this.handlePublish.bind(this)}> {Lang.get('fields.publish')} </a>
+                                }
+                                <p className="field-help"></p>
+                            </div>
+                        }
 
-  render() {
+                        <hr />
 
-    var self = this;
+                    </div>
+                }
 
-    const isPage = this.props.app.typology ? false : true;
+                {isPage &&
+                    <div>
+                        <h3>Parametres</h3>
+                        {this.renderParameters()}
+                        <hr />
+                    </div>
+                }
 
-    return (
-      <div className="sidebar">
-        { this.props.app.saved &&
-          <div className="publish-group">
-            { this.props.app.status == 1 &&
-              <div className="publish-form sidebar-item">
-                  <i className="fa fa-circle text-success"></i> {Lang.get('fields.published')} <br/>
-                  {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
-                    <a className="btn btn-default" href="" onClick={this.handleUnpublish.bind(this)}> {Lang.get('fields.unpublish')} </a>
-                  }
-                  <p className="field-help">{moment(this.props.app.content.published_at).format('LLLL')}</p>
-              </div>
-            }
+                <div className="form-group bmd-form-group sidebar-item">
+                    <label className="bmd-label-floating">{Lang.get('fields.active_languages')}</label>
+                    {this.renderLanguagesCheckbox()}
+                </div>
 
-            {this.props.app.status == 0 &&
-              <div className="publish-form sidebar-item">
-                  <i className="fa fa-circle text-warning"></i> {Lang.get('fields.draft')} <br/>
-                  {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
-                    <a className="btn btn-success" href=""  onClick={this.handlePublish.bind(this)}> {Lang.get('fields.publish')} </a>
-                  }
-                  <p className="field-help"></p>
-              </div>
-            }
+                <hr />
 
-            <hr/>
+                {isPage && this.props.app.pages !== undefined && this.props.app.pages != null &&
+                    <div>
+                        <div className="form-group bmd-form-group sidebar-item">
+                            <label htmlFor="parent_id" className="bmd-label-floating">{Lang.get('fields.parent_page')}</label>
+                            <Select
+                                isDisabled={architect.currentUserHasRole(ROLES['ROLE_ADMIN'])}
+                                id="parent_id"
+                                name="parent_id"
+                                value={value}
+                                onChange={this.handleChangeSelect.bind(this)}
+                                options={this.pagesArray}
+                            />
+                        </div>
+                        <hr />
+                    </div>
+                }
 
-          </div>
-        }
+                {this.props.app.typology.has_categories == 1 &&
+                    <div>
+                        <div className="form-group bmd-form-group has-danger">
+                            <label htmlFor="template" className="bmd-label-floating">{Lang.get('fields.category')}</label>
+                            <select className="form-control" id="template" name="category" value="" value={this.props.app.category} onChange={this.handleChange}>
+                                <option value="">---</option>
+                                {
+                                    this.props.app.categories && this.props.app.categories.map(function (category, i) {
+                                        return <option value={category.id} key={i}>{self.printSpace(category.level)}{category.name}</option>
+                                    })
+                                }
+                            </select>
+                        </div>
+                        <hr />
+                    </div>
+                }
 
-        {isPage &&
-          <div>
-            <h3>Parametres</h3>
-            {this.renderParameters()}
-            <hr/>
-          </div>
-        }
+                {this.props.app.typology.has_tags == 1 &&
+                    <div>
+                        <div className="form-group bmd-form-group sidebar-item">
+                            <TagManager
+                                tags={this.props.app.tags}
+                                tagsList={this.props.app.tagsList}
+                                content={this.props.app.content}
+                            />
+                        </div>
+                        <hr />
+                    </div>
+                }
 
-        <div className="form-group bmd-form-group sidebar-item">
-           <label className="bmd-label-floating">{Lang.get('fields.active_languages')}</label>
-           {this.renderLanguagesCheckbox()}
-        </div>
-
-        <hr/>
-
-        {this.props.app.pages !== undefined && this.props.app.pages != null &&
-          <div>
-            <div className="form-group bmd-form-group sidebar-item">
-               <label htmlFor="parent_id" className="bmd-label-floating">{Lang.get('fields.parent_page')}</label>
-
-               {!architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
-                 <select className="form-control" id="parent_id" name="parent_id" value={this.props.parent_id}  onChange={this.handleChange}>
-                      <option value="">---</option>
-                     {
-                       this.props.app.pages && Object.keys(this.props.app.pages).map(function(id) {
-                           return <option value={self.props.app.pages[id].id} key={self.props.app.pages[id].id} selected={self.props.app.content && self.props.app.content.parent_id == self.props.app.pages[id].id ? "selected" : ""}>{self.props.app.pages[id].title}</option>
-                       })
-                     }
-                 </select>
-               }
-               {architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
-                 <select disabled="true" className="form-control" id="parent_id" name="parent_id" value={this.props.parent_id}  onChange={this.handleChange}>
-                      <option value="">---</option>
-                     {
-                       this.props.app.pages && Object.keys(this.props.app.pages).map(function(id) {
-                           return <option value={self.props.app.pages[id].id} key={self.props.app.pages[id].id} selected={self.props.app.content && self.props.app.content.parent_id == self.props.app.pages[id].id ? "selected" : ""}>{self.props.app.pages[id].title}</option>
-                       })
-                     }
-                 </select>
-               }
-
+                {this.props.app.settings !== undefined && !architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
+                    <div>
+                        <hr />
+                        <div className="sidebar-item">
+                            <label className="bmd-label-floating">{Lang.get('header.configuration')}</label>
+                            {this.renderSettings()}
+                        </div>
+                    </div>
+                }
             </div>
-            <hr/>
-          </div>
-        }
-
-        {this.props.app.typology.has_categories == 1 &&
-          <div>
-            <div className="form-group bmd-form-group has-danger">
-               <label htmlFor="template" className="bmd-label-floating">{Lang.get('fields.category')}</label>
-               <select className="form-control" id="template" name="category" value="" value={this.props.app.category} onChange={this.handleChange}>
-                    <option value="">---</option>
-                   {
-                     this.props.app.categories && this.props.app.categories.map(function(category, i) {
-                       return <option value={category.id} key={i}>{self.printSpace(category.level)}{category.name}</option>
-                     })
-                   }
-               </select>
-            </div>
-            <hr/>
-          </div>
-        }
-
-        {this.props.app.typology.has_tags  == 1 &&
-          <div>
-            <div className="form-group bmd-form-group sidebar-item">
-              <TagManager
-                tags={this.props.app.tags}
-                tagsList={this.props.app.tagsList}
-                content={this.props.app.content}
-              />
-            </div>
-
-            <hr/>
-          </div>
-        }
-
-        {this.props.app.settings !== undefined && !architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
-
-          <div>
-            <hr/>
-
-            <div className="sidebar-item">
-               <label className="bmd-label-floating">{Lang.get('header.configuration')}</label>
-               {this.renderSettings()}
-            </div>
-
-
-          </div>
-        }
-
-
-      </div>
-    );
-  }
-
+        );
+    }
 }
 
 
@@ -421,13 +425,13 @@ const mapDispatchToProps = dispatch => {
         changeSettings: (settings) => {
             return dispatch(changeSettings(settings));
         },
-        publishToogle : (contentId, status) => {
+        publishToogle: (contentId, status) => {
             return dispatch(publishToogle(contentId, status));
         },
-        changeTranslation : (field) => {
+        changeTranslation: (field) => {
             return dispatch(changeTranslation(field));
         },
-        updateDefaultParameters : (parameters) => {
+        updateDefaultParameters: (parameters) => {
             return dispatch(updateDefaultParameters(parameters));
         },
     }
