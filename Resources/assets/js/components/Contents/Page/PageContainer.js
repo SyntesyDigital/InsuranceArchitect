@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { DragDropContextProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import ContentBar from './../Content/ContentBar';
 import ContentSidebar from './../Content/ContentSidebar';
 import PageBuilder from './PageBuilder';
 
 import {
-  initPageState
+    initPageState
 } from './../actions/';
 
 /*
@@ -22,34 +22,27 @@ import LayoutSelectModal from './LayoutSelectModal';
 
 class PageContainer extends Component {
 
-  constructor(props) {
-     super(props);
+    constructor(props) {
+        super(props);
 
-     //console.log("props.app => ", props.app.content);
-     this.props.initPageState(props.app.content);
-   }
+        //console.log("props.app => ", props.app.content);
+        this.props.initPageState(props.app.content);
+    }
 
-  render() {
+    render() {
 
-    return (
-      <div>
-        <ContentBar />
-
-        <div className="container rightbar-page content">
-          <ContentSidebar />
-
-          <DragDropContextProvider backend={HTML5Backend}>
-
-            <PageBuilder />
-
-          </DragDropContextProvider>
-
-        </div>
-
-      </div>
-    );
-  }
-
+        return (
+            <div>
+                <ContentBar />
+                <div className="container rightbar-page content">
+                    <ContentSidebar />
+                    <DragDropContextProvider backend={HTML5Backend}>
+                        <PageBuilder />
+                    </DragDropContextProvider>
+                </div>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = state => {
