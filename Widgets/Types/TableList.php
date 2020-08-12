@@ -30,5 +30,6 @@ class TableList extends Widget implements WidgetInterface
       'tableElements',
       'conditionalVisibility',
       'itemsPerPage',
+      'wsVisibility'
     ];
 }

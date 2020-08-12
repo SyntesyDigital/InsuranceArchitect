@@ -30,5 +30,6 @@ class ElementFormV2 extends Widget implements WidgetInterface
         'collapsed',
         'conditionalVisibility',
         'template',
+        'wsVisibility'
     ];
 }

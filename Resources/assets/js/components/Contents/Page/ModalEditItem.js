@@ -1243,6 +1243,15 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <InputSettingsField
+          field={this.state.field}
+          name="wsVisibility"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Afficher selon WS '}
+          inputLabel={'WS'}
+        />
+
       </div>
 
 

@@ -32,5 +32,6 @@ class TotalBoxPrice extends Widget implements WidgetInterface
       'backgroundColor',
       'backgroundHoverColor',
       'conditionalVisibility',
+      'wsVisibility'
     ];
 }

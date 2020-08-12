@@ -30,5 +30,6 @@ class TableDocument extends Widget implements WidgetInterface
       'tableElements',
       'conditionalVisibility',
       'itemsPerPage',
+      'wsVisibility'
     ];
 }

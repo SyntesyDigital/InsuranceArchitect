@@ -32,7 +32,8 @@ class StaticBanner extends Widget implements WidgetInterface
       'htmlId',
       'htmlClass',
       'hiddenFilter',
-      'conditionalVisibility'
+      'conditionalVisibility',
+      'wsVisibility'
     ];
 }
 ?>
