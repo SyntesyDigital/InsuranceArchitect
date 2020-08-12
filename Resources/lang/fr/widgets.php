@@ -66,4 +66,5 @@ return [
     'CHAT' => 'Chat',
     'SIMPLE_BUTTON' => 'Simple Button',
     'ACTION_LIST' => 'Action List',
+    'MESSAGE_BOX' => 'Message Box',
 ];
