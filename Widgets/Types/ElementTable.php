@@ -30,6 +30,7 @@ class ElementTable extends Widget implements WidgetInterface
         'tableElements',
         'excel',
         'headerRowsNumber',
+        'conditionalVisibility',
         'wsVisibility'
     ];
 }
