@@ -120,6 +120,5 @@ return [
     'collapsable' => 'Repliable',
     'moreBtn' => 'Voir plus',
     'addBtn' => 'Ajouter Element',
-    'excelBtn' => 'Texte exportation CSV'
-    
+    'excelBtn' => 'Texte exportation CSV',
 ];
