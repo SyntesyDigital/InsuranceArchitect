@@ -14,6 +14,7 @@ import TagManager from "./../Tags/TagManager";
 import InputSettingsField from './../../Typology/Settings/InputSettingsField';
 import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField';
 import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
+import UserAccessSettingsField from './../Page/Settings/UserAccess/UserAccessSettingsField';
 
 import moment from 'moment';
 
@@ -178,6 +179,7 @@ class ContentSidebar extends Component {
 
         return (
             <div>
+                {/*
                 <div className="form-group bmd-form-group sidebar-item">
                     <SelectorSettingsField
                         field={field}
@@ -215,6 +217,7 @@ class ContentSidebar extends Component {
                         inputLabel={Lang.get('modals.indica_html')}
                     />
                 </div>
+                */}
 
                 <div className="form-group bmd-form-group sidebar-item">
                     <BooleanSettingsField
@@ -225,6 +228,17 @@ class ContentSidebar extends Component {
                         label={'Accessible par le lien'}
                     />
                 </div>
+                <div className="form-group bmd-form-group sidebar-item">
+                    <UserAccessSettingsField
+                            field={field}
+                            name="userAccess"
+                            source="settings"
+                            onFieldChange={this.handleFieldSettingsChange.bind(this)}
+                            label={'Permis d\'accès'}
+                        />
+                </div>
+
+
             </div>
         )
     }

@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+import SettingsField from './../SettingsField';
+import { BoxAddGroup } from "architect-components-library";
+
 import {
   VISIBILITY_HIDE,
   VISIBILITY_SHOW,
@@ -9,31 +12,18 @@ import {
   OPERATOR_DIFFERENT
 } from './../../../constants';
 
-import ConditionsModal from './ConditionsModal';
+import UserAccessModal from './UserAccessModal';
 
-/**
-*   Settings with conditional language to define if field is visible or not
-*/
-class VisibilitySettingsField extends Component {
+export default class UserAcessSettingsField extends Component {
 
   constructor(props) {
     super(props);
 
-
-    var checkbox = null;
-    var value = this.getDefaultVisibilityValue();
-    var display = false;
-
     this.state = {
-      checkbox : checkbox,
-      value : value,
-      display : display,
       modalDisplay : false,
-      conditionIndex : null
-    };
-
-    this.handleFieldChange = this.handleFieldChange.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+      conditionIndex : null,
+      selectedContidion : null
+    }
 
     this.visibilityOptions = [
       {
@@ -52,7 +42,7 @@ class VisibilitySettingsField extends Component {
   */
   getConditionalAction() {
 
-    const value = this.state.value;
+    const value = this.getVisibilityValue();
 
     if(value !== undefined && value != null && value.initialValue !== undefined){
         for(var key in this.visibilityOptions){
@@ -66,48 +56,12 @@ class VisibilitySettingsField extends Component {
 
   getConditions() {
 
-    const value = this.state.value;
+    const value = this.getVisibilityValue();
 
     if(value !== undefined && value != null && value.conditions !== undefined){
       return value.conditions;
     }
     return [];
-  }
-
-
-
-  componentDidMount(){
-    this.processProps(this.props);
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps){
-    this.processProps(nextProps);
-  }
-
-  processProps(nextProps){
-    var checkbox = null;
-    var value = "";
-    var display = false;
-
-
-
-    if(nextProps.field != null && nextProps.field[nextProps.source] != null &&
-       nextProps.field[nextProps.source][nextProps.name] !== undefined){
-
-      checkbox = nextProps.field[nextProps.source][nextProps.name] != null;
-      display = true;
-
-      value = nextProps.field[nextProps.source][nextProps.name] == null ?
-        this.getDefaultVisibilityValue() : nextProps.field[nextProps.source][nextProps.name];
-
-      console.log("VisibilitySettingsField :: componentWillRecieveProps",nextProps.field[nextProps.source][nextProps.name]);
-    }
-
-    this.setState({
-      checkbox : checkbox,
-      value : value,
-      display : display
-    });
   }
 
   getDefaultVisibilityValue() {
@@ -148,20 +102,9 @@ class VisibilitySettingsField extends Component {
 
   //get value to process field
   getVisibilityValue() {
-    return this.state.value;
+    return this.props.field[this.props.source][this.props.name];
   }
 
-
-  handleFieldChange(event) {
-
-    var field = {
-      name : this.props.name,
-      source : this.props.source,
-      value : event.target.checked ? this.state.value : null
-    };
-
-    this.props.onFieldChange(field);
-  }
 
   handleInputChange(event) {
 
@@ -205,19 +148,19 @@ class VisibilitySettingsField extends Component {
     var self = this;
 
     bootbox.confirm({
-				message: 'Êtes-vous sûr de supprimer définitivement ce condition',
-				buttons: {
-						confirm: {
-								label: Lang.get('fields.si'),
-								className: 'btn-primary'
-						},
-						cancel: {
-								label: Lang.get('fields.no'),
-								className: 'btn-default'
-						}
-				},
-				callback: function (result) {
-					if(result){
+        message: 'Êtes-vous sûr de supprimer définitivement ce condition',
+        buttons: {
+            confirm: {
+                label: Lang.get('fields.si'),
+                className: 'btn-primary'
+            },
+            cancel: {
+                label: Lang.get('fields.no'),
+                className: 'btn-default'
+            }
+        },
+        callback: function (result) {
+          if(result){
 
             var conditions = self.getConditions();
 
@@ -226,9 +169,9 @@ class VisibilitySettingsField extends Component {
             //console.log("onConditionRemove :: ",conditions);
 
             self.updateConditions(conditions);
-					}
-				}
-		});
+          }
+        }
+    });
 
   }
 
@@ -261,10 +204,11 @@ class VisibilitySettingsField extends Component {
   }
 
   renderConditions() {
-    if(this.state.value.conditions === undefined)
+    var value = this.getVisibilityValue();
+    if(value.conditions === undefined)
       return null;
 
-    return this.state.value.conditions.map((item,index) =>
+    return value.conditions.map((item,index) =>
       <div className="condition-item row" key={index}>
         <div className="col-sm-9">
           {this.processCondition(item,index)}
@@ -282,8 +226,7 @@ class VisibilitySettingsField extends Component {
     );
   }
 
-  openModal(e) {
-    e.preventDefault();
+  openModal() {
 
     const value = this.getVisibilityValue();
     value.conditions.push(this.getDefaultConditionValue());
@@ -325,7 +268,7 @@ class VisibilitySettingsField extends Component {
 
   updateConditions(conditions) {
 
-    const value = this.state.value;
+    const value = this.getVisibilityValue();
 
     value.conditions = conditions;
 
@@ -338,64 +281,45 @@ class VisibilitySettingsField extends Component {
     this.props.onFieldChange(field);
   }
 
+
   render() {
 
-    const {checkbox,value} = this.state;
+    const value = this.getVisibilityValue();
+    //value is null, when setting field is disabled
 
     return (
+      <SettingsField
+        field={this.props.field}
+        onFieldChange={this.props.onFieldChange}
+        label={this.props.label}
+        name={this.props.name}
+        source={this.props.source}
+        defaultValue={this.getDefaultVisibilityValue()}
+      >
 
-      <div style={{display : this.state.display ? 'block' : 'none'}} className="visibility-settings-field">
+          <UserAccessModal
+            display={this.state.modalDisplay}
+            onModalClose={this.handleModalClose.bind(this)}
+            initialValue={this.getConditionalAction()}
+            conditions={this.getConditions()}
+            conditionIndex={this.state.selectedContidion}
+            onConditionChange={this.handleConditionChange.bind(this)}
+          />
 
-        <ConditionsModal
-          display={this.state.modalDisplay}
-          onModalClose={this.handleModalClose.bind(this)}
-          initialValue={this.getConditionalAction()}
-          conditions={this.getConditions()}
-          conditionIndex={this.state.selectedContidion}
-          onConditionChange={this.handleConditionChange.bind(this)}
-          parameters={this.props.parameters}
-        />
-
-        <div className="setup-field">
-          <div className="togglebutton">
-            <label>
-                <input type="checkbox"
-                  name={this.props.name}
-                  checked={ this.state.checkbox != null ? checkbox : false }
-                  onChange={this.handleFieldChange}
-                />
-                {this.props.label}
-            </label>
-          </div>
-
-
-          <div className="setup-field-config" style={{display : this.state.checkbox != null && this.state.checkbox ? "block" : "none" }}>
-            <div className="form-group bmd-form-group">
-               <label htmlFor="num" className="bmd-label-floating">{this.props.inputLabel}</label>
-               <select className="form-control" name="default" value={value.initialValue} onChange={this.handleInputChange} >
-                 {this.renderOptions()}
-               </select>
-            </div>
-            <div className="form-group bmd-form-group">
-              <label className="bmd-label-floating">
-              Définir les conditions :
-              </label>
-            </div>
+          {value != null && 
             <div className="form-group conditions-list">
-              {this.renderConditions()}
+                {this.renderConditions()}
             </div>
-            <div class="add-row-block">
-              <a href="" class="btn btn-default" onClick={this.openModal.bind(this)}>
-                <i class="fa fa-plus-circle"></i> Ajouter une condition
-              </a>
-            </div>
-          </div>
+          }
 
-        </div>
-      </div>
+          <BoxAddGroup 
+            title="Ajouter une condition"
+            onClick={this.openModal.bind(this)}
+          />
 
+
+      </SettingsField>
     );
   }
 
 }
-export default VisibilitySettingsField;
