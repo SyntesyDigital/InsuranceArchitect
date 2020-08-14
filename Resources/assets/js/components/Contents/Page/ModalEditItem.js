@@ -65,7 +65,9 @@ class ModalEditItem extends Component {
         displayListItemModal : false,
         listItemInfo : null,
         parameters : null,
-        templates : null
+        templates : null,
+        roles : this.getRoles(),
+        permissions : this.getPermissions()
     };
 
     this.onModalClose = this.onModalClose.bind(this);
@@ -73,6 +75,29 @@ class ModalEditItem extends Component {
 
     this.props.initEditItem();
     this.isOpen = false;
+  }
+
+  getPermissions() {
+    return Object.keys(CURRENT_USER.veosPermissions).map((key,index) => 
+      ({
+        name : key,
+        value : key
+      })
+    );
+  }
+  getRoles() {
+    return [{
+      name : CURRENT_USER.veosRole,
+      value : CURRENT_USER.veosRole
+    }];
+    /*
+    return Object.keys(CURRENT_USER.veosRoles).map((key,index) => function () {
+      return {
+        name : key,
+        value : key
+      }
+    });
+    */
   }
 
   processProps(props) {
@@ -674,6 +699,8 @@ class ModalEditItem extends Component {
 
     ////console.log("renderSettings!",this.state.field);
 
+    var field = this.state.field;
+
     return (
       <div>
 
@@ -1126,6 +1153,8 @@ class ModalEditItem extends Component {
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
           label="Afficher selon conditions"
           parameters={this.props.app.parametersList}
+          permissions={this.state.permissions}
+          roles={this.state.roles}
         />
 
         <SelectorSettingsField

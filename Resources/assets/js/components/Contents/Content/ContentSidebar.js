@@ -14,7 +14,7 @@ import TagManager from "./../Tags/TagManager";
 import InputSettingsField from './../../Typology/Settings/InputSettingsField';
 import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField';
 import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
-import UserAccessSettingsField from './../Page/Settings/UserAccess/UserAccessSettingsField';
+//import UserAccessSettingsField from './../Page/Settings/UserAccess/UserAccessSettingsField';
 
 import moment from 'moment';
 
@@ -228,6 +228,7 @@ class ContentSidebar extends Component {
                         label={'Accessible par le lien'}
                     />
                 </div>
+                {/*
                 <div className="form-group bmd-form-group sidebar-item">
                     <UserAccessSettingsField
                             field={field}
@@ -237,6 +238,7 @@ class ContentSidebar extends Component {
                             label={'Permis d\'accès'}
                         />
                 </div>
+                */}
 
 
             </div>

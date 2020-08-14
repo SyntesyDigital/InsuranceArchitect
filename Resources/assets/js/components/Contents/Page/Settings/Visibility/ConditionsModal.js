@@ -5,7 +5,9 @@ import { render } from 'react-dom';
 import {
   OPERATOR_EQUAL,
   OPERATOR_DIFFERENT,
-  CONDITION_FIELD_TYPE_PARAMETER
+  CONDITION_FIELD_TYPE_PARAMETER,
+  CONDITION_FIELD_TYPE_ROLE,
+  CONDITION_FIELD_TYPE_PERMISSION
 } from './../../../constants/';
 
 class ConditionsModal extends Component {
@@ -37,6 +39,14 @@ class ConditionsModal extends Component {
       {
         name : "Paramètre",
         value : CONDITION_FIELD_TYPE_PARAMETER
+      },
+      {
+        name : "Role",
+        value : CONDITION_FIELD_TYPE_ROLE
+      },
+      {
+        name : "Permis",
+        value : CONDITION_FIELD_TYPE_PERMISSION
       }
     ];
 
@@ -119,15 +129,29 @@ class ConditionsModal extends Component {
     );
   }
 
-  renderParameters() {
+  renderParameters(type) {
 
     var parameters = this.props.parameters;
+    var permissions = this.props.permissions;
+    var roles = this.props.roles;
 
     //console.log("Object(parameters).keys => ",parameters,Object.keys(parameters));
 
-    return Object.keys(parameters).map((key,index) =>
-      <option key={index} value={parameters[key].identifier}> {parameters[key].name}</option>
-    );
+    if(type == CONDITION_FIELD_TYPE_PARAMETER) {
+      return Object.keys(parameters).map((key,index) =>
+        <option key={index} value={parameters[key].identifier}> {parameters[key].name}</option>
+      );
+    }
+    else if(type == CONDITION_FIELD_TYPE_ROLE) {
+      return roles.map((item,index) =>
+        <option key={index} value={item.value}> {item.name}</option>
+      );
+    }
+    else if(type == CONDITION_FIELD_TYPE_PERMISSION) {
+      return permissions.map((item,index) =>
+        <option key={index} value={item.value}> {item.name}</option>
+      );
+    }
   }
 
   render() {
@@ -181,7 +205,7 @@ class ConditionsModal extends Component {
                          </label>
                          <select type="text" className="form-control" name="name" value={condition.name} onChange={this.handleInputChange} >
                             <option key={-1} value=""> Sélectionner </option>
-                            {this.renderParameters()}
+                            {this.renderParameters(condition.type)}
                          </select>
 
                       </div>

@@ -354,6 +354,8 @@ class VisibilitySettingsField extends Component {
           conditionIndex={this.state.selectedContidion}
           onConditionChange={this.handleConditionChange.bind(this)}
           parameters={this.props.parameters}
+          permissions={this.props.permissions}
+          roles={this.props.roles}
         />
 
         <div className="setup-field">
