@@ -2136,6 +2136,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'number',
+                'identifier' => 'paddingBottomTopReducedValues',
+                'name' => 'paddingBottomTopReducedValues',
+                'label' => 'Padding top-bottom values (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
                 'identifier' => 'paddingRightLeftReduced',
                 'name' => 'paddingRightLeftReduced',
                 'label' => 'Padding right-left (px)',
@@ -2160,7 +2167,7 @@ return [
       ], //end box 1
       [
         'type' => 'box',
-        'title' => 'Image text link',
+        'title' => 'Image text link | Last News',
         'identifier' => 'box_15',
         'children' => [
           [
