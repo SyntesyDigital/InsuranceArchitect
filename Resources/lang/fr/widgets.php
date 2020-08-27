@@ -67,4 +67,5 @@ return [
     'SIMPLE_BUTTON' => 'Simple Button',
     'ACTION_LIST' => 'Action List',
     'MESSAGE_BOX' => 'Message Box',
+    'LAST_NEWS_LIST' => 'Last News List',
 ];

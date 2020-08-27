@@ -1245,6 +1245,20 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="typology_id"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Typology'}
+          options={this.props.modalEdit.typologies.map(function(obj){
+            return {
+                value: obj.id,
+                name: obj.name
+            };
+        })}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="fontSize"
