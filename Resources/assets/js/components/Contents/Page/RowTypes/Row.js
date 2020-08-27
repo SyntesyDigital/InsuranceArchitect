@@ -33,6 +33,7 @@ class Row extends Component {
       ['col-xs-12 col-sm-8','col-xs-12  col-sm-4'],
       ['col-xs-12  col-sm-4','col-xs-12 col-sm-4','col-xs-12 col-sm-4'],
       ['col-xs-12 col-sm-6 col-md-3','col-xs-12  col-sm-6 col-md-3','col-xs-12  col-sm-6 col-md-3','col-xs-12 col-sm-6 col-md-3'],
+      ['col-xs-12 col-sm-4 col-md-2','col-xs-12 col-sm-4 col-md-2','col-xs-12 col-sm-4 col-md-2','col-xs-12 col-sm-4 col-md-2','col-xs-12 col-sm-4 col-md-2','col-xs-12 col-sm-4 col-md-2'],
       ['col-xs-12 col-sm-offset-1 col-sm-10 columna central']
     ];
 

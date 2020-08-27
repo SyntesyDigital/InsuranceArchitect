@@ -14,6 +14,7 @@ class SimpleButton extends Widget implements WidgetInterface
 
     public $fields = [
         'link' => 'Modules\Architect\Fields\Types\Link',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];
 
     public $rules = [
