@@ -78,7 +78,7 @@ class ModalEditItem extends Component {
   }
 
   getPermissions() {
-    return Object.keys(CURRENT_USER.veosPermissions).map((key,index) => 
+    return Object.keys(CURRENT_USER.veos_permissions).map((key,index) => 
       ({
         name : key,
         value : key
