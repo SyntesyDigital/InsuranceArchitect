@@ -24,7 +24,8 @@
 <script>
 
   var routes = {
-    'styles':"{{route('styles')}}",
+    'form.submit' : "{{route('style.update', $form->id)}}",
+    'form.back':"{{route('styles')}}",
     'medias.data' : "{{route('medias.data')}}",
     'medias.index' : '{{ route('medias.index') }}',
     'medias.store' : '{{ route('medias.store') }}',

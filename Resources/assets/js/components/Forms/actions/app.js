@@ -16,23 +16,23 @@ export function changeField(field) {
 }
 
 
-export function submitForm(data) {
+export function submitForm(url,data) {
     console.log('DATA',data);
 
-    return updateContent(data);
+    return updateContent(url,data);
 }
 
 export function saving(boolean) {
   return { type: SAVING, payload:boolean };
 }
 
-export function updateContent(data) {
+export function updateContent(url, data) {
 
     return (dispatch) => {
 
       dispatch(saving(true));
 
-      axios.post('/architect/styles/' + data.id + '/update', data)
+      axios.post(url, data)
           .then((response) => {
               console.log('THEN',response.data);
               if(response.data.success) {

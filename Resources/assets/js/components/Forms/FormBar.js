@@ -25,7 +25,7 @@ class FormBar extends Component {
     e.preventDefault();
 
     if(!this.props.app.saving){
-      this.props.submitForm(this.getFormData());
+      this.props.submitForm(routes.submit, this.getFormData());
     }
   }
 
@@ -75,7 +75,7 @@ class FormBar extends Component {
           <div className="row">
 
             <div className="col-md-12">
-              <a href={routes.styles} className="btn btn-default"> <i className="fa fa-angle-left"></i> </a>
+              <a href={routes.back} className="btn btn-default"> <i className="fa fa-angle-left"></i> </a>
               <h1>
                   {icon != "" &&
                     <i className={icon}></i>
@@ -128,8 +128,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitForm: (data) => {
-          return dispatch(submitForm(data));
+        submitForm: (url, data) => {
+          return dispatch(submitForm(url, data));
         }
 
     }
