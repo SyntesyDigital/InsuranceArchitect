@@ -17,6 +17,7 @@ import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField
 //import UserAccessSettingsField from './../Page/Settings/UserAccess/UserAccessSettingsField';
 
 import moment from 'moment';
+import UserAccessButton from '../Page/UserAccess/UserAccessButton';
 
 
 class ContentSidebar extends Component {
@@ -219,15 +220,7 @@ class ContentSidebar extends Component {
                 </div>
                 */}
 
-                <div className="form-group bmd-form-group sidebar-item">
-                    <BooleanSettingsField
-                        field={field}
-                        name="accessByLink"
-                        source="settings"
-                        onFieldChange={this.handleFieldSettingsChange.bind(this)}
-                        label={'Accessible par le lien'}
-                    />
-                </div>
+                
                 {/*
                 <div className="form-group bmd-form-group sidebar-item">
                     <UserAccessSettingsField
@@ -240,6 +233,9 @@ class ContentSidebar extends Component {
                 </div>
                 */}
 
+                <hr/>
+
+                <UserAccessButton />
 
             </div>
         )
@@ -411,7 +407,7 @@ class ContentSidebar extends Component {
                     </div>
                 }
 
-                {this.props.app.settings !== undefined && !architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
+                {this.props.app.saved && isPage && this.props.app.settings !== undefined && !architect.currentUserHasRole(ROLES['ROLE_ADMIN']) &&
                     <div>
                         <hr />
                         <div className="sidebar-item">

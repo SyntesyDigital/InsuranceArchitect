@@ -198,6 +198,22 @@ class Content extends Model
         return $ids;
     }
 
+    public static function getTreeSettings($id)
+    {
+        $settings = [];
+        $contents = Content::ancestorsAndSelf($id);
+        
+        foreach($contents as $content){
+            $settings[] = [
+                "id" => $content->id,
+                "title" => $content->title,
+                "settings" => $content->settings
+            ];
+        }
+
+        return $settings;
+    }
+
 
     public function getSettings()
     {

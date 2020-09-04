@@ -81,3 +81,7 @@ export const CONDITION_JOIN_OR = "or";
 //drop constants
 export const DROP_FIELD = "field"; //same drop and drag field
 export const DRAG_FIELD = "field"; //same drop and drag field
+
+//modal user access
+export const MODAL_USER_ACCESS_OPEN = "MODAL_USER_ACCESS_OPEN";
+export const MODAL_USER_ACCESS_CLOSE = "MODAL_USER_ACCESS_CLOSE";
