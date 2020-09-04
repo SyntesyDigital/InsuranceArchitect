@@ -21,17 +21,18 @@ const initialState =  {
   body : [],
   fields : {},
   saved : false,
-  saving : false
+  saving : false,
+  hide : false
 }
 
 function appReducer(state = initialState, action) {
 
     const {fields} = state;
 
-    console.log("action => ",action);
+    //console.log("action => ",action);
     switch(action.type) {
         case INIT_STATE:
-        console.log("action INIT_STATE=> ",action.payload.fields);
+        //console.log("action INIT_STATE=> ",action.payload.fields);
 
             return {
                 ...state,
@@ -41,7 +42,8 @@ function appReducer(state = initialState, action) {
                 body : action.payload.layout.layout.body !== undefined ?
                   action.payload.layout.layout.body : null,
                 sidebar : action.payload.layout.layout.sidebar !== undefined ?
-                  action.payload.layout.layout.sidebar : null
+                  action.payload.layout.layout.sidebar : null,
+                hide : action.payload.hide
             }
 
         case UPDATE_FIELD :

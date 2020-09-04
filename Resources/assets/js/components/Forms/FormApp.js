@@ -16,6 +16,7 @@ if (document.getElementById('form-builder')) {
     var form = element.getAttribute('form');
     var layout = element.getAttribute('layout');
     var fields = element.getAttribute('fields');
+    var hide = element.getAttribute('hide');
 
     ReactDOM.render(
       <Provider store={store}>
@@ -23,6 +24,7 @@ if (document.getElementById('form-builder')) {
           form={form}
           layout={layout}
           fields={fields}
+          hide={hide}
         />
       </Provider>
     , element);

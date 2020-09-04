@@ -6,6 +6,7 @@
     layout="{{ base64_encode(json_encode($layout)) }}"
     form="{{ base64_encode(json_encode($form)) }}"
     fields="{{ count($fields) > 0?base64_encode(json_encode($fields)):null }}"
+    hide="true"
 ></div>
 
 @stop
@@ -24,7 +25,8 @@
 <script>
 
   var routes = {
-    'styles':"{{route('styles')}}",
+    'form.submit' : "{{route('style.update', $form->id)}}",
+    'form.back':"{{route('styles')}}",
     'medias.data' : "{{route('medias.data')}}",
     'medias.index' : '{{ route('medias.index') }}',
     'medias.store' : '{{ route('medias.store') }}',

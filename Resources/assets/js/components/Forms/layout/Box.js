@@ -46,6 +46,7 @@ class Box extends Component {
   render() {
 
     const hideTab = this.props.hideTab !== undefined && this.props.hideTab == true ? true : false;
+    const showContent = this.props.app.hide ? false : true;
     const {data} = this.props;
 
     return (
@@ -55,7 +56,7 @@ class Box extends Component {
             {data.title}
           </span>
         </button>
-        <div id={"collapse"+data.identifier} className="collapse on" aria-labelledby={"heading"+data.identifier} aria-expanded="true" aria-controls={"collapse"+data.identifier}>
+        <div id={"collapse"+data.identifier} className={"collapse on "+(showContent ? 'in' : '')} aria-labelledby={"heading"+data.identifier} aria-expanded="true" aria-controls={"collapse"+data.identifier}>
           <div className="row box">
             {this.renderBox()}
           </div>
