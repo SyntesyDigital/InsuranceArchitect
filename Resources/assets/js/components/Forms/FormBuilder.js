@@ -19,7 +19,8 @@ class FormBuilder extends Component {
           //first state
           fields : props.fields ? JSON.parse(atob(props.fields)) : null,
           form : props.form ? JSON.parse(atob(props.form)) : null,
-          layout : props.layout ? JSON.parse(atob(props.layout)) : []
+          layout : props.layout ? JSON.parse(atob(props.layout)) : [],
+          hide : JSON.parse(props.hide)
       };
       //init state
       this.props.initState(data);
