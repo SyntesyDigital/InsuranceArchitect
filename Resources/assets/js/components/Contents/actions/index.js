@@ -8,3 +8,4 @@ export * from './modalSettings';
 export * from './modalEdit';
 export * from './modalEditList';
 export * from './modalLayout';
+export * from './modalUserAccess';

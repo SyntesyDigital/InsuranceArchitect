@@ -8,6 +8,7 @@ import modalSettingsReducer from './modalSettings.reducer';
 import modalEditReducer from './modalEdit.reducer';
 import modalEditListReducer from './modalEditList.reducer';
 import modalLayoutReducer from './modalLayout.reducer';
+import modalUserAccessReducer from './modalUserAccess.reducer';
 
 export default combineReducers({
     app: appReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
     modalSettings : modalSettingsReducer,
     modalEdit : modalEditReducer,
     modalEditList : modalEditListReducer,
-    modalLayout : modalLayoutReducer
+    modalLayout : modalLayoutReducer,
+    modalUserAccess : modalUserAccessReducer
 });

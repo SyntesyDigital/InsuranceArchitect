@@ -7,10 +7,13 @@ import { connect } from 'react-redux';
 import ContentBar from './../Content/ContentBar';
 import ContentSidebar from './../Content/ContentSidebar';
 import PageBuilder from './PageBuilder';
+import ModalUserAccess from './UserAccess/ModalUserAccess';
 
 import {
     initPageState
 } from './../actions/';
+
+
 
 /*
 import PageBuilder from './PageBuilder';
@@ -36,6 +39,7 @@ class PageContainer extends Component {
                 <ContentBar />
                 <div className="container rightbar-page content">
                     <ContentSidebar />
+                    <ModalUserAccess />
                     <DragDropContextProvider backend={HTML5Backend}>
                         <PageBuilder />
                     </DragDropContextProvider>
