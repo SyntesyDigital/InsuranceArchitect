@@ -699,6 +699,8 @@ class ModalEditItem extends Component {
 
     ////console.log("renderSettings!",this.state.field);
 
+    //elements.show
+
     var field = this.state.field;
 
     return (

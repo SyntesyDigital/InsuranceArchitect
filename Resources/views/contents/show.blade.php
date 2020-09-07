@@ -40,7 +40,8 @@ var routes = {
   'contents.page.create' : "{{route('contents.page.create')}}",
   'contents.create' : "{{route('contents.create',['typology' => ':id'])}}",
   'previewContent' : ASSETS+"preview/:id",
-  'pagelayouts.data' : '{{ route('pagelayouts.modal.data') }}'
+  'pagelayouts.data' : '{{ route('pagelayouts.modal.data') }}',
+  'elements.show' : "{{ route('extranet.elements.show',['id' => ':id'])"
 };
 </script>
 @endpush
