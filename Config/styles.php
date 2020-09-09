@@ -3333,8 +3333,56 @@ return [
                 ],
             ], //end children col
           ],
-        ], //en children box 3
-      ], //end box 3
+        ], //en children box 22
+      ], //end box 22
+      [
+        'type' => 'box',
+        'title' => 'FAQS',
+        'identifier' => 'box_23',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeTitleFaqs',
+                'name' => 'fontSizeTitleFaqs',
+                'label' => 'Title font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorTitleFaqs',
+                'name' => 'colorTitleFaqs',
+                'label' => 'Title color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorTitleFaqs',
+                'name' => 'backgroundColorTitleFaqs',
+                'label' => 'Title background-color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorDescFaqs',
+                'name' => 'backgroundColorDescFaqs',
+                'label' => 'Description background-color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusContainerFaqs',
+                'name' => 'borderRadiusContainerFaqs',
+                'label' => 'Border-radius container',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 23
+      ], //end box 23
     ],
   ],
 ];
