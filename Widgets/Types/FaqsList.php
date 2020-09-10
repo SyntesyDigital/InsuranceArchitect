@@ -24,5 +24,6 @@ class FaqsList extends Widget implements WidgetInterface
         'htmlClass',
         'hiddenFilter',
         'conditionalVisibility',
+        'titleFaq',
     ];
 }
