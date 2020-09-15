@@ -1203,6 +1203,14 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <InputSettingsField
+          field={this.state.field}
+          name="titleFaq"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Titre général'}
+        />
+
         <SelectorSettingsField
           field={this.state.field}
           name="alignContent"

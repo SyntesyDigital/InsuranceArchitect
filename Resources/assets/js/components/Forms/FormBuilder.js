@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
-import {initState,
-  cancelImage, updateImage
+import {
+    initState,
+    cancelImage, updateImage
 } from './actions/';
 
 import FormBar from './FormBar';
@@ -13,71 +14,68 @@ import MediaSelectModal from './../Medias/MediaSelectModal';
 class FormBuilder extends Component {
 
     constructor(props) {
-      super(props);
+        super(props);
 
-      var data = {
-          //first state
-          fields : props.fields ? JSON.parse(atob(props.fields)) : null,
-          form : props.form ? JSON.parse(atob(props.form)) : null,
-          layout : props.layout ? JSON.parse(atob(props.layout)) : [],
-          hide : JSON.parse(props.hide)
-      };
-      //init state
-      this.props.initState(data);
+        var data = {
+            //first state
+            fields: props.fields ? JSON.parse(atob(props.fields)) : null,
+            form: props.form ? JSON.parse(atob(props.form)) : null,
+            layout: props.layout ? JSON.parse(atob(props.layout)) : [],
+            hide: JSON.parse(props.hide)
+        };
+        //init state
+        this.props.initState(data);
 
     }
 
-    handleImageSelected(media){
-       //console.log("Selected image => ",media,this.props.images);
+    handleImageSelected(media) {
+        //console.log("Selected image => ",media,this.props.images);
 
         this.props.updateImage(
-          this.props.images.sourceField,
-          media,
-          this.props.app.fields,
-          this.props.images.sourceLanguage
+            this.props.images.sourceField,
+            media,
+            this.props.app.fields,
+            this.props.images.sourceLanguage
         );
     }
 
-    handleImageCancel(){
-      this.props.cancelImage();
+    handleImageCancel() {
+        this.props.cancelImage();
     }
 
     render() {
 
-      const mediaType = this.props.images.sourceField != null ?
-        this.props.images.sourceField.type : null;
+        const mediaType = this.props.images.sourceField != null ?
+            this.props.images.sourceField.type : null;
 
-      return (
-				<div>
+        return (
+            <div>
+                <MediaSelectModal
+                    display={this.props.images.displayModal}
+                    field={this.props.images.sourceField}
+                    mediaType={mediaType}
+                    onImageSelected={this.handleImageSelected.bind(this)}
+                    onImageCancel={this.handleImageCancel.bind(this)}
+                />
 
-          <MediaSelectModal
-            display={this.props.images.displayModal}
-            field={this.props.images.sourceField}
-            mediaType={mediaType}
-            onImageSelected={this.handleImageSelected.bind(this)}
-            onImageCancel={this.handleImageCancel.bind(this)}
-          />
+                <FormBar />
 
-          <FormBar />
+                <div className="container rightbar-page content">
+                    <FormSidebar />
 
-          <div className="container rightbar-page content">
-            <FormSidebar />
-
-            <div className="col-xs-9 page-content">
-              <FormContent />
+                    <div className="col-xs-9 page-content">
+                        <FormContent />
+                    </div>
+                </div>
             </div>
-
-          </div>
-
-        </div>
-      );
+        );
     }
 }
 
 const mapStateToProps = state => {
     return {
         app: state.app,
-        images : state.images
+        images: state.images
     }
 }
 
@@ -86,8 +84,8 @@ const mapDispatchToProps = dispatch => {
         initState: (payload) => {
             return dispatch(initState(payload));
         },
-        updateImage: (field,media,fields,language) => {
-            return dispatch(updateImage(field,media,fields,language));
+        updateImage: (field, media, fields, language) => {
+            return dispatch(updateImage(field, media, fields, language));
         },
         cancelImage: () => {
             return dispatch(cancelImage());

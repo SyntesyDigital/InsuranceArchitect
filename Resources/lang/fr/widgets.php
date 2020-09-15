@@ -68,4 +68,6 @@ return [
     'ACTION_LIST' => 'Action List',
     'MESSAGE_BOX' => 'Message Box',
     'LAST_NEWS_LIST' => 'Last News List',
+    'FAQS' => 'Faqs',
+    'FAQS_LIST' => 'Faqs List',
 ];
