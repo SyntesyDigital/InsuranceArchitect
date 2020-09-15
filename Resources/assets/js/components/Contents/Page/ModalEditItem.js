@@ -695,6 +695,24 @@ class ModalEditItem extends Component {
     })
   }
 
+  getElementLink(field,source,name,label){
+    if(field == null || field === undefined || field[source] == null || field[source] === undefined ||
+      field[source][name] === undefined) {
+      return label;
+    }
+
+    const value = field[source][name];
+    if(value == null || value == '' || value === undefined){
+      return label;
+    }
+    var elementUrl = routes['elements.show'].replace(":id",value);
+    //console.log("getElementLink :: field,value",field,value,elementUrl);
+    
+    return <a href={elementUrl} target="_blank">
+        <i className="fas fa-external-link-alt"></i>&nbsp; {label}
+      </a>
+  }
+
   renderSettings() {
 
     ////console.log("renderSettings!",this.state.field);
@@ -714,7 +732,12 @@ class ModalEditItem extends Component {
           name="fileElements"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={Lang.get('modals.element')}
+          label={this.getElementLink(
+              this.state.field,
+              'settings',
+              'fileElements',
+              Lang.get('modals.element')
+            )}
           options={this.props.modalEdit.fileElements.map(function(obj){
               return {
                   value: obj.value,
@@ -728,7 +751,12 @@ class ModalEditItem extends Component {
           name="tableElements"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={Lang.get('modals.element')}
+          label={this.getElementLink(
+            this.state.field,
+            'settings',
+            'tableElements',
+            Lang.get('modals.element')
+          )}
           options={this.props.modalEdit.tableElements.map(function(obj){
               return {
                   value: obj.value,
@@ -742,7 +770,12 @@ class ModalEditItem extends Component {
           name="formElements"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={Lang.get('modals.element')}
+          label={this.getElementLink(
+            this.state.field,
+            'settings',
+            'formElements',
+            Lang.get('modals.element')
+          )}
           options={this.props.modalEdit.formElements.map(function(obj){
               return {
                   value: obj.value,
@@ -756,7 +789,12 @@ class ModalEditItem extends Component {
           name="formElementsV2Preload"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={'Formulaire de précharge'}
+          label={this.getElementLink(
+            this.state.field,
+            'settings',
+            'formElementsV2Preload',
+            'Formulaire de précharge'
+          )}
           options={this.props.modalEdit.formElementsV2.map(function(obj){
               return {
                   value: obj.value,
@@ -770,7 +808,12 @@ class ModalEditItem extends Component {
           name="formElementsV2"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={Lang.get('modals.element')}
+          label={this.getElementLink(
+            this.state.field,
+            'settings',
+            'formElementsV2',
+            Lang.get('modals.element')
+          )}
           options={this.props.modalEdit.formElementsV2.map(function(obj){
               return {
                   value: obj.value,

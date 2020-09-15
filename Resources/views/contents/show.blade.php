@@ -41,7 +41,7 @@ var routes = {
   'contents.create' : "{{route('contents.create',['typology' => ':id'])}}",
   'previewContent' : ASSETS+"preview/:id",
   'pagelayouts.data' : '{{ route('pagelayouts.modal.data') }}',
-  'elements.show' : "{{ route('extranet.elements.show',['id' => ':id'])"
+  'elements.show' : "{{ route('extranet.elements.show',['id' => ':id'])}}"
 };
 </script>
 @endpush
