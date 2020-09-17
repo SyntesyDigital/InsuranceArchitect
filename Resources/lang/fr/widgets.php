@@ -70,4 +70,5 @@ return [
     'LAST_NEWS_LIST' => 'Last News List',
     'FAQS' => 'Faqs',
     'FAQS_LIST' => 'Faqs List',
+    'TABS_LIST' => 'Tabs List',
 ];
