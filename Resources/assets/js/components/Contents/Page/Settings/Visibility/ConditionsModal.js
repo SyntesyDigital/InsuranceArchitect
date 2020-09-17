@@ -108,10 +108,35 @@ class ConditionsModal extends Component {
 
   handleInputChange(e) {
     //TODO
-    const conditions = this.props.conditions;
+    let conditions = this.props.conditions;
 
     conditions[this.props.conditionIndex][e.target.name] = e.target.value;
+
+    //if type is changed and type is not parameter, the name is set with same type, 
+    conditions = this.updateConditionNameWithType(conditions,e);
+
     this.props.onConditionChange(conditions);
+  }
+
+  /**
+   * If type is role or permis, update the name with same type, because name is always the same
+   * for role and permis.
+   */
+  updateConditionNameWithType(conditions,e) {
+    if(e.target.name == "type") {
+      if(e.target.value != CONDITION_FIELD_TYPE_PARAMETER){
+        if(e.target.value == CONDITION_FIELD_TYPE_ROLE){
+          conditions[this.props.conditionIndex]['name'] = CONDITION_FIELD_TYPE_ROLE;
+        }
+        else if(e.target.value == CONDITION_FIELD_TYPE_PERMISSION){
+          conditions[this.props.conditionIndex]['name'] = CONDITION_FIELD_TYPE_PERMISSION;
+        }
+      }
+      //reset values variable
+      conditions[this.props.conditionIndex]['values'] = '';
+    }
+
+    return conditions;
   }
 
   renderOperators() {
@@ -132,9 +157,7 @@ class ConditionsModal extends Component {
   renderParameters(type) {
 
     var parameters = this.props.parameters;
-    var permissions = this.props.permissions;
-    var roles = this.props.roles;
-
+    
     //console.log("Object(parameters).keys => ",parameters,Object.keys(parameters));
 
     if(type == CONDITION_FIELD_TYPE_PARAMETER) {
@@ -142,7 +165,15 @@ class ConditionsModal extends Component {
         <option key={index} value={parameters[key].identifier}> {parameters[key].name}</option>
       );
     }
-    else if(type == CONDITION_FIELD_TYPE_ROLE) {
+    return null;
+  }
+
+  renderValues(type) {
+
+    var permissions = this.props.permissions;
+    var roles = this.props.roles;
+
+    if(type == CONDITION_FIELD_TYPE_ROLE) {
       return roles.map((item,index) =>
         <option key={index} value={item.value}> {item.name}</option>
       );
@@ -152,6 +183,7 @@ class ConditionsModal extends Component {
         <option key={index} value={item.value}> {item.name}</option>
       );
     }
+    return null;
   }
 
   render() {
@@ -199,16 +231,17 @@ class ConditionsModal extends Component {
                          </select>
                       </div>
 
-                      <div className="form-group bmd-form-group">
-                         <label htmlFor="name" className="bmd-label-floating">
-                            Field
-                         </label>
-                         <select type="text" className="form-control" name="name" value={condition.name} onChange={this.handleInputChange} >
-                            <option key={-1} value=""> Sélectionner </option>
-                            {this.renderParameters(condition.type)}
-                         </select>
-
-                      </div>
+                      {condition.type == CONDITION_FIELD_TYPE_PARAMETER && 
+                        <div className="form-group bmd-form-group">
+                          <label htmlFor="name" className="bmd-label-floating">
+                              Field
+                          </label>
+                          <select type="text" className="form-control" name="name" value={condition.name} onChange={this.handleInputChange} >
+                              <option key={-1} value=""> Sélectionner </option>
+                              {this.renderParameters(condition.type)}
+                          </select>
+                        </div>
+                      }
 
                       <div className="form-group bmd-form-group">
                          <label htmlFor="operator" className="bmd-label-floating">
@@ -219,12 +252,27 @@ class ConditionsModal extends Component {
                          </select>
                       </div>
 
-                      <div className="form-group bmd-form-group">
-                         <label htmlFor="values" className="bmd-label-floating">
-                            Values separated by comas
-                         </label>
-                         <input type="text" className="form-control" name="values" value={condition.values} onChange={this.handleInputChange} />
-                      </div>
+                      {condition.type == CONDITION_FIELD_TYPE_PARAMETER && 
+                        <div className="form-group bmd-form-group">
+                          <label htmlFor="values" className="bmd-label-floating">
+                              Values separated by comas
+                          </label>
+                          <input type="text" className="form-control" name="values" value={condition.values} onChange={this.handleInputChange} />
+                        </div>
+                      } 
+
+                      {condition.type != CONDITION_FIELD_TYPE_PARAMETER && 
+                        <div className="form-group bmd-form-group">
+                          <label htmlFor="values" className="bmd-label-floating">
+                              Value
+                          </label>
+                          <select type="text" className="form-control" name="values" value={condition.values} onChange={this.handleInputChange} >
+                            <option key={-1} value=""> Sélectionner </option>
+                            {this.renderValues(condition.type)}
+                          </select>
+                        </div>
+                      }
+
 
                     </div>
                   </div>

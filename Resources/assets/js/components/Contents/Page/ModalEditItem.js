@@ -86,18 +86,12 @@ class ModalEditItem extends Component {
     );
   }
   getRoles() {
-    return [{
-      name : CURRENT_USER.veosRole,
-      value : CURRENT_USER.veosRole
-    }];
-    /*
-    return Object.keys(CURRENT_USER.veosRoles).map((key,index) => function () {
-      return {
-        name : key,
-        value : key
-      }
-    });
-    */
+    return Object.keys(CURRENT_USER.veos_roles).map((key,index) => 
+      ({
+        name : CURRENT_USER.veos_roles[key],
+        value : CURRENT_USER.veos_roles[key]
+      })
+    );
   }
 
   processProps(props) {
