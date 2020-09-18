@@ -2689,20 +2689,6 @@ return [
                 'name' => 'backgroundColorActiveTab',
                 'label' => 'Background color active tab',
               ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'backgroundHoverColorTab',
-                'name' => 'backgroundHoverColorTab',
-                'label' => 'Background hover color tab',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'backgroundColorContentTab',
-                'name' => 'backgroundColorContentTab',
-                'label' => 'Background color content tab',
-              ],
             ], //end children col
           ],
           [
@@ -2715,13 +2701,6 @@ return [
                 'identifier' => 'fontSizeTab',
                 'name' => 'fontSizeTab',
                 'label' => 'Font-size tab (px)',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'borderRadiusTab',
-                'name' => 'borderRadiusTab',
-                'label' => 'Border radius tab (px)',
               ],
             ], //end children col
           ],
