@@ -1878,10 +1878,9 @@ return [
           ],
         ], //en children box
       ], //end box login
-
       [
         'type' => 'box',
-        'title' => 'Form Settings',
+        'title' => 'Element Form Settings',
         'identifier' => 'box_11',
         'children' => [
           [
@@ -1923,8 +1922,30 @@ return [
                 'name' => 'textBtnAddFileForm',
                 'label' => 'Text button file upload',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorTooltipDescForm',
+                'name' => 'backgroundColorTooltipDescForm',
+                'label' => 'Tooltip info background-color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorTooltipDescForm',
+                'name' => 'colorTooltipDescForm',
+                'label' => 'Tooltip info color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeTooltipDescForm',
+                'name' => 'fontSizeTooltipDescForm',
+                'label' => 'Tooltip info font-size',
+              ],
             ], //end children col
           ],
+
           [
             'type' => 'col',
             'class' => 'col-sm-12 col-md-6',
@@ -1983,7 +2004,188 @@ return [
           ],
         ], //en children box
       ], //end box form settings
-
+      [
+        'type' => 'box',
+        'title' => 'Element Table Settings',
+        'identifier' => 'box_19',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'headerColorTable',
+                'name' => 'headerColorTable',
+                'label' => 'Header color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'headerBackgroundColorTable',
+                'name' => 'headerBackgroundColorTable',
+                'label' => 'Header background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'iconColorHeaderTable',
+                'name' => 'iconColorHeaderTable',
+                'label' => 'Icon color header',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'rowColorTable',
+                'name' => 'rowColorTable',
+                'label' => 'Row color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'rowHoverColorTable',
+                'name' => 'rowHoverColorTable',
+                'label' => 'Row hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'rowBackgroundHoverColorTable',
+                'name' => 'rowBackgroundHoverColorTable',
+                'label' => 'Row background hover color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'rowOddBackgroundColorTable',
+                'name' => 'rowOddBackgroundColorTable',
+                'label' => 'Row odd background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'rowEvenBackgroundColorTable',
+                'name' => 'rowEvenBackgroundColorTable',
+                'label' => 'Row even background color',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-5',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeHeaderTable',
+                'name' => 'fontSizeHeaderTable',
+                'label' => 'Font-size header (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeRowTable',
+                'name' => 'fontSizeRowTable',
+                'label' => 'Font-size row (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'borderRadiusRowTable',
+                'name' => 'borderRadiusRowTable',
+                'label' => 'Border radius row (px)',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-5',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'alignFilterTable',
+                'name' => 'alignFilterTable',
+                'label' => 'Align filters (top, bottom)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'top',
+                    'value' => 'top',
+                  ],
+                  [
+                    'name' => 'bottom',
+                    'value' => 'bottom',
+                  ],
+                ],
+              ],
+              [
+                'type' => 'field',
+                'input' => 'select',
+                'identifier' => 'lowerUpperCaseHeaderTable',
+                'name' => 'lowerUpperCaseHeaderTable',
+                'label' => 'Text transform header (lowercase, uppercase, capitalize)',
+                'options' => [
+                  [
+                    'name' => 'Sélectionnez...',
+                    'value' => '',
+                  ],
+                  [
+                    'name' => 'lowercase',
+                    'value' => 'lowercase',
+                  ],
+                  [
+                    'name' => 'uppercase',
+                    'value' => 'uppercase',
+                  ],
+                  [
+                    'name' => 'capitalize',
+                    'value' => 'capitalize',
+                  ],
+                ],
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
+      [
+        'type' => 'box',
+        'title' => 'Element File Settings',
+        'identifier' => 'box_19_b',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'backgroundColorTooltipDescFile',
+                'name' => 'backgroundColorTooltipDescFile',
+                'label' => 'Tooltip info background-color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorTooltipDescFile',
+                'name' => 'colorTooltipDescFile',
+                'label' => 'Tooltip info color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeTooltipDescFile',
+                'name' => 'fontSizeTooltipDesc',
+                'label' => 'Tooltip info font-size',
+              ],
+            ], //end children col
+          ],
+        ], //en children box 3
+      ], //end box 3
       [
         'type' => 'box',
         'title' => 'Box 1',
@@ -2701,154 +2903,6 @@ return [
                 'identifier' => 'fontSizeTab',
                 'name' => 'fontSizeTab',
                 'label' => 'Font-size tab (px)',
-              ],
-            ], //end children col
-          ],
-        ], //en children box 3
-      ], //end box 3
-      [
-        'type' => 'box',
-        'title' => 'Element Table Settings',
-        'identifier' => 'box_19',
-        'children' => [
-          [
-            'type' => 'col',
-            'class' => 'col-md-2',
-            'children' => [
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'headerColorTable',
-                'name' => 'headerColorTable',
-                'label' => 'Header color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'headerBackgroundColorTable',
-                'name' => 'headerBackgroundColorTable',
-                'label' => 'Header background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'iconColorHeaderTable',
-                'name' => 'iconColorHeaderTable',
-                'label' => 'Icon color header',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'rowColorTable',
-                'name' => 'rowColorTable',
-                'label' => 'Row color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'rowHoverColorTable',
-                'name' => 'rowHoverColorTable',
-                'label' => 'Row hover color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'rowBackgroundHoverColorTable',
-                'name' => 'rowBackgroundHoverColorTable',
-                'label' => 'Row background hover color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'rowOddBackgroundColorTable',
-                'name' => 'rowOddBackgroundColorTable',
-                'label' => 'Row odd background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'rowEvenBackgroundColorTable',
-                'name' => 'rowEvenBackgroundColorTable',
-                'label' => 'Row even background color',
-              ],
-            ], //end children col
-          ],
-          [
-            'type' => 'col',
-            'class' => 'col-sm-12 col-md-5',
-            'children' => [
-              [
-                'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'fontSizeHeaderTable',
-                'name' => 'fontSizeHeaderTable',
-                'label' => 'Font-size header (px)',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'fontSizeRowTable',
-                'name' => 'fontSizeRowTable',
-                'label' => 'Font-size row (px)',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'borderRadiusRowTable',
-                'name' => 'borderRadiusRowTable',
-                'label' => 'Border radius row (px)',
-              ],
-            ], //end children col
-          ],
-          [
-            'type' => 'col',
-            'class' => 'col-sm-12 col-md-5',
-            'children' => [
-              [
-                'type' => 'field',
-                'input' => 'select',
-                'identifier' => 'alignFilterTable',
-                'name' => 'alignFilterTable',
-                'label' => 'Align filters (top, bottom)',
-                'options' => [
-                  [
-                    'name' => 'Sélectionnez...',
-                    'value' => '',
-                  ],
-                  [
-                    'name' => 'top',
-                    'value' => 'top',
-                  ],
-                  [
-                    'name' => 'bottom',
-                    'value' => 'bottom',
-                  ],
-                ],
-              ],
-              [
-                'type' => 'field',
-                'input' => 'select',
-                'identifier' => 'lowerUpperCaseHeaderTable',
-                'name' => 'lowerUpperCaseHeaderTable',
-                'label' => 'Text transform header (lowercase, uppercase, capitalize)',
-                'options' => [
-                  [
-                    'name' => 'Sélectionnez...',
-                    'value' => '',
-                  ],
-                  [
-                    'name' => 'lowercase',
-                    'value' => 'lowercase',
-                  ],
-                  [
-                    'name' => 'uppercase',
-                    'value' => 'uppercase',
-                  ],
-                  [
-                    'name' => 'capitalize',
-                    'value' => 'capitalize',
-                  ],
-                ],
               ],
             ], //end children col
           ],
