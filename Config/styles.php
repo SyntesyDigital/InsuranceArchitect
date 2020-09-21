@@ -2133,40 +2133,6 @@ return [
       ], //end box 3
       [
         'type' => 'box',
-        'title' => 'Element File Settings',
-        'identifier' => 'box_19_b',
-        'children' => [
-          [
-            'type' => 'col',
-            'class' => 'col-md-2',
-            'children' => [
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'backgroundColorTooltipDescFile',
-                'name' => 'backgroundColorTooltipDescFile',
-                'label' => 'Tooltip info background-color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'colorTooltipDescFile',
-                'name' => 'colorTooltipDescFile',
-                'label' => 'Tooltip info color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'fontSizeTooltipDescFile',
-                'name' => 'fontSizeTooltipDesc',
-                'label' => 'Tooltip info font-size',
-              ],
-            ], //end children col
-          ],
-        ], //en children box 3
-      ], //end box 3
-      [
-        'type' => 'box',
         'title' => 'Box 1',
         'identifier' => 'box_12',
         'children' => [
