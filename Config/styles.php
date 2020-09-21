@@ -1922,27 +1922,6 @@ return [
                 'name' => 'textBtnAddFileForm',
                 'label' => 'Text button file upload',
               ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'backgroundColorTooltipDescForm',
-                'name' => 'backgroundColorTooltipDescForm',
-                'label' => 'Tooltip info background-color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'colorTooltipDescForm',
-                'name' => 'colorTooltipDescForm',
-                'label' => 'Tooltip info color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'number',
-                'identifier' => 'fontSizeTooltipDescForm',
-                'name' => 'fontSizeTooltipDescForm',
-                'label' => 'Tooltip info font-size',
-              ],
             ], //end children col
           ],
 
@@ -3412,6 +3391,40 @@ return [
                 'name' => 'borderRadiusContainerFaqs',
                 'label' => 'Border-radius container',
               ],
+            ], //end children col
+          ],
+        ], //en children box 23
+      ], //end box 23
+      [
+        'type' => 'box',
+        'title' => 'Tooltip',
+        'identifier' => 'box_24',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorTooltipDescForm',
+                    'name' => 'backgroundColorTooltipDescForm',
+                    'label' => 'Tooltip info background-color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorTooltipDescForm',
+                    'name' => 'colorTooltipDescForm',
+                    'label' => 'Tooltip info color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeTooltipDescForm',
+                    'name' => 'fontSizeTooltipDescForm',
+                    'label' => 'Tooltip info font-size',
+                  ],
             ], //end children col
           ],
         ], //en children box 23
