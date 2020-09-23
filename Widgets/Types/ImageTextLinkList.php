@@ -20,5 +20,6 @@ class ImageTextLinkList extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'cropsAllowed',
+        'conditionalVisibility',
     ];
 }
