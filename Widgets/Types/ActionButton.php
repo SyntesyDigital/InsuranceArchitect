@@ -29,6 +29,7 @@ class ActionButton extends Widget implements WidgetInterface
         'htmlClass',
         'hiddenFilter',
         'conditionalVisibility',
-        'wsVisibility'
+        'wsVisibility',
+        'fileElements',
     ];
 }

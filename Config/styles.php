@@ -2747,6 +2747,20 @@ return [
                 'name' => 'titleHoverColorActionButton',
                 'label' => 'Title hover color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'numberColorActionButton',
+                'name' => 'numberColorActionButton',
+                'label' => 'Number color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'numberHoverColorActionButton',
+                'name' => 'numberHoverColorActionButton',
+                'label' => 'Number hover color',
+              ],
             ], //end children col
           ],
           [
