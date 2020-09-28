@@ -22,5 +22,6 @@ class LastNewsList extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'typology_id',
+        'conditionalVisibility',
     ];
 }

@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class BannerCarousel extends Widget implements WidgetInterface
 {
     public $type = 'widget-list';
@@ -17,7 +13,7 @@ class BannerCarousel extends Widget implements WidgetInterface
     public $widget = 'BANNER_SLIDE';
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $hidden = true;
@@ -26,7 +22,7 @@ class BannerCarousel extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'cropsAllowed',
-        'wsVisibility'
+        'wsVisibility',
+        'conditionalVisibility',
     ];
 }
-?>

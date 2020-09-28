@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class BannerSlide extends Widget implements WidgetInterface
 {
     public $type = 'widget';
@@ -20,11 +16,11 @@ class BannerSlide extends Widget implements WidgetInterface
         'image' => 'Modules\Architect\Fields\Types\Image',
         'title' => 'Modules\Architect\Fields\Types\Text',
         'subtitle' => 'Modules\Architect\Fields\Types\Text',
-        'url' => 'Modules\Architect\Fields\Types\Url'
+        'url' => 'Modules\Architect\Fields\Types\Url',
     ];
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $hidden = true;
@@ -33,7 +29,6 @@ class BannerSlide extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'cropsAllowed',
+        'conditionalVisibility',
     ];
-
 }
-?>

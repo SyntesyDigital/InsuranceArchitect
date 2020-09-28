@@ -5,10 +5,6 @@ namespace Modules\Architect\Widgets\Types;
 use Modules\Architect\Widgets\Widget;
 use Modules\Architect\Widgets\WidgetInterface;
 
-use Modules\Architect\Entities\Content;
-use Modules\Architect\Entities\ContentField;
-use Modules\Architect\Entities\Language;
-
 class Blog extends Widget implements WidgetInterface
 {
     public $type = 'widget';
@@ -21,7 +17,7 @@ class Blog extends Widget implements WidgetInterface
     ];
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $hidden = true;
@@ -30,6 +26,6 @@ class Blog extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'itemsPerPage',
+        'conditionalVisibility',
     ];
 }
-?>

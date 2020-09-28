@@ -19,6 +19,7 @@ return [
     'file_ws_fusion' => 'Fichier WS fusion',
     'translated_file' => 'Fichier traduit',
     'key_values' => 'Clé/Valeur',
+    'action' => 'Action',
 
     'title' => 'Titre',
     'description' => 'Description',

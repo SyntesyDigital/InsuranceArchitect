@@ -28,5 +28,6 @@ class ImageTextTitleDocuments extends Widget implements WidgetInterface
         'htmlId',
         'htmlClass',
         'cropsAllowed',
+        'conditionalVisibility',
     ];
 }
