@@ -68,7 +68,7 @@ export function loadCategories() {
 function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElementsTo, formElementsV2To){
     for (var i = 0; i< elementsFrom.length; i++ ){
 
-       if(elementsFrom[i].type == 'file'){
+       if(elementsFrom[i].type == 'file' || elementsFrom[i].type == 'file-v2'){
          fileElementsTo.push(processElement(elementsFrom[i]));
        }
        else if(elementsFrom[i].type == 'form'){
@@ -77,7 +77,7 @@ function pushElements(elementsFrom, fileElementsTo, formElementsTo, tableElement
        else if(elementsFrom[i].type == 'form-v2'){
         formElementsV2To.push(processElement(elementsFrom[i]));
        }
-       else if(elementsFrom[i].type == 'table'){
+       else if(elementsFrom[i].type == 'table' || elementsFrom[i].type == 'table-v2'){
         tableElementsTo.push(processElement(elementsFrom[i]));
        }
     }
