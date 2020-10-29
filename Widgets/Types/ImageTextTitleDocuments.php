@@ -18,6 +18,7 @@ class ImageTextTitleDocuments extends Widget implements WidgetInterface
         'link' => 'Modules\Architect\Fields\Types\Link',
         'link2' => 'Modules\Architect\Fields\Types\Link',
         'richtext' => 'Modules\Architect\Fields\Types\RichText',
+        'file' => 'Modules\Architect\Fields\Types\File',
     ];
 
     public $rules = [
