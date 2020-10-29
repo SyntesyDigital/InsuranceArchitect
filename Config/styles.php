@@ -1922,6 +1922,48 @@ return [
                 'name' => 'textBtnAddFileForm',
                 'label' => 'Text button file upload',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'stepperCompletedBackgroundColor',
+                'name' => 'stepperCompletedBackgroundColor',
+                'label' => 'Stage manager completed background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'stepperCompletedColor',
+                'name' => 'stepperCompletedColor',
+                'label' => 'Stage manager completed color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'stepperOuterColor',
+                'name' => 'stepperOuterColor',
+                'label' => 'Stage manager outer color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'stepperOuterBackgroundColor',
+                'name' => 'stepperOuterBackgroundColor',
+                'label' => 'Stage manager outer background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'stepperActiveBackgroundColor',
+                'name' => 'stepperActiveBackgroundColor',
+                'label' => 'Stage manager active background color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'stepperActiveColor',
+                'name' => 'stepperActiveColor',
+                'label' => 'Stage manager active color',
+              ],
             ], //end children col
           ],
 

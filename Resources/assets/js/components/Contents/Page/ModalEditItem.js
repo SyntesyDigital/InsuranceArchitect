@@ -882,7 +882,14 @@ class ModalEditItem extends Component {
           label="Couleur de fond (Hover)"
           inputLabel="Entrez la couleur"
         />
-        
+
+        <InputSettingsField
+          field={this.state.field}
+          name="initStage"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Init stage'}
+        />
 
         <BooleanSettingsField
           field={this.state.field}
