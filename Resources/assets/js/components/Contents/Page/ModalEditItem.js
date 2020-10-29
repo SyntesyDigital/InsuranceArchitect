@@ -689,6 +689,37 @@ class ModalEditItem extends Component {
     })
   }
 
+  /**
+   * Return all parameters available for this element.
+   */
+  getParametersOptions() {
+
+    if(this.state.parameters == null || this.state.parameters.length == 0 ||
+      this.props.modalEdit == null || this.props.modalEdit.parameters === undefined){
+      return [
+        {
+          value : '',
+          name : 'Aucun paramètre trouvé'
+        }
+      ];
+    }
+
+    var options = this.state.parameters.map((item,index) => {
+      return {
+        value: this.props.modalEdit.parameters[item.id].identifier,
+        name: this.props.modalEdit.parameters[item.id].name
+      };
+    });
+
+    options.unshift({
+      value : '',
+      name : 'Sélectionnez'
+    });
+
+    return options;
+
+  }
+
   getElementLink(field,source,name,label){
     if(field == null || field === undefined || field[source] == null || field[source] === undefined ||
       field[source][name] === undefined) {
@@ -1340,6 +1371,15 @@ class ModalEditItem extends Component {
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
           label={'Afficher selon WS '}
           inputLabel={'WS'}
+        />
+
+        <SelectorSettingsField
+          field={this.state.field}
+          name="stageParameter"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Paramètrè de l\'etape'}
+          options={this.getParametersOptions()}
         />
 
       </div>

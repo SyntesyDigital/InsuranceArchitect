@@ -71,4 +71,5 @@ return [
     'FAQS' => 'Faqs',
     'FAQS_LIST' => 'Faqs List',
     'TABS_LIST' => 'Tabs List',
+    'ELEMENT_STAGED_FORM' => 'Formulaire par étape'
 ];
