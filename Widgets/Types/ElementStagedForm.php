@@ -31,6 +31,7 @@ class ElementStagedForm extends Widget implements WidgetInterface
         'conditionalVisibility',
         'template',
         'wsVisibility',
-        'stageParameter'
+        'stageParameter',
+        'initStage'
     ];
 }
