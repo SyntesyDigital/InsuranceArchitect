@@ -1922,48 +1922,6 @@ return [
                 'name' => 'textBtnAddFileForm',
                 'label' => 'Text button file upload',
               ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperCompletedBackgroundColor',
-                'name' => 'stepperCompletedBackgroundColor',
-                'label' => 'Stage manager completed background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperCompletedColor',
-                'name' => 'stepperCompletedColor',
-                'label' => 'Stage manager completed color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperOuterColor',
-                'name' => 'stepperOuterColor',
-                'label' => 'Stage manager outer color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperOuterBackgroundColor',
-                'name' => 'stepperOuterBackgroundColor',
-                'label' => 'Stage manager outer background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperActiveBackgroundColor',
-                'name' => 'stepperActiveBackgroundColor',
-                'label' => 'Stage manager active background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperActiveColor',
-                'name' => 'stepperActiveColor',
-                'label' => 'Stage manager active color',
-              ],
             ], //end children col
           ],
 
@@ -3451,6 +3409,115 @@ return [
           ],
         ], //en children box 23
       ], //end box 23
+      [
+        'type' => 'box',
+        'title' => 'Formulaire par étapes',
+        'identifier' => 'box_26',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperCompletedBackgroundColor',
+                    'name' => 'stepperCompletedBackgroundColor',
+                    'label' => 'Step completed background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperCompletedColor',
+                    'name' => 'stepperCompletedColor',
+                    'label' => 'Step completed color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorCompletedLabelStepper',
+                    'name' => 'colorCompletedLabelStepper',
+                    'label' => 'Step completed label color',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperActiveBackgroundColor',
+                    'name' => 'stepperActiveBackgroundColor',
+                    'label' => 'Step active background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperActiveColor',
+                    'name' => 'stepperActiveColor',
+                    'label' => 'Step active color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorActiveLabelStepper',
+                    'name' => 'colorActiveLabelStepper',
+                    'label' => 'Step active label color',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperOuterBackgroundColor',
+                    'name' => 'stepperOuterBackgroundColor',
+                    'label' => 'Step outer background color',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperOuterColor',
+                    'name' => 'stepperOuterColor',
+                    'label' => 'Step outer color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorOuterLabelStepper',
+                    'name' => 'colorOuterLabelStepper',
+                    'label' => 'Step outer label color',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeLabelStepper',
+                    'name' => 'fontSizeLabelStepper',
+                    'label' => 'Step label font-size',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'distanceBetweenLabelStepper',
+                    'name' => 'distanceBetweenLabelStepper',
+                    'label' => 'Distance between label and step',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 26
+      ], //end box 26
     ],
   ],
 ];
