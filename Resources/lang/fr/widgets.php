@@ -73,4 +73,5 @@ return [
     'TABS_LIST' => 'Tabs List',
     'STEP_LIST' => 'Step List',
     'STEP' => 'Step',
+    'TIMELINE' => 'Timeline',
 ];

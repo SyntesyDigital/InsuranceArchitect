@@ -3449,8 +3449,90 @@ return [
                   ],
             ], //end children col
           ],
-        ], //en children box 23
-      ], //end box 23
+        ], //en children box 24
+      ], //end box 24
+      [
+        'type' => 'box',
+        'title' => 'Timeline',
+        'identifier' => 'box_25',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-6',
+            'children' => [
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorActiveTimeline',
+                    'name' => 'backgroundColorActiveTimeline',
+                    'label' => 'Stage active background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorActiveTimeline',
+                    'name' => 'borderColorActiveTimeline',
+                    'label' => 'Stage active border color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorOuterTimeline',
+                    'name' => 'backgroundColorOuterTimeline',
+                    'label' => 'Stage outer background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorOuterTimeline',
+                    'name' => 'borderColorOuterTimeline',
+                    'label' => 'Stage outer border color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorTextTimeline',
+                    'name' => 'colorTextTimeline',
+                    'label' => 'Stage text color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorDateTimeline',
+                    'name' => 'colorDateTimeline',
+                    'label' => 'Stage date color',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-12 col-md-6',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'widthStageTimeline',
+                    'name' => 'widthStageTimeline',
+                    'label' => 'Width stage',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeTextTimeline',
+                    'name' => 'fontSizeTextTimeline',
+                    'label' => 'Stage text font-size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeDateTimeline',
+                    'name' => 'fontSizeDateTimeline',
+                    'label' => 'Stage date font-size',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 25
+      ], //end box 25
     ],
   ],
 ];
