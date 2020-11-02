@@ -694,8 +694,9 @@ class ModalEditItem extends Component {
    */
   getParametersOptions() {
 
-    if(this.state.parameters == null || this.state.parameters.length == 0 ||
-      this.props.modalEdit == null || this.props.modalEdit.parameters === undefined){
+    if(this.props.app.parameters == null || this.props.app.parameters === undefined ||  
+        this.props.app.parameters.length == 0
+      ){
       return [
         {
           value : '',
@@ -704,10 +705,10 @@ class ModalEditItem extends Component {
       ];
     }
 
-    var options = this.state.parameters.map((item,index) => {
+    var options = this.props.app.parameters.map((item,index) => {
       return {
-        value: this.props.modalEdit.parameters[item.id].identifier,
-        name: this.props.modalEdit.parameters[item.id].name
+        value: item.identifier,
+        name: item.name
       };
     });
 
