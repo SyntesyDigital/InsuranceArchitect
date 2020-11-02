@@ -3518,6 +3518,54 @@ return [
           ],
         ], //en children box 26
       ], //end box 26
+      [
+        'type' => 'box',
+        'title' => 'Contact info box',
+        'identifier' => 'box_27',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorContactInfo',
+                    'name' => 'backgroundColorContactInfo',
+                    'label' => 'Box background color',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'titleColorContactInfo',
+                    'name' => 'titleColorContactInfo',
+                    'label' => 'Title color',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titleFontSizeContactInfo',
+                    'name' => 'titleFontSizeContactInfo',
+                    'label' => 'Title font-size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorPhoneMailContactInfo',
+                    'name' => 'colorPhoneMailContactInfo',
+                    'label' => 'Title phone/mail color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizePhoneMailContactInfo',
+                    'name' => 'fontSizePhoneMailContactInfo',
+                    'label' => 'Title phone/mail font-size',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 27
+      ], //end box 27
     ],
   ],
 ];
