@@ -8,7 +8,7 @@ use Modules\Architect\Widgets\WidgetInterface;
 class TimeLine extends Widget implements WidgetInterface
 {
     public $type = 'widget';
-    public $icon = 'far fa-comment-dots';
+    public $icon = 'fas fa-chart-bar';
     public $name = 'TIMELINE';
     public $component = 'CommonWidget';
 
