@@ -3709,6 +3709,41 @@ return [
                     'name' => 'distanceBetweenLabelStepper',
                     'label' => 'Distance between label and step',
                   ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'titleBackgroundColorFormStage',
+                    'name' => 'titleBackgroundColorFormStage',
+                    'label' => 'Title background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'titleColorFormStage',
+                    'name' => 'titleColorFormStage',
+                    'label' => 'Title color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titleLineHeightFormStage',
+                    'name' => 'titleLineHeightFormStage',
+                    'label' => 'Title line height',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titleFontSizeFormStage',
+                    'name' => 'titleFontSizeFormStage',
+                    'label' => 'Title font size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titlePaddingFormStage',
+                    'name' => 'titlePaddingFormStage',
+                    'label' => 'Title padding',
+                  ],
             ], //end children col
           ],
         ], //en children box 26
