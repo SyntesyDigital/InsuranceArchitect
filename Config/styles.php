@@ -3733,6 +3733,13 @@ return [
                   [
                     'type' => 'field',
                     'input' => 'number',
+                    'identifier' => 'titleFontSizeFormStage',
+                    'name' => 'titleFontSizeFormStage',
+                    'label' => 'Title font size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
                     'identifier' => 'titlePaddingFormStage',
                     'name' => 'titlePaddingFormStage',
                     'label' => 'Title padding',
