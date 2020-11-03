@@ -3748,6 +3748,88 @@ return [
           ],
         ], //en children box 26
       ], //end box 26
+      [
+        'type' => 'box',
+        'title' => 'Contact info box',
+        'identifier' => 'box_27',
+        'children' => [
+            [
+                'type' => 'col',
+                'class' => 'col-md-3',
+                'children' => [
+                    [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'backgroundColorContactInfo',
+                        'name' => 'backgroundColorContactInfo',
+                        'label' => 'Box background color',
+                      ],
+                    [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'titleColorContactInfo',
+                        'name' => 'titleColorContactInfo',
+                        'label' => 'Title color',
+                      ],
+                    [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'titleFontSizeContactInfo',
+                        'name' => 'titleFontSizeContactInfo',
+                        'label' => 'Title font-size',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'colorPhoneMailContactInfo',
+                        'name' => 'colorPhoneMailContactInfo',
+                        'label' => 'Title phone/mail color',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'fontSizePhoneMailContactInfo',
+                        'name' => 'fontSizePhoneMailContactInfo',
+                        'label' => 'Title phone/mail font-size',
+                      ],
+                ], //end children col
+              ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusTopRightContactInfo',
+                    'name' => 'borderRadiusTopRightContactInfo',
+                    'label' => 'Border-radius top right',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusTopLeftContactInfo',
+                    'name' => 'borderRadiusTopLeftContactInfo',
+                    'label' => 'Border-radius top left',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusBottomLeftContactInfo',
+                    'name' => 'borderRadiusBottomLeftContactInfo',
+                    'label' => 'Border-radius bottom left',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusBottomRightContactInfo',
+                    'name' => 'borderRadiusBottomRightContactInfo',
+                    'label' => 'Border-radius bottom right',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 27
+      ], //end box 27
     ],
   ],
 ];

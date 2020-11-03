@@ -74,4 +74,5 @@ return [
     'ELEMENT_STAGED_FORM' => 'Formulaire par étape',
     'STEP_LIST' => 'Liste des étapes',
     'STEP' => 'Étape',
+    'CONTACT_INFO' => 'Contact Info',
 ];

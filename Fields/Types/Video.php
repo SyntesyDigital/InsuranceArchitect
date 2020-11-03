@@ -2,11 +2,10 @@
 
 namespace Modules\Architect\Fields\Types;
 
-use Modules\Architect\Fields\Field;
-use Modules\Architect\Fields\FieldInterface;
-use Modules\Architect\Entities\Content;
 use Modules\Architect\Entities\ContentField;
 use Modules\Architect\Entities\Language;
+use Modules\Architect\Fields\Field;
+use Modules\Architect\Fields\FieldInterface;
 
 class Video extends Field implements FieldInterface
 {
@@ -15,62 +14,62 @@ class Video extends Field implements FieldInterface
     public $name = 'VIDEO';
 
     public $rules = [
-        'required'
+        'required',
     ];
 
     public $settings = [
       'htmlId',
-      'htmlClass'
+      'htmlClass',
+      'height',
     ];
 
     public function validate($request)
-    {}
+    {
+    }
 
-      public function save($content, $identifier, $values, $languages = null)
-      {
-          $languages = Language::getAllCached();
+    public function save($content, $identifier, $values, $languages = null)
+    {
+        $languages = Language::getAllCached();
 
-          // Save father field
-          $field = ContentField::create([
+        // Save father field
+        $field = ContentField::create([
               'name' => $identifier,
               'value' => '',
-              'content_id' => $content->id
+              'content_id' => $content->id,
           ]);
 
-          if(!$field) {
-              return false;
-          }
+        if (!$field) {
+            return false;
+        }
 
-          // Save TITLE child fields
-          if(isset($values['title'])) {
-              foreach($values['title'] as $iso => $value) {
-                  $language = $this->getLanguageFromIso($iso, $languages);
+        // Save TITLE child fields
+        if (isset($values['title'])) {
+            foreach ($values['title'] as $iso => $value) {
+                $language = $this->getLanguageFromIso($iso, $languages);
 
-                  $content->fields()->save(new ContentField([
-                      'name' => $identifier . '.title',
+                $content->fields()->save(new ContentField([
+                      'name' => $identifier.'.title',
                       'value' => $value,
                       'language_id' => isset($language->id) ? $language->id : null,
-                      'parent_id' => $field->id
+                      'parent_id' => $field->id,
                   ]));
-              }
-          }
+            }
+        }
 
-          // Save URL child fields
-          if(isset($values['url'])) {
-              foreach($values['url'] as $iso => $value) {
-                  $language = $this->getLanguageFromIso($iso, $languages);
+        // Save URL child fields
+        if (isset($values['url'])) {
+            foreach ($values['url'] as $iso => $value) {
+                $language = $this->getLanguageFromIso($iso, $languages);
 
-                  $content->fields()->save(new ContentField([
-                      'name' => $identifier . '.url',
+                $content->fields()->save(new ContentField([
+                      'name' => $identifier.'.url',
                       'value' => $value,
                       'language_id' => isset($language->id) ? $language->id : null,
-                      'parent_id' => $field->id
+                      'parent_id' => $field->id,
                   ]));
-              }
-          }
+            }
+        }
 
-          return true;
-      }
-
+        return true;
+    }
 }
-?>
