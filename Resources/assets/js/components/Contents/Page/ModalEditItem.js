@@ -689,6 +689,38 @@ class ModalEditItem extends Component {
     })
   }
 
+  /**
+   * Return all parameters available for this element.
+   */
+  getParametersOptions() {
+
+    if(this.props.app.parameters == null || this.props.app.parameters === undefined ||  
+        this.props.app.parameters.length == 0
+      ){
+      return [
+        {
+          value : '',
+          name : 'Aucun paramètre trouvé'
+        }
+      ];
+    }
+
+    var options = this.props.app.parameters.map((item,index) => {
+      return {
+        value: item.identifier,
+        name: item.name
+      };
+    });
+
+    options.unshift({
+      value : '',
+      name : 'Sélectionnez'
+    });
+
+    return options;
+
+  }
+
   getElementLink(field,source,name,label){
     if(field == null || field === undefined || field[source] == null || field[source] === undefined ||
       field[source][name] === undefined) {
@@ -883,13 +915,7 @@ class ModalEditItem extends Component {
           inputLabel="Entrez la couleur"
         />
 
-        <InputSettingsField
-          field={this.state.field}
-          name="initStage"
-          source="settings"
-          onFieldChange={this.handleFieldSettingsChange.bind(this)}
-          label={'Init stage'}
-        />
+        
 
         <BooleanSettingsField
           field={this.state.field}
@@ -1347,6 +1373,23 @@ class ModalEditItem extends Component {
           onFieldChange={this.handleFieldSettingsChange.bind(this)}
           label={'Afficher selon WS '}
           inputLabel={'WS'}
+        />
+
+        <SelectorSettingsField
+          field={this.state.field}
+          name="stageParameter"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Paramètrè de l\'etape'}
+          options={this.getParametersOptions()}
+        />
+
+        <InputSettingsField
+          field={this.state.field}
+          name="initStage"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Init stage'}
         />
 
       </div>

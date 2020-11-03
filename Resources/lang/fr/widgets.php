@@ -71,7 +71,8 @@ return [
     'FAQS' => 'Faqs',
     'FAQS_LIST' => 'Faqs List',
     'TABS_LIST' => 'Tabs List',
-    'STEP_LIST' => 'Step List',
-    'STEP' => 'Step',
+    'ELEMENT_STAGED_FORM' => 'Formulaire par étape',
+    'STEP_LIST' => 'Liste des étapes',
+    'STEP' => 'Étape',
     'CONTACT_INFO' => 'Contact Info',
 ];
