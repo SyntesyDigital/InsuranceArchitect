@@ -74,6 +74,14 @@ trait HasFields
         });
     }
 
+    public static function whereInField($name, $values)
+    {
+        return self::whereHas('fields', function ($q) use ($name, $values) {
+            $q->where('name', $name);
+            $q->whereIn('value', $values);
+        });
+    }
+
     public function getFieldByIdentifier($identifier)
     {
         $field = null;
