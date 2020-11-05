@@ -18,4 +18,6 @@ export const TYPE_FONT = "font";
 export const TYPE_BOOLEAN = "boolean";
 export const TYPE_SELECT = "select";
 export const TYPE_ICON = "icon";
+export const TYPE_TEXTAREA = "textarea";
+
 
