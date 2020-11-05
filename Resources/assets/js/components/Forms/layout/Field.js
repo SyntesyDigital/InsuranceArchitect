@@ -11,6 +11,7 @@ import FontField from './fields/FontField';
 import BooleanField from './fields/BooleanField';
 import SelectField from './fields/SelectField';
 import IconField from './fields/IconField';
+import TextAreaField from './fields/TextAreaField';
 
 class Field extends Component {
 
@@ -77,6 +78,13 @@ class Field extends Component {
             case 'icon':
                 return (
                     <IconField
+                        field={data}
+                    />
+                );
+                
+            case 'textarea':
+                return (
+                    <TextAreaField
                         field={data}
                     />
                 );
