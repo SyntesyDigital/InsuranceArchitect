@@ -12,6 +12,7 @@ return [
     'link' => 'Lien',
     'link2' => 'Lien 2',
     'titleDoc' => 'Title Doc',
+    'urlDoc' => 'Url Doc',
     'video' => 'Vidéo',
     'localization' => 'Emplacement',
     'slug' => 'Slug',

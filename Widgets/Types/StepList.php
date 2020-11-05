@@ -21,5 +21,6 @@ class StepList extends Widget implements WidgetInterface
         'htmlClass',
         'conditionalVisibility',
         'initStage',
+        'stageParameter'
     ];
 }

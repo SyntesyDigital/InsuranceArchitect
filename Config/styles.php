@@ -1922,48 +1922,6 @@ return [
                 'name' => 'textBtnAddFileForm',
                 'label' => 'Text button file upload',
               ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperCompletedBackgroundColor',
-                'name' => 'stepperCompletedBackgroundColor',
-                'label' => 'Stage manager completed background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperCompletedColor',
-                'name' => 'stepperCompletedColor',
-                'label' => 'Stage manager completed color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperOuterColor',
-                'name' => 'stepperOuterColor',
-                'label' => 'Stage manager outer color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperOuterBackgroundColor',
-                'name' => 'stepperOuterBackgroundColor',
-                'label' => 'Stage manager outer background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperActiveBackgroundColor',
-                'name' => 'stepperActiveBackgroundColor',
-                'label' => 'Stage manager active background color',
-              ],
-              [
-                'type' => 'field',
-                'input' => 'color',
-                'identifier' => 'stepperActiveColor',
-                'name' => 'stepperActiveColor',
-                'label' => 'Stage manager active color',
-              ],
             ], //end children col
           ],
 
@@ -3449,12 +3407,433 @@ return [
                   ],
             ], //end children col
           ],
-        ], //en children box 24
-      ], //end box 24
+        ], //en children box 23
+      ], //end box 23
+      [
+        'type' => 'box',
+        'title' => 'Formulaire par étapes',
+        'identifier' => 'box_26',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperCompletedBackgroundColor',
+                    'name' => 'stepperCompletedBackgroundColor',
+                    'label' => 'Step completed background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperCompletedColor',
+                    'name' => 'stepperCompletedColor',
+                    'label' => 'Step completed color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorCompletedLabelStepper',
+                    'name' => 'colorCompletedLabelStepper',
+                    'label' => 'Step completed label color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorPrevBtnStepper',
+                    'name' => 'colorPrevBtnStepper',
+                    'label' => 'Button prev color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorHoverPrevBtnStepper',
+                    'name' => 'colorHoverPrevBtnStepper',
+                    'label' => 'Button prev hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorPrevBtnStepper',
+                    'name' => 'backgroundColorPrevBtnStepper',
+                    'label' => 'Button prev background color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundHoverColorPrevBtnStepper',
+                    'name' => 'backgroundHoverColorPrevBtnStepper',
+                    'label' => 'Button prev background hover color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorPrevBtnStepper',
+                    'name' => 'borderColorPrevBtnStepper',
+                    'label' => 'Button prev border color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderHoverColorPrevBtnStepper',
+                    'name' => 'borderHoverColorPrevBtnStepper',
+                    'label' => 'Button prev border hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusPrevBtnStepper',
+                    'name' => 'borderRadiusPrevBtnStepper',
+                    'label' => 'Button prev border radius',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizePrevBtnStepper',
+                    'name' => 'fontSizePrevBtnStepper',
+                    'label' => 'Button prev font-size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconPrevBtnStepper',
+                    'name' => 'iconPrevBtnStepper',
+                    'label' => 'Button Icon prev',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperActiveBackgroundColor',
+                    'name' => 'stepperActiveBackgroundColor',
+                    'label' => 'Step active background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperActiveColor',
+                    'name' => 'stepperActiveColor',
+                    'label' => 'Step active color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorActiveLabelStepper',
+                    'name' => 'colorActiveLabelStepper',
+                    'label' => 'Step active label color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorNextBtnStepper',
+                    'name' => 'colorNextBtnStepper',
+                    'label' => 'Button next color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorHoverNextBtnStepper',
+                    'name' => 'colorHoverNextBtnStepper',
+                    'label' => 'Button next hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorNextBtnStepper',
+                    'name' => 'backgroundColorNextBtnStepper',
+                    'label' => 'Button next background color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundHoverColorNextBtnStepper',
+                    'name' => 'backgroundHoverColorNextBtnStepper',
+                    'label' => 'Button next background hover color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorNextBtnStepper',
+                    'name' => 'borderColorNextBtnStepper',
+                    'label' => 'Button next border color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderHoverColorNextBtnStepper',
+                    'name' => 'borderHoverColorNextBtnStepper',
+                    'label' => 'Button next border hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusNextBtnStepper',
+                    'name' => 'borderRadiusNextBtnStepper',
+                    'label' => 'Button next border radius',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeNextBtnStepper',
+                    'name' => 'fontSizeNextBtnStepper',
+                    'label' => 'Button next font-size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconPrevNextStepper',
+                    'name' => 'iconPrevNextStepper',
+                    'label' => 'Button Icon next',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperOuterBackgroundColor',
+                    'name' => 'stepperOuterBackgroundColor',
+                    'label' => 'Step outer background color',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'stepperOuterColor',
+                    'name' => 'stepperOuterColor',
+                    'label' => 'Step outer color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorOuterLabelStepper',
+                    'name' => 'colorOuterLabelStepper',
+                    'label' => 'Step outer label color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorSubmitBtnStepper',
+                    'name' => 'colorSubmitBtnStepper',
+                    'label' => 'Button submit color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorHoverSubmitBtnStepper',
+                    'name' => 'colorHoverSubmitBtnStepper',
+                    'label' => 'Button submit hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorSubmitBtnStepper',
+                    'name' => 'backgroundColorSubmitBtnStepper',
+                    'label' => 'Button submit background color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundHoverColorSubmitBtnStepper',
+                    'name' => 'backgroundHoverColorSubmitBtnStepper',
+                    'label' => 'Button submit background hover color',
+                  ],
+
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorSubmitBtnStepper',
+                    'name' => 'borderColorSubmitBtnStepper',
+                    'label' => 'Button submit border color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderHoverColorSubmitBtnStepper',
+                    'name' => 'borderHoverColorSubmitBtnStepper',
+                    'label' => 'Button submit border hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusSubmitBtnStepper',
+                    'name' => 'borderRadiusSubmitBtnStepper',
+                    'label' => 'Button submit border radius',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeSubmitBtnStepper',
+                    'name' => 'fontSizeSubmitBtnStepper',
+                    'label' => 'Button submit font-size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconSubmitStepper',
+                    'name' => 'iconSubmitStepper',
+                    'label' => 'Button Icon submit',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeLabelStepper',
+                    'name' => 'fontSizeLabelStepper',
+                    'label' => 'Step label font-size',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'distanceBetweenLabelStepper',
+                    'name' => 'distanceBetweenLabelStepper',
+                    'label' => 'Distance between label and step',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'titleBackgroundColorFormStage',
+                    'name' => 'titleBackgroundColorFormStage',
+                    'label' => 'Title background color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'titleColorFormStage',
+                    'name' => 'titleColorFormStage',
+                    'label' => 'Title color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titleLineHeightFormStage',
+                    'name' => 'titleLineHeightFormStage',
+                    'label' => 'Title line height',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titleFontSizeFormStage',
+                    'name' => 'titleFontSizeFormStage',
+                    'label' => 'Title font size',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'titlePaddingFormStage',
+                    'name' => 'titlePaddingFormStage',
+                    'label' => 'Title padding',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 26
+      ], //end box 26
+      [
+        'type' => 'box',
+        'title' => 'Contact info box',
+        'identifier' => 'box_27',
+        'children' => [
+            [
+                'type' => 'col',
+                'class' => 'col-md-3',
+                'children' => [
+                    [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'backgroundColorContactInfo',
+                        'name' => 'backgroundColorContactInfo',
+                        'label' => 'Box background color',
+                      ],
+                    [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'titleColorContactInfo',
+                        'name' => 'titleColorContactInfo',
+                        'label' => 'Title color',
+                      ],
+                    [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'titleFontSizeContactInfo',
+                        'name' => 'titleFontSizeContactInfo',
+                        'label' => 'Title font-size',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'color',
+                        'identifier' => 'colorPhoneMailContactInfo',
+                        'name' => 'colorPhoneMailContactInfo',
+                        'label' => 'Title phone/mail color',
+                      ],
+                      [
+                        'type' => 'field',
+                        'input' => 'number',
+                        'identifier' => 'fontSizePhoneMailContactInfo',
+                        'name' => 'fontSizePhoneMailContactInfo',
+                        'label' => 'Title phone/mail font-size',
+                      ],
+                ], //end children col
+              ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-3',
+            'children' => [
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusTopRightContactInfo',
+                    'name' => 'borderRadiusTopRightContactInfo',
+                    'label' => 'Border-radius top right',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusTopLeftContactInfo',
+                    'name' => 'borderRadiusTopLeftContactInfo',
+                    'label' => 'Border-radius top left',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusBottomLeftContactInfo',
+                    'name' => 'borderRadiusBottomLeftContactInfo',
+                    'label' => 'Border-radius bottom left',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusBottomRightContactInfo',
+                    'name' => 'borderRadiusBottomRightContactInfo',
+                    'label' => 'Border-radius bottom right',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 27
+      ], //end box 27
       [
         'type' => 'box',
         'title' => 'Timeline',
-        'identifier' => 'box_25',
+        'identifier' => 'box_28',
         'children' => [
           [
             'type' => 'col',
@@ -3539,7 +3918,7 @@ return [
             ], //end children col
           ],
         ], //en children box 25
-      ], //end box 25
+      ], //end box 28
     ],
   ],
 ];

@@ -16,6 +16,7 @@ class ImageTextTitleDocuments extends Widget implements WidgetInterface
         'image' => 'Modules\Architect\Fields\Types\Image',
         'title' => 'Modules\Architect\Fields\Types\Text',
         'titleDoc' => 'Modules\Architect\Fields\Types\Text',
+        'urlDoc' => 'Modules\Architect\Fields\Types\Url',
         'link2' => 'Modules\Architect\Fields\Types\Link',
         'richtext' => 'Modules\Architect\Fields\Types\RichText',
         'file' => 'Modules\Architect\Fields\Types\File',

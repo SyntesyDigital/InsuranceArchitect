@@ -153,13 +153,12 @@ class ModalSelectItem extends Component {
         FIELDS["IMAGES"].type,
         FIELDS["BOOLEAN"].type,
         FIELDS["URL"].type,
-        FIELDS["FILE"].type,
+        //FIELDS["FILE"].type,
         FIELDS["TRANSLATED_FILE"].type,
-        FIELDS["VIDEO"].type,
+        //FIELDS["VIDEO"].type,
         FIELDS["LOCALIZATION"].type,
         FIELDS["DATE"].type,
         FIELDS["LINK"].type
-
     ];
 
     for( var key in FIELDS){
