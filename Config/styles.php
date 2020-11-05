@@ -3510,6 +3510,13 @@ return [
             'children' => [
                 [
                     'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorTimeline',
+                    'name' => 'borderColorTimeline',
+                    'label' => 'Border color timeline',
+                  ],
+                [
+                    'type' => 'field',
                     'input' => 'number',
                     'identifier' => 'widthStageTimeline',
                     'name' => 'widthStageTimeline',

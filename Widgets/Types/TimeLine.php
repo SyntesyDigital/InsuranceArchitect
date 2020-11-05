@@ -26,9 +26,7 @@ class TimeLine extends Widget implements WidgetInterface
     public $settings = [
       'collapsable',
       'collapsed',
-      'bootstrapColumns',
       'conditionalVisibility',
-      'itemsPerPage',
       'tableElements',
       'wsVisibility',
     ];
