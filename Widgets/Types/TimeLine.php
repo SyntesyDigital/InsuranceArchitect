@@ -29,5 +29,6 @@ class TimeLine extends Widget implements WidgetInterface
       'conditionalVisibility',
       'tableElements',
       'wsVisibility',
+      'itemsPerPage'
     ];
 }
