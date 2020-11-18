@@ -1922,6 +1922,13 @@ return [
                 'name' => 'textBtnAddFileForm',
                 'label' => 'Text button file upload',
               ],
+              [
+                'type' => 'field',
+                'input' => 'text',
+                'identifier' => 'textBtnAddValueForm',
+                'name' => 'textBtnAddValueForm',
+                'label' => 'Text button add suscriptor',
+              ],
             ], //end children col
           ],
 

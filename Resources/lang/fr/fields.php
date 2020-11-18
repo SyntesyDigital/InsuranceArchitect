@@ -124,4 +124,5 @@ return [
     'moreBtn' => 'Voir plus',
     'addBtn' => 'Ajouter Element',
     'excelBtn' => 'Texte exportation CSV',
+    'new_suscriptor' => 'Nouveau souscripteur',
 ];
