@@ -11,13 +11,42 @@ export default class IconField extends Component {
 
         var icons = [];
 
+        const hasFontAwesome = SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== undefined
+            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== null
+            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE == true
+            ? true
+            : false;
+
+        const hasCreaticLib = SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== undefined
+            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== null
+            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE == true
+            ? true
+            : false;
+
+        if (hasFontAwesome) {
+            for (var key in fontAwesomeIcons) {
+                icons.push({
+                    value: key,
+                    label: <span> <i className={key}></i> &nbsp; {key}</span>
+                });
+            }
+        }
+
+        if (hasCreaticLib) {
+            //icons svg
+            // icons.push({
+            //     value: key,
+            //     label: <span> <i className={key}></i> &nbsp; {key}</span>
+            // });
+        }
+
         for (var key in fontAwesomeIcons) {
             icons.push({
                 value: key,
                 label: <span> <i className={key}></i> &nbsp; {key}</span>
             });
         }
-
+        
         this.state = {
             icons: icons
         };
