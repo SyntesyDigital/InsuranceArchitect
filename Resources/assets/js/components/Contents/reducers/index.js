@@ -9,6 +9,7 @@ import modalEditReducer from './modalEdit.reducer';
 import modalEditListReducer from './modalEditList.reducer';
 import modalLayoutReducer from './modalLayout.reducer';
 import modalUserAccessReducer from './modalUserAccess.reducer';
+import creaticIconsReducer from './creaticIcons.reducer';
 
 export default combineReducers({
     app: appReducer,
@@ -20,5 +21,7 @@ export default combineReducers({
     modalEdit : modalEditReducer,
     modalEditList : modalEditListReducer,
     modalLayout : modalLayoutReducer,
-    modalUserAccess : modalUserAccessReducer
+    modalUserAccess : modalUserAccessReducer,
+    creatic : creaticIconsReducer,
+
 });

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fontAwesomeIcons } from './Icons/Icons-data';
+import { creaticIcons } from './Icons/Creatic-icons';
 import Select from 'react-select';
 import {
     changeField
@@ -17,12 +18,40 @@ class IconField extends Component {
 
         var icons = [];
 
-        for (var key in fontAwesomeIcons) {
-            icons.push({
-                value: key,
-                label: <span> <i className={key}></i> &nbsp; {key}</span>
-            });
+        const hasFontAwesome = SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== undefined
+            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== null
+            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE.value == true
+            ? true
+            : false;
+
+        const hasCreaticLib = SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== undefined
+            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== null
+            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE.value == true
+            ? true
+            : false;
+
+        if (hasFontAwesome) {
+            for (var key in fontAwesomeIcons) {
+                icons.push({
+                    value: key,
+                    label: <span> <i className={key}></i> &nbsp; {key}</span>
+                });
+            }
         }
+
+        if (hasCreaticLib) {
+            for (var key in creaticIcons) {
+                icons.push({
+                    value: key,
+                    label: <span>
+                        <svg className={'icon ' + key}>
+                            <use xlinkHref={'#' + key}></use>
+                        </svg> &nbsp; {key}
+                    </span>
+                });
+            }
+        }
+
 
         this.state = {
             icons: icons
