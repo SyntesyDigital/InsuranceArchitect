@@ -19,5 +19,6 @@ class Icon extends Field implements FieldInterface
         'htmlId',
         'htmlClass',
         'fontSize',
+        'conditionalVisibility'
     ];
 }

@@ -19,7 +19,8 @@ class File extends Field implements FieldInterface
 
     public $settings = [
         'htmlId',
-        'htmlClass'
+        'htmlClass',
+        'conditionalVisibility'
     ];
 
     public function save($content, $identifier, $media, $languages = null)

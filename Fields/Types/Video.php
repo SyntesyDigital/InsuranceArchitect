@@ -21,6 +21,7 @@ class Video extends Field implements FieldInterface
       'htmlId',
       'htmlClass',
       'height',
+      'conditionalVisibility'
     ];
 
     public function validate($request)
