@@ -14,6 +14,7 @@ class Faqs extends Widget implements WidgetInterface
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
         'description' => 'Modules\Architect\Fields\Types\RichText',
     ];
 

@@ -3367,6 +3367,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
+                'identifier' => 'colorDescFaqs',
+                'name' => 'colorDescFaqs',
+                'label' => 'Description color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
                 'identifier' => 'backgroundColorDescFaqs',
                 'name' => 'backgroundColorDescFaqs',
                 'label' => 'Description background-color',
