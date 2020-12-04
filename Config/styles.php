@@ -3387,6 +3387,26 @@ return [
               ],
             ], //end children col
           ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeIconFaqs',
+                'name' => 'fontSizeIconFaqs',
+                'label' => 'Icon Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorIconFaqs',
+                'name' => 'colorIconFaqs',
+                'label' => 'Icon color',
+              ],
+            ], //end children col
+          ],
         ], //en children box 23
       ], //end box 23
       [
