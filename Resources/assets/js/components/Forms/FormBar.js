@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CustomIcon from './../../components/common/CustomIcon';
 import {
     submitForm
 } from './actions/';
@@ -62,17 +63,6 @@ class FormBar extends Component {
         const name = 'Form';
         const saved = this.props.app.saved;
         const saving = this.props.app.saving;
-        const hasFontAwesome = SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== undefined
-            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== null
-            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE.value == true
-            ? true
-            : false;
-
-        const hasCreaticLib = SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== undefined
-            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== null
-            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE.value == true
-            ? true
-            : false;
 
         return (
             <div className="page-bar">
@@ -82,16 +72,12 @@ class FormBar extends Component {
                         <div className="col-md-12">
                             <a href={routes.back} className="btn btn-default"> <i className="fa fa-angle-left"></i> </a>
                             <h1>
-                                {icon != '' && hasFontAwesome &&
-                                    <i className={icon}></i>
-                                }
-                                {icon != '' && hasCreaticLib &&
-                                    <svg className={'icon ' + icon}>
-                                        <use xlinkHref={'#' + icon}></use>
-                                    </svg>
+                                {icon != '' &&
+                                    <CustomIcon
+                                        icon={icon}
+                                    />
                                 }
                                 {'\u00A0'}
-
                                 {name != "" ? name : Lang.get('modals.new_content')}
                             </h1>
                             <div className="float-buttons pull-right">

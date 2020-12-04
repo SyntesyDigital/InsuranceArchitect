@@ -14,7 +14,7 @@ class TotalBox extends Widget implements WidgetInterface
 
     public $fields = [
         'name' => 'Modules\Architect\Fields\Types\Text',
-        'icon' => 'Modules\Architect\Fields\Types\Text',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
         'url' => 'Modules\Architect\Fields\Types\Url',
     ];
 
@@ -29,6 +29,6 @@ class TotalBox extends Widget implements WidgetInterface
       'htmlClass',
       'tableElements',
       'conditionalVisibility',
-      'wsVisibility'
+      'wsVisibility',
     ];
 }

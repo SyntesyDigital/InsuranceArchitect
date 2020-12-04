@@ -9,24 +9,41 @@ import { creaticIcons } from './Icons/Creatic-icons';
 class IconField extends Component {
 
     constructor(props) {
-
         super(props);
+        this.state = {
+            icons: []
+        };
+
+        this.handleOnChange = this.handleOnChange.bind(this);
+        this.getLibIcons = this.getLibIcons.bind(this);
+
+    }
+
+    componentDidMount() {
+        this.getLibIcons();
+    }
+
+
+    // ==============================
+    // Handlers
+    // ==============================
+
+    handleOnChange(option) {
+        this.props.onFieldChange({
+            identifier: this.props.field.identifier,
+            value: option.value
+        });
+    }
+
+    // ==============================
+    // Getters
+    // ==============================
+
+    getLibIcons() {
 
         var icons = [];
 
-        const hasFontAwesome = SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== undefined
-            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== null
-            && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE.value == true
-            ? true
-            : false;
-
-        const hasCreaticLib = SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== undefined
-            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== null
-            && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE.value == true
-            ? true
-            : false;
-
-        if (hasFontAwesome) {
+        if (hasFontAwesome()) {
             for (var key in fontAwesomeIcons) {
                 icons.push({
                     value: key,
@@ -35,7 +52,7 @@ class IconField extends Component {
             }
         }
 
-        if (hasCreaticLib) {
+        if (hasCreaticLib()) {
             for (var key in creaticIcons) {
                 icons.push({
                     value: key,
@@ -48,20 +65,11 @@ class IconField extends Component {
             }
         }
 
-        this.state = {
+        this.setState({
             icons: icons
-        };
-
-        this.handleOnChange = this.handleOnChange.bind(this);
-    }
-
-
-    handleOnChange(option) {
-        this.props.onFieldChange({
-            identifier: this.props.field.identifier,
-            value: option.value
         });
     }
+
 
     getOption(value) {
         if (value === undefined || value == null)
@@ -74,11 +82,48 @@ class IconField extends Component {
         return null;
     }
 
+    //procesamos el field si viene o no con idioma
+    getFieldValue(field) {
+
+        if (field.value) {
+            if (field.value[DEFAULT_LOCALE]) {
+                return field.value[DEFAULT_LOCALE];
+            }
+            else {
+                return field.value;
+            }
+        }
+        return '';
+    }
+
+    // procesamos la clave del icono para convertir a fontawesome v.4 ->
+    // -> o retornar el value que tenga
+    getFontAwesomeIcon(key) {
+
+        var explode = key.split(' ');
+
+        if (explode[0] == 'fa') {
+            explode[0] = 'fas';
+            return explode.join(' ');
+
+        } else {
+            return key;
+        }
+    }
+
+    // ==============================
+    // Renderers
+    // ==============================
+
     renderInputs() {
 
         const errors = this.props.app.errors[this.props.field.identifier];
         var error = errors ? true : false;
-        var value = this.getOption(this.props.field.value);
+
+        var fieldValue = this.getFieldValue(this.props.field);
+        fieldValue = this.getFontAwesomeIcon(fieldValue);
+
+        var value = this.getOption(fieldValue);
 
         return (
             <div className={'form-group bmd-form-group ' + (error ? 'has-error' : null)} >
@@ -117,6 +162,20 @@ class IconField extends Component {
             </div>
         );
     }
+}
+
+function hasFontAwesome() {
+    return SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== undefined
+        && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== null
+        ? !SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE.value
+        : true;
+}
+
+function hasCreaticLib() {
+    return SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== undefined
+        && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== null
+        ? SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE.value
+        : false;
 }
 
 const mapStateToProps = state => {
