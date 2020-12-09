@@ -126,6 +126,20 @@ export default class IconField extends Component {
     }
 }
 
+function hasFontAwesome() {
+    return SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== undefined
+        && SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE !== null
+        ? !SITE_CONFIG_GENERAL.FONTAWESOME_IS_ACTIVE.value
+        : true;
+}
+
+function hasCreaticLib() {
+    return SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== undefined
+        && SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE !== null
+        ? SITE_CONFIG_GENERAL.CREATIC_LIB_IS_ACTIVE.value
+        : false;
+}
+
 IconField.propTypes = {
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

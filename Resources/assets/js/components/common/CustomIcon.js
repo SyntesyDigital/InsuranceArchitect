@@ -33,7 +33,6 @@ export default class CustomIcon extends Component {
     isCreaticIcon() {
         let word = "creatic";
         if (this.props.icon.indexOf(word)) {
-            console.log("La palabra está dentro ");
             return true;
         }
         else {
