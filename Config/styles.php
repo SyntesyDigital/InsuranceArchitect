@@ -504,6 +504,13 @@ return [
                 'name' => 'frontSidebarWidth',
                 'label' => 'Width sidebar (px)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'frontSidebarIconFontSize',
+                'name' => 'frontSidebarIconFontSize',
+                'label' => 'Font-size icons (px)',
+              ],
             ], //end children col
           ],
         ], //en children box
@@ -2082,6 +2089,13 @@ return [
                 'name' => 'borderRadiusRowTable',
                 'label' => 'Border radius row (px)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeIconTable',
+                'name' => 'fontSizeIconTable',
+                'label' => 'Font-size icon (px)',
+              ],
             ], //end children col
           ],
           [
@@ -2732,6 +2746,13 @@ return [
                 'identifier' => 'iconColorActionButton',
                 'name' => 'iconColorActionButton',
                 'label' => 'Icon color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeIconActionButton',
+                'name' => 'fontSizeIconActionButton',
+                'label' => 'Icon Font-size (px)',
               ],
               [
                 'type' => 'field',

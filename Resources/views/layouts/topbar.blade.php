@@ -94,6 +94,9 @@
         </div>
         -->
 
+    <!-- Include file defs svg creatic custom library -->
+    @include('extranet::front.partials.svg_defs')
+    
     </div>
     <div class="clearfix"></div>
 </header>
