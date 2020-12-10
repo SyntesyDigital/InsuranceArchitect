@@ -122,9 +122,9 @@ class IconField extends Component {
 
         const { field } = this.props;
 
-        const value = this.props.app.fields[field.name] !== undefined &&
-            this.props.app.fields[field.name].value ?
-            this.props.app.fields[field.name].value : '';
+        const fieldName = this.props.app.fields[field.name] !== undefined &&
+            this.props.app.fields[field.name] ?
+            this.props.app.fields[field.name] : '';
 
         const options = this.state.icons.map(
             item => ({
@@ -132,7 +132,8 @@ class IconField extends Component {
                 value: item.value,
             }));
 
-        var fieldValue = this.getFieldValue(this.props.field);
+        var fieldValue = this.getFieldValue(fieldName);
+
         fieldValue = this.getFontAwesomeIcon(fieldValue);
 
         var optionIndex = this.getOption(fieldValue);
