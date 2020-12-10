@@ -31,5 +31,6 @@ class ActionButton extends Widget implements WidgetInterface
         'conditionalVisibility',
         'wsVisibility',
         'fileElements',
+        'actionBtnClass',
     ];
 }

@@ -1273,6 +1273,32 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <SelectorSettingsField
+          field={this.state.field}
+          name="actionBtnClass"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Action button class'}
+          options={[
+            {
+              value: "",
+              name: "---",
+            },
+            {
+              value: "action-btn-1",
+              name: "action-btn-1",
+            },
+            {
+              value: "action-btn-2",
+              name: "action-btn-2"
+            },
+            {
+              value: "action-btn-3",
+              name: "action-btn-3",
+            },
+          ]}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="titleFaq"
