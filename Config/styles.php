@@ -3388,6 +3388,13 @@ return [
               [
                 'type' => 'field',
                 'input' => 'color',
+                'identifier' => 'colorDescFaqs',
+                'name' => 'colorDescFaqs',
+                'label' => 'Description color',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
                 'identifier' => 'backgroundColorDescFaqs',
                 'name' => 'backgroundColorDescFaqs',
                 'label' => 'Description background-color',
@@ -3398,6 +3405,26 @@ return [
                 'identifier' => 'borderRadiusContainerFaqs',
                 'name' => 'borderRadiusContainerFaqs',
                 'label' => 'Border-radius container',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-2',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeIconFaqs',
+                'name' => 'fontSizeIconFaqs',
+                'label' => 'Icon Font-size (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorIconFaqs',
+                'name' => 'colorIconFaqs',
+                'label' => 'Icon color',
               ],
             ], //end children col
           ],
