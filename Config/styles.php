@@ -2752,7 +2752,7 @@ return [
                 'input' => 'number',
                 'identifier' => 'fontSizeIconActionButton',
                 'name' => 'fontSizeIconActionButton',
-                'label' => 'Icon Font-size (px)',
+                'label' => 'Icon Font-size (px) [class 1]',
               ],
               [
                 'type' => 'field',
@@ -2860,6 +2860,13 @@ return [
               ],
               [
                 'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeIconActionButton2',
+                'name' => 'fontSizeIconActionButton2',
+                'label' => 'Icon Font-size (px) [class 2]',
+              ],
+              [
+                'type' => 'field',
                 'input' => 'color',
                 'identifier' => 'iconHoverColorActionButton2',
                 'name' => 'iconHoverColorActionButton2',
@@ -2961,6 +2968,13 @@ return [
                 'identifier' => 'iconColorActionButton3',
                 'name' => 'iconColorActionButton3',
                 'label' => 'Icon color [class 3]',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeIconActionButton3',
+                'name' => 'fontSizeIconActionButton3',
+                'label' => 'Icon Font-size (px) [class 3]',
               ],
               [
                 'type' => 'field',
