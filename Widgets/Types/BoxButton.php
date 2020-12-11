@@ -15,7 +15,7 @@ class BoxButton extends Widget implements WidgetInterface
     public $fields = [
         'url' => 'Modules\Architect\Fields\Types\Url',
         'title' => 'Modules\Architect\Fields\Types\Text',
-        'icon' => 'Modules\Architect\Fields\Types\Text',
+        'icon' => 'Modules\Architect\Fields\Types\Icon',
         'image' => 'Modules\Architect\Fields\Types\Image',
     ];
 
@@ -34,6 +34,6 @@ class BoxButton extends Widget implements WidgetInterface
         'cropsAllowed',
         'backgroundColor',
         'backgroundHoverColor',
-        'wsVisibility'
+        'wsVisibility',
     ];
 }
