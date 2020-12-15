@@ -4234,6 +4234,13 @@ return [
                     'name' => 'backgroundColorbackgroundModal',
                     'label' => 'Modal background background-color',
                   ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorCloseButtonModal',
+                    'name' => 'colorCloseButtonModal',
+                    'label' => 'Modal icon close button color',
+                  ],
             ], //end children col
           ],
           [
@@ -4302,13 +4309,6 @@ return [
                     'identifier' => 'paddingContainerFormModal',
                     'name' => 'paddingContainerFormModal',
                     'label' => 'Modal container form padding (px)',
-                  ],
-                  [
-                    'type' => 'field',
-                    'input' => 'number',
-                    'identifier' => 'marginContainerFormModal',
-                    'name' => 'marginContainerFormModal',
-                    'label' => 'Modal container form margin (px)',
                   ],
             ], //end children col
           ],
