@@ -6,6 +6,7 @@ import LinkField from './LinkField';
 import ContentSelectModal from './../Contents/ContentSelectModal';
 import InputSettingsField from './../Typology/Settings/InputSettingsField';
 import SelectorSettingsField from './../Typology/Settings/SelectorSettingsField';
+import IconSettingsField from './../Typology/Settings/IconSettingsField';
 
 import axios from 'axios';
 
@@ -40,7 +41,7 @@ export default class ModalMenuItem extends Component {
           value:{},
           name:"Enllaç",
           type:"link",
-          settings:{htmlId:null,htmlClass:null,icon:null}
+          settings:{htmlId:null,htmlClass:null,icon:null, iconSelect:null}
       };
 
       this.setState({
@@ -220,7 +221,16 @@ export default class ModalMenuItem extends Component {
           inputLabel={Lang.get('modals.indica_css')}
         />
 
-        <InputSettingsField
+        {/* <InputSettingsField
+          field={this.state.field}
+          name="icon"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label="Icône"
+          inputLabel="Indiquez une icône"
+        /> */}
+
+        <IconSettingsField
           field={this.state.field}
           name="icon"
           source="settings"
@@ -228,7 +238,6 @@ export default class ModalMenuItem extends Component {
           label="Icône"
           inputLabel="Indiquez une icône"
         />
-
 
       </div>
     );
