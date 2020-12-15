@@ -4190,6 +4190,171 @@ return [
           ],
         ], //en children box 25
       ], //end box 28
+      [
+        'type' => 'box',
+        'title' => 'Modal settings',
+        'identifier' => 'box_29',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorHeaderModal',
+                    'name' => 'colorHeaderModal',
+                    'label' => 'Modal header color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorHeaderModal',
+                    'name' => 'backgroundColorHeaderModal',
+                    'label' => 'Modal header background-color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorHeaderModal',
+                    'name' => 'borderColorHeaderModal',
+                    'label' => 'Modal header border color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorContentModal',
+                    'name' => 'backgroundColorContentModal',
+                    'label' => 'Modal content background-color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorbackgroundModal',
+                    'name' => 'backgroundColorbackgroundModal',
+                    'label' => 'Modal background background-color',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-4 col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeHeaderModal',
+                    'name' => 'fontSizeHeaderModal',
+                    'label' => 'Modal header font-size (px)',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusHeaderModal',
+                    'name' => 'borderRadiusHeaderModal',
+                    'label' => 'Modal header border-radius (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'borderRadiusContentModal',
+                    'name' => 'borderRadiusContentModal',
+                    'label' => 'Modal content border-radius (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'boxShadowContentModal',
+                    'name' => 'boxShadowContentModal',
+                    'label' => 'Modal content box-shadow (0-100)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'opacityModal',
+                    'name' => 'opacityModal',
+                    'label' => 'Modal background opacity (0-100)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingHeaderModal',
+                    'name' => 'paddingHeaderModal',
+                    'label' => 'Modal header padding (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingContentFormWrapperModal',
+                    'name' => 'paddingContentFormWrapperModal',
+                    'label' => 'Modal wrapper padding (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'marginContentFormWrapperModal',
+                    'name' => 'marginContentFormWrapperModal',
+                    'label' => 'Modal wrapper margin (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'paddingContainerFormModal',
+                    'name' => 'paddingContainerFormModal',
+                    'label' => 'Modal container form padding (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'marginContainerFormModal',
+                    'name' => 'marginContainerFormModal',
+                    'label' => 'Modal container form margin (px)',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-sm-4 col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorFooterButtonModal',
+                    'name' => 'backgroundColorFooterButtonModal',
+                    'label' => 'Modal footer button background-color',
+                  ],
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorButtonModal',
+                    'name' => 'backgroundColorButtonModal',
+                    'label' => 'Modal button background-color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorButtonModal',
+                    'name' => 'colorButtonModal',
+                    'label' => 'Modal button color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorButtonModal',
+                    'name' => 'borderColorButtonModal',
+                    'label' => 'Modal button border-color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'minHeightButtonModal',
+                    'name' => 'minHeightButtonModal',
+                    'label' => 'Modal footer min-height',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 25
+      ], //end box 29
     ],
   ],
 ];
