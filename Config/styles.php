@@ -2370,6 +2370,13 @@ return [
                 'name' => 'descColorImgTxtLink',
                 'label' => 'Description color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorDateLastNews',
+                'name' => 'colorDateLastNews',
+                'label' => 'Last News date color',
+              ],
             ], //end children col
           ],
           [
