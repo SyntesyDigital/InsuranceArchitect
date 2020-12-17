@@ -1249,6 +1249,28 @@ class ModalEditItem extends Component {
 
         <SelectorSettingsField
           field={this.state.field}
+          name="renderButton"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={Lang.get('modals.render_button')}
+          options={[
+                {
+                    value: "",
+                    name: "---",
+                },
+                {
+                    value: "simple_button",
+                    name: Lang.get('modals.simple_button'),
+                },
+                {
+                    value: "box_button",
+                    name: Lang.get('modals.box_button'),
+                }
+          ]}
+        />
+
+        <SelectorSettingsField
+          field={this.state.field}
           name="btnClass"
           source="settings"
           onFieldChange={this.handleFieldSettingsChange.bind(this)}

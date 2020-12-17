@@ -57,4 +57,7 @@ return [
     'button_primary' => 'Primario',
     'button_secondary' => 'Secundario',
     'hide_empty_rows' => 'Ocultar filas vacías',
+    'render_button' => 'Tipo de renderizado',
+    'simple_button' => 'Botón simple',
+    'box_button' => 'Botón caja',
 ];

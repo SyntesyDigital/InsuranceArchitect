@@ -63,4 +63,7 @@ return [
     'button_primary' => 'Primaire',
     'button_secondary' => 'Secondaire',
     'hide_empty_rows' => 'Cacher les lignes vides',
+    'render_button' => 'Render button type',
+    'simple_button' => 'Simple button',
+    'box_button' => 'Box button',
 ];
