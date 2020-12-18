@@ -32,6 +32,7 @@ class ElementStagedForm extends Widget implements WidgetInterface
         'template',
         'wsVisibility',
         'stageParameter',
-        'initStage'
+        'initStage',
+        'autosave'
     ];
 }

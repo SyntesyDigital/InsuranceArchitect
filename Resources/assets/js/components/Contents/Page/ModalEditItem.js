@@ -1440,6 +1440,14 @@ class ModalEditItem extends Component {
           label={'Init stage'}
         />
 
+        <BooleanSettingsField
+          field={this.state.field}
+          name="autosave"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={'Autosave'}
+        />
+
       </div>
 
 
