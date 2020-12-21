@@ -1936,6 +1936,27 @@ return [
                 'name' => 'textBtnAddValueForm',
                 'label' => 'Text button add suscriptor',
               ],
+              [
+                'type' => 'field',
+                'input' => 'icon',
+                'identifier' => 'iconCurrencyForm',
+                'name' => 'iconCurrencyForm',
+                'label' => 'Icon currency',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'icon',
+                'identifier' => 'iconDateForm',
+                'name' => 'iconDateForm',
+                'label' => 'Icon date',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'icon',
+                'identifier' => 'iconSurfaceForm',
+                'name' => 'iconSurfaceForm',
+                'label' => 'Icon surface',
+              ],
             ], //end children col
           ],
 

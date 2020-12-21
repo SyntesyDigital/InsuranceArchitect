@@ -125,4 +125,5 @@ return [
     'addBtn' => 'Ajouter Element',
     'excelBtn' => 'Texte exportation CSV',
     'new_suscriptor' => 'Nouveau souscripteur',
+    'surface' => 'm2',
 ];
