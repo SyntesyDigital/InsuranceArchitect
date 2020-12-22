@@ -209,9 +209,13 @@ class ModalEditClass extends Component {
               name: "box-class-3",
             },
             {
-                value: "reduced",
-                name: "reduced",
-              },
+              value: "reduced",
+              name: "reduced",
+            },
+            {
+              value: "icon-box",
+              name: "icon-box",
+            },
           ]}
         />
       </div>
