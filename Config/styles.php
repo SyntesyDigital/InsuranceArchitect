@@ -1259,6 +1259,13 @@ return [
                 'name' => 'btn1BorderRadius',
                 'label' => 'Button 1 border-radius (px)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn1IconFontSize',
+                'name' => 'btn1IconFontSize',
+                'label' => 'Button 1 icon font-size (px)',
+              ],
             ], //end children col
           ],
           [
@@ -1321,6 +1328,13 @@ return [
                 'name' => 'btn2BorderRadius',
                 'label' => 'Button 2 border-radius (px)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn2IconFontSize',
+                'name' => 'btn2IconFontSize',
+                'label' => 'Button 2 icon font-size (px)',
+              ],
             ],
           ],
           [
@@ -1382,6 +1396,13 @@ return [
                 'identifier' => 'btn3BorderRadius',
                 'name' => 'btn3BorderRadius',
                 'label' => 'Button 3 border-radius (px)',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'btn3IconFontSize',
+                'name' => 'btn3IconFontSize',
+                'label' => 'Button 3 icon font-size (px)',
               ],
             ],
           ],
