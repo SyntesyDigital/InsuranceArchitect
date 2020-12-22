@@ -1957,6 +1957,13 @@ return [
                 'name' => 'iconSurfaceForm',
                 'label' => 'Icon surface',
               ],
+              [
+                'type' => 'field',
+                'input' => 'icon',
+                'identifier' => 'iconFontSizeForm',
+                'name' => 'iconFontSizeForm',
+                'label' => 'Icon font-size',
+              ],
             ], //end children col
           ],
 
