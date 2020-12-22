@@ -2169,6 +2169,13 @@ return [
                   ],
                 ],
               ],
+              [
+                'type' => 'field',
+                'input' => 'icon',
+                'identifier' => 'iconViewMoreTable',
+                'name' => 'iconViewMoreTable',
+                'label' => 'Icon view more',
+              ],
             ], //end children col
           ],
         ], //en children box 3
