@@ -3142,6 +3142,13 @@ return [
                 'name' => 'fontSizeTab',
                 'label' => 'Font-size tab (px)',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'widthTab',
+                'name' => 'widthTab',
+                'label' => 'Width tab (px)',
+              ],
             ], //end children col
           ],
         ], //en children box 3
