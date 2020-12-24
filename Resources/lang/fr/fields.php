@@ -125,4 +125,6 @@ return [
     'addBtn' => 'Ajouter Element',
     'excelBtn' => 'Texte exportation CSV',
     'new_suscriptor' => 'Nouveau souscripteur',
+    'button' => 'Button',
+    'dropzone' => 'Dropzone'
 ];
