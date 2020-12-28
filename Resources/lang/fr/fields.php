@@ -127,4 +127,5 @@ return [
     'new_suscriptor' => 'Nouveau souscripteur',
     'button' => 'Button',
     'dropzone' => 'Dropzone'
+    'surface' => 'm2',
 ];
