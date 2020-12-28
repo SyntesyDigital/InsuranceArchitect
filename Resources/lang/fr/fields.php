@@ -126,6 +126,6 @@ return [
     'excelBtn' => 'Texte exportation CSV',
     'new_suscriptor' => 'Nouveau souscripteur',
     'button' => 'Button',
-    'dropzone' => 'Dropzone'
+    'dropzone' => 'Dropzone',
     'surface' => 'm2',
 ];
