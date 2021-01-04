@@ -4423,8 +4423,50 @@ return [
                   ],
             ], //end children col
           ],
-        ], //en children box 25
+        ], //en children box 29
       ], //end box 29
+
+      [
+        'type' => 'box',
+        'title' => 'Breadcrumbs',
+        'identifier' => 'box_30',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorBreadcrumb',
+                    'name' => 'colorBreadcrumb',
+                    'label' => 'Breadcrumb color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorHoverBreadcrumb',
+                    'name' => 'colorHoverBreadcrumb',
+                    'label' => 'Breadcrumb hover color',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeBreadcrumb',
+                    'name' => 'fontSizeBreadcrumb',
+                    'label' => 'Breadcrumb font-size (px)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'borderColorBreadcrumb',
+                    'name' => 'borderColorBreadcrumb',
+                    'label' => 'Breadcrumb border-color',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 30
+      ], //end box 30
     ],
   ],
 ];
