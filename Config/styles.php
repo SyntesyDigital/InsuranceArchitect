@@ -1980,7 +1980,7 @@ return [
               ],
               [
                 'type' => 'field',
-                'input' => 'icon',
+                'input' => 'number',
                 'identifier' => 'iconFontSizeForm',
                 'name' => 'iconFontSizeForm',
                 'label' => 'Icon font-size',
