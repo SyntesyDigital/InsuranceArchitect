@@ -10,6 +10,7 @@ return [
   'has_container' => 'Te contenidor ?',
   'display_inline' => 'Display-inline dels elements amb separador ?',
   'display_label' => 'Ocultar els labels?',
+  'display_borders' => 'Visualitzar els borders?',
   'without_program' => 'Sense programa',
   'indica_title' => 'Indica títol',
   'Title' => 'Títol',

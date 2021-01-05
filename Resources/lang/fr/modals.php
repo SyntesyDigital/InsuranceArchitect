@@ -10,6 +10,7 @@ return [
     'has_container' => 'A un conteneur ?',
     'display_inline' => 'Display en ligne avec séparateur',
     'display_label' => 'Cacher les étiquettes?',
+    'display_borders' => 'Visualisez les bords?',
     'without_program' => 'Sans programme',
     'indica_title' => 'Indiquez le titre',
     'Title' => 'Titre',
