@@ -2042,6 +2042,13 @@ return [
                 'name' => 'borderPxInputForm',
                 'label' => 'Border (px) input',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'heightInputForm',
+                'name' => 'heightInputForm',
+                'label' => 'Height (px) (input/select/radio)',
+              ],
             ], //end children col
           ],
         ], //en children box
