@@ -1980,7 +1980,7 @@ return [
               ],
               [
                 'type' => 'field',
-                'input' => 'icon',
+                'input' => 'number',
                 'identifier' => 'iconFontSizeForm',
                 'name' => 'iconFontSizeForm',
                 'label' => 'Icon font-size',
@@ -2042,10 +2042,93 @@ return [
                 'name' => 'borderPxInputForm',
                 'label' => 'Border (px) input',
               ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'heightInputForm',
+                'name' => 'heightInputForm',
+                'label' => 'Height (px) (input/select/radio)',
+              ],
             ], //end children col
           ],
         ], //en children box
       ], //end box form settings
+      [
+        'type' => 'box',
+        'title' => 'Element File Settings',
+        'identifier' => 'box_19_a',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeLabelElementFile',
+                'name' => 'fontSizeLabelElementFile',
+                'label' => 'Font-size (px) label',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontWeightLabelElementFile',
+                'name' => 'fontWeightLabelElementFile',
+                'label' => 'Font-weight label (100 - 900)',
+              ],
+
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorLabelElementFile',
+                'name' => 'colorLabelElementFile',
+                'label' => 'Color label ',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'lineHeightLabelElementFile',
+                'name' => 'lineHeightLabelElementFile',
+                'label' => 'Line-height (px) label ',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeValueElementFile',
+                    'name' => 'fontSizeValueElementFile',
+                    'label' => 'Font-size (px) value',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontWeightValueElementFile',
+                    'name' => 'fontWeightValueElementFile',
+                    'label' => 'Font-weight value (100 - 900)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorValueElementFile',
+                    'name' => 'colorValueElementFile',
+                    'label' => 'Color value',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'lineHeightValueElementFile',
+                    'name' => 'lineHeightValueElementFile',
+                    'label' => 'Line-height (px) value ',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 19_a
+      ], //end box 19_a
       [
         'type' => 'box',
         'title' => 'Element Table Settings',
@@ -4467,6 +4550,108 @@ return [
           ],
         ], //en children box 30
       ], //end box 30
+      [
+        'type' => 'box',
+        'title' => 'Dropzone',
+        'identifier' => 'box_31',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorBorderState01Dropzone',
+                    'name' => 'colorBorderState01Dropzone',
+                    'label' => 'Border color state 01',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorState01Dropzone',
+                    'name' => 'backgroundColorState01Dropzone',
+                    'label' => 'Background color state 01',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorState01Dropzone',
+                    'name' => 'colorState01Dropzone',
+                    'label' => 'Color state 01',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeTextState01Dropzone',
+                    'name' => 'fontSizeTextState01Dropzone',
+                    'label' => 'Font-size (px) text state 01',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorSpanState01Dropzone',
+                    'name' => 'colorSpanState01Dropzone',
+                    'label' => 'Color span text',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorBorderState02Dropzone',
+                    'name' => 'colorBorderState02Dropzone',
+                    'label' => 'Border color state 02',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'backgroundColorState02Dropzone',
+                    'name' => 'backgroundColorState02Dropzone',
+                    'label' => 'Background color state 02',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorState02Dropzone',
+                    'name' => 'colorState02Dropzone',
+                    'label' => 'Color state 02',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeTextState02Dropzone',
+                    'name' => 'fontSizeTextState02Dropzone',
+                    'label' => 'Font-size (px) text state 02',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconState02Dropzone',
+                    'name' => 'iconState02Dropzone',
+                    'label' => 'Icon trash state 02',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'text',
+                    'identifier' => 'textDropzone',
+                    'name' => 'textDropzone',
+                    'label' => 'Text state 01 (you can use html tags)',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 31
+      ], //end box 31
     ],
   ],
 ];

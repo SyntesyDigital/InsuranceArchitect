@@ -7,7 +7,7 @@
   const CURRENT_USER = {!! Auth::user() ? json_encode(Auth::user(), JSON_PRETTY_PRINT) : 'null' !!};
   const LANGUAGES = {!! json_encode(Modules\Architect\Entities\Language::orderBy('name', 'DESC')->get(), JSON_PRETTY_PRINT) !!};
   const TYPOLOGIES = {!! json_encode(Modules\Architect\Entities\Typology::all(), JSON_PRETTY_PRINT) !!};
-  const ROW_SETTINGS = ['htmlId','htmlClass','hasContainer','textAlign','hideBorders', 'boxClass','conditionalVisibility', 'displayInline', 'displayLabel','stage'];
+  const ROW_SETTINGS = ['htmlId','htmlClass','hasContainer','textAlign','hideBorders', 'boxClass','conditionalVisibility', 'displayInline', 'displayLabel','stage', 'displayBorders'];
   const COL_SETTINGS = ['htmlId','htmlClass','textAlign','stripped','labelAlign','valueAlign','display', 'hideBorders','conditionalVisibility', 'displayInline', 'displayLabel'];
   const PAGE_SETTINGS = ['accessByLink','userAccess'];
   const CONTENT_SETTINGS = ['htmlClass'];
