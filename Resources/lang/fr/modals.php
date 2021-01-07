@@ -30,6 +30,7 @@ return [
     'indica_tipology_date_identifier' => 'Indiquer l\'identifiant du la date de la typologie',
     'extended_version' => 'Version étendue',
     'list_columns' => 'Colonnes de liste',
+    'auto_height' => 'Hauteur automatique',
     'column' => 'colonne',
     'columns' => 'colonnes',
     'height' => 'hauteur',

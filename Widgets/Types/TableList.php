@@ -27,9 +27,10 @@ class TableList extends Widget implements WidgetInterface
       'collapsable',
       'collapsed',
       'bootstrapColumns',
+      'autoHeight',
       'tableElements',
       'conditionalVisibility',
       'itemsPerPage',
-      'wsVisibility'
+      'wsVisibility',
     ];
 }

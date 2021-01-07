@@ -1198,6 +1198,14 @@ class ModalEditItem extends Component {
           ]}
         />
 
+        <BooleanSettingsField
+          field={this.state.field}
+          name="autoHeight"
+          source="settings"
+          onFieldChange={this.handleFieldSettingsChange.bind(this)}
+          label={Lang.get('modals.auto_height')}
+        />
+
         <InputSettingsField
           field={this.state.field}
           name="height"

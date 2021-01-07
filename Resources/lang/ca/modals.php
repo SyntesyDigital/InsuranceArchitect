@@ -29,6 +29,7 @@ return [
   'indica_tipology_date_identifier' => 'Indica el identificador de la data de la tipologia',
   'extended_version' => 'Versió extesa',
   'list_columns' => 'Columnes de llistat',
+  'auto_height' => 'Alçada automàtica',
   'column' => 'columna',
   'columns' => 'columnes',
   'height' => 'Alçada',

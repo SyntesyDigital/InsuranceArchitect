@@ -29,6 +29,7 @@ return [
     'indica_tipology_date_identifier' => 'Indicate the tipology date identifier',
     'extended_version' => 'Extended version',
     'list_columns' => 'List columns',
+    'auto_height' => 'Auto height',
     'column' => 'column',
     'columns' => 'columns',
     'height' => 'Height',
