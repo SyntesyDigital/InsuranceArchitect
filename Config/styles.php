@@ -2048,6 +2048,82 @@ return [
       ], //end box form settings
       [
         'type' => 'box',
+        'title' => 'Element File Settings',
+        'identifier' => 'box_19_a',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontSizeLabelElementFile',
+                'name' => 'fontSizeLabelElementFile',
+                'label' => 'Font-size (px) label',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'fontWeightLabelElementFile',
+                'name' => 'fontWeightLabelElementFile',
+                'label' => 'Font-weight label (100 - 900)',
+              ],
+
+              [
+                'type' => 'field',
+                'input' => 'color',
+                'identifier' => 'colorLabelElementFile',
+                'name' => 'colorLabelElementFile',
+                'label' => 'Color label ',
+              ],
+              [
+                'type' => 'field',
+                'input' => 'number',
+                'identifier' => 'lineHeightLabelElementFile',
+                'name' => 'lineHeightLabelElementFile',
+                'label' => 'Line-height (px) label ',
+              ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeValueElementFile',
+                    'name' => 'fontSizeValueElementFile',
+                    'label' => 'Font-size (px) value',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontWeightValueElementFile',
+                    'name' => 'fontWeightValueElementFile',
+                    'label' => 'Font-weight value (100 - 900)',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorValueElementFile',
+                    'name' => 'colorValueElementFile',
+                    'label' => 'Color value',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'lineHeightValueElementFile',
+                    'name' => 'lineHeightValueElementFile',
+                    'label' => 'Line-height (px) value ',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 19_a
+      ], //end box 19_a
+      [
+        'type' => 'box',
         'title' => 'Element Table Settings',
         'identifier' => 'box_19',
         'children' => [
