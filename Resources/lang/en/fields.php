@@ -104,5 +104,6 @@ return [
         'icon' => 'Icon',
         'file_too_big' => 'File too big',
         'new_suscriptor' => 'Add suscriptor',
-        'disable_breadcumb' => 'Disable breadcumb'
+        'disable_breadcumb' => 'Disable breadcumb',
+        'enable_topbar' => 'Activate top bar'
 ];

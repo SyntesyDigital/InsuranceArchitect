@@ -104,5 +104,6 @@ return [
     'icon' => 'Icona',
     'file_too_big' => 'Arxiu massa gran',
     'new_suscriptor' => 'Afegir suscriptor',
-    'disable_breadcumb' => 'Desactivar breadcumb'
+    'disable_breadcumb' => 'Desactivar breadcumb',
+    'enable_topbar' => 'Activar barra superior'
 ];

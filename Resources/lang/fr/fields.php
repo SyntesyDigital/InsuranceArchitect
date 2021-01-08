@@ -128,5 +128,6 @@ return [
     'button' => 'Button',
     'dropzone' => 'Dropzone',
     'surface' => 'm2',
-    'disable_breadcumb' => 'Désactiver le fil d\'ariane'
+    'disable_breadcumb' => 'Désactiver le fil d\'ariane',
+    'enable_topbar' => 'Activer la barre supérieure'
 ];

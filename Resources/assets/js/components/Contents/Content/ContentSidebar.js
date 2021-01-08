@@ -12,6 +12,7 @@ import {
 
 import TagManager from "./../Tags/TagManager";
 import InputSettingsField from './../../Typology/Settings/InputSettingsField';
+import InputSettingsTopBar from './../../Typology/Settings/InputSettingsTopBar';
 import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField';
 import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
 //import UserAccessSettingsField from './../Page/Settings/UserAccess/UserAccessSettingsField';
@@ -188,6 +189,16 @@ class ContentSidebar extends Component {
                     source="settings"
                     onFieldChange={this.handleFieldSettingsChange.bind(this)}
                     label={Lang.get('fields.disable_breadcumb')}
+                />
+
+                <InputSettingsTopBar
+                    field={field}
+                    name="topBar"
+                    source="settings"
+                    onFieldChange={this.handleFieldSettingsChange.bind(this)}
+                    label={Lang.get('fields.enable_topbar')}
+                    inputLabel="Title"
+                    selectLabel="Icon"
                 />
 
         
