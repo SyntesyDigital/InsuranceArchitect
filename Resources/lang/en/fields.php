@@ -104,4 +104,5 @@ return [
         'icon' => 'Icon',
         'file_too_big' => 'File too big',
         'new_suscriptor' => 'Add suscriptor',
+        'disable_breadcumb' => 'Disable breadcumb'
 ];

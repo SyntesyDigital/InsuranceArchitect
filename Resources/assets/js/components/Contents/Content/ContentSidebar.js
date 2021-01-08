@@ -171,7 +171,7 @@ class ContentSidebar extends Component {
 
     renderSettings() {
 
-        //console.log("settings => ",this.props.app.settings)
+        console.log("settings rendersettings => ",this.props.app.settings)
 
         let field = {
             settings: this.props.app.settings
@@ -180,6 +180,17 @@ class ContentSidebar extends Component {
 
         return (
             <div>
+
+
+                <BooleanSettingsField
+                    field={field}
+                    name="disableBreadcumb"
+                    source="settings"
+                    onFieldChange={this.handleFieldSettingsChange.bind(this)}
+                    label={Lang.get('fields.disable_breadcumb')}
+                />
+
+        
                 {/*
                 <div className="form-group bmd-form-group sidebar-item">
                     <SelectorSettingsField
