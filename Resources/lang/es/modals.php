@@ -62,4 +62,5 @@ return [
     'render_button' => 'Tipo de renderizado',
     'simple_button' => 'Botón simple',
     'box_button' => 'Botón caja',
+    'document_button' => 'Botón documento',
 ];

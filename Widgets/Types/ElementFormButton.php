@@ -14,6 +14,7 @@ class ElementFormButton extends Widget implements WidgetInterface
 
     public $fields = [
         'title' => 'Modules\Architect\Fields\Types\Text',
+        'subtitle' => 'Modules\Architect\Fields\Types\Text',
         'redirect' => 'Modules\Architect\Fields\Types\Url',
         'icon' => 'Modules\Architect\Fields\Types\Icon',
     ];

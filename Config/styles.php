@@ -4659,6 +4659,87 @@ return [
           ],
         ], //en children box 31
       ], //end box 31
+      [
+        'type' => 'box',
+        'title' => 'Fichier Button',
+        'identifier' => 'box_32',
+        'children' => [
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorTitleFichierButton',
+                    'name' => 'colorTitleFichierButton',
+                    'label' => 'Color title',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'color',
+                    'identifier' => 'colorSubTitleFichierButton',
+                    'name' => 'colorSubTitleFichierButton',
+                    'label' => 'Color subtitle',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'heightBackgroundFichierButton',
+                    'name' => 'heightBackgroundFichierButton',
+                    'label' => 'Background height (px)',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeTitleFichierButton',
+                    'name' => 'fontSizeTitleFichierButton',
+                    'label' => 'Font-size (px) title',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeSubTitleFichierButton',
+                    'name' => 'fontSizeSubTitleFichierButton',
+                    'label' => 'Font-size (px) subtitle',
+                  ],
+            ], //end children col
+          ],
+          [
+            'type' => 'col',
+            'class' => 'col-md-4',
+            'children' => [
+                  [
+                    'type' => 'field',
+                    'input' => 'icon',
+                    'identifier' => 'iconFichierButton',
+                    'name' => 'iconFichierButton',
+                    'label' => 'Icon',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'number',
+                    'identifier' => 'fontSizeIconFichierButton',
+                    'name' => 'fontSizeIconFichierButton',
+                    'label' => 'Font-size (px) icon',
+                  ],
+                  [
+                    'type' => 'field',
+                    'input' => 'text',
+                    'identifier' => 'subtitleFichierButton',
+                    'name' => 'subtitleFichierButton',
+                    'label' => 'Subtitle text',
+                  ],
+            ], //end children col
+          ],
+        ], //en children box 32
+      ], //end box 32
     ],
   ],
 ];
