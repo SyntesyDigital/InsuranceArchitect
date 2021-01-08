@@ -718,6 +718,13 @@ return [
                 'name' => 'frontFooterTextNumberColor',
                 'label' => 'Text number color',
               ],
+              [
+                'type' => 'field',
+                'input' => 'text',
+                'identifier' => 'footerContactRolesExcluded',
+                'name' => 'footerContactRolesExcluded',
+                'label' => 'Roles to hide footer phone (ROLE1, ROLE2...)',
+              ],
             ], //end children col
           ],
           [
