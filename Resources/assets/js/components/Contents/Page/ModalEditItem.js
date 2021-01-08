@@ -1273,6 +1273,10 @@ class ModalEditItem extends Component {
                 {
                     value: "box_button",
                     name: Lang.get('modals.box_button'),
+                },
+                {
+                    value: "document_button",
+                    name: Lang.get('modals.document_button'),
                 }
           ]}
         />
