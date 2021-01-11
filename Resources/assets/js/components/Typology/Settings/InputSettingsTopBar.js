@@ -37,6 +37,13 @@ class InputSettingsTopBar extends Component {
     this.props.onFieldChange(field);
   }
 
+  getDefaultValue(){
+    return {
+      title : '',
+      icon : ''
+    };
+  }
+
   render() {
 
     if(this.props.field == null || this.props.field[this.props.source] == null || 
@@ -55,7 +62,7 @@ class InputSettingsTopBar extends Component {
         label={this.props.label}
         name={this.props.name}
         source={this.props.source}
-        defaultValue={''}
+        defaultValue={this.getDefaultValue()}
       >
 
         <InputField
