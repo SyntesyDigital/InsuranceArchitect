@@ -9,29 +9,28 @@ import {
 
 import InputSettingsField from './../../Typology/Settings/InputSettingsField';
 import BooleanSettingsField from './../../Typology/Settings/BooleanSettingsField';
-import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField'
-
+import SelectorSettingsField from './../../Typology/Settings/SelectorSettingsField';
+import VisibilitySettingsField from './Settings/Visibility/VisibilitySettingsField';
 
 class ModalEditClass extends Component {
 
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    // //console.log(" ModalEditClass :: construct ",props);
+        this.mounted = false;
 
-    this.mounted = false;
+        this.state = {
+            field: null,
+            permissions : this.getPermissions(),
+            roles : this.getRoles(),
+        };
 
-    this.state = {
-      field: null
-    };
-
-    this.onModalClose = this.onModalClose.bind(this);
-  }
+        this.onModalClose = this.onModalClose.bind(this);
+    }
 
   componentDidMount() {
-
     if (this.props.modalSettings.displayModal) {
-      this.modalOpen();
+        this.modalOpen();
     }
 
     this.mounted = true;
@@ -39,6 +38,20 @@ class ModalEditClass extends Component {
 
   componentWillUnmount() {
     this.mounted = false;
+  }
+
+  getRoles() {
+    return Object.keys(CURRENT_USER.veos_roles).map((key,index) => ({
+        name : CURRENT_USER.veos_roles[key],
+        value : CURRENT_USER.veos_roles[key]
+    }));
+  }
+
+  getPermissions() {
+    return Object.keys(CURRENT_USER.veos_permissions).map((key,index) => ({
+        name : key,
+        value : key
+    }));
   }
   
   /**
@@ -58,7 +71,7 @@ class ModalEditClass extends Component {
     }
 
     if(config == null){
-      return field;
+        return field;
     }
 
     if(config !== undefined ) {
@@ -218,6 +231,18 @@ class ModalEditClass extends Component {
             },
           ]}
         />
+
+        <VisibilitySettingsField
+            field={data}
+            name="conditionalVisibility"
+            source="settings"
+            inputLabel="Définir l'état par défaut."
+            onFieldChange={this.handleFieldSettingsChange.bind(this)}
+            label="Afficher selon conditions"
+            parameters={this.props.app.parametersList}
+            permissions={this.state.permissions}
+            roles={this.state.roles}
+        />
       </div>
     );
   }
@@ -283,7 +308,6 @@ const mapDispatchToProps = dispatch => {
     changeFieldSettings: (field, layout) => {
       return dispatch(changeFieldSettings(field, layout));
     }
-
   }
 }
 
